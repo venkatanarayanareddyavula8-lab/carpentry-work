@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Nest</title>
+
+    <link rel="stylesheet" href="portfolio.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- ==================================================
+       HEADER
+    ================================================== -->
+
+    <header class="site-header" id="siteHeader">
+      <div class="header-container">
+        <!-- ================= LOGO ================= -->
+
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <img src="images/logo2.png" alt="Craft Nest Logo" />
+          </span>
+
+          <span class="logo-name"> Craft<strong>Nest</strong> </span>
+        </a>
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="main-nav" id="mainNav">
+          <!-- HOME DROPDOWN -->
+
+          <div class="nav-dropdown">
+            <button
+              type="button"
+              class="nav-link dropdown-button"
+              id="homeDropdownButton"
+            >
+              <span>Home</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+              <a href="index.html">Home 1</a>
+              <a href="index1.html">Home 2</a>
+            </div>
+          </div>
+
+          <!-- NAV LINKS -->
+
+          <a href="portfolio.html" class="nav-link"> Portfolio </a>
+
+          <a href="Materials.html" class="nav-link">
+            Materials &amp; Finishes
+          </a>
+
+          <a href="Process.html" class="nav-link"> Process </a>
+
+          <a href="Contact.html" class="nav-link"> Contact </a>
+
+          <!-- MOBILE GET STARTED -->
+
+          <a href="Login.html" class="nav-link mobile-login"> Get Started </a>
+        </nav>
+
+        <!-- ================= HEADER ACTIONS ================= -->
+
+        <div class="header-actions">
+          <!-- RTL / LTR -->
+
+          <button
+            type="button"
+            class="rtl-button"
+            id="rtlToggle"
+            aria-label="Switch to RTL"
+            title="Switch to RTL"
+          >
+            <span>RTL</span>
+          </button>
+
+          <!-- DARK / LIGHT -->
+
+          <button
+            type="button"
+            class="icon-button"
+            id="darkToggle"
+            aria-label="Dark Mode"
+            title="Dark Mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+
+          <!-- GET STARTED -->
+
+          <a href="Login.html" class="login-button">
+            <span>Get Started</span>
+          </a>
+
+          <!-- HAMBURGER -->
+
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open Menu"
+            title="Menu"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================================================
+     PORTFOLIO HERO
+================================================== -->
+
+    <section class="portfolio-hero">
+      <div class="portfolio-hero-overlay"></div>
+
+      <div class="portfolio-hero-content">
+        <span class="portfolio-label"> OUR PORTFOLIO </span>
+
+        <h1>
+          Where Craftsmanship
+          <em>Becomes Timeless Design</em>
+        </h1>
+
+        <p>
+          Explore our collection of handcrafted furniture, custom interiors, and
+          carefully finished pieces created with precision, character, and
+          purpose.
+        </p>
+
+        <div class="portfolio-hero-buttons">
+          <a href="#portfolio" class="portfolio-btn primary"> View Our Work </a>
+
+          <a href="#contact" class="portfolio-btn secondary">
+            Start a Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     OUR COLLECTION
+================================================== -->
+
+    <section class="furniture-collection">
+      <!-- SECTION HEADER -->
+      <div class="collection-header">
+        <span class="collection-label"> OUR COLLECTION </span>
+
+        <h2>Explore Our <em>Furniture</em></h2>
+
+        <p>
+          Discover thoughtfully crafted furniture designed to bring timeless
+          beauty, comfort, and character into your space.
+        </p>
+      </div>
+
+      <!-- ==================================================
+       CATEGORY BUTTONS
+  ================================================== -->
+
+      <div class="collection-filters">
+        <button type="button" class="filter-btn active">All Furniture</button>
+
+        <button type="button" class="filter-btn">Tables</button>
+
+        <button type="button" class="filter-btn">Beds</button>
+
+        <button type="button" class="filter-btn">Cabinets</button>
+      </div>
+
+      <!-- ==================================================
+       FURNITURE GRID
+  ================================================== -->
+
+      <div class="furniture-grid">
+        <!-- ==================================================
+         TABLE
+    ================================================== -->
+
+        <article class="furniture-card">
+          <div class="furniture-image">
+            <img src="images/elegent.jpg" alt="Elegant handcrafted table" />
+          </div>
+
+          <div class="furniture-content">
+            <span class="furniture-number"> 01 · TABLES </span>
+
+            <h3>Elegant Tables</h3>
+
+            <p>
+              Handcrafted tables designed with refined proportions, natural
+              materials, and lasting character.
+            </p>
+          </div>
+        </article>
+
+        <!-- ==================================================
+         BED
+    ================================================== -->
+
+        <article class="furniture-card">
+          <div class="furniture-image">
+            <img src="images/beds.webp" alt="Luxury handcrafted bed" />
+          </div>
+
+          <div class="furniture-content">
+            <span class="furniture-number"> 02 · BEDS </span>
+
+            <h3>Luxury Beds</h3>
+
+            <p>
+              Beautifully crafted beds that combine comfort, craftsmanship, and
+              timeless design.
+            </p>
+          </div>
+        </article>
+
+        <!-- ==================================================
+         CABINET
+    ================================================== -->
+
+        <article class="furniture-card">
+          <div class="furniture-image">
+            <img src="images/cabinet.jpg" alt="Refined handcrafted cabinet" />
+          </div>
+
+          <div class="furniture-content">
+            <span class="furniture-number"> 03 · CABINETS </span>
+
+            <h3>Refined Cabinets</h3>
+
+            <p>
+              Bespoke storage pieces created to balance practical function with
+              sophisticated detailing.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     LIVING ROOM FURNITURE
+================================================== -->
+
+    <section class="living-room-section" id="livingRoomFurniture">
+      <!-- ==================================================
+       SECTION HEADER
+  ================================================== -->
+
+      <div class="living-room-header">
+        <span class="living-room-label"> LIVING ROOM COLLECTION </span>
+
+        <h2>Timeless <em>Living Room Furniture</em></h2>
+
+        <p>
+          Discover beautifully handcrafted living room furniture created to
+          bring comfort, character, and timeless elegance into your home.
+        </p>
+      </div>
+
+      <!-- ==================================================
+       CATEGORY FILTERS
+  ================================================== -->
+
+      <div class="living-room-filters">
+        <button class="living-room-filter active" data-category="sofas">
+          Sofas
+        </button>
+
+        <button class="living-room-filter" data-category="coffee-tables">
+          Coffee Tables
+        </button>
+
+        <button class="living-room-filter" data-category="tv-units">
+          TV Units
+        </button>
+      </div>
+
+      <!-- ==================================================
+       FURNITURE GRID
+  ================================================== -->
+
+      <div class="living-room-grid">
+        <!-- ==================================================
+         CARD 01
+    ================================================== -->
+
+        <article class="living-room-card" data-category="sofas">
+          <div class="living-room-image">
+            <img
+              src="images/sofa.webp"
+              alt="Luxury handcrafted living room sofa"
+            />
+          </div>
+
+          <div class="living-room-content">
+            <span class="living-room-number"> LIVING — 01 </span>
+
+            <h3>Signature Sofa</h3>
+
+            <p>
+              A refined handcrafted sofa designed to combine exceptional comfort
+              with timeless proportions and elegant detailing.
+            </p>
+          </div>
+        </article>
+
+        <!-- ==================================================
+         CARD 02
+    ================================================== -->
+
+        <article class="living-room-card" data-category="coffee-tables">
+          <div class="living-room-image">
+            <img
+              src="images/cofffe.jpg"
+              alt="Handcrafted living room coffee table"
+            />
+          </div>
+
+          <div class="living-room-content">
+            <span class="living-room-number"> LIVING — 02 </span>
+
+            <h3>Artisan Coffee Table</h3>
+
+            <p>
+              Crafted from carefully selected timber, this coffee table brings
+              natural warmth and refined character to the living space.
+            </p>
+          </div>
+        </article>
+
+        <!-- ==================================================
+         CARD 03
+    ================================================== -->
+
+        <article class="living-room-card" data-category="tv-units">
+          <div class="living-room-image">
+            <img
+              src="images/tv.jpg"
+              alt="Modern handcrafted living room TV unit"
+            />
+          </div>
+
+          <div class="living-room-content">
+            <span class="living-room-number"> LIVING — 03 </span>
+
+            <h3>Modern TV Unit</h3>
+
+            <p>
+              A sophisticated storage and entertainment unit designed with clean
+              lines, practical storage, and handcrafted precision.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="custom-project-section" id="customProject">
+      <div class="custom-project-header">
+        <span class="custom-project-label">CUSTOM PROJECT</span>
+
+        <h2>
+          Designed For You.<br />
+          <em>Crafted For Life.</em>
+        </h2>
+
+        <p>
+          Every custom project begins with an idea. We transform your vision,
+          space, and lifestyle into a beautifully crafted piece of furniture.
+        </p>
+      </div>
+
+      <div class="custom-project-content">
+        <!-- LEFT -->
+        <div class="custom-project-image">
+          <img
+            src="images/hand.jpg"
+            alt="Custom handcrafted furniture project"
+          />
+        </div>
+
+        <!-- RIGHT -->
+        <div class="custom-project-details">
+          
+          
+
+          <p>
+            From the first sketch to the final finish, our craftsmen work
+            closely with you to create furniture that perfectly belongs in your
+            space.
+          </p>
+
+          <div class="custom-project-features">
+            <div class="custom-project-feature">
+              <span>01</span>
+              <div>
+                <h4>Personalised Design</h4>
+                <p>Created around your needs, style and space.</p>
+              </div>
+            </div>
+
+            <div class="custom-project-feature">
+              <span>02</span>
+              <div>
+                <h4>Premium Materials</h4>
+                <p>Carefully selected timber and refined finishes.</p>
+              </div>
+            </div>
+
+            <div class="custom-project-feature">
+              <span>03</span>
+              <div>
+                <h4>Handcrafted Precision</h4>
+                <p>Every detail is carefully finished by skilled craftsmen.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="Contact.html" class="custom-project-button">
+            START YOUR PROJECT
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ==================================================
+     BEFORE & AFTER
+================================================== -->
+
+<section class="before-after-section" id="beforeAfter">
+
+  <div class="before-after-header">
+
+    <span class="before-after-label">
+      BEFORE &amp; AFTER
+    </span>
+
+    <h2>
+      From Worn To <em>Wonderful</em>
+    </h2>
+
+    <p>
+      Discover how skilled craftsmanship transforms
+      worn furniture into timeless pieces.
+    </p>
+
+  </div>
+
+
+  <!-- PROJECT 01 -->
+  <div class="before-after-project">
+
+    <div class="before-after-slider">
+
+      <!-- AFTER IMAGE -->
+      <div class="before-after-after">
+        <img
+          src="images/before.avif"
+          alt="Furniture after restoration"
+        >
+      </div>
+
+      <!-- BEFORE IMAGE -->
+      <div class="before-after-before">
+        <img
+          src="images/before.avif"
+          alt="Furniture before restoration"
+        >
+      </div>
+
+      <!-- LABELS -->
+      <span class="before-after-label-tag before-label">
+        BEFORE
+      </span>
+
+      <span class="before-after-label-tag after-label">
+        AFTER
+      </span>
+
+      <!-- SLIDER -->
+      <div class="before-after-divider">
+
+        <div class="before-after-handle">
+          <span>‹</span>
+          <span>›</span>
+        </div>
+
+      </div>
+
+      <input
+        type="range"
+        class="before-after-range"
+        min="0"
+        max="100"
+        value="50"
+        aria-label="Before and after comparison"
+      >
+
+    </div>
+
+
+    <div class="before-after-info">
+
+      <span class="before-after-number">
+        PROJECT — 01
+      </span>
+
+      <h3>
+        Heritage Dining Table
+      </h3>
+
+      <p>
+        A beautifully restored dining table brought back to life
+        through careful sanding, structural repair and a refined
+        natural wood finish.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- PROJECT 02 -->
+  <div class="before-after-project">
+
+    <div class="before-after-slider">
+
+      <div class="before-after-after">
+        <img
+          src="images/dining 1.jpg"
+          alt="Cabinet after restoration"
+        >
+      </div>
+
+      <div class="before-after-before">
+        <img
+          src="images/dining 1.jpg"
+          alt="Cabinet before restoration"
+        >
+      </div>
+
+      <span class="before-after-label-tag before-label">
+        BEFORE
+      </span>
+
+      <span class="before-after-label-tag after-label">
+        AFTER
+      </span>
+
+      <div class="before-after-divider">
+
+        <div class="before-after-handle">
+          <span>‹</span>
+          <span>›</span>
+        </div>
+
+      </div>
+
+      <input
+        type="range"
+        class="before-after-range"
+        min="0"
+        max="100"
+        value="50"
+        aria-label="Before and after comparison"
+      >
+
+    </div>
+
+
+    <div class="before-after-info">
+
+      <span class="before-after-number">
+        PROJECT — 02
+      </span>
+
+      <h3>
+        Vintage Cabinet
+      </h3>
+
+      <p>
+        An aged cabinet transformed with precise repairs,
+        handcrafted detailing and a sophisticated new finish.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- PROJECT 03 -->
+  <div class="before-after-project">
+
+    <div class="before-after-slider">
+
+      <div class="before-after-after">
+        <img
+          src="images/cabinet 1.jpg"
+          alt="Wooden chair after restoration"
+        >
+      </div>
+
+      <div class="before-after-before">
+        <img
+          src="images/cabinet 1.jpg"
+          alt="Wooden chair before restoration"
+        >
+      </div>
+
+      <span class="before-after-label-tag before-label">
+        BEFORE
+      </span>
+
+      <span class="before-after-label-tag after-label">
+        AFTER
+      </span>
+
+      <div class="before-after-divider">
+
+        <div class="before-after-handle">
+          <span>‹</span>
+          <span>›</span>
+        </div>
+
+      </div>
+
+      <input
+        type="range"
+        class="before-after-range"
+        min="0"
+        max="100"
+        value="50"
+        aria-label="Before and after comparison"
+      >
+
+    </div>
+
+</section>
+<section class="furniture-units-section" id="furnitureUnits">
+
+  <div class="furniture-units-header">
+    <span class="furniture-units-label">OUR FURNITURE UNITS</span>
+
+    <h2>
+      Crafted With Purpose.
+      <em>Made For Living.</em>
+    </h2>
+
+    <p>
+      Handcrafted furniture designed and built with precision,
+      quality materials, and timeless craftsmanship.
+    </p>
+  </div>
+
+
+  <div class="furniture-units-wrapper">
+
+    <!-- UNIT 01 -->
+    <article class="furniture-unit">
+      <div class="unit-image">
+        <img src="images/storage units.png" alt="Storage Units">
+      </div>
+
+      <span class="unit-number">UNIT 01</span>
+
+      <h3>Storage Units</h3>
+
+      <span class="unit-size">180 × 45 × 210 cm</span>
+
+      <p>
+        Smart and practical storage solutions crafted to
+        maximize space while maintaining a clean and elegant look.
+      </p>
+    </article>
+
+
+    <!-- UNIT 02 -->
+    <article class="furniture-unit">
+      <div class="unit-image">
+        <img src="images/room furnture.png" alt="Living Room Furniture">
+      </div>
+
+      <span class="unit-number">UNIT 02</span>
+
+      <h3>Living Room Furniture</h3>
+
+      <span class="unit-size">220 × 90 × 85 cm</span>
+
+      <p>
+        Comfortable and timeless furniture designed with
+        quality materials, thoughtful proportions, and detail.
+      </p>
+    </article>
+
+
+    <!-- UNIT 03 -->
+    <article class="furniture-unit">
+      <div class="unit-image">
+        <img src="images/custom.jpg" alt="Custom Furniture Project">
+      </div>
+
+      <span class="unit-number">UNIT 03</span>
+
+      <h3>Custom Project</h3>
+
+      <span class="unit-size">240 × 60 × 200 cm</span>
+
+      <p>
+        Every project is built around your space, lifestyle,
+        and vision to create truly personal furniture.
+      </p>
+    </article>
+
+
+    <!-- UNIT 04 -->
+    <article class="furniture-unit">
+      <div class="unit-image">
+        <img src="images/before &after.png" alt="Before and After Furniture">
+      </div>
+
+      <span class="unit-number">UNIT 04</span>
+
+      <h3>Before &amp; After</h3>
+
+      <span class="unit-size">180 × 90 × 75 cm</span>
+
+      <p>
+        Skilled carpentry and careful finishing transform
+        existing furniture into beautiful renewed pieces.
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
+<section class="client-stories-section" id="clientProjectStories">
+
+  <!-- Header -->
+  <div class="client-stories-header">
+    <span class="client-stories-label">CLIENT PROJECT STORIES</span>
+
+    <h2>
+      Real Spaces.
+      <em>Personal Designs.</em>
+    </h2>
+
+    <p>
+      Discover the stories behind our handcrafted furniture,
+      created around real spaces, personal styles, and everyday living.
+    </p>
+  </div>
+
+
+  <!-- Stories -->
+  <div class="client-stories-grid">
+
+    <!-- Project 01 -->
+    <article class="client-story">
+
+      <div class="client-story-image">
+        <img
+          src="images/residence.jpg"
+          alt="Modern Residence furniture project"
+        >
+      </div>
+
+      <div class="client-story-content">
+
+        <span class="client-story-number">
+          PROJECT 01
+        </span>
+
+        <h3>
+          Modern Residence
+        </h3>
+
+        <span class="client-story-location">
+          Hyderabad
+        </span>
+
+        <p>
+          A bespoke furniture collection designed around
+          modern living, bringing warmth, functionality,
+          and timeless character into the home.
+        </p>
+
+        <div class="client-story-tags">
+          <span>CUSTOM FURNITURE</span>
+          <span>WALNUT FINISH</span>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- Project 02 -->
+    <article class="client-story">
+
+      <div class="client-story-image">
+        <img
+          src="images/heritage.jpg"
+          alt="Heritage Home furniture project"
+        >
+      </div>
+
+      <div class="client-story-content">
+
+        <span class="client-story-number">
+          PROJECT 02
+        </span>
+
+        <h3>
+          Heritage Home
+        </h3>
+
+        <span class="client-story-location">
+          Secunderabad
+        </span>
+
+        <p>
+          A carefully handcrafted furniture project where
+          traditional detailing meets refined contemporary
+          design and natural wood finishes.
+        </p>
+
+        <div class="client-story-tags">
+          <span>SOLID WOOD</span>
+          <span>HANDCRAFTED</span>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- Project 03 -->
+    <article class="client-story">
+
+      <div class="client-story-image">
+        <img
+          src="images/luxuary.jpg"
+          alt="Luxury Apartment furniture project"
+        >
+      </div>
+
+      <div class="client-story-content">
+
+        <span class="client-story-number">
+          PROJECT 03
+        </span>
+
+        <h3>
+          Luxury Apartment
+        </h3>
+
+        <span class="client-story-location">
+          Hyderabad
+        </span>
+
+        <p>
+          A personalized furniture collection created to
+          complement a sophisticated interior with elegant
+          proportions and premium finishes.
+        </p>
+
+        <div class="client-story-tags">
+          <span>BESPOKE DESIGN</span>
+          <span>PREMIUM FINISH</span>
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+<section class="portfolio-cta-section" id="portfolioCTA">
+
+  <div class="portfolio-cta-overlay"></div>
+
+  <div class="portfolio-cta-box">
+
+    <span class="portfolio-cta-label">
+      CRAFTED STORIES
+    </span>
+
+    <h2>
+      Explore Our
+      <em>Craftsmanship</em>
+    </h2>
+
+    <p>
+      Discover our completed furniture projects, bespoke designs,
+      and handcrafted creations — each piece reflecting our
+      attention to detail and passion for timeless furniture.
+    </p>
+
+    <a href="Portfolio.html" class="portfolio-cta-button">
+      VIEW OUR PORTFOLIO
+    </a>
+
+  </div>
+
+</section>
+    
+
+    <!-- ==================================================
+       FOOTER
+    ================================================== -->
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- ================= FOOTER BRAND ================= -->
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">
+              <img src="images/logo2.png" alt="Craft Nest Logo" />
+            </span>
+
+            <span class="logo-name"> Craft<strong>Nest</strong> </span>
+          </a>
+
+          <p>
+            Thoughtfully designed furniture crafted with quality materials,
+            skilled hands and timeless attention to detail.
+          </p>
+
+          <!-- SOCIAL -->
+          <div class="social-links">
+            <a href="#" aria-label="Facebook" title="Facebook">
+              <i data-lucide="users"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram" title="Instagram">
+              <i data-lucide="camera"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter" title="Twitter">
+              <i data-lucide="send"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube" title="YouTube">
+              <i data-lucide="play"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ================= QUICK LINKS ================= -->
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <a href="index.html">Home</a>
+
+          <a href="About.html">About</a>
+
+          <a href="Portfolio.html">Portfolio</a>
+
+          <a href="Materials.html">Materials &amp; Finishes</a>
+        </div>
+
+        <!-- ================= MENU ================= -->
+
+        <div class="footer-column">
+          <h3>Menu</h3>
+
+          <a href="Process.html">Process</a>
+
+          <a href="Services.html">Services</a>
+
+          <a href="Contact.html">Contact</a>
+
+          <a href="Login.html">Get Started</a>
+        </div>
+
+        <!-- ================= CONTACT ================= -->
+
+        <div class="footer-column footer-contact">
+          <h3>Contact</h3>
+
+          <p>
+            <i data-lucide="map-pin"></i>
+            <span>Hyderabad, India</span>
+          </p>
+
+          <p>
+            <i data-lucide="phone"></i>
+            <span>+91 98765 43210</span>
+          </p>
+
+          <p>
+            <i data-lucide="mail"></i>
+            <span>hello@craftnest.com</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= FOOTER BOTTOM ================= -->
+
+      <div class="footer-bottom">
+        <p>© 2026 Craft Nest. All Rights Reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+  </body>
+</html>

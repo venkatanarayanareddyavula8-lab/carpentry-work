@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Nest</title>
+
+    <link rel="stylesheet" href="process.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- ==================================================
+       HEADER
+    ================================================== -->
+
+    <header class="site-header" id="siteHeader">
+      <div class="header-container">
+        <!-- ================= LOGO ================= -->
+
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <img src="images/logo2.png" alt="Craft Nest Logo" />
+          </span>
+
+          <span class="logo-name"> Craft<strong>Nest</strong> </span>
+        </a>
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="main-nav" id="mainNav">
+          <!-- HOME DROPDOWN -->
+
+          <div class="nav-dropdown">
+            <button
+              type="button"
+              class="nav-link dropdown-button"
+              id="homeDropdownButton"
+            >
+              <span>Home</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+              <a href="index.html">Home 1</a>
+              <a href="index1.html">Home 2</a>
+            </div>
+          </div>
+
+          <!-- NAV LINKS -->
+
+          <a href="portfolio.html" class="nav-link"> Portfolio </a>
+
+          <a href="materials.html" class="nav-link">
+            Materials &amp; Finishes
+          </a>
+
+          <a href="Process.html" class="nav-link"> Process </a>
+
+          <a href="Contact.html" class="nav-link"> Contact </a>
+
+          <!-- MOBILE GET STARTED -->
+
+          <a href="Login.html" class="nav-link mobile-login"> Get Started </a>
+        </nav>
+
+        <!-- ================= HEADER ACTIONS ================= -->
+
+        <div class="header-actions">
+          <!-- RTL / LTR -->
+
+          <button
+            type="button"
+            class="rtl-button"
+            id="rtlToggle"
+            aria-label="Switch to RTL"
+            title="Switch to RTL"
+          >
+            <span>RTL</span>
+          </button>
+
+          <!-- DARK / LIGHT -->
+
+          <button
+            type="button"
+            class="icon-button"
+            id="darkToggle"
+            aria-label="Dark Mode"
+            title="Dark Mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+
+          <!-- GET STARTED -->
+
+          <a href="Login.html" class="login-button">
+            <span>Get Started</span>
+          </a>
+
+          <!-- HAMBURGER -->
+
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open Menu"
+            title="Menu"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================================================
+     PROCESS HERO
+================================================== -->
+
+    <section class="process-hero">
+      <div class="process-hero-overlay"></div>
+
+      <div class="process-hero-content">
+        <span class="process-hero-label"> OUR PROCESS </span>
+
+        <h1>From Vision <em>to Reality.</em></h1>
+
+        <p>
+          From the first conversation to the final installation, every piece is
+          thoughtfully designed, carefully crafted, and finished with precision.
+        </p>
+
+        <div class="process-hero-buttons">
+          <a href="Portfolio.html" class="process-hero-btn primary">
+            Explore Our Work
+          </a>
+
+          <a href="Contact.html" class="process-hero-btn secondary">
+            Start Your Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     OUR CRAFTING PHILOSOPHY
+================================================== -->
+
+    <section class="crafting-philosophy">
+      <div class="crafting-philosophy-container">
+        <!-- SECTION HEADER -->
+        <div class="crafting-philosophy-header">
+          <span class="crafting-philosophy-label">
+            OUR CRAFTING PHILOSOPHY
+          </span>
+
+          <h2>
+            Crafted With Purpose.
+            <em>Made To Last.</em>
+          </h2>
+
+          <p>
+            Furniture should not simply fill a space. It should reflect the
+            people who live in it.
+          </p>
+        </div>
+
+        <!-- PHILOSOPHY ITEMS -->
+        <div class="crafting-philosophy-row">
+          <!-- 01 -->
+          <div class="crafting-philosophy-item">
+            <div class="crafting-circle">
+              <span>01</span>
+            </div>
+
+            <div class="crafting-item-content">
+              <span class="crafting-item-label"> DESIGN </span>
+
+              <h3>Purposeful Design</h3>
+
+              <p>
+                Thoughtful planning for everyday living, creating furniture that
+                feels natural, functional, and personal.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="crafting-philosophy-item">
+            <div class="crafting-circle">
+              <span>02</span>
+            </div>
+
+            <div class="crafting-item-content">
+              <span class="crafting-item-label"> MATERIAL </span>
+
+              <h3>Honest Materials</h3>
+
+              <p>
+                Carefully selected materials that reveal natural character,
+                strength, texture, and lasting beauty.
+              </p>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="crafting-philosophy-item">
+            <div class="crafting-circle">
+              <span>03</span>
+            </div>
+
+            <div class="crafting-item-content">
+              <span class="crafting-item-label"> CRAFT </span>
+
+              <h3>Skilled Craftsmanship</h3>
+
+              <p>
+                Experienced hands, precise joinery, careful finishing, and
+                attention to every small detail.
+              </p>
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="crafting-philosophy-item">
+            <div class="crafting-circle">
+              <span>04</span>
+            </div>
+
+            <div class="crafting-item-content">
+              <span class="crafting-item-label"> LEGACY </span>
+
+              <h3>Built To Last</h3>
+
+              <p>
+                Furniture made with strength and care, designed to become part
+                of your space for years to come.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="crafting-philosophy-cta">
+          <a href="Contact.html"> Start Your Custom Project </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     PROCESS CTA
+================================================== -->
+
+    <section class="process-cta">
+      <div class="process-cta-container">
+        <!-- ================= IMAGE ================= -->
+
+        <div class="process-cta-image">
+          <img
+            src="images/background p1.avif"
+            alt="Craft Nest Custom Furniture"
+          />
+        </div>
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="process-cta-content">
+          <span class="process-cta-label"> READY TO BEGIN? </span>
+
+          <h2>
+            Your Vision.
+            <em>Our Craft.</em>
+          </h2>
+
+          <p>
+            From your first idea to the finished piece, we create thoughtfully
+            designed furniture made specifically for your space and lifestyle.
+          </p>
+
+          <a href="Contact.html" class="process-cta-button">
+            Start Your Custom Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+     PREMIUM FOOTER
+======================================== -->
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">
+              <img src="images/logo2.png" alt="Craft Nest Logo" />
+            </span>
+
+            <span class="logo-name"> Craft<strong>Nest</strong> </span>
+          </a>
+
+          <p class="footer-description">
+            Thoughtfully designed furniture crafted with quality materials,
+            skilled hands and timeless attention to detail.
+          </p>
+
+          <!-- SOCIAL ICONS -->
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="users"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="camera"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="send"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+              <i data-lucide="play"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <a href="index.html">Home</a>
+
+          <a href="portfolio.html">portfolio</a>
+
+          <a href="materials.html">Materials &amp; Finishes</a>
+
+          <a href="process.html"> process</a>
+          <a href="contact.html"> contact </a>
+        </div>
+
+        <!-- MENU -->
+        <div class="footer-column">
+          <h3>Menu</h3>
+
+          <a href="All-Furniture.html"> All Furniture </a>
+
+          <a href="Living-Room.html"> Living Room </a>
+
+          <a href="Bedroom.html"> Bedroom </a>
+
+          <a href="Dining-Room.html"> Dining Room </a>
+
+          <a href="Office-Furniture.html"> Office Furniture </a>
+        </div>
+        <!-- CONTACT -->
+        <div class="footer-column footer-contact">
+          <h3>Contact</h3>
+
+          <p>
+            <i data-lucide="map-pin"></i>
+            <span>Hyderabad, India</span>
+          </p>
+
+          <p>
+            <i data-lucide="phone"></i>
+            <span>+91 98765 43210</span>
+          </p>
+
+          <p>
+            <i data-lucide="mail"></i>
+            <span>hello@craftnest.com</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- FOOTER BOTTOM -->
+      <div class="footer-bottom">
+        <p>© 2026 Craft Nest. All Rights Reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#"> Privacy Policy </a>
+
+          <a href="#"> Terms &amp; Conditions </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="process.js"></script>
+  </body>
+</html>

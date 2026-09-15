@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Nest</title>
+
+    <link rel="stylesheet" href="materials.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- ==================================================
+       HEADER
+    ================================================== -->
+
+    <header class="site-header" id="siteHeader">
+      <div class="header-container">
+        <!-- ================= LOGO ================= -->
+
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <img src="images/logo2.png" alt="Craft Nest Logo" />
+          </span>
+
+          <span class="logo-name"> Craft<strong>Nest</strong> </span>
+        </a>
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="main-nav" id="mainNav">
+          <!-- HOME DROPDOWN -->
+
+          <div class="nav-dropdown">
+            <button
+              type="button"
+              class="nav-link dropdown-button"
+              id="homeDropdownButton"
+            >
+              <span>Home</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+              <a href="index.html">Home 1</a>
+              <a href="index1.html">Home 2</a>
+            </div>
+          </div>
+
+          <!-- NAV LINKS -->
+
+          <a href="portfolio.html" class="nav-link"> Portfolio </a>
+
+          <a href="materials.html" class="nav-link">
+            Materials &amp; Finishes
+          </a>
+
+          <a href="Process.html" class="nav-link"> Process </a>
+
+          <a href="Contact.html" class="nav-link"> Contact </a>
+
+          <!-- MOBILE GET STARTED -->
+
+          <a href="Login.html" class="nav-link mobile-login"> Get Started </a>
+        </nav>
+
+        <!-- ================= HEADER ACTIONS ================= -->
+
+        <div class="header-actions">
+          <!-- RTL / LTR -->
+
+          <button
+            type="button"
+            class="rtl-button"
+            id="rtlToggle"
+            aria-label="Switch to RTL"
+            title="Switch to RTL"
+          >
+            <span>RTL</span>
+          </button>
+
+          <!-- DARK / LIGHT -->
+
+          <button
+            type="button"
+            class="icon-button"
+            id="darkToggle"
+            aria-label="Dark Mode"
+            title="Dark Mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+
+          <!-- GET STARTED -->
+
+          <a href="Login.html" class="login-button">
+            <span>Get Started</span>
+          </a>
+
+          <!-- HAMBURGER -->
+
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open Menu"
+            title="Menu"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================================================
+     MATERIALS HERO
+================================================== -->
+
+    <section class="materials-hero">
+      <!-- HERO OVERLAY -->
+      <div class="materials-hero-overlay"></div>
+
+      <!-- HERO CONTENT -->
+      <div class="materials-hero-content">
+        <!-- LABEL -->
+        <span class="materials-label"> PREMIUM MATERIALS &amp; FINISHES </span>
+
+        <!-- HEADING -->
+        <h1>
+          Exceptional Materials.<br />
+          <em>Beautifully Crafted.</em>
+        </h1>
+
+        <!-- DESCRIPTION -->
+        <p>
+          Explore our carefully selected collection of premium woods, natural
+          finishes, and quality materials chosen to create furniture that is
+          beautiful, durable, and made to last.
+        </p>
+
+        <!-- BUTTONS -->
+        <div class="materials-hero-buttons">
+          <a href="Portfolio.html" class="materials-btn primary">
+            Explore Materials
+          </a>
+
+          <a href="Contact.html" class="materials-btn secondary">
+            Start Your Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     OUR MATERIAL PHILOSOPHY
+========================================== -->
+
+    <section class="material-philosophy">
+      <div class="material-philosophy-container">
+        <!-- TOP LABEL + HEADING -->
+        <div class="material-philosophy-header">
+          <span class="material-philosophy-label">
+            OUR MATERIAL PHILOSOPHY
+          </span>
+
+          <h2>Materials That <em>Tell a Story</em></h2>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="material-philosophy-content">
+          <!-- LEFT IMAGE -->
+          <div class="material-philosophy-image">
+            <img src="images/p3.avif" alt="Premium natural wood material" />
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="material-philosophy-info">
+            <p class="material-info-intro">
+              We believe exceptional furniture begins with exceptional
+              materials. Every wood, texture, and finish is carefully selected
+              to create pieces that feel natural, timeless, and uniquely yours.
+            </p>
+
+            <!-- 01 -->
+            <div class="material-philosophy-item">
+              <div class="material-item-number">01</div>
+
+              <div class="material-item-content">
+                <h3>Natural Character</h3>
+
+                <p>
+                  We celebrate the natural grain, texture, and individuality of
+                  every piece of wood.
+                </p>
+              </div>
+            </div>
+
+            <!-- 02 -->
+            <div class="material-philosophy-item">
+              <div class="material-item-number">02</div>
+
+              <div class="material-item-content">
+                <h3>Lasting Quality</h3>
+
+                <p>
+                  Every material is chosen for its strength, durability, and
+                  ability to age beautifully.
+                </p>
+              </div>
+            </div>
+
+            <!-- 03 -->
+            <div class="material-philosophy-item">
+              <div class="material-item-number">03</div>
+
+              <div class="material-item-content">
+                <h3>Honest Craftsmanship</h3>
+
+                <p>
+                  Authentic materials meet careful hand-finishing and skilled
+                  craftsmanship in every creation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     MATERIAL SELECTION
+================================================== -->
+
+    <section class="material-selection">
+      <div class="material-selection-container">
+        <!-- SECTION HEADER -->
+        <div class="material-selection-header">
+          <span class="material-selection-label"> MATERIAL SELECTION </span>
+
+          <h2>Choose the Right <em>Material</em></h2>
+
+          <p>
+            We carefully select materials that bring together natural beauty,
+            lasting strength, and timeless character.
+          </p>
+        </div>
+
+        <!-- MATERIAL CARDS -->
+        <div class="material-selection-grid">
+          <!-- SOLID WOOD -->
+          <article class="material-selection-card">
+            <span class="material-selection-number"> 01 </span>
+
+            <div class="material-selection-content">
+              <h3>Solid Wood</h3>
+
+              <p>
+                Natural timber with authentic grain, texture, and character.
+                Solid wood brings warmth, strength, and timeless beauty to every
+                piece.
+              </p>
+
+              <span class="material-selection-tag">
+                Natural &amp; Timeless
+              </span>
+            </div>
+          </article>
+
+          <!-- ENGINEERED WOOD -->
+          <article class="material-selection-card">
+            <span class="material-selection-number"> 02 </span>
+
+            <div class="material-selection-content">
+              <h3>Engineered Wood</h3>
+
+              <p>
+                Carefully engineered materials designed for stability,
+                consistency, and dependable performance in modern furniture
+                design.
+              </p>
+
+              <span class="material-selection-tag">
+                Stable &amp; Versatile
+              </span>
+            </div>
+          </article>
+
+          <!-- WOOD SPECIES -->
+          <article class="material-selection-card">
+            <span class="material-selection-number"> 03 </span>
+
+            <div class="material-selection-content">
+              <h3>Wood Species</h3>
+
+              <p>
+                Discover distinctive wood species, each offering its own natural
+                tone, grain pattern, texture, and individual personality.
+              </p>
+
+              <span class="material-selection-tag">
+                Unique &amp; Characterful
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     PREMIUM FINISHES
+================================================== -->
+
+    <section class="finishes-section premium-finishes">
+      <div class="finishes-container">
+        <div class="finishes-header">
+          <span class="finishes-label">PREMIUM FINISHES</span>
+
+          <h2>Finishes With <em>Purpose</em></h2>
+
+          <p>
+            Carefully selected finishes that protect, enhance, and elevate the
+            natural beauty of every handcrafted piece.
+          </p>
+        </div>
+
+        <div class="finishes-grid">
+          <!-- PREMIUM 01 -->
+          <article class="finish-box">
+            <div class="finish-box-number">01</div>
+
+            <div class="finish-box-visual premium-oil">
+              <span>NATURAL OIL</span>
+            </div>
+
+            <div class="finish-box-content">
+              <h3>Natural Oil</h3>
+
+              <small>Soft &amp; Organic</small>
+
+              <p>
+                Enhances the natural grain while creating a warm, soft, and
+                beautifully organic surface.
+              </p>
+            </div>
+          </article>
+
+          <!-- PREMIUM 02 -->
+          <article class="finish-box">
+            <div class="finish-box-number">02</div>
+
+            <div class="finish-box-visual premium-lacquer">
+              <span>MATTE LACQUER</span>
+            </div>
+
+            <div class="finish-box-content">
+              <h3>Matte Lacquer</h3>
+
+              <small>Smooth &amp; Refined</small>
+
+              <p>
+                Provides a clean contemporary appearance while preserving the
+                natural character of the timber.
+              </p>
+            </div>
+          </article>
+
+          <!-- PREMIUM 03 -->
+          <article class="finish-box">
+            <div class="finish-box-number">03</div>
+
+            <div class="finish-box-visual premium-walnut">
+              <span>RICH WALNUT</span>
+            </div>
+
+            <div class="finish-box-content">
+              <h3>Rich Walnut</h3>
+
+              <small>Deep &amp; Warm</small>
+
+              <p>
+                A sophisticated deep tone that brings warmth, depth, and
+                timeless elegance to furniture.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     HARDWARE COLLECTION
+================================================== -->
+
+    <section class="hardware-collection">
+      <div class="hardware-container">
+        <!-- SECTION HEADER -->
+        <div class="hardware-header">
+          <span class="hardware-label"> HARDWARE COLLECTION </span>
+
+          <h2>Details That <em>Complete Design</em></h2>
+
+          <p>
+            Carefully selected hardware that adds function, character, and
+            refinement to every handcrafted furniture piece.
+          </p>
+        </div>
+
+        <!-- THREE ROUND HARDWARE ITEMS -->
+        <div class="hardware-showcase">
+          <!-- 01 BRASS -->
+          <div class="hardware-item">
+            <div class="hardware-number">01</div>
+
+            <div class="hardware-image">
+              <img src="images/brass.webp" alt="Brass furniture hardware" />
+            </div>
+
+            <div class="hardware-content">
+              <h3>BRASS</h3>
+
+              <span>Hardware</span>
+
+              <p class="hardware-style">Warm &amp; Timeless</p>
+
+              <div class="hardware-details">
+                <div class="hardware-detail">
+                  <small>MATERIAL</small>
+                  <strong>Solid Brass</strong>
+                </div>
+
+                <div class="hardware-detail">
+                  <small>FINISH</small>
+                  <strong>Brushed</strong>
+                </div>
+
+                <div class="hardware-detail">
+                  <small>SUITED FOR</small>
+                  <strong>Classic Furniture</strong>
+                </div>
+              </div>
+
+              <p class="hardware-description">
+                Warm metallic tones that bring elegance, depth, and a refined
+                handcrafted character to furniture.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02 MATTE BLACK -->
+          <div class="hardware-item">
+            <div class="hardware-number">02</div>
+
+            <div class="hardware-image">
+              <img
+                src="images/mattle.webp"
+                alt="Matte black furniture hardware"
+              />
+            </div>
+
+            <div class="hardware-content">
+              <h3>MATTE BLACK</h3>
+
+              <span>Hardware</span>
+
+              <p class="hardware-style">Bold &amp; Modern</p>
+
+              <div class="hardware-details">
+                <div class="hardware-detail">
+                  <small>MATERIAL</small>
+                  <strong>Steel</strong>
+                </div>
+
+                <div class="hardware-detail">
+                  <small>FINISH</small>
+                  <strong>Matte</strong>
+                </div>
+
+                <div class="hardware-detail">
+                  <small>SUITED FOR</small>
+                  <strong>Modern Furniture</strong>
+                </div>
+              </div>
+
+              <p class="hardware-description">
+                A clean dark finish that creates a strong, contemporary
+                appearance with subtle contrast.
+              </p>
+            </div>
+          </div>
+
+          <!-- 03 BRONZE -->
+          <div class="hardware-item">
+            <div class="hardware-number">03</div>
+
+            <div class="hardware-image">
+              <img src="images/bronze.jpg" alt="Bronze furniture hardware" />
+            </div>
+
+            <div class="hardware-content">
+              <h3>BRONZE</h3>
+
+              <span>Hardware</span>
+
+              <p class="hardware-style">Rich &amp; Classic</p>
+
+              <div class="hardware-details">
+                <div class="hardware-detail">
+                  <small>MATERIAL</small>
+                  <strong>Bronze Alloy</strong>
+                </div>
+
+                <div class="hardware-detail">
+                  <small>FINISH</small>
+                  <strong>Antique</strong>
+                </div>
+
+                <div class="hardware-detail">
+                  <small>SUITED FOR</small>
+                  <strong>Traditional Furniture</strong>
+                </div>
+              </div>
+
+              <p class="hardware-description">
+                Rich aged tones that add depth, warmth, and timeless character
+                to custom furniture.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quality-durability">
+      <div class="quality-container">
+        <!-- HEADER -->
+        <div class="quality-header">
+          <span class="quality-label"> QUALITY &amp; DURABILITY </span>
+
+          <h2>Made to <em>Last</em></h2>
+
+          <p>
+            Every material passes through a careful process before becoming part
+            of your furniture.
+          </p>
+        </div>
+
+        <!-- CONTINUOUS PROCESS -->
+        <div class="quality-process">
+          <!-- 01 -->
+          <div class="quality-step">
+            <div class="quality-top">
+              <span class="quality-number">01</span>
+              <span class="quality-dot"></span>
+            </div>
+
+            <div class="quality-content">
+              <span class="quality-step-label"> MATERIAL </span>
+
+              <h3>Selected Materials</h3>
+
+              <p>
+                Solid wood, engineered wood and selected wood species chosen for
+                natural character.
+              </p>
+
+              <div class="quality-details">
+                <span>Solid Wood</span>
+                <span>Engineered Wood</span>
+                <span>Natural Grain</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="quality-step">
+            <div class="quality-top">
+              <span class="quality-number">02</span>
+              <span class="quality-dot"></span>
+            </div>
+
+            <div class="quality-content">
+              <span class="quality-step-label"> SELECTION </span>
+
+              <h3>Inspected With Care</h3>
+
+              <p>
+                Materials are inspected for moisture, consistency, grain quality
+                and natural character.
+              </p>
+
+              <div class="quality-details">
+                <span>Moisture Checked</span>
+                <span>Grain Selected</span>
+                <span>Quality Control</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="quality-step">
+            <div class="quality-top">
+              <span class="quality-number">03</span>
+              <span class="quality-dot"></span>
+            </div>
+
+            <div class="quality-content">
+              <span class="quality-step-label"> CONSTRUCTION </span>
+
+              <h3>Built With Precision</h3>
+
+              <p>
+                Strong joinery, accurate measurements and careful assembly
+                create a stable foundation.
+              </p>
+
+              <div class="quality-details">
+                <span>Strong Joinery</span>
+                <span>Precise Fit</span>
+                <span>Stable Build</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="quality-step">
+            <div class="quality-top">
+              <span class="quality-number">04</span>
+              <span class="quality-dot"></span>
+            </div>
+
+            <div class="quality-content">
+              <span class="quality-step-label"> FINISHING </span>
+
+              <h3>Protected Surfaces</h3>
+
+              <p>
+                Natural oils, matte lacquer and protective finishes enhance the
+                wood while preserving its character.
+              </p>
+
+              <div class="quality-details">
+                <span>Natural Oils</span>
+                <span>Matte Lacquer</span>
+                <span>Surface Protection</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 -->
+          <div class="quality-step">
+            <div class="quality-top">
+              <span class="quality-number">05</span>
+              <span class="quality-dot"></span>
+            </div>
+
+            <div class="quality-content">
+              <span class="quality-step-label"> DETAILING </span>
+
+              <h3>Refined By Hand</h3>
+
+              <p>
+                Edges, surfaces, hardware and finishing touches are carefully
+                refined by skilled craftsmen.
+              </p>
+
+              <div class="quality-details">
+                <span>Fine Edges</span>
+                <span>Hardware Details</span>
+                <span>Hand Finishing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 06 -->
+          <div class="quality-step">
+            <div class="quality-top">
+              <span class="quality-number">06</span>
+              <span class="quality-dot"></span>
+            </div>
+
+            <div class="quality-content">
+              <span class="quality-step-label"> LONGEVITY </span>
+
+              <h3>Designed to Endure</h3>
+
+              <p>
+                Furniture designed to remain strong, functional and beautiful
+                through everyday use.
+              </p>
+
+              <div class="quality-details">
+                <span>Everyday Use</span>
+                <span>Long Lasting</span>
+                <span>Timeless Beauty</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     PREMIUM CTA
+================================================== -->
+
+    <section class="premium-cta">
+      <div class="premium-cta-overlay"></div>
+
+      <div class="premium-cta-box">
+        <span class="premium-cta-label"> START YOUR PROJECT </span>
+
+        <h2>Let’s Create Something <em>Timeless</em></h2>
+
+        <p>
+          From the first idea to the final detail, we create custom furniture
+          designed around your space, lifestyle and vision.
+        </p>
+
+        <div class="premium-cta-actions">
+          <a href="Contact.html" class="premium-cta-primary">
+            Start Your Project
+          </a>
+
+          <a href="Portfolio.html" class="premium-cta-secondary">
+            View Our Work
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+     PREMIUM FOOTER
+======================================== -->
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">
+              <img src="images/logo2.png" alt="Craft Nest Logo" />
+            </span>
+
+            <span class="logo-name"> Craft<strong>Nest</strong> </span>
+          </a>
+
+          <p class="footer-description">
+            Thoughtfully designed furniture crafted with quality materials,
+            skilled hands and timeless attention to detail.
+          </p>
+
+          <!-- SOCIAL ICONS -->
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="users"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="camera"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="send"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+              <i data-lucide="play"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <a href="index.html">Home</a>
+
+          <a href="portfolio.html">portfolio</a>
+
+          <a href="materials.html">Materials &amp; Finishes</a>
+
+          <a href="process.html"> process</a>
+          <a href="contact.html"> contact </a>
+        </div>
+
+        <!-- MENU -->
+        <div class="footer-column">
+          <h3>Menu</h3>
+
+          <a href="All-Furniture.html"> All Furniture </a>
+
+          <a href="Living-Room.html"> Living Room </a>
+
+          <a href="Bedroom.html"> Bedroom </a>
+
+          <a href="Dining-Room.html"> Dining Room </a>
+
+          <a href="Office-Furniture.html"> Office Furniture </a>
+        </div>
+        <!-- CONTACT -->
+        <div class="footer-column footer-contact">
+          <h3>Contact</h3>
+
+          <p>
+            <i data-lucide="map-pin"></i>
+            <span>Hyderabad, India</span>
+          </p>
+
+          <p>
+            <i data-lucide="phone"></i>
+            <span>+91 98765 43210</span>
+          </p>
+
+          <p>
+            <i data-lucide="mail"></i>
+            <span>hello@craftnest.com</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- FOOTER BOTTOM -->
+      <div class="footer-bottom">
+        <p>© 2026 Craft Nest. All Rights Reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#"> Privacy Policy </a>
+
+          <a href="#"> Terms &amp; Conditions </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="materials.js"></script>
+  </body>
+</html>

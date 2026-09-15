@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Nest</title>
+
+    <link rel="stylesheet" href="index.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- ==================================================
+       HEADER
+    ================================================== -->
+
+    <header class="site-header" id="siteHeader">
+      <div class="header-container">
+        <!-- ================= LOGO ================= -->
+
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <img src="images/logo2.png" alt="Craft Nest Logo" />
+          </span>
+
+          <span class="logo-name"> Craft<strong>Nest</strong> </span>
+        </a>
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="main-nav" id="mainNav">
+          <!-- HOME DROPDOWN -->
+
+          <div class="nav-dropdown">
+            <button
+              type="button"
+              class="nav-link dropdown-button"
+              id="homeDropdownButton"
+            >
+              <span>Home</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+              <a href="index.html">Home 1</a>
+              <a href="index1.html">Home 2</a>
+            </div>
+          </div>
+
+          <!-- NAV LINKS -->
+
+          <a href="portfolio.html" class="nav-link"> Portfolio </a>
+
+          <a href="Materials.html" class="nav-link">
+            Materials &amp; Finishes
+          </a>
+
+          <a href="Process.html" class="nav-link"> Process </a>
+
+          <a href="Contact.html" class="nav-link"> Contact </a>
+
+          <!-- MOBILE GET STARTED -->
+
+          <a href="Login.html" class="nav-link mobile-login"> Get Started </a>
+        </nav>
+
+        <!-- ================= HEADER ACTIONS ================= -->
+
+        <div class="header-actions">
+          <!-- RTL / LTR -->
+
+          <button
+            type="button"
+            class="rtl-button"
+            id="rtlToggle"
+            aria-label="Switch to RTL"
+            title="Switch to RTL"
+          >
+            <span>RTL</span>
+          </button>
+
+          <!-- DARK / LIGHT -->
+
+          <button
+            type="button"
+            class="icon-button"
+            id="darkToggle"
+            aria-label="Dark Mode"
+            title="Dark Mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+
+          <!-- GET STARTED -->
+
+          <a href="Login.html" class="login-button">
+            <span>Get Started</span>
+          </a>
+
+          <!-- HAMBURGER -->
+
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open Menu"
+            title="Menu"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==========================================
+       PREMIUM HERO
+  ========================================== -->
+
+    <section class="premium-hero">
+      <!-- Overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Floating Craft Icons -->
+      <div class="floating-craft craft-one">
+        <i data-lucide="hammer"></i>
+      </div>
+
+      <div class="floating-craft craft-two">
+        <i data-lucide="ruler"></i>
+      </div>
+
+      <!-- Main Content -->
+      <div class="hero-content">
+        <!-- Badge -->
+        <span class="hero-badge"> BESPOKE FURNITURE &amp; CRAFTSMANSHIP </span>
+
+        <!-- Heading -->
+        <h1>
+          Crafted by Hand,<br />
+          <span>Made for You</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="hero-description">
+          Discover beautifully handcrafted furniture designed around your space,
+          style, and lifestyle. Every piece is carefully crafted with premium
+          materials and timeless attention to detail.
+        </p>
+
+        <!-- Buttons -->
+        <div class="hero-buttons">
+          <a href="portfolio.html" class="hero-btn primary-btn">
+            Explore Our Work
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+
+          <a href="contact.html" class="hero-btn secondary-btn">
+            Start Your Project
+            <i data-lucide="message-square"></i>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong class="counter" data-target="15">0</strong>
+            <span>YEARS EXPERIENCE</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong class="counter" data-target="500">0</strong>
+            <span>PROJECTS CRAFTED</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong class="counter" data-target="100">0</strong>
+            <span>% HANDCRAFTED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Text -->
+      <div class="hero-bottom-text">
+        <span>CRAFTSMANSHIP</span>
+        <span>BESPOKE</span>
+        <span>TIMELESS DESIGN</span>
+      </div>
+    </section>
+    <!-- ==========================================
+     BESPOKE FURNITURE
+========================================== -->
+
+    <section class="bespoke-section">
+      <div class="bespoke-header">
+        <span class="bespoke-label">02 — BESPOKE FURNITURE</span>
+
+        <h2>
+          Furniture Designed
+          <span>Only for You</span>
+        </h2>
+
+        <p>
+          Every piece is thoughtfully designed and handcrafted around your
+          space, your lifestyle, and your personal style.
+        </p>
+      </div>
+
+      <div class="bespoke-content">
+        <!-- LEFT IMAGE -->
+        <div class="bespoke-image">
+          <img src="images/imge 2.jpg" alt="Bespoke handcrafted furniture" />
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="bespoke-info">
+          <span class="info-label">YOUR VISION, OUR CRAFT</span>
+
+          <h3>
+            Built around
+            <span>your way of living.</span>
+          </h3>
+
+          <p class="bespoke-description">
+            From the first idea to the final finish, we create furniture that
+            fits naturally into your home. Our craftsmen combine traditional
+            woodworking techniques with modern design to create pieces that are
+            both beautiful and functional.
+          </p>
+
+          <div class="bespoke-features">
+            <div class="bespoke-feature">
+              <span class="feature-number">01</span>
+              <div>
+                <h4>Custom Design</h4>
+                <p>Designed specifically for your space and requirements.</p>
+              </div>
+            </div>
+
+            <div class="bespoke-feature">
+              <span class="feature-number">02</span>
+              <div>
+                <h4>Premium Materials</h4>
+                <p>Carefully selected wood, finishes, and hardware.</p>
+              </div>
+            </div>
+
+            <div class="bespoke-feature">
+              <span class="feature-number">03</span>
+              <div>
+                <h4>Expert Craftsmanship</h4>
+                <p>Every detail is shaped, finished, and inspected by hand.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     FURNITURE CATEGORIES
+========================================== -->
+
+    <section class="categories-section">
+      <div class="categories-header">
+        <span class="categories-label"> 03 — FURNITURE CATEGORIES </span>
+
+        <h2>Designed for <span>Every Space</span></h2>
+
+        <p>
+          Explore our handcrafted furniture collections, thoughtfully designed
+          to bring comfort, character, and timeless beauty to every corner of
+          your home.
+        </p>
+      </div>
+
+      <div class="categories-grid">
+        <!-- TABLES -->
+        <div class="category-item">
+          <div class="category-image">
+            <img src="images/custom tables.webp" alt="Custom Tables" />
+
+            <span class="category-number">01</span>
+
+            <div class="category-overlay">
+              <a href="portfolio.html">
+                Explore Collection
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-content">
+            <h3>Tables</h3>
+
+            <p>
+              Dining tables, coffee tables, work tables and statement pieces
+              crafted for your space.
+            </p>
+          </div>
+        </div>
+
+        <!-- BEDS -->
+        <div class="category-item">
+          <div class="category-image">
+            <img src="images/beds.webp" alt="Custom Beds" />
+
+            <span class="category-number">02</span>
+
+            <div class="category-overlay">
+              <a href="portfolio.html">
+                Explore Collection
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-content">
+            <h3>Beds</h3>
+
+            <p>
+              Custom beds and bedroom furniture designed for comfort, warmth and
+              lasting style.
+            </p>
+          </div>
+        </div>
+
+        <!-- STORAGE -->
+        <div class="category-item">
+          <div class="category-image">
+            <img src="images/storage.jpg" alt="Custom Storage Furniture" />
+
+            <span class="category-number">03</span>
+
+            <div class="category-overlay">
+              <a href="portfolio.html">
+                Explore Collection
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-content">
+            <h3>Storage</h3>
+
+            <p>
+              Cabinets, wardrobes, shelving and smart storage solutions made
+              around your needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- SEATING -->
+        <div class="category-item">
+          <div class="category-image">
+            <img src="images/seating.avif" alt="Custom Seating" />
+
+            <span class="category-number">04</span>
+
+            <div class="category-overlay">
+              <a href="portfolio.html">
+                Explore Collection
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-content">
+            <h3>Seating</h3>
+
+            <p>
+              Chairs, benches and accent seating crafted with comfort and
+              character in mind.
+            </p>
+          </div>
+        </div>
+
+        <!-- DINING -->
+        <div class="category-item">
+          <div class="category-image">
+            <img src="images/dining.webp" alt="Dining Furniture" />
+
+            <span class="category-number">05</span>
+
+            <div class="category-overlay">
+              <a href="portfolio.html">
+                Explore Collection
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-content">
+            <h3>Dining</h3>
+
+            <p>
+              Complete dining collections that make every gathering feel
+              beautifully considered.
+            </p>
+          </div>
+        </div>
+
+        <!-- OFFICE -->
+        <div class="category-item">
+          <div class="category-image">
+            <img src="images/office.avif" alt="Office Furniture" />
+
+            <span class="category-number">06</span>
+
+            <div class="category-overlay">
+              <a href="portfolio.html">
+                Explore Collection
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-content">
+            <h3>Office</h3>
+
+            <p>
+              Desks, storage and workspace furniture designed for productive and
+              inspiring environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     CRAFT NEST
+     MATERIALS PREVIEW
+========================================== -->
+
+    <section class="materials-preview">
+      <!-- ================= HEADER ================= -->
+
+      <div class="materials-header">
+        <span class="materials-label"> MATERIALS PREVIEW </span>
+
+        <h2>
+          Materials With
+          <span>Character</span>
+        </h2>
+
+        <p>
+          Carefully selected materials for furniture that looks beautiful and
+          lasts for years.
+        </p>
+      </div>
+
+      <!-- ================= MAIN MATERIAL ================= -->
+
+      <div class="materials-main">
+        <!-- IMAGE -->
+
+        <div class="material-image">
+          <img src="images/slid.jpg" alt="Premium Solid Wood" />
+
+          <div class="material-image-text">
+            <span>PREMIUM MATERIAL</span>
+            <span>01</span>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="material-info">
+          <p>
+            We carefully select premium materials to create furniture with
+            natural character, lasting strength, and timeless beauty. Every
+            material is chosen to complement the design and purpose of each
+            custom piece.
+          </p>
+
+          <!-- MATERIAL DETAILS -->
+
+          <div class="material-details">
+            <div class="material-detail">
+              <span>01</span>
+
+              <h4>Natural Wood</h4>
+
+              <p>Authentic texture and natural character.</p>
+            </div>
+
+            <div class="material-detail">
+              <span>02</span>
+
+              <h4>Built to Last</h4>
+
+              <p>Strong materials selected for durability.</p>
+            </div>
+          </div>
+
+          <!-- LINK -->
+
+          <a href="materials.html" class="material-link">
+            Explore Material
+
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ================= MATERIAL COLLECTION ================= -->
+
+      <div class="material-collection">
+        <a href="materials.html" class="material-item">
+          <span class="material-number">01</span>
+
+          <div class="material-item-content">
+            <h4>OAK</h4>
+
+            <p>Strong &amp; Natural</p>
+          </div>
+
+          <span class="material-arrow">↗</span>
+        </a>
+
+        <a href="materials.html" class="material-item">
+          <span class="material-number">02</span>
+
+          <div class="material-item-content">
+            <h4>WALNUT</h4>
+
+            <p>Rich &amp; Elegant</p>
+          </div>
+
+          <span class="material-arrow">↗</span>
+        </a>
+
+        <a href="materials.html" class="material-item">
+          <span class="material-number">03</span>
+
+          <div class="material-item-content">
+            <h4>TEAK</h4>
+
+            <p>Durable &amp; Warm</p>
+          </div>
+
+          <span class="material-arrow">↗</span>
+        </a>
+
+        <a href="materials.html" class="material-item">
+          <span class="material-number">04</span>
+
+          <div class="material-item-content">
+            <h4>ASH</h4>
+
+            <p>Light &amp; Refined</p>
+          </div>
+
+          <span class="material-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     HOW WE WORK
+========================================================= -->
+
+    <section class="how-work">
+      <div class="how-work-header">
+        <span>OUR PROCESS</span>
+
+        <h2>How We <em>Work</em></h2>
+
+        <p>
+          From the first idea to the final installation, we carefully craft
+          every piece to match your space and style.
+        </p>
+      </div>
+
+      <div class="work-process">
+        <!-- 01 -->
+        <div class="work-step">
+          <div class="work-number">
+            <span>01</span>
+            <div class="work-line"></div>
+          </div>
+
+          <h3>CONSULTATION</h3>
+
+          <p>
+            Understand your needsWe begin by understanding your space,
+            lifestyle, preferences, and furniture requirements. Every detail
+            helps us create a design that feels personal and practical.
+          </p>
+        </div>
+
+        <!-- 02 -->
+        <div class="work-step">
+          <div class="work-number">
+            <span>02</span>
+            <div class="work-line"></div>
+          </div>
+
+          <h3>DESIGN</h3>
+
+          <p>
+            Plan &amp; visualize We turn your ideas into thoughtful furniture
+            designs that balance beauty, comfort, and functionality. From
+            dimensions and materials to finishes and fine details
+          </p>
+        </div>
+
+        <!-- 03 -->
+        <div class="work-step">
+          <div class="work-number">
+            <span>03</span>
+            <div class="work-line"></div>
+          </div>
+
+          <h3>CRAFTING</h3>
+
+          <p>
+            Build with precisionOur skilled craftsmen bring every design to life
+            with precision and care. Using quality materials and refined
+            techniques, we carefully shape, join, and finish each piece
+          </p>
+        </div>
+
+        <!-- 04 -->
+        <div class="work-step">
+          <div class="work-number">
+            <span>04</span>
+          </div>
+
+          <h3>INSTALLATION</h3>
+
+          <p>
+            Deliver &amp; installOnce your furniture is ready, our team
+            carefully delivers and installs each piece in your space. We ensure
+            every detail is properly fitted, aligned, and finished
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- =========================================================
+     CLIENT TESTIMONIALS
+========================================================= -->
+
+    <section class="client-testimonials">
+      <div class="testimonials-heading">
+        <span>CLIENT TESTIMONIALS</span>
+
+        <h2>What Our <em>Clients Say</em></h2>
+
+        <p>
+          Honest words from clients who trusted Craft Nest to create furniture
+          made especially for them.
+        </p>
+      </div>
+
+      <!-- =====================================================
+       TESTIMONIAL
+  ====================================================== -->
+
+      <div class="testimonial-wrapper">
+        <div class="testimonial-slide" id="testimonialSlide">
+          <!-- IMAGE -->
+          <div class="testimonial-image">
+            <img
+              id="testimonialImage"
+              src="images/client-1.jpg"
+              alt="Sarah Mitchell"
+            />
+          </div>
+
+          <!-- NAME -->
+          <h3 id="testimonialName">Sarah Mitchell</h3>
+
+          <!-- ROLE -->
+          <p class="testimonial-role" id="testimonialRole">
+            Interior Design Client
+          </p>
+
+          <!-- STARS -->
+          <div class="testimonial-stars" id="testimonialStars">★★★★★</div>
+
+          <!-- CONTENT -->
+          <blockquote id="testimonialText">
+            “The craftsmanship was exceptional. Every detail was carefully
+            finished and the furniture fits our space perfectly.”
+          </blockquote>
+        </div>
+
+        <!-- =================================================
+         CONTROLS
+    ================================================== -->
+
+        <div class="testimonial-bottom">
+          <span id="testimonialCount"> 01 / 03 </span>
+
+          <div class="testimonial-arrows">
+            <button
+              type="button"
+              id="testimonialPrev"
+              aria-label="Previous testimonial"
+            >
+              ←
+            </button>
+
+            <button
+              type="button"
+              id="testimonialNext"
+              aria-label="Next testimonial"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     CRAFT NEST
+     CRAFTSMANSHIP STATISTICS
+========================================================= -->
+
+    <section class="craft-stats">
+      <!-- HEADING -->
+      <div class="craft-stats-header">
+        <span>CRAFTSMANSHIP STATISTICS</span>
+
+        <h2>Built With <em>Precision</em></h2>
+
+        <p>
+          Every piece reflects our commitment to skilled craftsmanship, premium
+          materials, and exceptional attention to detail.
+        </p>
+      </div>
+
+      <!-- STATISTICS -->
+      <div class="craft-stats-grid">
+        <!-- STAT 01 -->
+        <div class="craft-stat">
+          <span class="craft-stat-number">15+</span>
+
+          <h3>YEARS OF</h3>
+
+          <p>CRAFTSMANSHIP</p>
+        </div>
+
+        <!-- STAT 02 -->
+        <div class="craft-stat">
+          <span class="craft-stat-number">250+</span>
+
+          <h3>PROJECTS</h3>
+
+          <p>COMPLETED</p>
+        </div>
+
+        <!-- STAT 03 -->
+        <div class="craft-stat">
+          <span class="craft-stat-number">98%</span>
+
+          <h3>CLIENT</h3>
+
+          <p>SATISFACTION</p>
+        </div>
+
+        <!-- STAT 04 -->
+        <div class="craft-stat">
+          <span class="craft-stat-number">12+</span>
+
+          <h3>MASTER</h3>
+
+          <p>CRAFTSMEN</p>
+        </div>
+      </div>
+    </section>
+    <!-- =========================================================
+     CUSTOM ORDER CTA
+========================================================= -->
+
+    <section class="custom-order-cta">
+      <div class="cta-box">
+        <h2>Start Your Custom Order</h2>
+
+        <p class="cta-description">
+          Create a custom piece designed around your space, style, and needs.
+        </p>
+
+        <a href="contact.html" class="cta-button">
+          GET-STARTED
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================
+     PREMIUM FOOTER
+======================================== -->
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">
+              <img src="images/logo2.png" alt="Craft Nest Logo" />
+            </span>
+
+            <span class="logo-name"> Craft<strong>Nest</strong> </span>
+          </a>
+
+          <p class="footer-description">
+            Thoughtfully designed furniture crafted with quality materials,
+            skilled hands and timeless attention to detail.
+          </p>
+
+          <!-- SOCIAL ICONS -->
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="users"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="camera"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="send"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+              <i data-lucide="play"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <a href="index.html">Home</a>
+
+          <a href="portfolio.html">portfolio</a>
+
+          <a href="materials.html">Materials &amp; Finishes</a>
+
+          <a href="process.html"> process</a>
+          <a href="contact.html"> contact </a>
+        </div>
+
+        <!-- MENU -->
+        <div class="footer-column">
+          <h3>Menu</h3>
+
+          <a href="All-Furniture.html"> All Furniture </a>
+
+          <a href="Living-Room.html"> Living Room </a>
+
+          <a href="Bedroom.html"> Bedroom </a>
+
+          <a href="Dining-Room.html"> Dining Room </a>
+
+          <a href="Office-Furniture.html"> Office Furniture </a>
+        </div>
+        <!-- CONTACT -->
+        <div class="footer-column footer-contact">
+          <h3>Contact</h3>
+
+          <p>
+            <i data-lucide="map-pin"></i>
+            <span>Hyderabad, India</span>
+          </p>
+
+          <p>
+            <i data-lucide="phone"></i>
+            <span>+91 98765 43210</span>
+          </p>
+
+          <p>
+            <i data-lucide="mail"></i>
+            <span>hello@craftnest.com</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- FOOTER BOTTOM -->
+      <div class="footer-bottom">
+        <p>© 2026 Craft Nest. All Rights Reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#"> Privacy Policy </a>
+
+          <a href="#"> Terms &amp; Conditions </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

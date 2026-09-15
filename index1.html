@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Nest</title>
+
+    <link rel="stylesheet" href="index1.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- ==================================================
+       HEADER
+    ================================================== -->
+
+    <header class="site-header" id="siteHeader">
+      <div class="header-container">
+        <!-- ================= LOGO ================= -->
+
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <img src="images/logo2.png" alt="Craft Nest Logo" />
+          </span>
+
+          <span class="logo-name"> Craft<strong>Nest</strong> </span>
+        </a>
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="main-nav" id="mainNav">
+          <!-- HOME DROPDOWN -->
+
+          <div class="nav-dropdown">
+            <button
+              type="button"
+              class="nav-link dropdown-button"
+              id="homeDropdownButton"
+            >
+              <span>Home</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+              <a href="index.html">Home 1</a>
+              <a href="index1.html">Home 2</a>
+            </div>
+          </div>
+
+          <!-- NAV LINKS -->
+
+          <a href="portfolio.html" class="nav-link"> Portfolio </a>
+
+          <a href="Materials.html" class="nav-link">
+            Materials &amp; Finishes
+          </a>
+          <a href="Process.html" class="nav-link"> Process </a>
+
+          <a href="Contact.html" class="nav-link"> Contact </a>
+
+          <!-- MOBILE GET STARTED -->
+
+          <a href="Login.html" class="nav-link mobile-login"> Get Started </a>
+        </nav>
+
+        <!-- ================= HEADER ACTIONS ================= -->
+
+        <div class="header-actions">
+          <!-- RTL / LTR -->
+
+          <button
+            type="button"
+            class="rtl-button"
+            id="rtlToggle"
+            aria-label="Switch to RTL"
+            title="Switch to RTL"
+          >
+            <span>RTL</span>
+          </button>
+
+          <!-- DARK / LIGHT -->
+
+          <button
+            type="button"
+            class="icon-button"
+            id="darkToggle"
+            aria-label="Dark Mode"
+            title="Dark Mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+
+          <!-- GET STARTED -->
+
+          <a href="Login.html" class="login-button">
+            <span>Get Started</span>
+          </a>
+
+          <!-- HAMBURGER -->
+
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open Menu"
+            title="Menu"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- ==================================================
+     LUXURY HERO BANNER
+================================================== -->
+
+    <section class="luxury-hero">
+      <!-- Overlay -->
+      <div class="luxury-hero-overlay"></div>
+
+      <!-- Hero Content -->
+      <div class="luxury-hero-content">
+        <!-- Label -->
+        <span class="luxury-label"> CRAFTED WITH PRECISION </span>
+
+        <!-- Heading -->
+        <h1>
+          Timeless Furniture.<br />
+          <em>Exceptional Living.</em>
+        </h1>
+
+        <!-- Description -->
+        <p>
+          Bespoke furniture thoughtfully designed and crafted to bring timeless
+          elegance into your space.
+        </p>
+
+        <!-- Buttons -->
+        <div class="luxury-hero-buttons">
+          <a href="Portfolio.html" class="luxury-btn primary">
+            Explore Collection
+          </a>
+
+          <a href="Contact.html" class="luxury-btn secondary">
+            Start Your Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="premium-materials">
+      <div class="premium-materials-header">
+        <span>PREMIUM MATERIALS</span>
+
+        <h2>Selected for <em>Beauty</em></h2>
+
+        <p>
+          Carefully chosen materials that bring natural beauty, lasting quality
+          and timeless character to every piece.
+        </p>
+      </div>
+
+      <div class="materials-grid">
+        <!-- 01 -->
+        <article class="material-item">
+          <div class="material-image">
+            <img src="images/oak.jpg" alt="Natural Oak" />
+          </div>
+
+          <div class="material-content">
+            <span>01</span>
+            <h3>Natural Oak</h3>
+            <p>Warm and timeless.</p>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="material-item">
+          <div class="material-image">
+            <img src="images/rich walnut.jpg" alt="Rich Walnut" />
+          </div>
+
+          <div class="material-content">
+            <span>02</span>
+            <h3>Rich Walnut</h3>
+            <p>Deep and distinctive.</p>
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="material-item">
+          <div class="material-image">
+            <img src="images/marbel.jpg" alt="Italian Marble" />
+          </div>
+
+          <div class="material-content">
+            <span>03</span>
+            <h3>Italian Marble</h3>
+            <p>Natural elegance.</p>
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="material-item">
+          <div class="material-image">
+            <img src="images/fabric.webp" alt="Luxury Fabric" />
+          </div>
+
+          <div class="material-content">
+            <span>04</span>
+            <h3>Luxury Fabric</h3>
+            <p>Soft and sophisticated.</p>
+          </div>
+        </article>
+
+        <!-- 05 -->
+        <article class="material-item">
+          <div class="material-image">
+            <img src="images/lenin.webp" alt="Premium Linen" />
+          </div>
+
+          <div class="material-content">
+            <span>05</span>
+            <h3>Premium Linen</h3>
+            <p>Light and refined.</p>
+          </div>
+        </article>
+
+        <!-- 06 -->
+        <article class="material-item">
+          <div class="material-image">
+            <img src="images/brushed.webp" alt="Brushed Brass" />
+          </div>
+
+          <div class="material-content">
+            <span>06</span>
+            <h3>Brushed Brass</h3>
+            <p>Elegant detailing.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="materials-button">
+        <a href="Materials.html">View Materials</a>
+      </div>
+    </section>
+    <!-- ==================================================
+     CRAFTSMANSHIP DETAILS
+================================================== -->
+
+    <section class="craft-details">
+      <div class="craft-details-header">
+        <span>CRAFTSMANSHIP DETAILS</span>
+
+        <h2>Where Every <em>Detail Matters</em></h2>
+
+        <p>
+          From precise joinery to refined finishing, every element reflects our
+          commitment to quality and timeless craftsmanship.
+        </p>
+      </div>
+
+      <div class="craft-detail-main">
+        <!-- ONE IMAGE -->
+        <div class="craft-detail-image">
+          <img src="images/p3.avif" alt="Craftsmanship Details" />
+        </div>
+
+        <!-- DETAILS -->
+        <div class="craft-detail-content">
+          <div class="craft-item">
+            <span>01</span>
+            <div>
+              <h3>Handcrafted Joinery</h3>
+              <p>
+                Carefully constructed joints designed for strength, stability
+                and lasting durability.
+              </p>
+            </div>
+          </div>
+
+          <div class="craft-item">
+            <span>02</span>
+            <div>
+              <h3>Precision Finishing</h3>
+              <p>
+                Smooth surfaces and refined finishes bring out the natural
+                character of every material.
+              </p>
+            </div>
+          </div>
+
+          <div class="craft-item">
+            <span>03</span>
+            <div>
+              <h3>Material Selection</h3>
+              <p>
+                Premium materials are carefully selected for beauty, durability
+                and timeless character.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="craft-details-button">
+        <a href="Process.html">Explore Our Process</a>
+      </div>
+    </section>
+    <!-- ==================================================
+     PROJECT JOURNEY
+================================================== -->
+
+    <section class="project-journey">
+      <!-- HEADER -->
+      <div class="journey-header">
+        <span>PROJECT JOURNEY</span>
+
+        <h2>From Vision To <em>Final Piece</em></h2>
+
+        <p>
+          Every furniture project follows a thoughtful journey where ideas,
+          craftsmanship and attention to detail come together.
+        </p>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="journey-timeline">
+        <!-- STEP 01 -->
+        <div class="journey-step">
+          <div class="journey-content">
+            <span class="journey-tag">STEP ONE</span>
+
+            <h3>DISCOVER</h3>
+
+            <h4>Understanding Your Space</h4>
+
+            <p>
+              We begin by understanding your lifestyle, space, requirements and
+              personal design vision. This first conversation creates the
+              foundation for the entire project.
+            </p>
+
+            <div class="journey-meta">
+              <span>Space Planning</span>
+              <span>Requirements</span>
+              <span>Design Vision</span>
+            </div>
+          </div>
+
+          <div class="journey-center">
+            <div class="journey-number">01</div>
+          </div>
+        </div>
+
+        <!-- STEP 02 -->
+        <div class="journey-step">
+          <div class="journey-content">
+            <span class="journey-tag">STEP TWO</span>
+
+            <h3>DESIGN</h3>
+
+            <h4>Shaping The Concept</h4>
+
+            <p>
+              Your ideas are transformed into thoughtful layouts, refined
+              proportions, carefully selected materials and functional details
+              that balance beauty and comfort.
+            </p>
+
+            <div class="journey-meta">
+              <span>Layouts</span>
+              <span>Materials</span>
+              <span>Proportions</span>
+            </div>
+          </div>
+
+          <div class="journey-center">
+            <div class="journey-number">02</div>
+          </div>
+        </div>
+
+        <!-- STEP 03 -->
+        <div class="journey-step">
+          <div class="journey-content">
+            <span class="journey-tag">STEP THREE</span>
+
+            <h3>CRAFT</h3>
+
+            <h4>Bringing Ideas To Life</h4>
+
+            <p>
+              Skilled craftsmen carefully shape every element using quality
+              materials, precise techniques and years of experience. Every
+              detail is created with purpose.
+            </p>
+
+            <div class="journey-meta">
+              <span>Handcrafted</span>
+              <span>Precision</span>
+              <span>Quality</span>
+            </div>
+          </div>
+
+          <div class="journey-center">
+            <div class="journey-number">03</div>
+          </div>
+        </div>
+
+        <!-- STEP 04 -->
+        <div class="journey-step">
+          <div class="journey-content">
+            <span class="journey-tag">STEP FOUR</span>
+
+            <h3>REFINE</h3>
+
+            <h4>Perfecting Every Detail</h4>
+
+            <p>
+              Surfaces, textures, finishes and proportions are carefully
+              reviewed. Every element is refined until the final piece feels
+              balanced, elegant and complete.
+            </p>
+
+            <div class="journey-meta">
+              <span>Finishing</span>
+              <span>Details</span>
+              <span>Quality Check</span>
+            </div>
+          </div>
+
+          <div class="journey-center">
+            <div class="journey-number">04</div>
+          </div>
+        </div>
+
+        <!-- STEP 05 -->
+        <div class="journey-step">
+          <div class="journey-content">
+            <span class="journey-tag">FINAL STEP</span>
+
+            <h3>INSTALL</h3>
+
+            <h4>Completing Your Space</h4>
+
+            <p>
+              Each piece is carefully positioned and installed to create a
+              seamless final result. Your space is completed with care,
+              precision and attention to every detail.
+            </p>
+
+            <div class="journey-meta">
+              <span>Installation</span>
+              <span>Final Review</span>
+              <span>Completion</span>
+            </div>
+          </div>
+
+          <div class="journey-center">
+            <div class="journey-number">05</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==================================================
+     MEET OUR CRAFTSMEN
+================================================== -->
+
+    <section class="craftsmen-section">
+      <div class="craftsmen-container">
+        <!-- IMAGE SIDE -->
+        <div class="craftsmen-image">
+          <img
+            src="images/meet.jpg"
+            alt="CraftNest skilled craftsman working on furniture"
+          />
+        </div>
+
+        <!-- CONTENT SIDE -->
+        <div class="craftsmen-content">
+          <span class="craftsmen-label"> OUR CRAFTSMANSHIP </span>
+
+          <h2>
+            Meet Our
+            <span>Craftsmen</span>
+          </h2>
+
+          <p>
+            Behind every CraftNest creation is a skilled craftsman who brings
+            years of experience, precision and passion to every piece of
+            furniture.
+          </p>
+
+          <p>
+            From carefully selecting timber to shaping, joining, polishing and
+            finishing, our craftsmen combine traditional woodworking techniques
+            with modern design standards.
+          </p>
+
+          <!-- FEATURES -->
+          <div class="craftsmen-features">
+            <div class="craftsmen-feature">
+              <span class="craftsmen-feature-icon"> ✓ </span>
+
+              <span> Skilled Artisans </span>
+            </div>
+
+            <div class="craftsmen-feature">
+              <span class="craftsmen-feature-icon"> ✓ </span>
+
+              <span> Premium Wood </span>
+            </div>
+
+            <div class="craftsmen-feature">
+              <span class="craftsmen-feature-icon"> ✓ </span>
+
+              <span> Handcrafted Details </span>
+            </div>
+
+            <div class="craftsmen-feature">
+              <span class="craftsmen-feature-icon"> ✓ </span>
+
+              <span> Quality Finishing </span>
+            </div>
+          </div>
+
+          <!-- BUTTON -->
+          <a href="#" class="craftsmen-button"> Discover Our Craft </a>
+        </div>
+      </div>
+    </section>
+    <!-- ==================================================
+     CRAFTNEST - CUSTOMER STORIES
+================================================== -->
+
+    <section class="customer-stories">
+      <!-- HEADER -->
+
+      <div class="customer-stories-header">
+        <span class="customer-stories-label"> CUSTOMER STORIES </span>
+
+        <h2>
+          Loved by <em>2,400+</em> Customers &amp;<br />
+          Professionals
+        </h2>
+
+        <p>
+          See how our customers transformed their spaces with CraftNest
+          furniture and craftsmanship.
+        </p>
+      </div>
+
+      <!-- CUSTOMER STORIES -->
+
+      <div class="customer-stories-grid">
+        <!-- STORY 01 -->
+
+        <article class="story-card">
+          <div class="story-image">
+            <img
+              src="images/rahul kumar.jpg"
+              alt="CraftNest customer interior"
+            />
+          </div>
+
+          <div class="story-content">
+            <div class="story-stars">★★★★★</div>
+
+            <p class="story-review">
+              "CraftNest completely transformed my home. The furniture quality,
+              finishing and attention to detail were outstanding. Highly
+              recommended!"
+            </p>
+
+            <div class="story-customer">
+              <strong> Rahul Kumar </strong>
+
+              <span> Homeowner </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- STORY 02 -->
+
+        <article class="story-card">
+          <div class="story-image">
+            <img
+              src="images/priya sharma.jpg"
+              alt="CraftNest custom furniture"
+            />
+          </div>
+
+          <div class="story-content">
+            <div class="story-stars">★★★★★</div>
+
+            <p class="story-review">
+              "The craftsmanship is excellent. Every piece feels premium and
+              perfectly made for the space. CraftNest delivered exactly what we
+              wanted."
+            </p>
+
+            <div class="story-customer">
+              <strong> Priya Sharma </strong>
+
+              <span> Interior Designer </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- STORY 03 -->
+
+        <article class="story-card">
+          <div class="story-image">
+            <img
+              src="images/arun reddy.jpg"
+              alt="CraftNest furniture interior"
+            />
+          </div>
+
+          <div class="story-content">
+            <div class="story-stars">★★★★★</div>
+
+            <p class="story-review">
+              "I was extremely impressed with the timber quality and finishing.
+              The team was professional from design to installation."
+            </p>
+
+            <div class="story-customer">
+              <strong> Arjun Reddy </strong>
+
+              <span> Architect </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- ==================================================
+     FAQ SECTION
+================================================== -->
+
+    <section class="faq-section">
+      <div class="faq-container">
+        <!-- FAQ HEADER -->
+        <div class="faq-header">
+          <span class="faq-label">FREQUENTLY ASKED QUESTIONS</span>
+
+          <h2>
+            Everything You Need<br />
+            to <span>Know</span>
+          </h2>
+
+          <p>
+            Find answers to the most common questions about our furniture,
+            custom designs, materials, delivery and installation.
+          </p>
+        </div>
+
+        <!-- FAQ LIST -->
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>Do you offer custom furniture designs?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. We create custom furniture based on your space,
+                measurements, preferred materials, finishes and design
+                requirements. Our craftsmen work closely with you to create
+                pieces that perfectly match your interior.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What type of wood do you use?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                We use carefully selected solid wood, premium timber and
+                high-quality engineered materials depending on the furniture
+                design. Every material is chosen for durability, appearance and
+                long-term performance.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How long does custom furniture take?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Custom furniture usually takes between 3 to 8 weeks depending on
+                the size, design complexity, materials and finishing
+                requirements of the project.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you provide delivery and installation?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. We provide professional delivery and installation for
+                selected furniture projects. Our team ensures that every piece
+                is safely delivered and properly installed at your location.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I choose the color and finish?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Absolutely. You can choose from a range of wood tones, stains,
+                textures and finishing options to achieve the exact look you
+                want for your space.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you provide furniture maintenance support?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. We provide guidance on furniture care and maintenance to
+                help preserve the beauty, finish and durability of your
+                furniture for years to come.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+       CRAFTNEST CTA SECTION
+  ===================================================== -->
+
+    <section class="craftnest-cta">
+      <div class="craftnest-cta-container">
+        <!-- LEFT IMAGE -->
+        <div class="craftnest-cta-image">
+          <img
+            src="images/cta p3.webp"
+            alt="CraftNest custom furniture craftsmanship"
+          />
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="craftnest-cta-content">
+          <span class="craftnest-cta-label"> GET A CUSTOM QUOTE </span>
+
+          <h2>Turn Your Ideas Into Beautiful Furniture</h2>
+
+          <p>
+            Tell us about your dream furniture, and our team will get back to
+            you with a personalized quote.
+          </p>
+
+          <a href="#contact" class="craftnest-cta-button">
+            Get a Custom Quote
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+       FOOTER
+    ================================================== -->
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- ================= FOOTER BRAND ================= -->
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">
+              <img src="images/logo2.png" alt="Craft Nest Logo" />
+            </span>
+
+            <span class="logo-name"> Craft<strong>Nest</strong> </span>
+          </a>
+
+          <p>
+            Thoughtfully designed furniture crafted with quality materials,
+            skilled hands and timeless attention to detail.
+          </p>
+
+          <!-- SOCIAL -->
+          <div class="social-links">
+            <a href="#" aria-label="Facebook" title="Facebook">
+              <i data-lucide="users"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram" title="Instagram">
+              <i data-lucide="camera"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter" title="Twitter">
+              <i data-lucide="send"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube" title="YouTube">
+              <i data-lucide="play"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ================= QUICK LINKS ================= -->
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <a href="index.html">Home</a>
+
+          <a href="About.html">About</a>
+
+          <a href="Portfolio.html">Portfolio</a>
+
+          <a href="Materials.html">Materials &amp; Finishes</a>
+        </div>
+
+        <!-- ================= MENU ================= -->
+
+        <div class="footer-column">
+          <h3>Menu</h3>
+
+          <a href="Process.html">Process</a>
+
+          <a href="Services.html">Services</a>
+
+          <a href="Contact.html">Contact</a>
+
+          <a href="Login.html">Get Started</a>
+        </div>
+
+        <!-- ================= CONTACT ================= -->
+
+        <div class="footer-column footer-contact">
+          <h3>Contact</h3>
+
+          <p>
+            <i data-lucide="map-pin"></i>
+            <span>Hyderabad, India</span>
+          </p>
+
+          <p>
+            <i data-lucide="phone"></i>
+            <span>+91 98765 43210</span>
+          </p>
+
+          <p>
+            <i data-lucide="mail"></i>
+            <span>hello@craftnest.com</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= FOOTER BOTTOM ================= -->
+
+      <div class="footer-bottom">
+        <p>© 2026 Craft Nest. All Rights Reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index1.js"></script>
+  </body>
+</html>

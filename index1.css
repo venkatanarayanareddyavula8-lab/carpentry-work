@@ -1,0 +1,7916 @@
+/* ==================================================
+   CRAFT NEST
+   HEADER
+   RTL / LTR
+   MOBILE RESPONSIVE
+================================================== */
+
+/* ==================================================
+   ROOT VARIABLES
+================================================== */
+
+:root {
+  --primary: #d9a15b;
+  --secondary: #8b5a35;
+  --bg: #ffffff;
+  --text: #222222;
+}
+
+/* ==================================================
+   DARK MODE
+================================================== */
+
+body.dark {
+  --bg: #222222;
+  --text: #ffffff;
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+  overflow-x: hidden;
+}
+
+body.rtl {
+  direction: rtl;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==================================================
+   HEADER CONTAINER
+================================================== */
+
+.header-container {
+  width: min(1400px, calc(100% - 60px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(139, 90, 53, 0.18);
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo {
+  display: inline-flex;
+  flex-direction: row;
+  direction: ltr;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  overflow: visible;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+.logo-icon {
+  width: 82px;
+  height: 82px;
+  min-width: 82px;
+  flex: 0 0 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-icon img {
+  width: 82px;
+  height: 82px;
+  min-width: 82px;
+  min-height: 82px;
+  max-width: none;
+  max-height: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+  transform: translateX(12px) scale(1.6);
+}
+
+.logo-name {
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-left: -42px;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+}
+
+.logo-name strong {
+  color: var(--secondary);
+}
+
+/* ==================================================
+   RTL LOGO
+================================================== */
+
+body.rtl .logo {
+  direction: ltr;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+}
+
+body.rtl .logo-icon {
+  order: 1;
+  margin: 0;
+  padding: 0;
+}
+
+body.rtl .logo-name {
+  order: 2;
+  margin-left: -42px;
+  margin-right: 0;
+  text-align: left;
+}
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+
+.nav-link,
+.dropdown-button {
+  position: relative;
+  min-height: 78px;
+  padding: 0 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 610;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after,
+.dropdown-button::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  bottom: 15px;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.dropdown-button:hover,
+.nav-dropdown.active .dropdown-button {
+  color: var(--secondary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after,
+.nav-dropdown.active .dropdown-button::after {
+  transform: scaleX(1);
+}
+
+/* ==================================================
+   DROPDOWN
+================================================== */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-button svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.nav-dropdown.open .dropdown-button svg {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 175px;
+  padding: 8px;
+  background: var(--bg);
+  border: 1px solid rgba(139, 90, 53, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 13px;
+  border-radius: 5px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.dropdown-menu a:hover {
+  color: var(--secondary);
+  background: rgba(217, 161, 91, 0.12);
+}
+
+/* ==================================================
+   HEADER ACTIONS
+================================================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+/* ==================================================
+   RTL BUTTON
+================================================== */
+
+.rtl-button {
+  height: 40px;
+  min-width: 62px;
+  padding: 0 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 3px solid var(--primary);
+  border-radius: 13px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.rtl-button:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* ==================================================
+   DARK MODE BUTTON
+================================================== */
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--primary);
+  border-radius: 13px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.icon-button:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.icon-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* ==================================================
+   GET STARTED / LOGIN BUTTON
+================================================== */
+
+.login-button {
+  height: 40px;
+  min-width: 88px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 3px solid var(--primary);
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.login-button:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   MOBILE MENU BUTTON
+================================================== */
+
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: 3px solid var(--primary);
+  border-radius: 13px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-toggle:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.menu-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.mobile-login {
+  display: none;
+}
+
+/* ==================================================
+   MOBILE 360px
+================================================== */
+
+@media (max-width: 360px) {
+  .header-container {
+    width: calc(100% - 10px);
+    min-height: 68px;
+    gap: 3px;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: visible;
+    gap: 0;
+  }
+
+  .logo-icon {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    flex: 0 0 55px;
+  }
+
+  .logo-icon img {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    min-height: 55px;
+    transform: translateX(5px) scale(1.25);
+  }
+
+  .logo-name {
+    margin-left: -28px;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .header-actions {
+    gap: 3px;
+  }
+
+  .rtl-button {
+    min-width: 40px;
+    height: 36px;
+    padding: 0 5px;
+    border-radius: 7px;
+    font-size: 10px;
+  }
+
+  .icon-button,
+  .menu-toggle {
+    width: 35px;
+    height: 35px;
+    border-radius: 7px;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 68px;
+    left: 5px;
+    right: 5px;
+    width: auto;
+    max-height: calc(100vh - 75px);
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 8px;
+    gap: 1px;
+    background: var(--bg);
+    border: 1px solid rgba(139, 90, 53, 0.18);
+    border-radius: 8px;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .main-nav.active {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .main-nav .nav-link,
+  .main-nav .dropdown-button {
+    display: inline-flex;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    min-height: 46px;
+    padding: 0 12px;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .nav-link::after,
+  .dropdown-button::after {
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+  }
+
+  .nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+  }
+
+  .nav-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 22px;
+    font-size: 12px;
+    color: var(--text);
+  }
+
+  .mobile-login {
+    display: inline-flex;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    min-height: 44px;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: #000000;
+    border: 1px solid var(--primary);
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .mobile-login:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #ffffff;
+  }
+
+  body.rtl .header-container {
+    position: relative;
+    direction: ltr;
+  }
+
+  body.rtl .logo {
+    position: absolute;
+    right: 0;
+    left: auto;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    direction: ltr;
+    z-index: 10;
+  }
+
+  body.rtl .logo-icon {
+    order: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  body.rtl .logo-name {
+    order: 2;
+    margin-left: -28px;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  body.rtl .header-actions {
+    margin-right: auto;
+    margin-left: 0;
+    direction: ltr;
+  }
+
+  body.rtl .main-nav {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .main-nav .nav-link,
+  body.rtl .main-nav .dropdown-button {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .menu-toggle {
+    direction: ltr;
+  }
+}
+
+/* ==================================================
+   MOBILE 361px - 768px
+================================================== */
+
+@media (min-width: 361px) and (max-width: 768px) {
+  .header-container {
+    width: calc(100% - 30px);
+    min-height: 74px;
+    gap: 8px;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: visible;
+    gap: 0;
+  }
+
+  .logo-icon {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    flex: 0 0 72px;
+  }
+
+  .logo-icon img {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    min-height: 72px;
+    transform: translateX(9px) scale(1.45);
+  }
+
+  .logo-name {
+    margin-left: -36px;
+    font-size: 23px;
+  }
+
+  .header-actions {
+    gap: 5px;
+    flex-shrink: 0;
+  }
+
+  .rtl-button {
+    min-width: 48px;
+    height: 38px;
+    padding: 0 7px;
+    border-radius: 8px;
+  }
+
+  .icon-button,
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 74px;
+    left: 15px;
+    right: 15px;
+    width: auto;
+    max-height: calc(100vh - 88px);
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 2px;
+    background: var(--bg);
+    border: 1px solid rgba(139, 90, 53, 0.18);
+    border-radius: 8px;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .main-nav.active {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .main-nav .nav-link,
+  .main-nav .dropdown-button {
+    display: inline-flex;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .nav-link::after,
+  .dropdown-button::after {
+    left: 14px;
+    right: 14px;
+    bottom: 5px;
+  }
+
+  .nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+  }
+
+  .nav-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 11px 25px;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .mobile-login {
+    display: inline-flex;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    min-height: 46px;
+    margin-top: 6px;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: #000000;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .mobile-login:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #ffffff;
+  }
+
+  body.rtl .header-container {
+    position: relative;
+    direction: ltr;
+  }
+
+  body.rtl .logo {
+    position: absolute;
+    right: 0;
+    left: auto;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    direction: ltr;
+    z-index: 10;
+  }
+
+  body.rtl .logo-icon {
+    order: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  body.rtl .logo-name {
+    order: 2;
+    margin-left: -36px;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  body.rtl .header-actions {
+    margin-right: auto;
+    margin-left: 0;
+    direction: ltr;
+  }
+
+  body.rtl .main-nav {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .nav-link,
+  body.rtl .dropdown-button {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .menu-toggle {
+    direction: ltr;
+  }
+}
+
+/* ==================================================
+   TABLET 769px - 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-container {
+    width: calc(100% - 30px);
+    min-height: 74px;
+    gap: 8px;
+  }
+
+  .logo {
+    flex-shrink: 1;
+    min-width: 170px;
+    gap: 0;
+  }
+
+  .logo-icon {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+    flex: 0 0 68px;
+  }
+
+  .logo-icon img {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+    min-height: 68px;
+    transform: translateX(8px) scale(1.38);
+  }
+
+  .logo-name {
+    margin-left: -34px;
+    font-size: 21px;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 0;
+    min-width: 0;
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link,
+  .dropdown-button {
+    min-height: 74px;
+    padding: 0 6px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .nav-link::after,
+  .dropdown-button::after {
+    left: 6px;
+    right: 6px;
+  }
+
+  .dropdown-button svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .header-actions {
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .rtl-button {
+    min-width: 48px;
+    height: 38px;
+    padding: 0 6px;
+    border-radius: 8px;
+  }
+
+  .icon-button {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+
+  .login-button {
+    display: inline-flex;
+    min-width: 68px;
+    height: 38px;
+    padding: 0 9px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .mobile-login {
+    display: none;
+  }
+
+  body.rtl .logo {
+    direction: ltr;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  body.rtl .logo-icon {
+    order: 1;
+  }
+
+  body.rtl .logo-name {
+    order: 2;
+    margin-left: -34px;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  body.rtl .main-nav {
+    direction: rtl;
+  }
+
+  body.rtl .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+}
+
+/* ==================================================
+   FINAL RTL SAFETY
+================================================== */
+
+body.rtl .logo {
+  gap: 0;
+  direction: ltr;
+}
+
+body.rtl .logo-name {
+  margin-right: 0;
+}
+
+/* ==================================================
+   FINAL MOBILE HAMBURGER SAFETY
+================================================== */
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .main-nav.active {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .main-nav .nav-link,
+  .main-nav .dropdown-button {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .main-nav .nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .main-nav .mobile-login {
+    display: inline-flex;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  body.rtl .menu-toggle {
+    order: -1;
+  }
+}
+
+.luxury-hero {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background-image: url("images/background p1.avif");
+  background-size: cover;
+  background-position: center center;
+
+  color: var(--bg);
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   OVERLAY
+================================================== */
+
+.luxury-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.78)
+  );
+
+  z-index: 1;
+}
+/* ==================================================
+   DARK MODE HERO
+================================================== */
+
+/* ==================================================
+   DARK MODE OVERLAY
+================================================== */
+
+body.dark .luxury-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+/* ==================================================
+   CONTENT
+================================================== */
+
+.luxury-hero-content {
+  position: relative;
+  z-index: 5;
+
+  width: min(900px, calc(100% - 40px));
+
+  margin: 40px auto 0;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   LABEL
+================================================== */
+
+.luxury-label {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   HEADING
+================================================== */
+
+.luxury-hero h1 {
+  margin: 0;
+
+  color: var(--primary);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 600;
+
+  letter-spacing: -1px;
+}
+
+.luxury-hero h1 em {
+  color: var(--primary);
+  font-style: italic;
+}
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.luxury-hero p {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.7;
+
+  display: block;
+  visibility: visible;
+  opacity: 1;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.luxury-hero-buttons {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   COMMON BUTTON
+================================================== */
+
+.luxury-btn {
+  min-width: 170px;
+  height: 48px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ==================================================
+   PRIMARY BUTTON
+================================================== */
+
+.luxury-btn.primary {
+  background: var(--primary);
+
+  border: 2px solid var(--primary);
+
+  color: var(--text);
+}
+
+.luxury-btn.primary:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--bg);
+
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   SECONDARY BUTTON
+================================================== */
+
+.luxury-btn.secondary {
+  border: 2px solid var(--primary);
+
+  color: #ffffff;
+}
+
+.luxury-btn.secondary:hover {
+  background: var(--secondary);
+
+  border-color: var(--secondary);
+
+  color: var(--bg);
+
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   RTL
+================================================== */
+
+body.rtl .luxury-hero {
+  direction: rtl;
+}
+
+body.rtl .luxury-hero-content {
+  direction: rtl;
+  text-align: center;
+}
+
+body.rtl .luxury-hero-buttons {
+  direction: rtl;
+}
+
+/* ==================================================
+   LARGE DESKTOP / 1920px
+================================================== */
+
+@media (min-width: 1600px) {
+  .luxury-hero {
+    min-height: 760px;
+  }
+
+  .luxury-hero-content {
+    width: min(1050px, calc(100% - 100px));
+  }
+
+  .luxury-label {
+    padding: 8px 22px;
+
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+  .luxury-hero h1 {
+    font-size: 82px;
+    line-height: 0.98;
+  }
+
+  .luxury-hero p {
+    max-width: 720px;
+
+    margin: 32px auto 40px;
+
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .luxury-btn {
+    min-width: 190px;
+    height: 52px;
+
+    font-size: 13px;
+  }
+}
+
+/* ==================================================
+   DESKTOP
+   1025px - 1599px
+================================================== */
+
+@media (min-width: 1025px) and (max-width: 1599px) {
+  .luxury-hero {
+    min-height: 680px;
+  }
+
+  .luxury-hero-content {
+    width: min(900px, calc(100% - 60px));
+  }
+
+  .luxury-hero h1 {
+    font-size: 64px;
+  }
+
+  .luxury-hero p {
+    font-size: 14px;
+  }
+}
+
+/* ==================================================
+   NETBOOK
+   769px - 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .luxury-hero {
+    width: 100%;
+    min-height: 0;
+
+    padding: 95px 30px 70px;
+
+    background-size: cover;
+    background-position: center center;
+
+    box-sizing: border-box;
+  }
+
+  .luxury-hero-content {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+  }
+
+  .luxury-label {
+    padding: 7px 17px;
+
+    margin-bottom: 18px;
+
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .luxury-hero h1 {
+    font-size: 58px;
+    line-height: 1;
+  }
+
+  .luxury-hero p {
+    max-width: 580px;
+
+    margin: 23px auto 30px;
+
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .luxury-hero-buttons {
+    gap: 12px;
+  }
+
+  .luxury-btn {
+    min-width: 165px;
+    height: 46px;
+
+    padding: 0 18px;
+
+    font-size: 12px;
+  }
+}
+
+/* ==================================================
+   IPAD MINI
+   601px - 768px
+================================================== */
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .luxury-hero {
+    width: 100%;
+    min-height: 0;
+
+    padding: 95px 28px 70px;
+
+    background-size: cover;
+    background-position: center center;
+
+    box-sizing: border-box;
+  }
+
+  .luxury-hero-content {
+    width: 100%;
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+  }
+
+  .luxury-label {
+    padding: 7px 16px;
+
+    margin-bottom: 18px;
+
+    font-size: 10px;
+    letter-spacing: 2.3px;
+  }
+
+  .luxury-hero h1 {
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: -0.6px;
+  }
+
+  .luxury-hero p {
+    max-width: 520px;
+
+    margin: 22px auto 29px;
+
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .luxury-hero-buttons {
+    gap: 11px;
+  }
+
+  .luxury-btn {
+    min-width: 160px;
+    height: 45px;
+
+    padding: 0 17px;
+
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   SAMSUNG GALAXY S8+
+   361px - 600px
+================================================== */
+
+@media (min-width: 361px) and (max-width: 600px) {
+  .luxury-hero {
+    width: 100%;
+    min-height: 0;
+
+    padding: 85px 15px 55px;
+
+    background-size: cover;
+    background-position: center center;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+  .luxury-hero-content {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+  }
+
+  .luxury-label {
+    padding: 6px 12px;
+
+    margin-bottom: 16px;
+
+    font-size: 8px;
+    letter-spacing: 1.6px;
+  }
+
+  .luxury-hero h1 {
+    font-size: 35px;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.4px;
+  }
+
+  .luxury-hero p {
+    width: 100%;
+    max-width: 310px;
+
+    margin: 19px auto 26px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .luxury-hero-buttons {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .luxury-btn {
+    width: 100%;
+    max-width: 220px;
+
+    min-width: 0;
+
+    height: 44px;
+
+    padding: 0 15px;
+
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   MOBILE RTL OVERFLOW FIX
+================================================== */
+
+@media (max-width: 600px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body.rtl .luxury-hero {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  body.rtl .luxury-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* =========================================================
+   PREMIUM MATERIALS
+========================================================= */
+
+.premium-materials {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 110px 6%;
+
+  background: var(--bg);
+  color: var(--text);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.premium-materials-header {
+  width: 100%;
+  max-width: 750px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+.premium-materials-header > span {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+.premium-materials-header h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 64px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+.premium-materials-header h2 em {
+  color: var(--primary);
+  font-style: italic;
+}
+
+.premium-materials-header p {
+  width: 100%;
+  max-width: 620px;
+
+  margin: 24px auto 0;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MATERIALS GRID
+   3 COLUMNS × 2 ROWS
+========================================================= */
+
+.materials-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  column-gap: 30px;
+  row-gap: 60px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MATERIAL ITEM
+========================================================= */
+
+.material-item {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.material-image {
+  width: 100%;
+  height: 330px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+.material-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.material-item:hover .material-image img {
+  transform: scale(1.04);
+}
+
+/* =========================================================
+   MATERIAL CONTENT
+========================================================= */
+
+.material-content {
+  width: 100%;
+
+  padding-top: 18px;
+
+  box-sizing: border-box;
+}
+
+.material-content > span {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+.material-content h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 32px;
+  font-weight: 600;
+
+  line-height: 1.1;
+}
+
+.material-content p {
+  margin: 7px 0 0;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.materials-button {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 70px;
+
+  box-sizing: border-box;
+}
+
+.materials-button a {
+  min-width: 190px;
+  height: 50px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.materials-button a:hover {
+  background: var(--secondary);
+
+  border-color: var(--secondary);
+
+  color: var(--bg);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RTL
+========================================================= */
+
+body.rtl .premium-materials {
+  direction: rtl;
+}
+
+body.rtl .premium-materials-header {
+  direction: rtl;
+}
+
+body.rtl .materials-grid {
+  direction: rtl;
+}
+
+body.rtl .material-item {
+  direction: rtl;
+}
+
+body.rtl .material-content {
+  text-align: right;
+}
+
+/* =========================================================
+   1920px / LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+  .premium-materials {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 140px 60px;
+
+    box-sizing: border-box;
+  }
+
+  .premium-materials-header {
+    max-width: 850px;
+
+    margin-bottom: 85px;
+  }
+
+  .premium-materials-header > span {
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+
+  .premium-materials-header h2 {
+    font-size: 80px;
+  }
+
+  .premium-materials-header p {
+    max-width: 700px;
+
+    font-size: 15px;
+  }
+
+  .materials-grid {
+    width: 100%;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    column-gap: 40px;
+    row-gap: 75px;
+  }
+
+  .material-image {
+    width: 100%;
+    height: 390px;
+  }
+
+  .material-content h3 {
+    font-size: 38px;
+  }
+
+  .material-content p {
+    font-size: 12px;
+  }
+
+  .materials-button {
+    margin-top: 80px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+   1025px - 1599px
+========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1599px) {
+  .premium-materials {
+    width: 100%;
+    max-width: 1400px;
+
+    padding: 110px 6%;
+
+    box-sizing: border-box;
+  }
+
+  .materials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    column-gap: 30px;
+    row-gap: 60px;
+  }
+
+  .material-image {
+    height: 330px;
+  }
+}
+
+/* =========================================================
+   NETBOOK
+   769px - 1024px
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .premium-materials {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 80px 30px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+  .premium-materials-header {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto 55px;
+  }
+
+  .premium-materials-header > span {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .premium-materials-header h2 {
+    font-size: 52px;
+  }
+
+  .premium-materials-header p {
+    max-width: 600px;
+
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .materials-grid {
+    width: 100%;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    column-gap: 20px;
+    row-gap: 45px;
+  }
+
+  .material-image {
+    width: 100%;
+    height: 250px;
+  }
+
+  .material-content {
+    padding-top: 14px;
+  }
+
+  .material-content h3 {
+    font-size: 26px;
+  }
+
+  .material-content p {
+    font-size: 10px;
+  }
+
+  .materials-button {
+    margin-top: 55px;
+  }
+}
+
+/* =========================================================
+   IPAD MINI
+   601px - 768px
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .premium-materials {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 65px 25px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+  .premium-materials-header {
+    width: 100%;
+    max-width: 680px;
+
+    margin: 0 auto 50px;
+  }
+
+  .premium-materials-header > span {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+
+    margin-bottom: 13px;
+  }
+
+  .premium-materials-header h2 {
+    font-size: 46px;
+    line-height: 1;
+  }
+
+  .premium-materials-header p {
+    max-width: 540px;
+
+    margin-top: 20px;
+
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .materials-grid {
+    width: 100%;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    column-gap: 14px;
+    row-gap: 35px;
+  }
+
+  .material-image {
+    width: 100%;
+    height: 190px;
+  }
+
+  .material-content {
+    padding-top: 12px;
+  }
+
+  .material-content > span {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .material-content h3 {
+    font-size: 22px;
+    line-height: 1.05;
+  }
+
+  .material-content p {
+    margin-top: 6px;
+
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .materials-button {
+    margin-top: 50px;
+  }
+
+  .materials-button a {
+    min-width: 175px;
+    height: 47px;
+  }
+}
+
+/* =========================================================
+   SAMSUNG GALAXY S8+
+   361px - 600px
+========================================================= */
+
+@media (min-width: 361px) and (max-width: 600px) {
+  .premium-materials {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 60px 12px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+  .premium-materials-header {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto 40px;
+  }
+
+  .premium-materials-header > span {
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+  }
+
+  .premium-materials-header h2 {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .premium-materials-header p {
+    width: 100%;
+    max-width: 330px;
+
+    margin: 18px auto 0;
+
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .materials-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    column-gap: 8px;
+    row-gap: 35px;
+
+    box-sizing: border-box;
+  }
+
+  .material-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .material-image {
+    width: 100%;
+    height: 145px;
+
+    overflow: hidden;
+  }
+
+  .material-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  .material-content {
+    width: 100%;
+
+    padding-top: 9px;
+  }
+
+  .material-content > span {
+    font-size: 6px;
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+  }
+
+  .material-content h3 {
+    font-size: 17px;
+
+    line-height: 1.05;
+  }
+
+  .material-content p {
+    margin-top: 5px;
+
+    font-size: 8px;
+
+    line-height: 1.35;
+  }
+
+  .materials-button {
+    width: 100%;
+
+    margin-top: 45px;
+  }
+
+  .materials-button a {
+    width: 100%;
+    max-width: 220px;
+
+    min-width: 0;
+    height: 44px;
+
+    padding: 0 15px;
+
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   MOBILE RTL OVERFLOW FIX
+========================================================= */
+
+@media (max-width: 600px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body.rtl .premium-materials {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+  }
+
+  body.rtl .materials-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.rtl .material-item {
+    min-width: 0;
+  }
+}
+
+/* ==================================================
+   CRAFTSMANSHIP DETAILS
+   DESKTOP + NETBOOK + IPAD MINI + SAMSUNG S8+
+================================================== */
+
+.craft-details {
+  width: 100%;
+  padding: 90px 7%;
+  box-sizing: border-box;
+  background: var(--bg);
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.craft-details-header {
+  max-width: 850px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.craft-details-header span {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+.craft-details-header h2 {
+  margin: 0 0 18px;
+  font-size: 48px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.craft-details-header h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--primary);
+}
+
+.craft-details-header p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* ==================================================
+   MAIN CONTENT
+================================================== */
+
+.craft-detail-main {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 70px;
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.craft-detail-image {
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+}
+
+.craft-detail-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.craft-detail-image img:hover {
+  transform: scale(1.03);
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.craft-detail-content {
+  width: 100%;
+}
+
+.craft-item {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(139, 90, 53, 0.2);
+}
+
+.craft-item:first-child {
+  padding-top: 0;
+}
+
+.craft-item:last-child {
+  border-bottom: none;
+}
+
+.craft-item > span {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--secondary);
+  padding-top: 5px;
+}
+
+.craft-item h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.craft-item p {
+  margin: 0;
+  max-width: 500px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* ==================================================
+   BUTTON
+================================================== */
+
+.craft-details-button {
+  max-width: 1250px;
+  margin: 55px auto 0;
+  text-align: center;
+}
+
+.craft-details-button a {
+  min-width: 190px;
+  height: 50px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.craft-details-button a:hover {
+  background: var(--secondary);
+
+  border-color: var(--secondary);
+
+  color: var(--bg);
+
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   LARGE DESKTOP
+   1600px+
+================================================== */
+
+@media (min-width: 1600px) {
+  .craft-details {
+    padding: 110px 8%;
+  }
+
+  .craft-details-header {
+    margin-bottom: 75px;
+  }
+
+  .craft-details-header h2 {
+    font-size: 54px;
+  }
+
+  .craft-details-header p {
+    font-size: 17px;
+  }
+
+  .craft-detail-main {
+    max-width: 1400px;
+    gap: 90px;
+  }
+
+  .craft-detail-image {
+    height: 620px;
+  }
+
+  .craft-item h3 {
+    font-size: 24px;
+  }
+
+  .craft-item p {
+    font-size: 16px;
+  }
+
+  .craft-details-button {
+    max-width: 1400px;
+    margin-top: 65px;
+  }
+}
+
+/* ==================================================
+   NETBOOK / LAPTOP
+   1025px - 1366px
+================================================== */
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .craft-details {
+    padding: 75px 6%;
+  }
+
+  .craft-details-header {
+    margin-bottom: 50px;
+  }
+
+  .craft-details-header h2 {
+    font-size: 42px;
+  }
+
+  .craft-detail-main {
+    gap: 50px;
+  }
+
+  .craft-detail-image {
+    height: 480px;
+  }
+
+  .craft-item {
+    padding: 22px 0;
+  }
+
+  .craft-item h3 {
+    font-size: 20px;
+  }
+
+  .craft-item p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .craft-details-button {
+    margin-top: 45px;
+  }
+}
+
+/* ==================================================
+   IPAD MINI
+   PORTRAIT + LANDSCAPE
+   768px - 1024px
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .craft-details {
+    padding: 70px 6%;
+  }
+
+  .craft-details-header {
+    max-width: 700px;
+    margin-bottom: 50px;
+  }
+
+  .craft-details-header span {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+
+  .craft-details-header h2 {
+    font-size: 38px;
+  }
+
+  .craft-details-header p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .craft-detail-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+  }
+
+  .craft-detail-image {
+    height: 440px;
+  }
+
+  .craft-item {
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+    padding: 22px 0;
+  }
+
+  .craft-item h3 {
+    font-size: 19px;
+  }
+
+  .craft-item p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .craft-details-button {
+    margin-top: 45px;
+  }
+}
+
+/* ==================================================
+   SMALL TABLET / LARGE MOBILE
+   600px - 767px
+================================================== */
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .craft-details {
+    padding: 60px 6%;
+  }
+
+  .craft-details-header {
+    margin-bottom: 40px;
+  }
+
+  .craft-details-header h2 {
+    font-size: 34px;
+  }
+
+  .craft-details-header p {
+    font-size: 15px;
+  }
+
+  .craft-detail-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .craft-detail-image {
+    height: 400px;
+  }
+
+  .craft-item {
+    padding: 20px 0;
+  }
+
+  .craft-item h3 {
+    font-size: 19px;
+  }
+
+  .craft-item p {
+    font-size: 14px;
+  }
+
+  .craft-details-button {
+    margin-top: 35px;
+  }
+}
+
+/* ==================================================
+   SAMSUNG GALAXY S8+
+   360px - 599px
+================================================== */
+
+@media (max-width: 599px) {
+  .craft-details {
+    width: 100%;
+    padding: 50px 20px;
+    box-sizing: border-box;
+  }
+
+  /* HEADER */
+
+  .craft-details-header {
+    width: 100%;
+    margin: 0 auto 35px;
+  }
+
+  .craft-details-header span {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .craft-details-header h2 {
+    margin-bottom: 14px;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .craft-details-header p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* MAIN */
+
+  .craft-detail-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  /* IMAGE */
+
+  .craft-detail-image {
+    width: 100%;
+    height: 300px;
+  }
+
+  .craft-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* CONTENT */
+
+  .craft-detail-content {
+    width: 100%;
+  }
+
+  .craft-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
+
+  .craft-item:first-child {
+    padding-top: 0;
+  }
+
+  .craft-item > span {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    padding-top: 3px;
+  }
+
+  .craft-item h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .craft-item p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* BUTTON */
+
+  .craft-details-button {
+    width: 100%;
+    margin-top: 35px;
+  }
+
+  .craft-details-button a {
+    padding: 13px 22px;
+    font-size: 12px;
+  }
+}
+
+/* ==================================================
+   VERY SMALL MOBILE
+   320px - 359px
+================================================== */
+
+@media (max-width: 359px) {
+  .craft-details {
+    padding: 45px 16px;
+  }
+
+  .craft-details-header h2 {
+    font-size: 27px;
+  }
+
+  .craft-details-header p {
+    font-size: 13px;
+  }
+
+  .craft-detail-image {
+    height: 260px;
+  }
+
+  .craft-item {
+    grid-template-columns: 35px 1fr;
+    gap: 10px;
+  }
+
+  .craft-item h3 {
+    font-size: 17px;
+  }
+
+  .craft-item p {
+    font-size: 12px;
+  }
+
+  .craft-details-button a {
+    padding: 12px 18px;
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   IPAD MINI LANDSCAPE
+================================================== */
+
+@media (min-width: 1000px) and (max-width: 1100px) and (orientation: landscape) {
+  .craft-details {
+    padding: 60px 5%;
+  }
+
+  .craft-detail-main {
+    gap: 40px;
+  }
+
+  .craft-detail-image {
+    height: 400px;
+  }
+
+  .craft-item {
+    padding: 18px 0;
+  }
+
+  .craft-item h3 {
+    font-size: 18px;
+  }
+
+  .craft-item p {
+    font-size: 13px;
+  }
+}
+
+/* ==================================================
+   TOUCH DEVICES
+   REMOVE HOVER SCALE
+================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .craft-detail-image img {
+    transform: none;
+  }
+
+  .craft-details-button a:hover {
+    background: transparent;
+    color: var(--primary);
+  }
+}
+
+/* ==================================================
+   PROJECT JOURNEY
+================================================== */
+
+.project-journey {
+  width: 100%;
+  padding: 110px 7%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.journey-header {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.journey-header > span {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+.journey-header h2 {
+  margin: 0;
+
+  font-size: clamp(45px, 6vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.journey-header h2 em {
+  color: var(--primary);
+  font-style: normal;
+}
+
+.journey-header p {
+  max-width: 650px;
+  margin: 20px auto 0;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  opacity: 0.75;
+}
+
+/* ==================================================
+   TIMELINE
+================================================== */
+
+.journey-timeline {
+  position: relative;
+
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+/* ==================================================
+   ONE STRAIGHT CENTER LINE
+================================================== */
+
+.journey-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  width: 3px;
+
+  background: var(--primary);
+
+  transform: translateX(-50%);
+
+  opacity: 0.75;
+
+  z-index: 1;
+}
+
+/* ==================================================
+   EACH STEP
+================================================== */
+
+.journey-step {
+  position: relative;
+
+  width: 100%;
+  min-height: 270px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 100px 1fr;
+
+  align-items: start;
+
+  z-index: 2;
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.journey-content {
+  position: relative;
+
+  width: 100%;
+  max-width: 440px;
+
+  padding: 25px 30px;
+
+  background: var(--bg);
+
+  z-index: 4;
+  font-size: 15px;
+}
+
+/* 01 / 03 / 05 */
+
+.journey-step:nth-child(odd) .journey-content {
+  grid-column: 1;
+
+  justify-self: end;
+
+  text-align: right;
+}
+
+/* 02 / 04 */
+
+.journey-step:nth-child(even) .journey-content {
+  grid-column: 3;
+
+  justify-self: start;
+
+  text-align: left;
+}
+
+/* ==================================================
+   CENTER NUMBER
+   IMPORTANT:
+   ABSOLUTE = EVERY NUMBER STAYS AT SAME HEIGHT
+   AS ITS CONTENT HEADING
+================================================== */
+
+.journey-center {
+  position: absolute;
+
+  top: 25px;
+  left: 50%;
+
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform: translateX(-50%);
+
+  z-index: 10;
+
+  padding: 0;
+}
+
+/* ==================================================
+   NUMBER CIRCLE
+================================================== */
+
+.journey-number {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--primary);
+
+  border-radius: 50%;
+
+  background: var(--bg);
+
+  color: var(--primary);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  direction: ltr;
+
+  z-index: 10;
+}
+
+/* ==================================================
+   REMOVE ALL OLD CONNECTOR LINES
+================================================== */
+
+.journey-content::after {
+  content: none;
+}
+
+/* ==================================================
+   SMALL CONNECTOR - LEFT SIDE
+   01 / 03 / 05
+================================================== */
+
+.journey-step:nth-child(odd) .journey-content {
+  margin-right: 0;
+}
+
+/* small line from left content to number */
+
+.journey-step:nth-child(odd)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 57px;
+
+  right: calc(50% - 18px);
+
+  width: 18px;
+  height: 1px;
+
+  background: var(--secondary);
+
+  z-index: 5;
+}
+
+/* ==================================================
+   SMALL CONNECTOR - RIGHT SIDE
+   02 / 04
+================================================== */
+
+.journey-step:nth-child(even)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 57px;
+
+  left: calc(50% - 18px);
+
+  width: 18px;
+  height: 1px;
+
+  background: var(--secondary);
+
+  z-index: 5;
+}
+
+/* ==================================================
+   TAG
+================================================== */
+
+.journey-tag {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: var(--secondary);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+/* ==================================================
+   HEADINGS
+================================================== */
+
+.journey-content h3 {
+  margin: 0 0 5px;
+
+  color: var(--primary);
+
+  font-size: 28px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.journey-content h4 {
+  margin: 0 0 14px;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.journey-content p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  opacity: 0.72;
+  font-size: 15px;
+}
+
+/* ==================================================
+   META
+================================================== */
+
+.journey-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.journey-step:nth-child(odd) .journey-meta {
+  justify-content: flex-end;
+}
+
+.journey-step:nth-child(even) .journey-meta {
+  justify-content: flex-start;
+}
+
+.journey-meta span {
+  padding: 6px 12px;
+
+  border: 1px solid var(--secondary);
+
+  border-radius: 30px;
+
+  font-size: 10px;
+
+  color: var(--primary);
+
+  white-space: nowrap;
+}
+
+/* ==================================================
+   RTL
+================================================== */
+
+body.rtl {
+  direction: rtl;
+}
+
+body.rtl .journey-header {
+  direction: rtl;
+}
+
+/* ==================================================
+   RTL CONTENT
+================================================== */
+
+body.rtl .journey-step:nth-child(odd) .journey-content {
+  grid-column: 3;
+
+  justify-self: start;
+
+  text-align: left;
+}
+
+body.rtl .journey-step:nth-child(even) .journey-content {
+  grid-column: 1;
+
+  justify-self: end;
+
+  text-align: right;
+}
+
+/* ==================================================
+   RTL CENTER
+   CENTER LINE NEVER MOVES
+================================================== */
+
+body.rtl .journey-center {
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  direction: ltr;
+}
+
+/* ==================================================
+   RTL CONNECTOR
+================================================== */
+
+body.rtl .journey-step:nth-child(odd)::after {
+  right: auto;
+  left: calc(50% - 18px);
+}
+
+body.rtl .journey-step:nth-child(even)::after {
+  left: auto;
+  right: calc(50% - 18px);
+}
+
+/* ==================================================
+   RTL META
+================================================== */
+
+body.rtl .journey-step:nth-child(odd) .journey-meta {
+  justify-content: flex-start;
+}
+
+body.rtl .journey-step:nth-child(even) .journey-meta {
+  justify-content: flex-end;
+}
+
+/* ==================================================
+   LARGE DESKTOP
+================================================== */
+
+@media (min-width: 1600px) {
+  .project-journey {
+    padding: 130px 7%;
+  }
+
+  .journey-header h2 {
+    font-size: 62px;
+  }
+
+  .journey-timeline {
+    max-width: 1250px;
+  }
+
+  .journey-step {
+    min-height: 310px;
+
+    grid-template-columns: 1fr 110px 1fr;
+  }
+
+  .journey-content {
+    max-width: 500px;
+  }
+
+  .journey-center {
+    top: 25px;
+
+    width: 68px;
+    height: 68px;
+  }
+
+  .journey-number {
+    width: 68px;
+    height: 68px;
+  }
+
+  .journey-step:nth-child(odd)::after {
+    top: 59px;
+  }
+
+  .journey-step:nth-child(even)::after {
+    top: 59px;
+  }
+}
+
+/* ==================================================
+   NETBOOK / LAPTOP
+   1025px - 1366px
+================================================== */
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .project-journey {
+    padding: 90px 5%;
+  }
+
+  .journey-header {
+    max-width: 760px;
+    margin-bottom: 65px;
+  }
+
+  .journey-header h2 {
+    font-size: 44px;
+  }
+
+  .journey-header p {
+    font-size: 14px;
+  }
+
+  .journey-timeline {
+    max-width: 950px;
+  }
+
+  .journey-step {
+    min-height: 245px;
+
+    grid-template-columns: 1fr 90px 1fr;
+  }
+
+  .journey-content {
+    max-width: 390px;
+
+    padding: 20px 25px;
+  }
+
+  .journey-center {
+    top: 20px;
+
+    width: 60px;
+    height: 60px;
+  }
+
+  .journey-number {
+    width: 60px;
+    height: 60px;
+  }
+
+  .journey-step:nth-child(odd)::after,
+  .journey-step:nth-child(even)::after {
+    top: 52px;
+  }
+
+  .journey-content h3 {
+    font-size: 25px;
+  }
+
+  .journey-content h4 {
+    font-size: 16px;
+  }
+
+  .journey-content p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* ==================================================
+   IPAD MINI
+   768px - 1024px
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .project-journey {
+    padding: 85px 5%;
+  }
+
+  .journey-header {
+    max-width: 700px;
+    margin-bottom: 65px;
+  }
+
+  .journey-header h2 {
+    font-size: 40px;
+  }
+
+  .journey-timeline {
+    max-width: 850px;
+  }
+
+  .journey-step {
+    min-height: 245px;
+
+    grid-template-columns: 1fr 80px 1fr;
+  }
+
+  .journey-content {
+    max-width: 330px;
+
+    padding: 18px 20px;
+  }
+
+  .journey-center {
+    top: 18px;
+
+    width: 58px;
+    height: 58px;
+  }
+
+  .journey-number {
+    width: 58px;
+    height: 58px;
+  }
+
+  .journey-step:nth-child(odd)::after,
+  .journey-step:nth-child(even)::after {
+    top: 47px;
+  }
+
+  .journey-content h3 {
+    font-size: 23px;
+  }
+
+  .journey-content h4 {
+    font-size: 15px;
+  }
+
+  .journey-content p {
+    font-size: 15px;
+  }
+}
+
+/* ==================================================
+   MOBILE
+   360px - 767px
+================================================== */
+
+@media (max-width: 767px) {
+  .project-journey {
+    padding: 70px 18px;
+  }
+
+  .journey-header {
+    margin-bottom: 50px;
+  }
+
+  .journey-header h2 {
+    font-size: 32px;
+  }
+
+  .journey-header p {
+    font-size: 13px;
+  }
+
+  /* CENTER LINE */
+
+  .journey-timeline::before {
+    left: 30px;
+
+    width: 2px;
+
+    transform: none;
+  }
+
+  /* STEP */
+
+  .journey-step {
+    display: grid;
+
+    grid-template-columns: 60px 1fr;
+
+    min-height: auto;
+
+    padding: 30px 0;
+  }
+
+  /* NUMBER */
+
+  .journey-center {
+    position: absolute;
+
+    top: 3px;
+    left: 30px;
+
+    width: 54px;
+    height: 54px;
+
+    transform: translateX(-50%);
+  }
+
+  .journey-number {
+    width: 54px;
+    height: 54px;
+
+    font-size: 12px;
+  }
+
+  /* CONTENT */
+
+  .journey-content,
+  .journey-step:nth-child(odd) .journey-content,
+  .journey-step:nth-child(even) .journey-content {
+    grid-column: 2;
+
+    max-width: none;
+
+    padding: 3px 0 3px 22px;
+
+    text-align: left;
+  }
+
+  /* NO CONNECTOR ON MOBILE */
+
+  .journey-step::after {
+    display: none;
+  }
+
+  /* RTL MOBILE */
+
+  body.rtl .journey-timeline::before {
+    left: auto;
+    right: 30px;
+  }
+
+  body.rtl .journey-center {
+    left: auto;
+    right: 30px;
+
+    transform: translateX(50%);
+  }
+
+  body.rtl .journey-step {
+    grid-template-columns: 1fr 60px;
+  }
+
+  body.rtl .journey-content,
+  body.rtl .journey-step:nth-child(odd) .journey-content,
+  body.rtl .journey-step:nth-child(even) .journey-content {
+    grid-column: 1;
+
+    padding: 3px 22px 3px 0;
+
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   SAMSUNG S8+
+   360px - 380px
+================================================== */
+
+@media (min-width: 360px) and (max-width: 380px) {
+  .project-journey {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .journey-header h2 {
+    font-size: 30px;
+  }
+
+  .journey-timeline::before {
+    left: 29px;
+  }
+
+  .journey-step {
+    grid-template-columns: 58px 1fr;
+  }
+
+  .journey-center {
+    left: 29px;
+
+    width: 52px;
+    height: 52px;
+  }
+
+  .journey-number {
+    width: 52px;
+    height: 52px;
+  }
+
+  .journey-content,
+  .journey-step:nth-child(odd) .journey-content,
+  .journey-step:nth-child(even) .journey-content {
+    padding-left: 20px;
+  }
+
+  body.rtl .journey-timeline::before {
+    left: auto;
+    right: 29px;
+  }
+
+  body.rtl .journey-center {
+    left: auto;
+    right: 29px;
+  }
+
+  body.rtl .journey-step {
+    grid-template-columns: 1fr 58px;
+  }
+
+  body.rtl .journey-content,
+  body.rtl .journey-step:nth-child(odd) .journey-content,
+  body.rtl .journey-step:nth-child(even) .journey-content {
+    padding-right: 20px;
+    padding-left: 0;
+  }
+}
+/* ==================================================
+   CRAFTNEST - MEET OUR CRAFTSMEN
+   RESPONSIVE + RTL
+================================================== */
+
+.craftsmen-section {
+  width: 100%;
+  padding: 100px 7%;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.craftsmen-section *,
+.craftsmen-section *::before,
+.craftsmen-section *::after {
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.craftsmen-container {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+
+  align-items: center;
+  gap: 70px;
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.craftsmen-image {
+  width: 100%;
+  height: 600px;
+
+  overflow: hidden;
+  border-radius: 18px;
+
+  background: var(--bg);
+
+  box-shadow: 0 18px 45px rgba(56, 39, 24, 0.12);
+}
+
+.craftsmen-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.7s ease;
+}
+
+.craftsmen-image:hover img {
+  transform: scale(1.04);
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.craftsmen-content {
+  width: 100%;
+}
+
+.craftsmen-label {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   HEADING
+================================================== */
+
+.craftsmen-content h2 {
+  margin: 0 0 25px;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(42px, 4.5vw, 66px);
+
+  line-height: 1.08;
+  font-weight: 600;
+
+  letter-spacing: -1.3px;
+}
+
+.craftsmen-content h2 span {
+  color: var(--primary);
+}
+
+/* ==================================================
+   PARAGRAPH
+================================================== */
+
+.craftsmen-content p {
+  max-width: 560px;
+
+  margin: 0 0 20px;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+  line-height: 1.9;
+
+  font-weight: 400;
+}
+
+/* ==================================================
+   FEATURES
+================================================== */
+
+.craftsmen-features {
+  margin-top: 32px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px 22px;
+}
+
+.craftsmen-feature {
+  display: flex;
+
+  align-items: center;
+  gap: 12px;
+
+  color: #39342f;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.craftsmen-feature-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: var(--text);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ==================================================
+   BUTTON
+================================================== */
+
+.craftsmen-button {
+  min-width: 190px;
+  height: 50px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.craftsmen-button:hover {
+  background: var(--secondary);
+
+  border-color: var(--secondary);
+
+  color: var(--bg);
+
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   LARGE DESKTOP — 1920px+
+   ONLY SIDE WIDTH REDUCED
+   LTR + RTL
+================================================== */
+
+@media (min-width: 1600px) {
+  .craftsmen-section {
+    width: 100%;
+    padding: 100px 8%;
+    box-sizing: border-box;
+  }
+
+  .craftsmen-container {
+    width: 100%;
+    max-width: 1450px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    gap: 75px;
+  }
+
+  /* ===============================
+     LTR
+  =============================== */
+
+  body:not(.rtl) .craftsmen-section {
+    direction: ltr;
+  }
+
+  body:not(.rtl) .craftsmen-container {
+    direction: ltr;
+  }
+
+  body:not(.rtl) .craftsmen-content {
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* ===============================
+     RTL
+  =============================== */
+
+  body.rtl .craftsmen-section {
+    direction: rtl;
+  }
+
+  body.rtl .craftsmen-container {
+    direction: rtl;
+  }
+
+  body.rtl .craftsmen-content {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .craftsmen-label {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .craftsmen-content h2,
+  body.rtl .craftsmen-content p {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .craftsmen-features {
+    direction: rtl;
+  }
+
+  body.rtl .craftsmen-feature {
+    direction: rtl;
+    text-align: right;
+    justify-content: flex-start;
+  }
+
+  body.rtl .craftsmen-button {
+    direction: rtl;
+  }
+}
+
+/* ==================================================
+   DESKTOP / NETBOOK
+   1367px - 1599px
+   WIDTH SLIGHTLY REDUCED
+================================================== */
+
+@media (min-width: 1367px) and (max-width: 1599px) {
+  .craftsmen-section {
+    padding: 90px 5%;
+  }
+
+  .craftsmen-container {
+    max-width: 1250px;
+    gap: 55px;
+  }
+
+  .craftsmen-image {
+    height: 540px;
+  }
+
+  .craftsmen-content h2 {
+    font-size: 58px;
+  }
+
+  .craftsmen-content p {
+    max-width: 540px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+}
+
+/* ==================================================
+   LAPTOP / NETBOOK
+   1025px - 1366px
+   WIDTH REDUCED
+================================================== */
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .craftsmen-section {
+    padding: 75px 5%;
+  }
+
+  .craftsmen-container {
+    max-width: 1150px;
+    gap: 45px;
+  }
+
+  .craftsmen-image {
+    height: 470px;
+  }
+
+  .craftsmen-content h2 {
+    font-size: 48px;
+  }
+
+  .craftsmen-content p {
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .craftsmen-features {
+    gap: 15px 18px;
+  }
+
+  .craftsmen-feature {
+    font-size: 12px;
+  }
+
+  .craftsmen-feature-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .craftsmen-button {
+    min-width: 170px;
+    height: 48px;
+    margin-top: 32px;
+    font-size: 12px;
+  }
+}
+
+/* ==================================================
+   TABLET / iPAD MINI
+   768px - 1024px
+   WIDTH REDUCED
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .craftsmen-section {
+    padding: 65px 4%;
+  }
+
+  .craftsmen-container {
+    width: 94%;
+    max-width: 900px;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 28px;
+  }
+
+  .craftsmen-image {
+    height: 400px;
+    border-radius: 15px;
+  }
+
+  .craftsmen-content h2 {
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+
+  .craftsmen-content p {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .craftsmen-label {
+    margin-bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 2.3px;
+  }
+
+  .craftsmen-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .craftsmen-feature {
+    font-size: 11px;
+    gap: 9px;
+  }
+
+  .craftsmen-feature-icon {
+    width: 29px;
+    height: 29px;
+    font-size: 12px;
+  }
+
+  .craftsmen-button {
+    min-width: 155px;
+    height: 44px;
+    margin-top: 25px;
+    padding: 0 18px;
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   SAMSUNG GALAXY S8+
+   481px - 767px
+   COMPACT WIDTH
+================================================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .craftsmen-section {
+    padding: 55px 5%;
+  }
+
+  .craftsmen-container {
+    width: 94%;
+    max-width: 560px;
+
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .craftsmen-image {
+    height: 300px;
+    border-radius: 14px;
+  }
+
+  .craftsmen-content {
+    text-align: left;
+  }
+
+  .craftsmen-label {
+    margin-bottom: 13px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .craftsmen-content h2 {
+    margin-bottom: 17px;
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .craftsmen-content p {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .craftsmen-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 14px;
+    margin-top: 24px;
+  }
+
+  .craftsmen-feature {
+    font-size: 11px;
+    gap: 7px;
+  }
+
+  .craftsmen-feature-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .craftsmen-button {
+    min-width: 155px;
+    height: 44px;
+    margin-top: 26px;
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   MOBILE
+   360px - 480px
+================================================== */
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .craftsmen-section {
+    padding: 48px 5%;
+  }
+
+  .craftsmen-container {
+    width: 94%;
+    max-width: 430px;
+
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+  }
+
+  .craftsmen-image {
+    height: 270px;
+    border-radius: 13px;
+  }
+
+  .craftsmen-label {
+    margin-bottom: 12px;
+    font-size: 9px;
+    letter-spacing: 1.9px;
+  }
+
+  .craftsmen-content h2 {
+    margin-bottom: 16px;
+    font-size: 30px;
+    line-height: 1.12;
+  }
+
+  .craftsmen-content p {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .craftsmen-features {
+    grid-template-columns: 1fr;
+    gap: 11px;
+    margin-top: 22px;
+  }
+
+  .craftsmen-feature {
+    font-size: 11px;
+    gap: 8px;
+  }
+
+  .craftsmen-feature-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .craftsmen-button {
+    width: 100%;
+    max-width: 210px;
+    height: 44px;
+    margin-top: 25px;
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   VERY SMALL MOBILE
+   BELOW 360px
+================================================== */
+
+@media (max-width: 359px) {
+  .craftsmen-section {
+    padding: 42px 5%;
+  }
+
+  .craftsmen-container {
+    width: 94%;
+    max-width: 330px;
+
+    grid-template-columns: 1fr;
+
+    gap: 23px;
+  }
+
+  .craftsmen-image {
+    height: 235px;
+    border-radius: 12px;
+  }
+
+  .craftsmen-label {
+    margin-bottom: 10px;
+    font-size: 8px;
+    letter-spacing: 1.6px;
+  }
+
+  .craftsmen-content h2 {
+    margin-bottom: 14px;
+    font-size: 27px;
+    line-height: 1.14;
+  }
+
+  .craftsmen-content p {
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .craftsmen-features {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .craftsmen-feature {
+    font-size: 10px;
+    gap: 7px;
+  }
+
+  .craftsmen-feature-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .craftsmen-button {
+    width: 100%;
+    max-width: 195px;
+    height: 42px;
+    margin-top: 22px;
+    font-size: 10px;
+  }
+}
+
+/* ==================================================
+   RTL
+   CORRECT ALIGNMENT
+================================================== */
+
+body.rtl .craftsmen-section {
+  direction: rtl;
+}
+
+body.rtl .craftsmen-container {
+  direction: rtl;
+}
+
+body.rtl .craftsmen-content {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .craftsmen-label {
+  direction: rtl;
+}
+
+body.rtl .craftsmen-content h2 {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .craftsmen-content p {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .craftsmen-features {
+  direction: rtl;
+}
+
+body.rtl .craftsmen-feature {
+  direction: rtl;
+  text-align: right;
+  justify-content: flex-start;
+}
+
+body.rtl .craftsmen-feature-icon {
+  flex-shrink: 0;
+}
+
+body.rtl .craftsmen-button {
+  direction: rtl;
+}
+
+/* ==================================================
+   RTL — MOBILE
+================================================== */
+
+@media (max-width: 767px) {
+  body.rtl .craftsmen-content {
+    text-align: right;
+  }
+
+  body.rtl .craftsmen-content h2,
+  body.rtl .craftsmen-content p,
+  body.rtl .craftsmen-label {
+    text-align: right;
+  }
+
+  body.rtl .craftsmen-features {
+    direction: rtl;
+  }
+
+  body.rtl .craftsmen-feature {
+    justify-content: flex-start;
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   TOUCH DEVICES
+================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .craftsmen-image:hover img {
+    transform: none;
+  }
+
+  .craftsmen-button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.customer-stories-header {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.customer-stories-label {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+.customer-stories-header h2 {
+  margin: 0 0 22px;
+
+  color: var(--text);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(42px, 4vw, 62px);
+
+  line-height: 1.08;
+
+  font-weight: 600;
+
+  letter-spacing: -1px;
+}
+
+.customer-stories-header h2 em {
+  color: var(--secondary);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+
+  font-weight: 600;
+}
+
+.customer-stories-header p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+/* ==================================================
+   GRID
+================================================== */
+
+.customer-stories-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+
+  align-items: start;
+}
+
+/* ==================================================
+   STORY CARD
+================================================== */
+
+.story-card {
+  width: 100%;
+
+  background: var(--bg);
+
+  border: 3px solid var(--primary);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 18px 45px rgba(50, 35, 20, 0.12);
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.story-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 300px;
+
+  overflow: hidden;
+
+  background: var(--bg);
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 0.7s ease;
+}
+
+.story-card:hover .story-image img {
+  transform: scale(1.045);
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.story-content {
+  padding: 28px 26px 30px;
+}
+
+/* ==================================================
+   STARS
+================================================== */
+
+.story-stars {
+  margin-bottom: 18px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 17px;
+
+  letter-spacing: 2px;
+
+  line-height: 1;
+}
+
+/* ==================================================
+   REVIEW
+================================================== */
+
+.story-review {
+  margin: 0 0 25px;
+
+  color: var(--text);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+
+  line-height: 1.6;
+
+  font-style: italic;
+
+  font-weight: 500;
+}
+
+/* ==================================================
+   CUSTOMER
+================================================== */
+
+.story-customer {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(139, 90, 53, 0.12);
+}
+
+.story-customer strong {
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.story-customer span {
+  color: var(--secondary);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+/* ==================================================
+   CUSTOMER STORIES
+   RESPONSIVE + RTL
+================================================== */
+
+/* =====================================================
+   MAIN CTA
+===================================================== */
+
+.craftnest-cta {
+  width: 100%;
+
+  padding: 90px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+}
+
+/* =====================================================
+   CTA CONTAINER
+===================================================== */
+
+.craftnest-cta-container {
+  width: 100%;
+  max-width: 1450px;
+
+  min-height: 560px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* =====================================================
+   LEFT IMAGE
+===================================================== */
+
+.craftnest-cta-image {
+  width: 100%;
+  height: 100%;
+
+  min-height: 560px;
+
+  overflow: hidden;
+}
+
+.craftnest-cta-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.craftnest-cta-content {
+  min-height: 560px;
+
+  padding: 70px 75px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  background: #4a2c1a;
+
+  color: #ffffff;
+}
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.craftnest-cta-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #d9a15b;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.craftnest-cta-content h2 {
+  max-width: 600px;
+
+  margin-bottom: 25px;
+
+  color: #ffffff;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(40px, 4vw, 58px);
+
+  line-height: 1.12;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.craftnest-cta-content p {
+  max-width: 570px;
+
+  margin-bottom: 35px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.craftnest-cta-button {
+  min-width: 225px;
+  height: 54px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  border-radius: 30px;
+
+  background: #d9a15b;
+
+  border: 1px solid #d9a15b;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.craftnest-cta-button span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.craftnest-cta-button:hover {
+  background: #b87333;
+
+  border-color: #b87333;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* ==================================================
+   CUSTOMER STORIES
+   RESPONSIVE + RTL
+================================================== */
+
+/* ==================================================
+   LARGE DESKTOP — 1920px+
+   ONLY SIDE WIDTH REDUCED
+   LTR + RTL
+================================================== */
+
+@media (min-width: 1600px) {
+  .customer-stories {
+    width: 100%;
+    max-width: 1500px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 120px 4% 140px;
+
+    box-sizing: border-box;
+  }
+
+  /* ===============================
+     LTR
+  =============================== */
+
+  body:not(.rtl) .customer-stories {
+    direction: ltr;
+  }
+
+  body:not(.rtl) .customer-stories-header {
+    direction: ltr;
+    text-align: center;
+  }
+
+  body:not(.rtl) .customer-stories-grid {
+    direction: ltr;
+  }
+
+  /* ===============================
+     RTL
+  =============================== */
+
+  body.rtl .customer-stories {
+    direction: rtl;
+  }
+
+  body.rtl .customer-stories-header {
+    direction: rtl;
+    text-align: center;
+  }
+
+  body.rtl .customer-stories-grid {
+    direction: rtl;
+  }
+
+  body.rtl .story-card {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .story-content {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .story-stars {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .story-review {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .story-customer {
+    direction: rtl;
+    text-align: right;
+  }
+
+  body.rtl .story-badge {
+    left: auto;
+    right: 14px;
+  }
+}
+
+/* ==================================================
+   NETBOOK / LAPTOP — 1025px TO 1366px
+================================================== */
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .customer-stories {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    padding: 75px 4.2% 90px;
+  }
+
+  .customer-stories-header {
+    margin-bottom: 50px;
+  }
+
+  .customer-stories-header h2 {
+    font-size: 48px;
+  }
+
+  .customer-stories-header p {
+    font-size: 15px;
+  }
+
+  .customer-stories-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .story-image {
+    height: 245px;
+  }
+
+  .story-content {
+    padding: 24px 21px 26px;
+  }
+
+  .story-review {
+    font-size: 17px;
+  }
+
+  .story-stars {
+    font-size: 15px;
+  }
+}
+
+/* ==================================================
+   TABLET / iPAD MINI — 768px TO 1024px
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .customer-stories {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    padding: 75px 5% 90px;
+  }
+
+  .customer-stories-header {
+    max-width: 750px;
+    margin: 0 auto 50px;
+  }
+
+  .customer-stories-header h2 {
+    font-size: 46px;
+  }
+
+  .customer-stories-header p {
+    font-size: 15px;
+  }
+
+  .customer-stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .story-image {
+    height: 270px;
+  }
+
+  .story-content {
+    padding: 25px 22px 28px;
+  }
+
+  .story-review {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .story-stars {
+    font-size: 15px;
+  }
+
+  .story-card:nth-child(3) {
+    grid-column: 1 / -1;
+
+    width: calc(50% - 12px);
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==================================================
+   iPAD MINI LANDSCAPE / SMALL TABLET
+   900px TO 1024px
+================================================== */
+
+@media (min-width: 900px) and (max-width: 1024px) {
+  .customer-stories {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .story-image {
+    height: 290px;
+  }
+
+  .story-content {
+    padding: 27px 24px 30px;
+  }
+
+  .story-review {
+    font-size: 18px;
+  }
+
+  .customer-stories-header p {
+    font-size: 15px;
+  }
+}
+
+/* ==================================================
+   SAMSUNG GALAXY S8+ / LARGE MOBILE
+   481px TO 767px
+================================================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .customer-stories {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    padding: 65px 6% 75px;
+  }
+
+  .customer-stories-header {
+    margin-bottom: 45px;
+  }
+
+  .customer-stories-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .customer-stories-header h2 {
+    font-size: 38px;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+  }
+
+  .customer-stories-header p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .customer-stories-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .story-card {
+    width: 100%;
+  }
+
+  .story-image {
+    height: 310px;
+  }
+
+  .story-content {
+    padding: 25px 23px 28px;
+  }
+
+  .story-review {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+}
+
+/* ==================================================
+   SAMSUNG GALAXY S8+ PORTRAIT
+   481px TO 600px
+================================================== */
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .customer-stories {
+    padding: 60px 5.5% 70px;
+  }
+
+  .customer-stories-header h2 {
+    font-size: 35px;
+  }
+
+  .customer-stories-header p {
+    font-size: 13px;
+  }
+
+  .story-image {
+    height: 285px;
+  }
+
+  .story-content {
+    padding: 23px 21px 26px;
+  }
+
+  .story-review {
+    font-size: 17px;
+  }
+}
+
+/* ==================================================
+   MOBILE — 360px TO 480px
+================================================== */
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .customer-stories {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    padding: 55px 5% 65px;
+  }
+
+  .customer-stories-header {
+    margin-bottom: 38px;
+  }
+
+  .customer-stories-label {
+    margin-bottom: 12px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .customer-stories-header h2 {
+    margin-bottom: 17px;
+
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+  }
+
+  .customer-stories-header p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .customer-stories-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .story-image {
+    height: 245px;
+  }
+
+  .story-badge {
+    left: 11px;
+    bottom: 11px;
+
+    padding: 7px 10px;
+
+    font-size: 10px;
+  }
+
+  .story-content {
+    padding: 22px 19px 24px;
+  }
+
+  .story-stars {
+    margin-bottom: 15px;
+
+    font-size: 15px;
+    letter-spacing: 1.5px;
+  }
+
+  .story-review {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .story-customer {
+    padding-top: 15px;
+  }
+}
+
+/* ==================================================
+   SMALL MOBILE — 320px TO 359px
+================================================== */
+
+@media (min-width: 320px) and (max-width: 359px) {
+  .customer-stories {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    padding: 45px 5% 55px;
+  }
+
+  .customer-stories-header {
+    margin-bottom: 32px;
+  }
+
+  .customer-stories-label {
+    font-size: 8px;
+    letter-spacing: 1.8px;
+  }
+
+  .customer-stories-header h2 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .customer-stories-header p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .customer-stories-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .story-image {
+    height: 215px;
+  }
+
+  .story-content {
+    padding: 20px 17px 22px;
+  }
+
+  .story-stars {
+    font-size: 14px;
+  }
+
+  .story-review {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .story-customer strong {
+    font-size: 13px;
+  }
+
+  .story-customer span {
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   VERY SMALL MOBILE — BELOW 320px
+================================================== */
+
+@media (max-width: 319px) {
+  .customer-stories {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    padding: 40px 4% 50px;
+  }
+
+  .customer-stories-header {
+    margin-bottom: 28px;
+  }
+
+  .customer-stories-header h2 {
+    font-size: 25px;
+  }
+
+  .customer-stories-header p {
+    font-size: 11px;
+  }
+
+  .customer-stories-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .story-image {
+    height: 190px;
+  }
+
+  .story-content {
+    padding: 18px 15px 20px;
+  }
+
+  .story-review {
+    font-size: 14px;
+  }
+}
+
+/* ==================================================
+   RTL — BASE
+================================================== */
+
+body.rtl .customer-stories {
+  direction: rtl;
+}
+
+/* ==================================================
+   RTL — HEADER
+================================================== */
+
+body.rtl .customer-stories-header {
+  direction: rtl;
+  text-align: center;
+}
+
+body.rtl .customer-stories-header h2,
+body.rtl .customer-stories-header p,
+body.rtl .customer-stories-label {
+  direction: rtl;
+}
+
+/* ==================================================
+   RTL — GRID
+================================================== */
+
+body.rtl .customer-stories-grid {
+  direction: rtl;
+}
+
+/* ==================================================
+   RTL — CARD
+================================================== */
+
+body.rtl .story-card {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ==================================================
+   RTL — IMAGE
+================================================== */
+
+body.rtl .story-image {
+  direction: rtl;
+}
+
+/* ==================================================
+   RTL — BADGE
+================================================== */
+
+body.rtl .story-badge {
+  left: auto;
+  right: 14px;
+}
+
+/* ==================================================
+   RTL — CONTENT
+================================================== */
+
+body.rtl .story-content {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ==================================================
+   RTL — STARS
+================================================== */
+
+body.rtl .story-stars {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ==================================================
+   RTL — REVIEW
+================================================== */
+
+body.rtl .story-review {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ==================================================
+   RTL — CUSTOMER
+================================================== */
+
+body.rtl .story-customer {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ==================================================
+   RTL — TABLET
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body.rtl .customer-stories-grid {
+    direction: rtl;
+  }
+
+  body.rtl .story-card:nth-child(3) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==================================================
+   RTL — LARGE MOBILE
+================================================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  body.rtl .story-badge {
+    left: auto;
+    right: 11px;
+  }
+
+  body.rtl .story-content {
+    text-align: right;
+  }
+
+  body.rtl .story-stars {
+    text-align: right;
+  }
+
+  body.rtl .story-review {
+    text-align: right;
+  }
+
+  body.rtl .story-customer {
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   RTL — MOBILE
+================================================== */
+
+@media (min-width: 360px) and (max-width: 480px) {
+  body.rtl .story-badge {
+    left: auto;
+    right: 11px;
+  }
+
+  body.rtl .story-content {
+    text-align: right;
+  }
+
+  body.rtl .story-stars {
+    text-align: right;
+  }
+
+  body.rtl .story-review {
+    text-align: right;
+  }
+
+  body.rtl .story-customer {
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   RTL — SMALL MOBILE
+================================================== */
+
+@media (max-width: 359px) {
+  body.rtl .story-badge {
+    left: auto;
+    right: 10px;
+  }
+
+  body.rtl .story-content {
+    text-align: right;
+  }
+
+  body.rtl .story-stars {
+    text-align: right;
+  }
+
+  body.rtl .story-review {
+    text-align: right;
+  }
+
+  body.rtl .story-customer {
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   RTL — VERY SMALL MOBILE
+================================================== */
+
+@media (max-width: 319px) {
+  body.rtl .story-badge {
+    left: auto;
+    right: 9px;
+  }
+
+  body.rtl .story-content {
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   TOUCH DEVICES
+================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .story-card:hover {
+    transform: none;
+
+    box-shadow: 0 8px 30px rgba(50, 35, 20, 0.06);
+  }
+
+  .story-card:hover .story-image img {
+    transform: none;
+  }
+}
+
+/* ==================================================
+   CRAFTNEST - FAQ
+================================================== */
+
+.faq-section {
+  width: 100%;
+
+  padding: 100px 7% 110px;
+
+  background: var(--bg);
+  color: var(--text);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+.faq-section *,
+.faq-section *::before,
+.faq-section *::after {
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.faq-container {
+  width: 100%;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 90px;
+
+  align-items: start;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.faq-header {
+  position: sticky;
+
+  top: 80px;
+}
+
+.faq-label {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   HEADING
+================================================== */
+
+.faq-header h2 {
+  margin: 0 0 22px;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(42px, 4.5vw, 62px);
+
+  line-height: 1.08;
+
+  font-weight: 600;
+
+  letter-spacing: -1.5px;
+}
+
+.faq-header h2 span {
+  color: var(--primary);
+}
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.faq-header p {
+  max-width: 460px;
+
+  margin: 0;
+
+  color: var(--muted, #6c6964);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+}
+
+/* ==================================================
+   FAQ LIST
+================================================== */
+
+.faq-list {
+  width: 100%;
+
+  border-top: 1px solid var(--border);
+}
+
+/* ==================================================
+   FAQ ITEM
+================================================== */
+
+.faq-item {
+  width: 100%;
+
+  border-bottom: 1px solid var(--border);
+}
+
+/* ==================================================
+   QUESTION
+================================================== */
+
+.faq-question {
+  width: 100%;
+
+  min-height: 78px;
+
+  padding: 22px 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  color: var(--secondary);
+}
+
+/* ==================================================
+   ICON
+================================================== */
+
+.faq-icon {
+  width: 30px;
+
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  color: var(--secondary);
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ==================================================
+   ANSWER
+================================================== */
+
+.faq-answer {
+  max-height: 0;
+
+  overflow: hidden;
+
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
+}
+
+.faq-answer p {
+  max-width: 720px;
+
+  margin: 0;
+
+  padding: 0 45px 0 5px;
+
+  color: var(--muted, #77716a);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+/* ==================================================
+   ACTIVE FAQ
+================================================== */
+
+.faq-item.active .faq-answer {
+  max-height: 250px;
+
+  padding-bottom: 24px;
+}
+
+.faq-item.active .faq-icon {
+  background: var(--secondary);
+
+  color: var(--bg);
+
+  transform: rotate(45deg);
+}
+
+/* ==================================================
+   LARGE DESKTOP
+   1600px+
+================================================== */
+
+@media (min-width: 1600px) {
+  .faq-section {
+    padding: 115px 6% 125px;
+  }
+
+  .faq-container {
+    max-width: 1450px;
+
+    gap: 100px;
+  }
+
+  .faq-header h2 {
+    font-size: 66px;
+  }
+
+  .faq-header p {
+    font-size: 15px;
+  }
+
+  .faq-question {
+    min-height: 82px;
+
+    font-size: 16px;
+  }
+
+  .faq-answer p {
+    font-size: 14px;
+  }
+}
+
+/* ==================================================
+   NETBOOK / LAPTOP
+   1025px - 1366px
+================================================== */
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .faq-section {
+    padding: 80px 5%;
+  }
+
+  .faq-container {
+    max-width: 1120px;
+
+    gap: 65px;
+  }
+
+  .faq-header h2 {
+    font-size: 48px;
+  }
+
+  .faq-header p {
+    font-size: 13px;
+  }
+
+  .faq-question {
+    min-height: 70px;
+
+    font-size: 13px;
+  }
+
+  .faq-answer p {
+    font-size: 12px;
+  }
+}
+
+/* ==================================================
+   iPAD MINI / TABLET
+   768px - 1024px
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .faq-section {
+    padding: 70px 5%;
+  }
+
+  .faq-container {
+    width: 94%;
+
+    max-width: 900px;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .faq-header {
+    position: static;
+
+    text-align: center;
+  }
+
+  .faq-header p {
+    max-width: 600px;
+
+    margin: 0 auto;
+  }
+
+  .faq-header h2 {
+    font-size: 44px;
+  }
+
+  .faq-question {
+    min-height: 68px;
+
+    font-size: 15px;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+  }
+}
+
+/* ==================================================
+   SAMSUNG GALAXY S8+
+   481px - 767px
+================================================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .faq-section {
+    padding: 60px 5%;
+  }
+
+  .faq-container {
+    width: 94%;
+
+    max-width: 560px;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .faq-header {
+    position: static;
+  }
+
+  .faq-header h2 {
+    font-size: 36px;
+  }
+
+  .faq-header p {
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+  .faq-question {
+    min-height: 64px;
+
+    padding: 18px 2px;
+
+    font-size: 12px;
+  }
+
+  .faq-icon {
+    width: 27px;
+
+    height: 27px;
+
+    font-size: 18px;
+  }
+
+  .faq-answer p {
+    padding-right: 35px;
+
+    font-size: 11px;
+
+    line-height: 1.75;
+  }
+}
+
+/* ==================================================
+   MOBILE
+   360px - 480px
+================================================== */
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .faq-section {
+    padding: 50px 5%;
+  }
+
+  .faq-container {
+    width: 94%;
+
+    max-width: 430px;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .faq-header {
+    position: static;
+  }
+
+  .faq-label {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .faq-header h2 {
+    font-size: 31px;
+  }
+
+  .faq-header p {
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .faq-question {
+    min-height: 60px;
+
+    padding: 16px 2px;
+
+    font-size: 11px;
+  }
+
+  .faq-icon {
+    width: 26px;
+
+    height: 26px;
+
+    font-size: 17px;
+  }
+
+  .faq-answer p {
+    padding-right: 30px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+}
+
+/* ==================================================
+   VERY SMALL MOBILE
+   BELOW 360px
+================================================== */
+
+@media (max-width: 359px) {
+  .faq-section {
+    padding: 45px 5%;
+  }
+
+  .faq-container {
+    width: 94%;
+
+    max-width: 330px;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .faq-header {
+    position: static;
+  }
+
+  .faq-header h2 {
+    font-size: 27px;
+  }
+
+  .faq-header p {
+    font-size: 10px;
+  }
+
+  .faq-question {
+    min-height: 56px;
+
+    padding: 14px 2px;
+
+    font-size: 10px;
+  }
+
+  .faq-icon {
+    width: 24px;
+
+    height: 24px;
+
+    font-size: 16px;
+  }
+
+  .faq-answer p {
+    padding-right: 25px;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+  }
+}
+
+/* ==================================================
+   RTL
+================================================== */
+
+body.rtl .faq-section {
+  direction: rtl;
+}
+
+body.rtl .faq-container {
+  direction: rtl;
+}
+
+body.rtl .faq-header {
+  text-align: right;
+}
+
+body.rtl .faq-header p {
+  text-align: right;
+}
+
+body.rtl .faq-question {
+  direction: rtl;
+
+  text-align: right;
+}
+
+body.rtl .faq-answer {
+  direction: rtl;
+}
+
+body.rtl .faq-answer p {
+  padding-left: 45px;
+
+  padding-right: 5px;
+
+  text-align: right;
+}
+
+/* ==================================================
+   RTL TABLET + MOBILE
+================================================== */
+
+@media (max-width: 1024px) {
+  body.rtl .faq-header {
+    text-align: center;
+  }
+
+  body.rtl .faq-header p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  body.rtl .faq-answer p {
+    padding-left: 30px;
+
+    padding-right: 2px;
+  }
+}
+
+/* ==================================================
+   TOUCH DEVICES
+================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .faq-question:hover {
+    color: var(--text);
+  }
+}
+
+/* =====================================================
+   MAIN CTA
+===================================================== */
+
+.craftnest-cta {
+  width: 100%;
+  padding: 90px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg);
+}
+
+/* =====================================================
+   CTA CONTAINER
+===================================================== */
+
+.craftnest-cta-container {
+  width: 100%;
+  max-width: 1450px;
+  min-height: 560px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+}
+
+/* =====================================================
+   LEFT IMAGE
+===================================================== */
+
+.craftnest-cta-image {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+
+  overflow: hidden;
+}
+
+.craftnest-cta-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.craftnest-cta-content {
+  min-height: 560px;
+
+  padding: 70px 75px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  background: var(--secondary);
+  color: var(--bg);
+}
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.craftnest-cta-label {
+  display: inline-block;
+
+  padding: 7px 18px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.craftnest-cta-content h2 {
+  max-width: 600px;
+
+  margin-bottom: 25px;
+
+  color: var(--bg);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(40px, 4vw, 58px);
+
+  line-height: 1.12;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.craftnest-cta-content p {
+  max-width: 570px;
+
+  margin-bottom: 35px;
+
+  color: var(--bg);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.craftnest-cta-button {
+  min-width: 190px;
+  height: 50px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+
+  color: var(--text);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.craftnest-cta-button span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* =====================================================
+   1920px / LARGE DESKTOP
+   ONLY SIDE WIDTH REDUCED
+   LTR + RTL
+===================================================== */
+
+@media (min-width: 1600px) {
+  .craftnest-cta {
+    padding: 110px 8%;
+  }
+
+  .craftnest-cta-container {
+    width: 100%;
+    max-width: 1380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ===============================
+     LTR
+  =============================== */
+
+  body:not(.rtl) .craftnest-cta-container {
+    direction: ltr;
+  }
+
+  body:not(.rtl) .craftnest-cta-content {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  /* ===============================
+     RTL
+  =============================== */
+
+  body.rtl .craftnest-cta-container {
+    direction: rtl;
+  }
+
+  body.rtl .craftnest-cta-content {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  body.rtl .craftnest-cta-button {
+    direction: rtl;
+  }
+}
+
+/* =====================================================
+   1. NETBOOK / LAPTOP
+   1025px - 1366px
+===================================================== */
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .craftnest-cta {
+    padding: 70px 5%;
+  }
+
+  .craftnest-cta-container {
+    max-width: 1200px;
+
+    min-height: 500px;
+  }
+
+  .craftnest-cta-image {
+    min-height: 500px;
+  }
+
+  .craftnest-cta-content {
+    min-height: 500px;
+
+    padding: 55px 60px;
+  }
+
+  .craftnest-cta-label {
+    font-size: 12px;
+
+    letter-spacing: 2.2px;
+
+    margin-bottom: 16px;
+  }
+
+  .craftnest-cta-content h2 {
+    max-width: 500px;
+
+    font-size: 44px;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+  }
+
+  .craftnest-cta-content p {
+    max-width: 480px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-bottom: 28px;
+  }
+
+  .craftnest-cta-button {
+    min-width: 205px;
+
+    height: 50px;
+
+    font-size: 12px;
+
+    gap: 20px;
+  }
+}
+
+/* =====================================================
+   2. IPAD MINI / TABLET
+   768px - 1024px
+===================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .craftnest-cta {
+    padding: 60px 5%;
+  }
+
+  .craftnest-cta-container {
+    max-width: 900px;
+
+    min-height: 440px;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-radius: 18px;
+  }
+
+  .craftnest-cta-image {
+    min-height: 440px;
+  }
+
+  .craftnest-cta-content {
+    min-height: 440px;
+
+    padding: 40px 38px;
+  }
+
+  .craftnest-cta-label {
+    font-size: 10px;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 14px;
+  }
+
+  .craftnest-cta-content h2 {
+    max-width: 360px;
+
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.8px;
+
+    margin-bottom: 18px;
+  }
+
+  .craftnest-cta-content p {
+    max-width: 350px;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    margin-bottom: 25px;
+  }
+
+  .craftnest-cta-button {
+    min-width: 185px;
+
+    height: 48px;
+
+    padding: 0 22px;
+
+    gap: 17px;
+
+    font-size: 11px;
+  }
+
+  .craftnest-cta-button span {
+    font-size: 17px;
+  }
+}
+
+/* =====================================================
+   SAMSUNG GALAXY S8+ / LARGE MOBILE
+   360px - 480px
+===================================================== */
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .craftnest-cta {
+    padding: 45px 5%;
+  }
+
+  .craftnest-cta-container {
+    width: 100%;
+    max-width: 430px;
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    border-radius: 16px;
+  }
+
+  .craftnest-cta-image {
+    width: 100%;
+    height: 260px;
+    min-height: 260px;
+  }
+
+  .craftnest-cta-content {
+    width: 100%;
+    min-height: auto;
+
+    padding: 38px 28px;
+  }
+
+  .craftnest-cta-label {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    margin-bottom: 14px;
+  }
+
+  .craftnest-cta-content h2 {
+    max-width: 100%;
+
+    font-size: 30px;
+    line-height: 1.15;
+
+    letter-spacing: -0.6px;
+
+    margin-bottom: 17px;
+  }
+
+  .craftnest-cta-content p {
+    max-width: 100%;
+
+    font-size: 11px;
+    line-height: 1.75;
+
+    margin-bottom: 25px;
+  }
+
+  .craftnest-cta-button {
+    min-width: 190px;
+    height: 46px;
+
+    padding: 0 20px;
+
+    gap: 17px;
+
+    font-size: 11px;
+  }
+
+  .craftnest-cta-button span {
+    font-size: 17px;
+  }
+
+  /* ===============================
+     LTR
+  =============================== */
+
+  body:not(.rtl) .craftnest-cta-content {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  /* ===============================
+     RTL
+  =============================== */
+
+  body.rtl .craftnest-cta-container {
+    direction: rtl;
+  }
+
+  body.rtl .craftnest-cta-content {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  body.rtl .craftnest-cta-button {
+    direction: rtl;
+  }
+}
+/* =====================================================
+   TOUCH DEVICES
+===================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .craftnest-cta-button:hover {
+    transform: none;
+
+    box-shadow: none;
+  }
+}
+/* ==================================================
+   CRAFT NEST
+   PREMIUM FOOTER
+   RTL / LTR
+   MOBILE RESPONSIVE
+================================================== */
+
+/* ==================================================
+   FOOTER CONTAINER
+================================================== */
+
+.footer-container {
+  width: min(1400px, calc(100% - 60px));
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 70px 0 55px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1.2fr;
+  column-gap: 70px;
+
+  row-gap: 0;
+
+  align-items: start;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.site-footer {
+  width: 100%;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  margin-top: 80px;
+
+  border-top: 1px solid rgba(128, 128, 128, 0.18);
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   BRAND
+================================================== */
+
+.footer-brand {
+  width: 100%;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  gap: 0;
+
+  margin: 0;
+
+  padding: 0;
+
+  align-self: start;
+  position: relative;
+  top: -15px;
+}
+
+/* ==================================================
+   FOOTER LOGO
+================================================== */
+
+.footer-logo {
+  display: inline-flex;
+
+  flex-direction: row;
+
+  direction: ltr;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 0;
+
+  width: max-content;
+
+  max-width: 100%;
+
+  margin: -20px 0 -18px 0;
+
+  padding: 0;
+
+  flex-shrink: 0;
+
+  overflow: visible;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  line-height: 1;
+}
+
+/* ==================================================
+   LOGO ICON
+================================================== */
+
+.footer-logo .logo-icon {
+  width: 82px;
+  height: 82px;
+
+  min-width: 82px;
+
+  flex: 0 0 82px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: 0;
+
+  padding: 0;
+
+  overflow: visible;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+/* ==================================================
+   LOGO IMAGE
+================================================== */
+
+.footer-logo .logo-icon img {
+  width: 82px;
+  height: 82px;
+
+  min-width: 82px;
+  min-height: 82px;
+
+  max-width: none;
+  max-height: none;
+
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  transform: translateX(12px) scale(1.6);
+}
+
+/* ==================================================
+   LOGO NAME
+================================================== */
+
+.footer-logo .logo-name {
+  display: block;
+
+  margin: 0 0 0 -42px;
+
+  padding: 0;
+
+  color: var(--primary);
+
+  font-size: 21px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  position: relative;
+
+  z-index: 10;
+}
+
+.footer-logo .logo-name strong {
+  color: var(--secondary);
+}
+
+/* ==================================================
+   DESCRIPTION
+   NO EXTRA GAP
+================================================== */
+
+.footer-description {
+  width: 100%;
+  max-width: 380px;
+  margin: 12px 0 0 0;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: left;
+  position: relative;
+  top: 0;
+}
+
+/* ==================================================
+   SOCIAL LINKS
+================================================== */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin: 30px 0 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+/* ==================================================
+   SOCIAL BUTTON
+================================================== */
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--primary);
+  border-radius: 13px;
+  color: var(--text);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* ==================================================
+   SOCIAL ICON
+================================================== */
+
+.social-links a svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==================================================
+   SOCIAL HOVER
+================================================== */
+
+.social-links a:hover {
+  background: var(--primary);
+
+  color: #000000;
+
+  border-color: var(--primary);
+
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   FOOTER COLUMNS
+================================================== */
+
+.footer-column {
+  width: 100%;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  align-self: start;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+/* ==================================================
+   COLUMN HEADING
+================================================== */
+
+.footer-column h3 {
+  margin: 0 0 22px 0;
+
+  padding: 0;
+
+  color: var(--primary);
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+/* ==================================================
+   QUICK LINKS
+================================================== */
+
+.footer-column > a {
+  position: relative;
+
+  width: fit-content;
+
+  margin: 0 0 14px 0;
+
+  padding: 0 0 4px 0;
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ==================================================
+   LINK UNDERLINE
+================================================== */
+
+.footer-column > a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 1px;
+
+  background: var(--primary);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform 0.25s ease;
+}
+
+/* ==================================================
+   LINK HOVER
+================================================== */
+
+.footer-column > a:hover,
+.footer-column > a.active {
+  color: var(--secondary);
+}
+
+.footer-column > a:hover::after,
+.footer-column > a.active::after {
+  transform: scaleX(1);
+}
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.footer-contact {
+  width: 100%;
+}
+
+.footer-contact p {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0 0 15px 0;
+
+  padding: 0;
+
+  color: var(--text);
+
+  font-size: 13px;
+
+  line-height: 1.55;
+
+  text-align: left;
+}
+
+/* ==================================================
+   CONTACT ICON
+================================================== */
+
+.footer-contact p svg {
+  width: 17px;
+  height: 17px;
+
+  min-width: 17px;
+
+  color: var(--primary);
+
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+/* ==================================================
+   CONTACT TEXT
+================================================== */
+
+.footer-contact p span {
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+}
+
+/* ==================================================
+   FOOTER BOTTOM
+================================================== */
+
+.footer-bottom {
+  width: min(1400px, calc(100% - 60px));
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 22px 0;
+
+  border-top: 1px solid rgba(139, 90, 53, 0.18);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+/* ==================================================
+   COPYRIGHT
+================================================== */
+
+.footer-bottom p {
+  margin: 0;
+
+  padding: 0;
+
+  color: var(--text);
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* ==================================================
+   BOTTOM LINKS
+================================================== */
+
+.footer-bottom-links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  position: relative;
+
+  padding-bottom: 3px;
+
+  color: var(--text);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+/* ==================================================
+   BOTTOM LINK UNDERLINE
+================================================== */
+
+.footer-bottom-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 1px;
+
+  background: var(--primary);
+
+  transform: scaleX(0);
+
+  transition: transform 0.25s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--secondary);
+}
+
+.footer-bottom-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ==================================================
+   RTL
+================================================== */
+
+body.rtl .site-footer {
+  direction: rtl;
+
+  text-align: right;
+}
+
+body.rtl .footer-container {
+  direction: rtl;
+
+  text-align: right;
+}
+
+/* ==================================================
+   RTL BRAND
+================================================== */
+
+body.rtl .footer-brand {
+  direction: rtl;
+
+  align-items: flex-start;
+
+  text-align: right;
+
+  gap: 0;
+}
+
+/* ==================================================
+   RTL LOGO
+   LOGO + NAME REMAIN TOGETHER
+================================================== */
+
+body.rtl .footer-logo {
+  display: inline-flex;
+
+  flex-direction: row;
+
+  direction: ltr;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 0;
+
+  margin: -20px 0 -18px 0;
+
+  padding: 0;
+}
+
+body.rtl .footer-logo .logo-icon {
+  order: 1;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+body.rtl .footer-logo .logo-name {
+  order: 2;
+
+  margin-left: -42px;
+
+  margin-right: 0;
+
+  padding: 0;
+
+  text-align: left;
+}
+
+/* ==================================================
+   RTL DESCRIPTION
+================================================== */
+
+body.rtl .footer-description {
+  margin: 0;
+
+  padding: 0;
+
+  top: 0;
+
+  text-align: right;
+}
+
+/* ==================================================
+   RTL COLUMNS
+================================================== */
+
+body.rtl .footer-column {
+  direction: rtl;
+
+  align-items: flex-start;
+
+  text-align: right;
+}
+
+body.rtl .footer-column > a {
+  direction: rtl;
+
+  text-align: right;
+}
+
+/* ==================================================
+   RTL SOCIAL
+================================================== */
+
+body.rtl .social-links {
+  direction: rtl;
+
+  flex-direction: row;
+
+  justify-content: flex-start;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin: -2px 0 0 0;
+
+  padding: 0;
+}
+
+body.rtl .social-links a {
+  direction: ltr;
+
+  flex-shrink: 0;
+}
+
+/* ==================================================
+   RTL CONTACT
+================================================== */
+
+body.rtl .footer-contact p {
+  direction: rtl;
+
+  justify-content: flex-start;
+
+  text-align: right;
+}
+
+/* ==================================================
+   RTL BOTTOM
+================================================== */
+
+body.rtl .footer-bottom {
+  direction: rtl;
+
+  text-align: right;
+}
+
+body.rtl .footer-bottom-links {
+  direction: rtl;
+
+  justify-content: flex-start;
+}
+
+/* ==================================================
+   MOBILE 360px
+================================================== */
+
+@media (max-width: 360px) {
+  .site-footer {
+    margin-top: 50px;
+  }
+
+  /* CONTAINER */
+
+  .footer-container {
+    width: calc(100% - 20px);
+
+    padding: 45px 0 35px;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  /* BRAND */
+
+  .footer-brand {
+    grid-column: auto;
+
+    gap: 0;
+  }
+
+  /* LOGO */
+
+  .footer-logo {
+    margin: -8px 0 -12px 0;
+
+    gap: 0;
+  }
+
+  .footer-logo .logo-icon {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    flex-basis: 55px;
+  }
+
+  .footer-logo .logo-icon img {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+    min-height: 55px;
+
+    transform: translateX(5px) scale(1.25);
+  }
+
+  .footer-logo .logo-name {
+    margin-left: -28px;
+
+    font-size: 18px;
+  }
+
+  /* DESCRIPTION */
+
+  .footer-description {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    top: 0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  /* SOCIAL */
+
+  .social-links {
+    margin: -2px 0 0 0;
+
+    gap: 9px;
+  }
+
+  .social-links a {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* RTL LOGO */
+
+  body.rtl .footer-logo {
+    margin: -8px 0 -12px 0;
+
+    direction: ltr;
+
+    flex-direction: row;
+
+    gap: 0;
+  }
+
+  body.rtl .footer-logo .logo-icon {
+    order: 1;
+  }
+
+  body.rtl .footer-logo .logo-name {
+    order: 2;
+
+    margin-left: -28px;
+
+    margin-right: 0;
+
+    text-align: left;
+  }
+
+  /* RTL SOCIAL */
+
+  body.rtl .social-links {
+    direction: rtl;
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    gap: 9px;
+
+    margin: -2px 0 0 0;
+  }
+
+  /* COLUMNS */
+
+  .footer-column h3 {
+    margin-bottom: 16px;
+
+    font-size: 15px;
+  }
+
+  .footer-column > a {
+    margin-bottom: 10px;
+
+    font-size: 13px;
+  }
+
+  /* CONTACT */
+
+  .footer-contact p {
+    margin-bottom: 11px;
+
+    gap: 8px;
+
+    font-size: 13px;
+  }
+
+  /* BOTTOM */
+
+  .footer-bottom {
+    width: calc(100% - 20px);
+
+    padding: 18px 0;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 10px;
+  }
+
+  .footer-bottom-links {
+    justify-content: flex-start;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+  }
+
+  body.rtl .footer-bottom {
+    align-items: flex-start;
+
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   MOBILE 361px - 768px
+================================================== */
+
+@media (min-width: 361px) and (max-width: 768px) {
+  .footer-container {
+    width: calc(100% - 30px);
+
+    padding: 55px 0 45px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 25px;
+
+    row-gap: 35px;
+  }
+
+  /* BRAND FULL WIDTH */
+
+  .footer-brand {
+    grid-column: 1 / -1;
+
+    gap: 0;
+  }
+
+  /* LOGO */
+
+  .footer-logo {
+    margin: -10px 0 -14px 0;
+
+    gap: 0;
+  }
+
+  .footer-logo .logo-icon {
+    width: 72px;
+    height: 72px;
+
+    min-width: 72px;
+
+    flex-basis: 72px;
+  }
+
+  .footer-logo .logo-icon img {
+    width: 72px;
+    height: 72px;
+
+    min-width: 72px;
+    min-height: 72px;
+
+    transform: translateX(9px) scale(1.45);
+  }
+
+  .footer-logo .logo-name {
+    margin-left: -36px;
+
+    font-size: 23px;
+  }
+
+  /* DESCRIPTION */
+
+  .footer-description {
+    margin: 0;
+
+    padding: 0;
+
+    top: 0;
+  }
+
+  /* SOCIAL */
+
+  .social-links {
+    margin: -2px 0 0 0;
+
+    gap: 9px;
+  }
+
+  /* RTL LOGO */
+
+  body.rtl .footer-logo {
+    margin: -10px 0 -14px 0;
+
+    direction: ltr;
+
+    flex-direction: row;
+
+    gap: 0;
+  }
+
+  body.rtl .footer-logo .logo-icon {
+    order: 1;
+  }
+
+  body.rtl .footer-logo .logo-name {
+    order: 2;
+
+    margin-left: -36px;
+
+    margin-right: 0;
+
+    text-align: left;
+  }
+
+  /* RTL SOCIAL */
+
+  body.rtl .social-links {
+    direction: rtl;
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: -2px 0 0 0;
+  }
+
+  body.rtl .social-links a {
+    direction: ltr;
+
+    flex-shrink: 0;
+  }
+
+  /* BOTTOM */
+
+  .footer-bottom {
+    width: calc(100% - 30px);
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .footer-bottom-links {
+    gap: 20px;
+
+    flex-wrap: wrap;
+  }
+
+  body.rtl .footer-bottom {
+    align-items: flex-start;
+
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   TABLET 769px - 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-container {
+    width: calc(100% - 30px);
+
+    padding: 60px 0 45px;
+
+    grid-template-columns:
+      1.4fr
+      1fr
+      1.2fr;
+
+    column-gap: 30px;
+
+    row-gap: 0;
+  }
+
+  /* LOGO */
+
+  .footer-logo {
+    margin: -15px 0 -15px 0;
+  }
+
+  .footer-logo .logo-icon {
+    width: 68px;
+    height: 68px;
+
+    min-width: 68px;
+
+    flex-basis: 68px;
+  }
+
+  .footer-logo .logo-icon img {
+    width: 68px;
+    height: 68px;
+
+    min-width: 68px;
+    min-height: 68px;
+
+    transform: translateX(8px) scale(1.38);
+  }
+
+  .footer-logo .logo-name {
+    margin-left: -34px;
+
+    font-size: 21px;
+  }
+
+  /* DESCRIPTION */
+
+  .footer-description {
+    margin: 0;
+
+    top: 0;
+
+    max-width: 320px;
+
+    font-size: 14px;
+  }
+
+  /* SOCIAL */
+
+  .social-links {
+    margin: -2px 0 0 0;
+  }
+
+  /* RTL */
+
+  body.rtl .footer-logo {
+    margin: -15px 0 -15px 0;
+
+    direction: ltr;
+
+    flex-direction: row;
+
+    gap: 0;
+  }
+
+  body.rtl .footer-logo .logo-name {
+    margin-left: -34px;
+
+    margin-right: 0;
+  }
+
+  body.rtl .social-links {
+    direction: rtl;
+
+    flex-direction: row;
+
+    gap: 9px;
+
+    margin: -2px 0 0 0;
+  }
+}
+
+/* ==================================================
+   MOBILE TAP
+   PREVENT LAYOUT SHIFT
+================================================== */
+
+.site-footer a,
+.site-footer button {
+  -webkit-tap-highlight-color: transparent;
+
+  touch-action: manipulation;
+}
+
+/* ==================================================
+   NO HORIZONTAL OVERFLOW
+================================================== */
+
+html {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: hidden;
+
+  -webkit-text-size-adjust: 100%;
+
+  text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: hidden;
+
+  -webkit-text-size-adjust: 100%;
+
+  text-size-adjust: 100%;
+}
+
+/* ==================================================
+   FOOTER SAFETY
+================================================== */
+
+.site-footer *,
+.footer-container *,
+.footer-bottom * {
+  box-sizing: border-box;
+
+  max-width: 100%;
+}
