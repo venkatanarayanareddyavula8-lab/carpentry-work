@@ -341,7 +341,7 @@ body.rtl .logo-name {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border: 3px solid var(--primary);
+  border: 1px solid var(--primary);
   border-radius: 13px;
   background: var(--bg);
   color: var(--text);
@@ -369,7 +369,7 @@ body.rtl .logo-name {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--primary);
+  border: 1px solid var(--primary);
   border-radius: 13px;
   background: var(--bg);
   color: var(--text);
@@ -1130,31 +1130,18 @@ body.rtl .logo-name {
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.85),
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.78)
-  );
+  background: rgba(0, 0, 0, 0.72);
 
   z-index: 1;
 }
-/* =========================================================
-   DARK MODE HERO
-========================================================= */
 
 /* =========================================================
    DARK MODE HERO
 ========================================================= */
-
 body.dark .hero-overlay {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.9)
-  );
+  background: rgba(0, 0, 0, 0.82);
 }
+
 /* =========================================================
    HERO CONTENT
 ========================================================= */
@@ -1259,32 +1246,25 @@ body.dark .hero-overlay {
 .hero-buttons {
   width: 100%;
   max-width: 100%;
-
   display: flex;
-
   justify-content: center;
   align-items: center;
-
   gap: 12px;
-
   margin-top: 22px;
 }
 
 .hero-btn {
   min-width: 170px;
   height: 48px;
-
   padding: 0 22px;
-
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
+  gap: 9px;
+
   border-radius: 8px;
-
   font-family: "Montserrat", sans-serif;
-
   font-size: 13px;
   font-weight: 700;
 
@@ -1298,21 +1278,17 @@ body.dark .hero-overlay {
 .hero-btn svg {
   width: 16px;
   height: 16px;
-
   flex-shrink: 0;
 }
 
 .primary-btn {
   background: var(--primary);
-
   border: 2px solid var(--primary);
-
   color: var(--text);
 }
 
 .secondary-btn {
   border: 2px solid var(--primary);
-
   color: #ffffff;
 }
 
@@ -1322,98 +1298,65 @@ body.dark .hero-overlay {
 
 .primary-btn:hover {
   background: var(--secondary);
-
   border-color: var(--secondary);
-
   color: var(--bg);
-
   transform: translateY(-2px);
 }
 
 .secondary-btn:hover {
   background: var(--secondary);
-
   border-color: var(--secondary);
-
   color: var(--bg);
-
   transform: translateY(-2px);
-}
-
-/* =========================================================
-   STATS
+} /* =========================================================
+   HERO STATS
 ========================================================= */
 
 .hero-stats {
-  width: 100%;
-  max-width: 100%;
-
   display: flex;
-
   justify-content: center;
-  align-items: center;
-
-  gap: 55px;
-
-  margin-top: 30px;
+  align-items: flex-start;
+  gap: 70px;
+  margin-top: 35px;
 }
 
 .hero-stat {
-  min-width: 120px;
-  max-width: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-
+  min-width: 150px;
   text-align: center;
-
-  opacity: 0;
-
-  animation: statReveal 0.8s ease forwards;
 }
 
-.hero-stat:nth-child(1) {
-  animation-delay: 0.5s;
+.stat-number {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2px;
 }
 
-.hero-stat:nth-child(2) {
-  animation-delay: 0.7s;
-}
-
-.hero-stat:nth-child(3) {
-  animation-delay: 0.9s;
-}
-
-@keyframes statReveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-stat strong {
+.stat-number .counter {
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 40px;
-
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 700;
   color: var(--primary);
 }
 
-.hero-stat span {
-  margin-top: 2px;
+.stat-number > span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--primary);
+}
 
-  font-size: 12px;
-
+.stat-label {
+  display: block;
+  margin-top: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 1.5px;
-
   color: #ffffff;
+  white-space: nowrap;
 }
 
 /* =========================================================
@@ -4242,6 +4185,7 @@ body.rtl .materials-button {
   padding: 110px 7%;
   background: var(--bg);
   color: var(--text);
+  overflow: hidden;
 }
 
 /* =========================================================
@@ -4249,13 +4193,23 @@ body.rtl .materials-button {
 ========================================================= */
 
 .how-work-header {
+  width: 100%;
   max-width: 800px;
   margin: 0 auto 75px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
 }
 
 .how-work-header > span {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   margin-bottom: 15px;
   padding: 7px 18px;
 
@@ -4267,15 +4221,20 @@ body.rtl .materials-button {
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2.5px;
+
+  white-space: nowrap;
 }
 
 .how-work-header h2 {
+  width: 100%;
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(40px, 6vw, 60px);
   line-height: 1;
   font-weight: 600;
+
+  text-align: center;
 }
 
 .how-work-header h2 em {
@@ -4284,11 +4243,15 @@ body.rtl .materials-button {
 }
 
 .how-work-header p {
+  width: 100%;
   max-width: 650px;
+
   margin: 20px auto 0;
 
   font-size: 14px;
   line-height: 1.8;
+
+  text-align: center;
 
   opacity: 0.7;
 }
@@ -4300,11 +4263,21 @@ body.rtl .materials-button {
 .work-process {
   width: 100%;
   max-width: 1400px;
-  margin: auto;
+
+  margin: 0 auto;
+
+  padding-left: 20px;
+  padding-right: 20px;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
   gap: 30px;
+
+  justify-content: center;
+  align-items: start;
+
+  direction: ltr;
 }
 
 /* =========================================================
@@ -4312,7 +4285,16 @@ body.rtl .materials-button {
 ========================================================= */
 
 .work-step {
+  width: 100%;
   min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  direction: ltr;
 }
 
 /* =========================================================
@@ -4320,32 +4302,45 @@ body.rtl .materials-button {
 ========================================================= */
 
 .work-number {
+  width: 100%;
   display: flex;
   align-items: center;
-
-  width: 100%;
-  margin-bottom: 28px;
+  direction: ltr;
 }
 
 .work-number > span {
   flex-shrink: 0;
-
   font-family: "Cormorant Garamond", serif;
   font-size: 30px;
   font-weight: 600;
-
   color: var(--primary);
 }
 
 .work-line {
   flex: 1;
-  width: 100%;
   height: 1px;
-
   margin-left: 18px;
-
   background: var(--secondary);
   opacity: 0.45;
+}
+
+/* =========================================================
+   RTL — NUMBER FIRST, LINE AFTER
+========================================================= */
+
+body.rtl .work-number {
+  direction: ltr;
+  flex-direction: row;
+}
+
+body.rtl .work-number > span {
+  order: 1;
+}
+
+body.rtl .work-line {
+  order: 2;
+  margin-left: 18px;
+  margin-right: 0;
 }
 
 /* =========================================================
@@ -4353,21 +4348,30 @@ body.rtl .materials-button {
 ========================================================= */
 
 .work-step h3 {
+  width: 100%;
+
   margin: 0 0 12px;
 
   font-family: "Cormorant Garamond", serif;
   font-size: 25px;
   font-weight: 600;
 
+  line-height: 1.2;
   letter-spacing: 1px;
+
+  text-align: center;
 }
 
 .work-step p {
-  max-width: 200px;
-  margin: 0;
+  width: 100%;
+  max-width: 220px;
+
+  margin: 0 auto;
 
   font-size: 13px;
   line-height: 1.7;
+
+  text-align: center;
 
   opacity: 0.7;
 }
@@ -4380,59 +4384,164 @@ body.rtl .how-work {
   direction: rtl;
 }
 
-body.rtl .work-step {
-  text-align: right;
+body.rtl .how-work-header {
+  direction: rtl;
+  text-align: center;
 }
 
-body.rtl .work-number {
-  flex-direction: row-reverse;
-}
-
-body.rtl .work-line {
-  margin-left: 0;
-  margin-right: 18px;
+body.rtl .how-work-header h2,
+body.rtl .how-work-header p {
+  text-align: center;
 }
 
 /* =========================================================
-   MOBILE
-   360px — 599px
+   RTL PROCESS
+   EQUAL LEFT + RIGHT SPACE
 ========================================================= */
 
-@media (max-width: 599px) {
+body.rtl .work-process {
+  direction: rtl;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+body.rtl .work-step {
+  direction: rtl;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* =========================================================
+   RTL NUMBER + LINE
+   NUMBER FIRST + LINE AFTER
+========================================================= */
+
+body.rtl .work-number {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  flex-direction: row;
+
+  direction: ltr;
+}
+
+body.rtl .work-number > span {
+  order: 1;
+}
+
+body.rtl .work-line {
+  order: 2;
+
+  flex: 1 1 auto;
+
+  margin-left: 18px;
+  margin-right: 0;
+}
+
+/* =========================================================
+   RTL CONTENT
+========================================================= */
+
+body.rtl .work-step h3,
+body.rtl .work-step p {
+  text-align: center;
+}
+
+body.rtl .work-step p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   1600px+
+========================================================= */
+
+@media (min-width: 1600px) {
   .how-work {
-    padding: 65px 18px;
-  }
-
-  .how-work-header {
-    margin-bottom: 50px;
-  }
-
-  .how-work-header > span {
-    margin-bottom: 13px;
-    padding: 6px 15px;
-
-    font-size: 15px;
-    letter-spacing: 2px;
-  }
-
-  .how-work-header h2 {
-    font-size: 40px;
-    line-height: 1.05;
-  }
-
-  .how-work-header p {
-    margin-top: 18px;
-    font-size: 15px;
-    line-height: 1.8;
+    padding-left: 8%;
+    padding-right: 8%;
   }
 
   .work-process {
-    grid-template-columns: 1fr;
-    gap: 38px;
+    max-width: 1500px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    gap: 40px;
+  }
+
+  .how-work-header {
+    margin-bottom: 85px;
+  }
+
+  .how-work-header h2 {
+    font-size: 64px;
+  }
+
+  .how-work-header p {
+    font-size: 15px;
+  }
+
+  .work-number > span {
+    font-size: 32px;
+  }
+
+  .work-step h3 {
+    font-size: 27px;
+  }
+
+  .work-step p {
+    max-width: 240px;
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   NETBOOK
+   769px — 1024px
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .how-work {
+    padding: 85px 5%;
+  }
+
+  .how-work-header {
+    margin-bottom: 60px;
+  }
+
+  .how-work-header h2 {
+    font-size: 54px;
+  }
+
+  .how-work-header p {
+    max-width: 600px;
+    font-size: 14px;
+  }
+
+  .work-process {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .work-number {
-    margin-bottom: 16px;
+    margin-bottom: 22px;
   }
 
   .work-number > span {
@@ -4440,23 +4549,23 @@ body.rtl .work-line {
   }
 
   .work-line {
-    margin-left: 14px;
+    margin-left: 12px;
   }
 
   .work-step h3 {
-    font-size: 24px;
-    margin-bottom: 7px;
+    font-size: 22px;
+    letter-spacing: 0.7px;
   }
 
   .work-step p {
-    max-width: 100%;
-    font-size: 13px;
+    max-width: 180px;
+    font-size: 12px;
     line-height: 1.7;
   }
 
   body.rtl .work-line {
-    margin-left: 0;
-    margin-right: 14px;
+    margin-left: 12px;
+    margin-right: 0;
   }
 }
 
@@ -4476,6 +4585,7 @@ body.rtl .work-line {
 
   .how-work-header h2 {
     font-size: 50px;
+    line-height: 1.05;
   }
 
   .how-work-header p {
@@ -4485,8 +4595,12 @@ body.rtl .work-line {
   }
 
   .work-process {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 50px 35px;
+
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .work-number {
@@ -4509,30 +4623,54 @@ body.rtl .work-line {
 }
 
 /* =========================================================
-   NETBOOK
-   769px — 1024px
+   SAMSUNG GALAXY S8+
+   360px — 599px
 ========================================================= */
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 599px) {
   .how-work {
-    padding: 85px 5%;
+    padding: 65px 18px;
   }
 
   .how-work-header {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+  }
+
+  .how-work-header > span {
+    margin-bottom: 13px;
+    padding: 6px 15px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
   }
 
   .how-work-header h2 {
-    font-size: 54px;
+    font-size: 40px;
+    line-height: 1.05;
+  }
+
+  .how-work-header p {
+    margin-top: 18px;
+
+    font-size: 14px;
+    line-height: 1.8;
   }
 
   .work-process {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .work-step {
+    width: 100%;
   }
 
   .work-number {
-    margin-bottom: 22px;
+    margin-bottom: 16px;
   }
 
   .work-number > span {
@@ -4540,52 +4678,77 @@ body.rtl .work-line {
   }
 
   .work-line {
-    margin-left: 12px;
+    margin-left: 14px;
   }
 
   .work-step h3 {
-    font-size: 22px;
+    font-size: 24px;
+    margin-bottom: 7px;
   }
 
   .work-step p {
-    font-size: 12px;
+    max-width: 100%;
+
+    font-size: 13px;
     line-height: 1.7;
   }
 
+  /* RTL mobile */
+
+  body.rtl .work-process {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.rtl .work-number {
+    direction: ltr;
+    flex-direction: row;
+  }
+
+  body.rtl .work-number > span {
+    order: 1;
+  }
+
   body.rtl .work-line {
-    margin-left: 0;
-    margin-right: 12px;
+    order: 2;
+
+    margin-left: 14px;
+    margin-right: 0;
+  }
+
+  body.rtl .work-step h3,
+  body.rtl .work-step p {
+    text-align: center;
   }
 }
 
-/* =========================================================
+/* =====================================================
    CLIENT TESTIMONIALS
-========================================================= */
+====================================================== */
 
 .client-testimonials {
   width: 100%;
   padding: 110px 7%;
-
   background: var(--bg);
   color: var(--text);
-
   overflow: hidden;
 }
 
-/* =========================================================
+/* =====================================================
    HEADING
-========================================================= */
+====================================================== */
 
 .testimonials-heading {
-  max-width: 850px;
-  margin: 0 auto 65px;
-
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 60px;
   text-align: center;
 }
 
 .testimonials-heading > span {
-  display: inline-block;
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 15px;
   padding: 7px 18px;
 
@@ -4594,6 +4757,7 @@ body.rtl .work-line {
 
   color: var(--primary);
 
+  font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2.5px;
@@ -4603,10 +4767,11 @@ body.rtl .work-line {
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(45px, 6vw, 60px);
+  font-size: clamp(40px, 6vw, 60px);
   line-height: 1;
   font-weight: 600;
+
+  text-align: center;
 }
 
 .testimonials-heading h2 em {
@@ -4616,67 +4781,73 @@ body.rtl .work-line {
 
 .testimonials-heading p {
   max-width: 650px;
-
   margin: 20px auto 0;
 
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 1.8;
 
   opacity: 0.7;
 }
 
-/* =========================================================
-   WRAPPER
-========================================================= */
+/* =====================================================
+   TESTIMONIAL GRID
+====================================================== */
 
-.testimonial-wrapper {
+.testimonial-grid {
   width: 100%;
-  max-width: 850px;
-
+  max-width: 1400px;
   margin: 0 auto;
 
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
 }
 
-/* =========================================================
-   SLIDE
-========================================================= */
+/* =====================================================
+   TESTIMONIAL CARD
+====================================================== */
 
-.testimonial-slide {
-  min-height: 600px;
+.testimonial-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 45px 35px;
+
+  border: 3px solid rgba(139, 90, 53, 0.35);
+  background: var(--bg);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 
-  padding: 10px 20px 20px;
-
-  border: none;
-
-  opacity: 1;
-  transform: translateY(0);
+  text-align: center;
 
   transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.testimonial-slide.fade-out {
-  opacity: 0;
-  transform: translateY(25px);
+.testimonial-card:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--primary);
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* =========================================================
-   IMAGE
-========================================================= */
+/* =====================================================
+   CLIENT IMAGE
+====================================================== */
 
 .testimonial-image {
-  width: 220px;
-  height: 220px;
+  width: 105px;
+  height: 105px;
 
-  margin-bottom: 25px;
-  padding: 7px;
+  margin-bottom: 22px;
+
+  padding: 5px;
 
   border: 2px solid var(--primary);
   border-radius: 50%;
@@ -4691,146 +4862,263 @@ body.rtl .work-line {
   display: block;
 
   object-fit: cover;
+
   border-radius: 50%;
 }
 
-/* =========================================================
+/* =====================================================
    NAME
-========================================================= */
+====================================================== */
 
-.testimonial-slide h3 {
-  margin: 0 0 5px;
+.testimonial-card h3 {
+  margin: 0;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 600;
+
+  color: var(--text);
 }
 
-/* =========================================================
+/* =====================================================
    ROLE
-========================================================= */
+====================================================== */
 
 .testimonial-role {
-  margin: 0 0 16px;
+  margin: 6px 0 12px;
 
+  font-family: "Montserrat", sans-serif;
   font-size: 11px;
-  letter-spacing: 1.8px;
+  font-weight: 500;
 
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 
-  opacity: 0.6;
+  color: var(--secondary);
+
+  opacity: 0.8;
 }
 
-/* =========================================================
+/* =====================================================
    STARS
-========================================================= */
+====================================================== */
 
 .testimonial-stars {
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 
   color: var(--primary);
 
-  font-size: 16px;
-  letter-spacing: 5px;
+  font-size: 17px;
+  letter-spacing: 4px;
 }
 
-/* =========================================================
+/* =====================================================
    REVIEW
-========================================================= */
+====================================================== */
 
-.testimonial-slide blockquote {
-  max-width: 700px;
+.testimonial-card blockquote {
+  width: 100%;
+  max-width: 360px;
 
   margin: 0 auto;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 28px;
-  line-height: 1.5;
-
+  font-size: 20px;
+  line-height: 1.6;
   font-weight: 500;
 
   color: var(--text);
 }
 
-/* =========================================================
-   BOTTOM
-========================================================= */
+/* =====================================================
+   DARK MODE
+====================================================== */
 
-.testimonial-bottom {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  width: 100%;
-  max-width: 700px;
-
-  margin: 0 auto;
-
-  padding: 0 10px;
+body.dark .testimonial-card {
+  border-color: rgba(217, 161, 91, 0.35);
 }
 
-#testimonialCount {
-  font-size: 15px;
-
-  letter-spacing: 2px;
-
-  opacity: 0.7;
+body.dark .testimonial-card:hover {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* =========================================================
-   ARROWS
-========================================================= */
-
-.testimonial-arrows {
-  display: flex;
-  gap: 10px;
-}
-
-.testimonial-arrows button {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid var(--secondary);
-
-  background: transparent;
-  color: var(--text);
-
-  font-size: 18px;
-
-  cursor: pointer;
-
-  transition: 0.3s ease;
-}
-
-.testimonial-arrows button:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: var(--bg);
-}
-
-/* =========================================================
+/* =====================================================
    RTL
-========================================================= */
+====================================================== */
 
 body.rtl .client-testimonials {
   direction: rtl;
 }
 
-body.rtl .testimonial-bottom {
-  direction: ltr;
+body.rtl .testimonials-heading {
+  text-align: center;
 }
 
-/* =========================================================
-   MOBILE
-   360px — 599px
-========================================================= */
+body.rtl .testimonial-grid {
+  direction: rtl;
+}
+
+body.rtl .testimonial-card {
+  direction: rtl;
+  text-align: center;
+}
+
+/* =====================================================
+   1920px — LARGE DESKTOP + RTL
+====================================================== */
+
+@media (min-width: 1920px) {
+  .client-testimonials {
+    width: 100%;
+    padding: 140px 0;
+    overflow: hidden;
+  }
+
+  .testimonials-heading {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 70px;
+    text-align: center;
+  }
+
+  .testimonial-grid {
+    width: 88%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+
+    box-sizing: border-box;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    min-height: 480px;
+    padding: 50px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .testimonial-image {
+    width: 110px;
+    height: 110px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 30px;
+  }
+
+  .testimonial-card blockquote {
+    width: 100%;
+    max-width: 360px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  /* =================================================
+     RTL
+  ================================================== */
+
+  body.rtl .client-testimonials {
+    direction: rtl;
+  }
+
+  body.rtl .testimonials-heading {
+    direction: rtl;
+    text-align: center;
+  }
+
+  body.rtl .testimonial-grid {
+    direction: rtl;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body.rtl .testimonial-card {
+    direction: rtl;
+    text-align: center;
+    align-items: center;
+  }
+
+  body.rtl .testimonial-card blockquote {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =====================================================
+   NETBOOK / 769px - 1024px
+====================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .client-testimonials {
+    padding: 85px 5%;
+  }
+
+  .testimonial-grid {
+    gap: 18px;
+  }
+
+  .testimonial-card {
+    padding: 38px 22px;
+  }
+
+  .testimonial-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 25px;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 18px;
+  }
+}
+
+/* =====================================================
+   IPAD MINI / 600px - 768px
+====================================================== */
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .client-testimonials {
+    padding: 75px 30px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
+
+  .testimonial-card {
+    padding: 40px 25px;
+  }
+
+  .testimonial-grid .testimonial-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 19px;
+  }
+}
+
+/* =====================================================
+   SAMSUNG GALAXY S8+ / MOBILE
+====================================================== */
 
 @media (max-width: 599px) {
   .client-testimonials {
@@ -4838,164 +5126,38 @@ body.rtl .testimonial-bottom {
   }
 
   .testimonials-heading {
-    margin-bottom: 45px;
-  }
-
-  .testimonials-heading > span {
-    margin-bottom: 13px;
-    padding: 6px 15px;
-
-    font-size: 15px;
-    letter-spacing: 2px;
+    margin-bottom: 40px;
   }
 
   .testimonials-heading h2 {
     font-size: 40px;
-    line-height: 1.05;
   }
 
   .testimonials-heading p {
-    margin-top: 18px;
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 13px;
   }
 
-  .testimonial-slide {
-    min-height: 500px;
-    padding: 5px 5px 20px;
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 40px 22px;
   }
 
   .testimonial-image {
-    width: 165px;
-    height: 165px;
-
-    margin-bottom: 20px;
-    padding: 6px;
+    width: 90px;
+    height: 90px;
   }
 
-  .testimonial-slide h3 {
+  .testimonial-card h3 {
     font-size: 25px;
   }
 
-  .testimonial-role {
-    font-size: 9px;
-    letter-spacing: 1.2px;
-    margin-bottom: 14px;
-  }
-
-  .testimonial-stars {
-    font-size: 13px;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-  }
-
-  .testimonial-slide blockquote {
-    width: 100%;
-    max-width: 100%;
-
-    font-size: 22px;
-    line-height: 1.5;
-  }
-
-  .testimonial-bottom {
-    max-width: 100%;
-    padding: 0;
-    margin-top: 10px;
-  }
-
-  .testimonial-arrows {
-    gap: 7px;
-  }
-
-  .testimonial-arrows button {
-    width: 36px;
-    height: 36px;
-    font-size: 15px;
-  }
-}
-
-/* =========================================================
-   IPAD MINI
-   600px — 768px
-========================================================= */
-
-@media (min-width: 600px) and (max-width: 768px) {
-  .client-testimonials {
-    padding: 75px 30px;
-  }
-
-  .testimonials-heading {
-    margin-bottom: 55px;
-  }
-
-  .testimonials-heading h2 {
-    font-size: 50px;
-  }
-
-  .testimonials-heading p {
-    font-size: 15px;
-    line-height: 1.85;
-  }
-
-  .testimonial-slide {
-    min-height: 560px;
-    padding: 10px 30px 20px;
-  }
-
-  .testimonial-image {
-    width: 190px;
-    height: 190px;
-    margin-bottom: 23px;
-  }
-
-  .testimonial-slide h3 {
-    font-size: 28px;
-  }
-
-  .testimonial-slide blockquote {
-    max-width: 650px;
-    font-size: 20px;
+  .testimonial-card blockquote {
+    font-size: 18px;
     line-height: 1.55;
-  }
-}
-
-/* =========================================================
-   NETBOOK
-   769px — 1024px
-========================================================= */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .client-testimonials {
-    padding: 85px 5%;
-  }
-
-  .testimonials-heading {
-    margin-bottom: 60px;
-  }
-
-  .testimonials-heading h2 {
-    font-size: 54px;
-  }
-
-  .testimonial-slide {
-    min-height: 580px;
-    padding: 10px 40px 20px;
-  }
-
-  .testimonial-image {
-    width: 205px;
-    height: 205px;
-    margin-bottom: 25px;
-  }
-
-  .testimonial-slide h3 {
-    font-size: 29px;
-  }
-
-  .testimonial-slide blockquote {
-    max-width: 700px;
-    font-size: 27px;
-    line-height: 1.5;
   }
 }
 
@@ -5331,190 +5493,189 @@ body.rtl .craft-stat {
   }
 }
 
-/* =========================================================
+/* =====================================================
    CUSTOM ORDER CTA
-========================================================= */
+===================================================== */
 
 .custom-order-cta {
-  position: relative;
-
   width: 100%;
-  min-height: 520px;
+  padding: 110px 7%;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.custom-order-content {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  padding: 40px 20px;
-
-  background-image: url("images/cta\ p2.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  overflow: hidden;
-}
-
-/* =========================================================
-   DARK OVERLAY
-========================================================= */
-
-.custom-order-cta::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.45);
-}
-
-/* =========================================================
-   CENTER BOX
-========================================================= */
-
-.cta-box {
-  position: relative;
-  z-index: 2;
-
-  width: 90%;
-  max-width: 650px;
-
-  padding: 55px 50px;
-
   text-align: center;
-
-  background: rgba(255, 255, 255, 0.95);
+  box-sizing: border-box;
 }
 
-/* =========================================================
-   DESCRIPTION
-========================================================= */
+/* =====================================================
+   LABEL
+===================================================== */
 
-.cta-description {
-  max-width: 520px;
-
-  margin: 0 auto 30px;
-
-  color: var(--secondary);
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 20px;
-
-  line-height: 1.5;
-
-  font-weight: 500;
-}
-
-/* =========================================================
-   BUTTON
-========================================================= */
-
-.cta-button {
-  height: 40px;
-  min-width: 88px;
-  padding: 0 15px;
+.cta-label {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  border: 3px solid var(--primary);
-  border-radius: 8px;
+
+  margin-bottom: 18px;
+  padding: 7px 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.custom-order-content h2 {
+  width: 100%;
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 6vw, 64px);
+  line-height: 1.05;
+  font-weight: 600;
+
+  color: var(--text);
+}
+
+/* =====================================================
+   MAIN DESCRIPTION
+===================================================== */
+
+.cta-description {
+  width: 100%;
+  max-width: 650px;
+
+  margin: 22px auto 18px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.85;
+
+  color: var(--text);
+  opacity: 0.72;
+}
+
+/* =====================================================
+   SUPPORTING MATTER
+===================================================== */
+
+.cta-support {
+  width: 100%;
+  max-width: 620px;
+
+  margin: 0 auto 32px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+
+  color: var(--text);
+  opacity: 0.58;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.cta-button {
+  min-width: 175px;
+  height: 48px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
   background: var(--primary);
   color: var(--text);
-  font-size: 13px;
+
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  cursor: pointer;
+  letter-spacing: 1px;
+
+  text-decoration: none;
+
+  box-sizing: border-box;
+
   transition:
     background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .cta-button span {
   font-size: 18px;
-
-  transition: 0.3s ease;
+  line-height: 1;
 }
 
 .cta-button:hover {
   background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--bg);
+
+  transform: translateY(-2px);
 }
 
-.cta-button:hover span {
-  transform: translateX(5px);
-}
-/* =========================================================
-   CUSTOM ORDER CTA - H2 ONLY
-========================================================= */
+/* =====================================================
+   DARK MODE
+===================================================== */
 
-.cta-box h2 {
-  margin: 0;
-  padding: 0;
-
-  color: var(--primary);
-
-  font-size: 40px;
-  line-height: 1.2;
-  font-weight: 700;
-
-  text-align: center;
+body.dark .custom-order-cta {
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* =========================================================
-   NETBOOK
-========================================================= */
-
-@media (min-width: 1025px) and (max-width: 1366px) {
-  .cta-box h2 {
-    font-size: 15px;
-  }
-}
-
-/* =========================================================
-   iPad Mini
-========================================================= */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .cta-box h2 {
-    font-size: 15px;
-    line-height: 1.2;
-  }
-}
-
-/* =========================================================
-   Samsung Galaxy S8+
-========================================================= */
-
-@media (min-width: 361px) and (max-width: 767px) {
-  .cta-box h2 {
-    font-size: 15px;
-    line-height: 1.25;
-  }
-}
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 360px) {
-  .cta-box h2 {
-    font-size: 27px;
-    line-height: 1.25;
-  }
-}
-/* =========================================================
+/* =====================================================
    RTL
-========================================================= */
+===================================================== */
 
 body.rtl .custom-order-cta {
   direction: rtl;
-
-  background-position: center center;
 }
 
-body.rtl .cta-box {
+body.rtl .custom-order-content {
+  direction: rtl;
+  text-align: center;
+}
+
+body.rtl .cta-description,
+body.rtl .cta-support {
   text-align: center;
 }
 
@@ -5522,125 +5683,223 @@ body.rtl .cta-button {
   direction: rtl;
 }
 
-/* =========================================================
-   MOBILE
-   360px — 599px
-========================================================= */
+/* =====================================================
+   1600px+
+===================================================== */
 
-@media (max-width: 599px) {
+@media (min-width: 1600px) {
   .custom-order-cta {
-    min-height: 400px;
-
-    padding: 40px 18px;
+    padding: 125px 6%;
   }
 
-  .cta-box {
-    width: 100%;
+  .custom-order-content {
+    max-width: 900px;
+  }
 
-    max-width: 100%;
+  .cta-label {
+    margin-bottom: 22px;
+    padding: 8px 20px;
 
-    padding: 35px 20px;
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .custom-order-content h2 {
+    font-size: 68px;
   }
 
   .cta-description {
-    font-size: 22px;
-
-    line-height: 1.5;
-
-    margin-bottom: 25px;
-  }
-
-  .cta-button {
-    padding: 13px 20px;
-
-    font-size: 9px;
-
-    letter-spacing: 1px;
-  }
-
-  .cta-button span {
-    font-size: 16px;
-  }
-}
-
-/* =========================================================
-   IPAD MINI
-   600px — 768px
-========================================================= */
-
-@media (min-width: 600px) and (max-width: 768px) {
-  .custom-order-cta {
-    min-height: 450px;
-
-    padding: 50px 30px;
-  }
-
-  .cta-box {
-    width: 90%;
-
-    max-width: 600px;
-
-    padding: 45px 35px;
-  }
-
-  .cta-description {
-    font-size: 25px;
-
-    line-height: 1.5;
-
-    margin-bottom: 28px;
-  }
-
-  .cta-button {
-    padding: 14px 24px;
+    max-width: 700px;
+    margin-top: 25px;
+    margin-bottom: 20px;
 
     font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .cta-support {
+    max-width: 680px;
+    margin-bottom: 36px;
+
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .cta-button {
+    min-width: 185px;
+    height: 50px;
   }
 }
 
-/* =========================================================
-   NETBOOK
-   769px — 1024px
-========================================================= */
+/* =====================================================
+   1920px — LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1920px) {
+  .custom-order-cta {
+    padding: 135px 0;
+  }
+
+  .custom-order-content {
+    width: 90%;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .custom-order-content h2 {
+    font-size: 72px;
+  }
+
+  .cta-description {
+    max-width: 720px;
+    font-size: 15px;
+  }
+
+  .cta-support {
+    max-width: 680px;
+    font-size: 14px;
+  }
+}
+
+/* =====================================================
+   NETBOOK / 769px - 1024px
+===================================================== */
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .custom-order-cta {
-    min-height: 480px;
-
-    padding: 60px 5%;
+    padding: 85px 5%;
   }
 
-  .cta-box {
-    width: 90%;
+  .custom-order-content {
+    max-width: 750px;
+  }
 
-    max-width: 620px;
-
-    padding: 50px 40px;
+  .custom-order-content h2 {
+    font-size: 54px;
   }
 
   .cta-description {
-    font-size: 27px;
+    max-width: 620px;
+    font-size: 13px;
+  }
 
-    line-height: 1.5;
+  .cta-support {
+    max-width: 580px;
+    font-size: 12px;
+  }
+}
 
-    margin-bottom: 30px;
+/* =====================================================
+   IPAD MINI / 600px - 768px
+===================================================== */
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .custom-order-cta {
+    padding: 75px 30px;
+  }
+
+  .custom-order-content {
+    max-width: 680px;
+  }
+
+  .custom-order-content h2 {
+    font-size: 50px;
+  }
+
+  .cta-description {
+    max-width: 600px;
+    font-size: 13px;
+  }
+
+  .cta-support {
+    max-width: 560px;
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   SAMSUNG GALAXY S8+ / MOBILE
+===================================================== */
+
+@media (max-width: 599px) {
+  .custom-order-cta {
+    padding: 65px 18px;
+  }
+
+  .custom-order-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta-label {
+    margin-bottom: 15px;
+    padding: 6px 15px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .custom-order-content h2 {
+    font-size: 42px;
+    line-height: 1.08;
+  }
+
+  .cta-description {
+    max-width: 450px;
+
+    margin: 18px auto 16px;
+
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .cta-support {
+    max-width: 450px;
+
+    margin: 0 auto 27px;
+
+    font-size: 12px;
+    line-height: 1.7;
   }
 
   .cta-button {
-    padding: 15px 26px;
+    min-width: 165px;
+    height: 46px;
 
-    font-size: 10px;
+    padding: 0 18px;
+
+    font-size: 11px;
+  }
+
+  .cta-button span {
+    font-size: 17px;
   }
 }
-/* ==================================================
 
-   RTL - ONLY HAMBURGER REVERSE
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
-================================================== */
+@media (max-width: 360px) {
+  .custom-order-cta {
+    padding: 55px 15px;
+  }
 
-@media (max-width: 768px) {
-  body.rtl .menu-toggle {
-    order: -1;
+  .custom-order-content h2 {
+    font-size: 38px;
+  }
+
+  .cta-description {
+    font-size: 12px;
+  }
+
+  .cta-support {
+    font-size: 11px;
+  }
+
+  .cta-button {
+    min-width: 155px;
   }
 }
 /* ==================================================
@@ -5669,8 +5928,8 @@ body.rtl .cta-button {
     1fr
     1fr
     1.2fr;
-  column-gap: 70px;
 
+  column-gap: 70px;
   row-gap: 0;
 
   align-items: start;
@@ -5682,18 +5941,16 @@ body.rtl .cta-button {
 
 .site-footer {
   width: 100%;
-
   background: var(--bg);
-
   color: var(--text);
 
-  margin-top: 80px;
+  /* FOOTER TOP */
+  margin-top: 0;
 
   border-top: 1px solid rgba(128, 128, 128, 0.18);
 
   overflow: hidden;
 }
-
 /* ==================================================
    BRAND
 ================================================== */

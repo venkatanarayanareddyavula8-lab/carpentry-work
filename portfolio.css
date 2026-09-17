@@ -341,7 +341,7 @@ body.rtl .logo-name {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border: 3px solid var(--primary);
+  border: 1px solid var(--primary);
   border-radius: 13px;
   background: var(--bg);
   color: var(--text);
@@ -369,7 +369,7 @@ body.rtl .logo-name {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--primary);
+  border: 1px solid var(--primary);
   border-radius: 13px;
   background: var(--bg);
   color: var(--text);
@@ -1105,7 +1105,7 @@ body.rtl .logo-name {
 
   overflow: hidden;
 
-  background-image: url("images/background p1.avif");
+  background-image: url("images/proto.jpg");
 
   background-size: cover;
 
@@ -1121,32 +1121,25 @@ body.rtl .logo-name {
 
 .portfolio-hero-overlay {
   position: absolute;
-
   inset: 0;
 
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.85),
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.78)
-  );
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.78);
 
   z-index: 1;
+
+  pointer-events: none;
 }
 
 /* ==================================================
-   DARK MODE OVERLAY
+   DARK MODE
 ================================================== */
 
 body.dark .portfolio-hero-overlay {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.9)
-  );
+  background: rgba(0, 0, 0, 0.84);
 }
-
 /* ==================================================
    CONTENT
 ================================================== */
@@ -1585,63 +1578,6 @@ body.dark .portfolio-hero-overlay {
 }
 
 /* ==================================================
-   CATEGORY FILTERS
-================================================== */
-
-.collection-filters {
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  gap: 12px;
-  margin-bottom: 50px;
-
-  box-sizing: border-box;
-}
-
-.filter-btn {
-  min-width: 135px;
-  height: 45px;
-
-  padding: 0 22px;
-
-  border: 1px solid var(--secondary);
-  border-radius: 30px;
-
-  background: transparent;
-  color: var(--text);
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-
-  box-sizing: border-box;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: #ffffff;
-}
-
-.filter-btn:hover {
-  transform: translateY(-2px);
-}
-
-/* ==================================================
    FURNITURE GRID
 ================================================== */
 
@@ -1805,28 +1741,6 @@ body.dark .filter-btn {
     max-width: 650px;
   }
 
-  .collection-filters {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    box-sizing: border-box;
-  }
-
-  .furniture-grid {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-
-    box-sizing: border-box;
-  }
-
   .furniture-card {
     width: 100%;
     max-width: 100%;
@@ -1897,27 +1811,6 @@ body.dark .filter-btn {
     width: 100%;
     max-width: 600px;
     font-size: 15px;
-  }
-
-  .collection-filters {
-    width: 100%;
-    max-width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    gap: 10px;
-    margin-bottom: 35px;
-
-    box-sizing: border-box;
-  }
-
-  .filter-btn {
-    min-width: 115px;
-    height: 42px;
-    padding: 0 18px;
-    font-size: 11px;
   }
 
   .furniture-grid {
@@ -2028,27 +1921,6 @@ body.dark .filter-btn {
     line-height: 1.65;
     overflow-wrap: break-word;
     word-wrap: break-word;
-  }
-
-  .collection-filters {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 35px;
-    box-sizing: border-box;
-  }
-
-  .filter-btn {
-    min-width: 100px;
-    max-width: 100%;
-    height: 39px;
-    padding: 0 13px;
-    font-size: 9px;
-    box-sizing: border-box;
   }
 
   /* ONE COLUMN ONLY */
@@ -2403,74 +2275,6 @@ body.dark .filter-btn {
 }
 
 /* ==================================================
-   CATEGORY FILTERS
-================================================== */
-
-.living-room-filters {
-  width: 100%;
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 12px;
-
-  margin-bottom: 50px;
-
-  box-sizing: border-box;
-}
-
-.living-room-filter {
-  min-width: 135px;
-
-  height: 45px;
-
-  padding: 0 22px;
-
-  border: 1px solid var(--secondary);
-
-  border-radius: 30px;
-
-  background: transparent;
-
-  color: var(--text);
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 12px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.5px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-
-  box-sizing: border-box;
-}
-
-.living-room-filter:hover,
-.living-room-filter.active {
-  background: var(--primary);
-
-  border-color: var(--primary);
-
-  color: var(--bg);
-}
-
-.living-room-filter:hover {
-  transform: translateY(-2px);
-}
-
-/* ==================================================
    FURNITURE GRID
 ================================================== */
 
@@ -2630,10 +2434,6 @@ body.dark .filter-btn {
     max-width: 720px;
 
     font-size: 15px;
-  }
-
-  .living-room-filters {
-    margin-bottom: 55px;
   }
 
   .living-room-grid {
@@ -2809,22 +2609,6 @@ body.dark .filter-btn {
     line-height: 1.7;
   }
 
-  .living-room-filters {
-    gap: 8px;
-
-    margin-bottom: 35px;
-  }
-
-  .living-room-filter {
-    min-width: 0;
-
-    height: 42px;
-
-    padding: 0 16px;
-
-    font-size: 10px;
-  }
-
   .living-room-grid {
     grid-template-columns: 1fr;
 
@@ -2862,22 +2646,6 @@ body.dark .filter-btn {
 
   .living-room-header p {
     font-size: 12px;
-  }
-
-  .living-room-filters {
-    gap: 7px;
-
-    margin-bottom: 30px;
-  }
-
-  .living-room-filter {
-    min-width: 0;
-
-    height: 40px;
-
-    padding: 0 13px;
-
-    font-size: 9px;
   }
 
   .living-room-grid {
@@ -3289,29 +3057,29 @@ body.dark .living-room-filter {
   }
 }
 /* ==================================================
-   BEFORE & AFTER
+   BEFORE & AFTER SECTION
 ================================================== */
 
 .before-after-section {
   width: 100%;
-  padding: 110px 6%;
-
+  padding: 120px 6%;
   background: var(--bg);
   color: var(--text);
-
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* ==================================================
-   HEADER
+   SECTION HEADER
 ================================================== */
 
 .before-after-header {
+  width: 100%;
   max-width: 850px;
-
-  margin: 0 auto 75px;
+  margin: 0 auto 70px;
 
   text-align: center;
+  box-sizing: border-box;
 }
 
 .before-after-label {
@@ -3326,38 +3094,53 @@ body.dark .living-room-filter {
   color: var(--primary);
 
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-
-  letter-spacing: 2px;
-
-  box-sizing: border-box;
+  letter-spacing: 2.5px;
 }
 
 .before-after-header h2 {
-  margin: 0 0 22px;
+  margin: 0;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(45px, 6vw, 60px);
-  font-weight: 500;
+  font-size: clamp(42px, 5vw, 62px);
+  font-weight: 600;
+  line-height: 1;
 
-  line-height: 1.05;
+  color: var(--text);
 }
 
 .before-after-header h2 em {
   color: var(--primary);
-  font-style: italic;
+  font-style: normal;
 }
 
 .before-after-header p {
-  max-width: 680px;
-
-  margin: 0 auto;
+  max-width: 620px;
+  margin: 20px auto 0;
 
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-
   line-height: 1.8;
+
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* ==================================================
+   THREE PROJECTS — ONE ROW
+================================================== */
+
+.before-after-projects {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+
+  box-sizing: border-box;
 }
 
 /* ==================================================
@@ -3366,46 +3149,36 @@ body.dark .living-room-filter {
 
 .before-after-project {
   width: 100%;
-  max-width: 1450px;
+  min-width: 0;
 
-  margin: 0 auto 90px;
-}
-
-.before-after-project:last-child {
-  margin-bottom: 0;
+  box-sizing: border-box;
 }
 
 /* ==================================================
-   SLIDER
+   BEFORE / AFTER IMAGE AREA
 ================================================== */
 
 .before-after-slider {
   position: relative;
 
   width: 100%;
-  height: 620px;
+  height: 420px;
 
   overflow: hidden;
 
-  user-select: none;
-  touch-action: none;
+  background: #111;
 
   box-sizing: border-box;
 }
 
-/* ==================================================
-   AFTER IMAGE
-================================================== */
+/* AFTER IMAGE */
 
 .before-after-after {
   position: absolute;
-
   inset: 0;
 
   width: 100%;
   height: 100%;
-
-  overflow: hidden;
 }
 
 .before-after-after img {
@@ -3417,15 +3190,11 @@ body.dark .living-room-filter {
   object-fit: cover;
 }
 
-/* ==================================================
-   BEFORE IMAGE
-================================================== */
+/* BEFORE IMAGE */
 
 .before-after-before {
   position: absolute;
-
-  top: 0;
-  left: 0;
+  inset: 0;
 
   width: 50%;
   height: 100%;
@@ -3436,19 +3205,20 @@ body.dark .living-room-filter {
 }
 
 .before-after-before img {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
   width: 100%;
   height: 100%;
-
-  max-width: none;
 
   display: block;
 
   object-fit: cover;
+
+  /*
+    Important:
+    Keep the complete image width aligned
+    with the AFTER image.
+  */
+  max-width: none;
+  width: calc(100% + 0px);
 }
 
 /* ==================================================
@@ -3458,40 +3228,34 @@ body.dark .living-room-filter {
 .before-after-label-tag {
   position: absolute;
 
-  top: 22px;
+  top: 18px;
 
   z-index: 5;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 6px 12px;
 
-  min-height: 34px;
+  background: rgba(0, 0, 0, 0.65);
 
-  padding: 0 15px;
-
-  background: var(--bg);
-  color: var(--text);
+  color: #ffffff;
 
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
   font-weight: 600;
-
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 
   box-sizing: border-box;
 }
 
 .before-label {
-  left: 22px;
+  left: 18px;
 }
 
 .after-label {
-  right: 22px;
+  right: 18px;
 }
 
 /* ==================================================
-   DIVIDER
+   CENTER DIVIDER
 ================================================== */
 
 .before-after-divider {
@@ -3499,12 +3263,11 @@ body.dark .living-room-filter {
 
   top: 0;
   bottom: 0;
-
   left: 50%;
 
   width: 2px;
 
-  background: var(--primary);
+  background: #ffffff;
 
   z-index: 6;
 
@@ -3523,37 +3286,36 @@ body.dark .living-room-filter {
   top: 50%;
   left: 50%;
 
-  width: 58px;
-  height: 58px;
-
-  border: 2px solid var(--primary);
-  border-radius: 50%;
-
-  background: var(--primary);
+  width: 44px;
+  height: 44px;
 
   transform: translate(-50%, -50%);
 
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
 
-  gap: 3px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1;
 
   box-sizing: border-box;
 }
 
 .before-after-handle span {
-  color: var(--bg);
-
-  font-family: Arial, sans-serif;
-  font-size: 25px;
-  font-weight: 400;
-
-  line-height: 1;
+  display: block;
 }
 
 /* ==================================================
-   RANGE
+   RANGE SLIDER
 ================================================== */
 
 .before-after-range {
@@ -3568,118 +3330,141 @@ body.dark .living-room-filter {
 
   opacity: 0;
 
-  z-index: 10;
-
   cursor: ew-resize;
 
+  z-index: 10;
+
   appearance: none;
-  -webkit-appearance: none;
 }
 
 /* ==================================================
-   PROJECT INFO
+   PROJECT INFORMATION
 ================================================== */
 
 .before-after-info {
-  max-width: 800px;
+  width: 100%;
 
-  margin: 30px auto 0;
+  padding: 28px 5px 0;
 
   text-align: center;
+
+  box-sizing: border-box;
 }
 
 .before-after-number {
   display: block;
 
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+
+  color: var(--primary);
 
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: 600;
-
-  letter-spacing: 3px;
-
-  color: var(--primary);
+  letter-spacing: 2px;
 }
 
 .before-after-info h3 {
   margin: 0 0 12px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 40px;
-  font-weight: 500;
+  color: var(--text);
 
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  font-weight: 600;
   line-height: 1.1;
 }
 
 .before-after-info p {
-  max-width: 650px;
-
+  max-width: 380px;
   margin: 0 auto;
 
-  font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  color: var(--text);
 
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
   line-height: 1.8;
+
+  opacity: 0.7;
 }
 
 /* ==================================================
-   1600px+
+   RTL
+================================================== */
+
+body.rtl .before-after-section {
+  direction: rtl;
+}
+
+body.rtl .before-after-header {
+  direction: rtl;
+  text-align: center;
+}
+
+body.rtl .before-after-projects {
+  direction: rtl;
+}
+
+body.rtl .before-after-project {
+  direction: rtl;
+}
+
+body.rtl .before-after-info {
+  text-align: center;
+}
+
+/* ==================================================
+   DARK MODE
+================================================== */
+
+body.dark .before-after-section {
+  background: var(--bg);
+}
+
+body.dark .before-after-label-tag {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* ==================================================
+   1920px LARGE DESKTOP
 ================================================== */
 
 @media (min-width: 1600px) {
   .before-after-section {
-    padding: 125px 6%;
-  }
-
-  .before-after-header h2 {
-    font-size: 70px;
-  }
-
-  .before-after-project {
-    max-width: 1550px;
-
-    margin-bottom: 110px;
-  }
-
-  .before-after-slider {
-    height: 650px;
-  }
-
-  .before-after-info h3 {
-    font-size: 44px;
-  }
-}
-
-/* ==================================================
-   1920px+
-================================================== */
-
-@media (min-width: 1920px) {
-  .before-after-section {
-    padding: 140px 6%;
+    padding: 140px 5%;
   }
 
   .before-after-header {
-    margin-bottom: 90px;
+    max-width: 950px;
+    margin-bottom: 85px;
   }
 
-  .before-after-header h2 {
-    font-size: 76px;
-  }
-
-  .before-after-project {
-    max-width: 1600px;
+  .before-after-projects {
+    width: 90%;
+    max-width: 1500px;
+    gap: 35px;
   }
 
   .before-after-slider {
-    height: 680px;
+    height: 470px;
+  }
+
+  .before-after-info {
+    padding-top: 32px;
+  }
+
+  .before-after-info h3 {
+    font-size: 32px;
+  }
+
+  .before-after-info p {
+    font-size: 13px;
+    max-width: 420px;
   }
 }
 
 /* ==================================================
-   NETBOOK
-   769px - 1024px
+   NETBOOK / 769px — 1024px
 ================================================== */
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -3688,100 +3473,76 @@ body.dark .living-room-filter {
   }
 
   .before-after-header {
-    margin-bottom: 60px;
-  }
-
-  .before-after-header h2 {
-    font-size: 54px;
-  }
-
-  .before-after-slider {
-    height: 480px;
-  }
-
-  .before-after-info h3 {
-    font-size: 34px;
-  }
-
-  .before-after-info p {
-    font-size: 12px;
-  }
-}
-
-/* ==================================================
-   IPAD MINI
-   601px - 768px
-================================================== */
-
-@media (min-width: 601px) and (max-width: 768px) {
-  .before-after-section {
-    padding: 80px 5%;
-  }
-
-  .before-after-header {
     margin-bottom: 55px;
   }
 
-  .before-after-header h2 {
-    font-size: 50px;
-  }
-
-  .before-after-header p {
-    font-size: 15px;
-  }
-
-  .before-after-project {
-    margin-bottom: 65px;
+  .before-after-projects {
+    gap: 18px;
   }
 
   .before-after-slider {
-    height: 400px;
+    height: 300px;
   }
 
   .before-after-label-tag {
-    top: 15px;
-
-    min-height: 30px;
-
-    padding: 0 12px;
-
-    font-size: 15px;
-  }
-
-  .before-label {
-    left: 15px;
-  }
-
-  .after-label {
-    right: 15px;
+    padding: 5px 9px;
+    font-size: 8px;
   }
 
   .before-after-handle {
-    width: 52px;
-    height: 52px;
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
   }
 
   .before-after-info {
-    margin-top: 25px;
+    padding-top: 22px;
   }
 
   .before-after-info h3 {
-    font-size: 32px;
+    font-size: 25px;
   }
 
   .before-after-info p {
-    font-size: 15px;
+    font-size: 11px;
   }
 }
 
 /* ==================================================
-   SAMSUNG GALAXY S8+
-   361px - 600px
+   IPAD MINI — 600px — 768px
 ================================================== */
 
-@media (min-width: 361px) and (max-width: 600px) {
+@media (min-width: 600px) and (max-width: 768px) {
   .before-after-section {
-    padding: 70px 5%;
+    padding: 80px 30px;
+  }
+
+  .before-after-header {
+    margin-bottom: 50px;
+  }
+
+  .before-after-projects {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    gap: 55px;
+  }
+
+  .before-after-slider {
+    height: 390px;
+  }
+
+  .before-after-info h3 {
+    font-size: 28px;
+  }
+}
+
+/* ==================================================
+   SAMSUNG GALAXY S8+ / MOBILE
+================================================== */
+
+@media (min-width: 361px) and (max-width: 599px) {
+  .before-after-section {
+    padding: 70px 20px;
   }
 
   .before-after-header {
@@ -3789,33 +3550,69 @@ body.dark .living-room-filter {
   }
 
   .before-after-header h2 {
-    font-size: 44px;
-    line-height: 1.05;
+    font-size: 43px;
   }
 
   .before-after-header p {
     font-size: 12px;
-    line-height: 1.7;
   }
 
-  .before-after-project {
-    margin-bottom: 55px;
+  .before-after-projects {
+    grid-template-columns: 1fr;
+    gap: 45px;
   }
 
   .before-after-slider {
     height: 320px;
   }
 
+  .before-after-info {
+    padding-top: 22px;
+  }
+
+  .before-after-info h3 {
+    font-size: 27px;
+  }
+
+  .before-after-info p {
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   360px AND BELOW
+================================================== */
+
+@media (max-width: 360px) {
+  .before-after-section {
+    padding: 60px 16px;
+  }
+
+  .before-after-header {
+    margin-bottom: 40px;
+  }
+
+  .before-after-header h2 {
+    font-size: 39px;
+  }
+
+  .before-after-header p {
+    font-size: 11px;
+  }
+
+  .before-after-projects {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .before-after-slider {
+    height: 290px;
+  }
+
   .before-after-label-tag {
     top: 12px;
-
-    min-height: 28px;
-
-    padding: 0 10px;
-
-    font-size: 7px;
-
-    letter-spacing: 1.5px;
+    padding: 5px 8px;
+    font-size: 8px;
   }
 
   .before-label {
@@ -3827,113 +3624,41 @@ body.dark .living-room-filter {
   }
 
   .before-after-handle {
-    width: 48px;
-    height: 48px;
-  }
-
-  .before-after-handle span {
-    font-size: 21px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
   }
 
   .before-after-info {
-    margin-top: 22px;
+    padding-top: 20px;
   }
 
   .before-after-info h3 {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .before-after-info p {
-    font-size: 11px;
+    font-size: 10px;
     line-height: 1.7;
   }
 }
-
-/* ==================================================
-   360px AND BELOW
-================================================== */
-
-@media (max-width: 360px) {
-  .before-after-section {
-    padding: 60px 5%;
-  }
-
-  .before-after-header {
-    margin-bottom: 40px;
-  }
-
-  .before-after-header h2 {
-    font-size: 38px;
-  }
-
-  .before-after-header p {
-    font-size: 11px;
-  }
-
-  .before-after-project {
-    margin-bottom: 45px;
-  }
-
-  .before-after-slider {
-    height: 290px;
-  }
-
-  .before-after-label-tag {
-    top: 10px;
-
-    min-height: 26px;
-
-    padding: 0 9px;
-
-    font-size: 7px;
-  }
-
-  .before-label {
-    left: 10px;
-  }
-
-  .after-label {
-    right: 10px;
-  }
-
-  .before-after-handle {
-    width: 44px;
-    height: 44px;
-  }
-
-  .before-after-handle span {
-    font-size: 19px;
-  }
-
-  .before-after-info h3 {
-    font-size: 28px;
-  }
-
-  .before-after-info p {
-    font-size: 11px;
-  }
-}
-
-/* ==================================================
-   FURNITURE UNITS
-================================================== */
+/* =========================================================
+   FURNITURE UNITS SECTION
+========================================================= */
 
 .furniture-units-section {
   width: 100%;
-  padding: 100px 5%;
+  padding: 100px 0;
   background: var(--bg);
-  color: var(--text);
-  box-sizing: border-box;
 }
 
-/* ==================================================
-   HEADER
-================================================== */
+/* =========================================================
+   SECTION HEADER
+========================================================= */
 
 .furniture-units-header {
-  width: 100%;
-  max-width: 850px;
-  margin: 0 auto 80px;
+  width: min(900px, calc(100% - 60px));
+  margin: 0 auto 55px;
   text-align: center;
 }
 
@@ -3960,103 +3685,79 @@ body.dark .living-room-filter {
 .furniture-units-header h2 {
   margin: 0;
 
-  font-family: "Cormorant Garamond", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(45px, 6vw, 60px);
+  line-height: 1.1;
   font-weight: 500;
-  line-height: 1.05;
+
+  color: var(--text);
 }
 
 .furniture-units-header h2 em {
+  display: block;
+
   font-style: italic;
-  color: var(--primary);
+  font-weight: 400;
+
+  color: var(--secondary);
 }
 
 .furniture-units-header p {
   max-width: 650px;
   margin: 22px auto 0;
 
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
 
   color: var(--text);
 }
 
-/* ==================================================
-   UNITS WRAPPER
-================================================== */
+/* =========================================================
+   CARDS WRAPPER
+========================================================= */
 
 .furniture-units-wrapper {
-  width: 100%;
-  max-width: 1500px;
+  width: min(1400px, calc(100% - 60px));
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-/* ==================================================
-   CONNECTING LINE
-================================================== */
-
-.furniture-units-wrapper::before {
-  content: "";
-
-  position: absolute;
-
-  top: 150px;
-
-  left: 12.5%;
-  right: 12.5%;
-
-  height: 1px;
-
-  background: var(--secondary);
-
-  opacity: 0.45;
-
-  z-index: 0;
-}
-
-/* ==================================================
-   UNIT
-================================================== */
+/* =========================================================
+   FURNITURE CARD
+========================================================= */
 
 .furniture-unit {
-  position: relative;
-  z-index: 1;
+  background: var(--bg);
 
-  min-width: 0;
-
-  padding: 0 25px;
-
-  text-align: center;
-
-  box-sizing: border-box;
-}
-
-/* ==================================================
-   ROUND IMAGE
-================================================== */
-
-.unit-image {
-  width: 220px;
-  height: 220px;
-
-  margin: 0 auto 28px;
-
-  border-radius: 50%;
+  border: 1px solid #e8e1d8;
 
   overflow: hidden;
 
-  background: var(--bg);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
 
-  border: 8px solid var(--bg);
+.furniture-unit:hover {
+  transform: translateY(-8px);
 
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.unit-image {
+  width: 100%;
+  height: 430px;
+
+  overflow: hidden;
+
+  background: #f3eee8;
 }
 
 .unit-image img {
@@ -4067,380 +3768,150 @@ body.dark .living-room-filter {
 
   object-fit: cover;
 
-  border-radius: 50%;
-
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
 .furniture-unit:hover .unit-image img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
-/* ==================================================
-   UNIT NUMBER
-================================================== */
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.unit-content {
+  padding: 28px 28px 32px;
+}
 
 .unit-number {
   display: block;
 
   margin-bottom: 10px;
 
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
 
-  letter-spacing: 2px;
-
-  color: var(--primary);
+  color: var(--secondary);
 }
-
-/* ==================================================
-   TITLE
-================================================== */
 
 .furniture-unit h3 {
-  margin: 0 auto 12px;
+  margin: 0 0 10px;
 
-  max-width: 230px;
+  font-family: Georgia, "Times New Roman", serif;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
 
-  line-height: 1.15;
+  color: var(--text);
 }
 
-/* ==================================================
-   SIZE
-================================================== */
-
 .unit-size {
-  display: inline-block;
+  display: block;
 
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-
   letter-spacing: 1px;
 
   color: var(--secondary);
 }
 
-/* ==================================================
-   DESCRIPTION
-================================================== */
-
 .furniture-unit p {
-  max-width: 240px;
+  margin: 0;
 
-  margin: 0 auto;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.75;
 
   color: var(--text);
 }
 
-/* ==================================================
-   1920px+
-================================================== */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media (min-width: 1600px) {
+@media (max-width: 1000px) {
   .furniture-units-section {
-    padding: 120px 5%;
+    padding: 80px 0;
   }
 
   .furniture-units-wrapper {
-    max-width: 1550px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .unit-image {
-    width: 240px;
-    height: 240px;
-  }
-
-  .furniture-units-wrapper::before {
-    top: 160px;
-  }
-
-  .furniture-unit h3 {
-    font-size: 28px;
-  }
-
-  .furniture-unit p {
-    max-width: 260px;
-    font-size: 13px;
+    height: 380px;
   }
 }
 
-/* ==================================================
-   NETBOOK / SMALL DESKTOP
-   769px - 1024px
-================================================== */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 650px) {
   .furniture-units-section {
-    padding: 80px 4%;
+    padding: 65px 0;
   }
 
   .furniture-units-header {
-    margin-bottom: 60px;
-  }
-
-  .furniture-units-header h2 {
-    font-size: 44px;
-  }
-
-  .furniture-units-wrapper {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .furniture-unit {
-    padding: 0 10px;
-  }
-
-  .unit-image {
-    width: 155px;
-    height: 155px;
-
-    border-width: 6px;
-
-    margin-bottom: 22px;
-  }
-
-  .furniture-units-wrapper::before {
-    top: 112px;
-
-    left: 12.5%;
-    right: 12.5%;
-  }
-
-  .furniture-unit h3 {
-    font-size: 21px;
-  }
-
-  .unit-size {
-    font-size: 10px;
-  }
-
-  .furniture-unit p {
-    font-size: 11px;
-    line-height: 1.65;
-  }
-}
-
-/* ==================================================
-   IPAD MINI
-   601px - 768px
-================================================== */
-
-@media (min-width: 601px) and (max-width: 768px) {
-  .furniture-units-section {
-    padding: 75px 5%;
-  }
-
-  .furniture-units-header {
-    margin-bottom: 55px;
-  }
-
-  .furniture-units-header h2 {
-    font-size: 42px;
-  }
-
-  .furniture-units-wrapper {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 65px;
-  }
-
-  .furniture-unit {
-    padding: 0 15px;
-  }
-
-  .unit-image {
-    width: 190px;
-    height: 190px;
-  }
-
-  /*
-     Two rows means each row gets
-     its own connecting line.
-  */
-
-  .furniture-units-wrapper::before {
-    display: none;
-  }
-
-  .furniture-unit:nth-child(1)::after,
-  .furniture-unit:nth-child(2)::after {
-    content: "";
-
-    position: absolute;
-
-    top: 95px;
-
-    width: 50%;
-
-    height: 1px;
-
-    background: var(--secondary);
-
-    opacity: 0.45;
-
-    z-index: -1;
-  }
-
-  .furniture-unit:nth-child(1)::after {
-    left: 75%;
-  }
-
-  .furniture-unit:nth-child(2)::after {
-    display: none;
-  }
-
-  .furniture-unit h3 {
-    font-size: 24px;
-  }
-}
-
-/* ==================================================
-   LARGE MOBILE
-   481px - 600px
-================================================== */
-
-@media (min-width: 481px) and (max-width: 600px) {
-  .furniture-units-section {
-    padding: 65px 6%;
-  }
-
-  .furniture-units-header {
-    margin-bottom: 50px;
+    width: calc(100% - 30px);
+    margin-bottom: 40px;
   }
 
   .furniture-units-header h2 {
     font-size: 38px;
   }
 
-  .furniture-units-wrapper {
-    grid-template-columns: 1fr;
-    gap: 65px;
-  }
-
-  .furniture-units-wrapper::before {
-    display: none;
-  }
-
-  .furniture-unit {
-    padding: 0;
-  }
-
-  .unit-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  .furniture-unit h3 {
-    font-size: 25px;
-  }
-
-  .furniture-unit p {
-    max-width: 300px;
-  }
-}
-
-/* ==================================================
-   SMALL MOBILE
-   360px - 480px
-================================================== */
-
-@media (min-width: 360px) and (max-width: 480px) {
-  .furniture-units-section {
-    padding: 60px 5%;
-  }
-
-  .furniture-units-header {
-    margin-bottom: 45px;
-  }
-
-  .furniture-units-header h2 {
-    font-size: 34px;
-  }
-
   .furniture-units-header p {
-    font-size: 12px;
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .furniture-units-wrapper {
+    width: calc(100% - 30px);
+
     grid-template-columns: 1fr;
-    gap: 55px;
-  }
 
-  .furniture-units-wrapper::before {
-    display: none;
-  }
-
-  .furniture-unit {
-    padding: 0;
+    gap: 30px;
   }
 
   .unit-image {
-    width: 175px;
-    height: 175px;
+    height: 360px;
+  }
 
-    border-width: 6px;
+  .unit-content {
+    padding: 24px;
   }
 
   .furniture-unit h3 {
-    font-size: 23px;
-  }
-
-  .unit-size {
-    font-size: 9px;
-  }
-
-  .furniture-unit p {
-    max-width: 290px;
-    font-size: 11px;
+    font-size: 26px;
   }
 }
 
-/* ==================================================
-   360px AND BELOW
-================================================== */
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-@media (max-width: 359px) {
-  .furniture-units-section {
-    padding: 55px 18px;
-  }
-
+@media (max-width: 380px) {
   .furniture-units-header h2 {
-    font-size: 31px;
-  }
-
-  .furniture-units-wrapper {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .furniture-units-wrapper::before {
-    display: none;
+    font-size: 32px;
   }
 
   .unit-image {
-    width: 160px;
-    height: 160px;
+    height: 320px;
+  }
 
-    border-width: 5px;
+  .unit-content {
+    padding: 20px;
   }
 
   .furniture-unit h3 {
-    font-size: 21px;
+    font-size: 24px;
   }
 }
-
 /* ==================================================
    CLIENT PROJECT STORIES
 ================================================== */
@@ -4891,450 +4362,268 @@ body.dark .living-room-filter {
     font-size: 10px;
   }
 }
-/* ==================================================
+/* =========================================================
    PORTFOLIO CTA
-================================================== */
+========================================================= */
 
 .portfolio-cta-section {
   width: 100%;
-  min-height: 620px;
+  padding: 100px 30px;
 
-  position: relative;
+  background: var(--bg);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+}
+/* =========================================================
+   PORTFOLIO CTA
+========================================================= */
 
-  padding: 80px 5%;
-
+.portfolio-cta-section {
+  width: 100%;
+  padding: 100px 30px;
+  background: var(--bg);
+  text-align: center;
   box-sizing: border-box;
-
-  background-image: url("images/cta\ proto.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
   overflow: hidden;
 }
 
-/* ==================================================
-   IMAGE OVERLAY
-================================================== */
+/* =========================================================
+   CONTENT
+========================================================= */
 
-.portfolio-cta-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.58));
-
-  z-index: 1;
-}
-
-/* ==================================================
-   CENTER BOX
-================================================== */
-
-.portfolio-cta-box {
+.portfolio-cta-content {
   width: 100%;
   max-width: 850px;
-
-  /* HEIGHT REDUCED */
-  padding: 50px 70px;
-
-  position: relative;
-  z-index: 2;
-
-  text-align: center;
-
+  margin: 0 auto;
   box-sizing: border-box;
-
-  background: rgba(255, 255, 255, 0.94);
-
-  border: 1px solid rgba(217, 161, 91, 0.65);
-
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
-
-  backdrop-filter: blur(4px);
 }
 
-/* ==================================================
+/* =========================================================
    LABEL
-================================================== */
+========================================================= */
 
 .portfolio-cta-label {
   display: inline-block;
-
-  padding: 7px 18px;
-  margin-bottom: 18px;
-
+  padding: 6px 16px;
+  margin-bottom: 10px;
   border: 1px solid var(--primary);
   border-radius: 30px;
-
   color: var(--primary);
-
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
   font-weight: 600;
-
   letter-spacing: 2px;
-
+  line-height: 1.3;
   box-sizing: border-box;
 }
 
-/* ==================================================
+/* =========================================================
    HEADING
-================================================== */
+========================================================= */
 
-.portfolio-cta-box h2 {
+.portfolio-cta-content h2 {
   margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(45px, 6vw, 60px);
+  line-height: 1.15;
   font-weight: 500;
-
-  line-height: 1.02;
-
-  color: #222;
+  color: var(--text);
 }
 
-.portfolio-cta-box h2 em {
-  display: block;
-
+.portfolio-cta-content h2 em {
   font-style: italic;
-
+  font-weight: 400;
   color: var(--primary);
 }
 
-/* ==================================================
+/* =========================================================
    DESCRIPTION
-================================================== */
+========================================================= */
 
 .portfolio-cta-box p {
-  max-width: 520px;
-
-  margin: 25px auto 32px;
-
-  font-family: "Montserrat", sans-serif;
-
+  width: 100%;
+  max-width: 650px;
+  margin: 10px auto 0;
+  padding: 0;
   font-size: 15px;
-
-  line-height: 1.9;
-
-  color: var(--text);
+  line-height: 1.6;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-/* ==================================================
+/* =========================================================
    BUTTON
-================================================== */
+========================================================= */
 
 .portfolio-cta-button {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-width: 210px;
-
-  padding: 15px 28px;
-
-  box-sizing: border-box;
-
-  text-decoration: none;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 11px;
-  font-weight: 600;
-
-  letter-spacing: 1.8px;
-
+  display: inline-block;
+  margin-top: 16px;
+  padding: 13px 28px;
+  background: var(--primary);
   color: var(--text);
-
-  background: var(--secondary);
-
-  border: 1px solid var(--secondary);
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+  box-sizing: border-box;
+  transition: 0.3s ease;
 }
 
 .portfolio-cta-button:hover {
-  background: var(--primary);
-
-  border-color: var(--primary);
-
-  color: var(--bg);
-
-  transform: translateY(-2px);
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* ==================================================
-   DARK MODE
-================================================== */
+/* =========================================================
+   TABLET / iPAD MINI
+========================================================= */
 
-body.dark .portfolio-cta-box {
-  background: rgba(34, 34, 34, 0.94);
+@media (max-width: 768px) {
+  .portfolio-cta-section {
+    padding: 80px 24px;
+  }
+
+  .portfolio-cta-content {
+    max-width: 680px;
+  }
+
+  .portfolio-cta-label {
+    margin-bottom: 9px;
+    padding: 6px 15px;
+    font-size: 10px;
+  }
+
+  .portfolio-cta-content h2 {
+    font-size: clamp(40px, 7vw, 52px);
+    line-height: 1.15;
+  }
+
+  .portfolio-cta-content p {
+    max-width: 600px;
+    margin-top: 9px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .portfolio-cta-button {
+    margin-top: 15px;
+    padding: 13px 26px;
+  }
 }
 
-body.dark .portfolio-cta-box h2 {
-  color: var(--bg);
+/* =========================================================
+   SAMSUNG GALAXY S8+ / MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .portfolio-cta-section {
+    width: 100%;
+    padding: 65px 20px;
+  }
+
+  .portfolio-cta-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .portfolio-cta-label {
+    padding: 6px 14px;
+    margin-bottom: 8px;
+    font-size: 9px;
+    letter-spacing: 1.7px;
+  }
+
+  .portfolio-cta-content h2 {
+    font-size: clamp(34px, 10vw, 42px);
+    line-height: 1.12;
+  }
+
+  .portfolio-cta-content p {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 9px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .portfolio-cta-button {
+    margin-top: 14px;
+    padding: 12px 23px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
 }
 
-body.dark .portfolio-cta-box p {
-  color: #ddd;
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .portfolio-cta-section {
+    padding: 55px 16px;
+  }
+
+  .portfolio-cta-label {
+    padding: 5px 12px;
+    margin-bottom: 7px;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+
+  .portfolio-cta-content h2 {
+    font-size: 32px;
+  }
+
+  .portfolio-cta-content p {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-top: 8px;
+  }
+
+  .portfolio-cta-button {
+    margin-top: 13px;
+    padding: 11px 20px;
+    font-size: 11px;
+  }
 }
 
-/* ==================================================
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+  .portfolio-cta-section {
+    padding: 50px 14px;
+  }
+
+  .portfolio-cta-content h2 {
+    font-size: 30px;
+  }
+
+  .portfolio-cta-content p {
+    font-size: 13px;
+  }
+
+  .portfolio-cta-button {
+    padding: 11px 18px;
+  }
+}
+
+/* =========================================================
    RTL
-   DESKTOP + MOBILE RESPONSIVE
-================================================== */
+========================================================= */
 
-body.rtl {
-  direction: rtl;
-}
-
-/* Portfolio CTA */
 body.rtl .portfolio-cta-section {
   direction: rtl;
 }
 
-body.rtl .portfolio-cta-box {
+body.rtl .portfolio-cta-content {
   direction: rtl;
+}
+
+body.rtl .portfolio-cta-content p {
   text-align: center;
-}
-
-body.rtl .portfolio-cta-label,
-body.rtl .portfolio-cta-box h2,
-body.rtl .portfolio-cta-box p,
-body.rtl .portfolio-cta-button {
-  direction: rtl;
-}
-
-/* ==================================================
-   MOBILE RTL
-================================================== */
-
-@media (max-width: 768px) {
-  body.rtl .portfolio-cta-section {
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  body.rtl .portfolio-cta-box {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  body.rtl .portfolio-cta-box h2,
-  body.rtl .portfolio-cta-box p {
-    overflow-wrap: break-word;
-    word-break: normal;
-  }
-
-  body.rtl .portfolio-cta-button {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-}
-
-/* ==================================================
-   LARGE DESKTOP
-   1600px+
-================================================== */
-
-@media (min-width: 1600px) {
-  .portfolio-cta-section {
-    min-height: 700px;
-
-    padding: 100px 6%;
-  }
-
-  .portfolio-cta-box {
-    max-width: 760px;
-
-    padding: 85px 80px;
-  }
-
-  .portfolio-cta-box h2 {
-    font-size: 68px;
-  }
-
-  .portfolio-cta-box p {
-    max-width: 570px;
-
-    font-size: 14px;
-  }
-}
-
-/* ==================================================
-   NETBOOK
-   769px - 1024px
-================================================== */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .portfolio-cta-section {
-    min-height: 560px;
-
-    padding: 70px 5%;
-  }
-
-  .portfolio-cta-box {
-    max-width: 590px;
-
-    padding: 55px 45px;
-  }
-
-  .portfolio-cta-box h2 {
-    font-size: 48px;
-  }
-
-  .portfolio-cta-box p {
-    font-size: 12px;
-  }
-}
-
-/* ==================================================
-   IPAD MINI
-   601px - 768px
-================================================== */
-
-@media (min-width: 601px) and (max-width: 768px) {
-  .portfolio-cta-section {
-    min-height: 520px;
-
-    padding: 60px 5%;
-  }
-
-  .portfolio-cta-box {
-    max-width: 540px;
-
-    padding: 50px 40px;
-  }
-
-  .portfolio-cta-box h2 {
-    font-size: 44px;
-  }
-
-  .portfolio-cta-box p {
-    font-size: 15px;
-
-    line-height: 1.8;
-  }
-}
-
-/* ==================================================
-   LARGE MOBILE
-   481px - 600px
-================================================== */
-
-@media (min-width: 481px) and (max-width: 600px) {
-  .portfolio-cta-section {
-    min-height: 500px;
-
-    padding: 50px 6%;
-  }
-
-  .portfolio-cta-box {
-    max-width: 100%;
-
-    padding: 45px 30px;
-  }
-
-  .portfolio-cta-box h2 {
-    font-size: 40px;
-  }
-
-  .portfolio-cta-box p {
-    font-size: 11px;
-
-    line-height: 1.8;
-  }
-
-  .portfolio-cta-button {
-    min-width: 190px;
-
-    padding: 14px 20px;
-  }
-}
-
-/* ==================================================
-   MOBILE
-   360px - 480px
-================================================== */
-
-@media (min-width: 360px) and (max-width: 480px) {
-  .portfolio-cta-section {
-    min-height: 480px;
-
-    padding: 45px 5%;
-  }
-
-  .portfolio-cta-box {
-    padding: 40px 22px;
-  }
-
-  .portfolio-cta-label {
-    font-size: 9px;
-
-    letter-spacing: 2px;
-  }
-
-  .portfolio-cta-box h2 {
-    font-size: 35px;
-  }
-
-  .portfolio-cta-box p {
-    margin: 20px auto 27px;
-
-    font-size: 11px;
-
-    line-height: 1.75;
-  }
-
-  .portfolio-cta-button {
-    width: 100%;
-
-    min-width: 0;
-
-    padding: 14px 15px;
-
-    font-size: 10px;
-  }
-}
-
-/* ==================================================
-   SMALL MOBILE
-   BELOW 360px
-================================================== */
-
-@media (max-width: 359px) {
-  .portfolio-cta-section {
-    min-height: 460px;
-
-    padding: 40px 18px;
-  }
-
-  .portfolio-cta-box {
-    padding: 35px 18px;
-  }
-
-  .portfolio-cta-box h2 {
-    font-size: 31px;
-  }
-
-  .portfolio-cta-box p {
-    font-size: 10px;
-  }
-
-  .portfolio-cta-button {
-    width: 100%;
-  }
 }
 
 /* ==================================================

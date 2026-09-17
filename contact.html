@@ -73,7 +73,9 @@
 
           <!-- MOBILE GET STARTED -->
 
-          <a href="Login.html" class="nav-link mobile-login"> Get Started </a>
+          <a href="getstarted.html" class="nav-link mobile-login">
+            Get Started
+          </a>
         </nav>
 
         <!-- ================= HEADER ACTIONS ================= -->
@@ -105,7 +107,7 @@
 
           <!-- GET STARTED -->
 
-          <a href="Login.html" class="login-button">
+          <a href="getstarted.html" class="login-button">
             <span>Get Started</span>
           </a>
 
@@ -158,244 +160,447 @@
         </div>
       </div>
     </section>
+
     <!-- ==================================================
      CUSTOM FURNITURE ENQUIRY
 ================================================== -->
 
-    <section class="custom-enquiry">
-      <div class="custom-enquiry-container">
-        <!-- HEADER -->
-        <div class="custom-enquiry-header">
-          <span class="section-label">START YOUR PROJECT</span>
+    <section class="custom-enquiry" id="enquiry">
+      <div class="enquiry-container">
+        <!-- ==================================================
+         LEFT — CONTACT INFORMATION
+    ================================================== -->
 
-          <h2>Custom Furniture <em>Enquiry</em></h2>
+        <div class="enquiry-info">
+          <div class="enquiry-info-header">
+            <span>GET IN TOUCH</span>
+            <h2>Let's Build Something <em>Beautiful</em></h2>
+            <p>
+              Have a custom furniture idea? Share your requirements with us and
+              our craftsmen will help bring your vision to life.
+            </p>
+          </div>
 
-          <p>
-            Tell us about your furniture project, requirements, and vision.
-            We'll help bring it to life.
-          </p>
+          <!-- ADDRESS -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-map-pin-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>ADDRESS</span>
+              <h3>Our Workshop</h3>
+              <p>
+                123 Craft Street,<br />
+                Woodworking District,<br />
+                Your City, India
+              </p>
+            </div>
+          </div>
+
+          <!-- WORKING HOURS -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-time-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>WORKING HOURS</span>
+              <h3>Visit Our Workshop</h3>
+              <p>
+                Monday – Saturday<br />
+                9:00 AM – 7:00 PM
+              </p>
+            </div>
+          </div>
+
+          <!-- PHONE -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-phone-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>PHONE NUMBER</span>
+              <h3>Call Us</h3>
+              <p>+91 98765 43210</p>
+            </div>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-mail-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>EMAIL ADDRESS</span>
+              <h3>Send Us a Message</h3>
+              <p>hello@customfurniture.com</p>
+            </div>
+          </div>
+
+          <!-- WORKSHOP -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-hammer-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>OUR WORKSHOP</span>
+              <h3>Craftsmanship Studio</h3>
+              <p>Visit our workshop and explore our craftsmanship in person.</p>
+            </div>
+          </div>
         </div>
 
-        <!-- FORM -->
-        <form class="enquiry-form">
-          <!-- ================= 01 FULL NAME ================= -->
+        <!-- ==================================================
+         RIGHT — ENQUIRY FORM
+    ================================================== -->
 
-          <div class="enquiry-group">
-            <div class="enquiry-number">01</div>
-
-            <div class="enquiry-content">
-              <label>FULL NAME</label>
-
-              <div class="name-fields">
-                <input type="text" placeholder="First Name" />
-
-                <input type="text" placeholder="Last Name" />
-              </div>
-            </div>
+        <div class="enquiry-form-wrapper">
+          <div class="form-header">
+            <span>CUSTOM FURNITURE</span>
+            <h2>Custom Furniture <em>Enquiry</em></h2>
+            <p>
+              Tell us about your project and we will get back to you with the
+              right solution for your space.
+            </p>
           </div>
 
-          <!-- ================= 04 FURNITURE TYPE ================= -->
+          <form class="enquiry-form">
+            <!-- NAME -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
 
-          <div class="enquiry-group">
-            <div class="enquiry-number">04</div>
-
-            <div class="enquiry-content">
-              <label>FURNITURE TYPE</label>
-
-              <select>
-                <option value="">Select Furniture Type</option>
-                <option>Dining Table</option>
-                <option>Bed</option>
-                <option>Wardrobe</option>
-                <option>Storage Unit</option>
-                <option>TV Unit</option>
-                <option>Custom Furniture</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- ================= 02 EMAIL ================= -->
-
-          <div class="enquiry-group">
-            <div class="enquiry-number">02</div>
-
-            <div class="enquiry-content">
-              <label>EMAIL ADDRESS</label>
-
-              <input type="email" placeholder="your@email.com" />
-            </div>
-          </div>
-
-          <!-- ================= 05 DIMENSIONS ================= -->
-
-          <div class="enquiry-group">
-            <div class="enquiry-number">05</div>
-
-            <div class="enquiry-content">
-              <label>DIMENSIONS & REQUIREMENTS</label>
-
-              <div class="dimension-fields">
-                <input type="text" placeholder="Width" />
-
-                <input type="text" placeholder="Height" />
-
-                <input type="text" placeholder="Depth" />
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Enter your full name"
+                  required
+                />
               </div>
 
-              <textarea placeholder="Special requirements..."></textarea>
-            </div>
-          </div>
+              <!-- EMAIL -->
+              <div class="form-group">
+                <label for="email">Email Address</label>
 
-          <!-- ================= 03 PHONE ================= -->
-
-          <div class="enquiry-group">
-            <div class="enquiry-number">03</div>
-
-            <div class="enquiry-content">
-              <label>PHONE NUMBER</label>
-
-              <input type="tel" placeholder="+91" />
-            </div>
-          </div>
-
-          <!-- ================= 06 MATERIAL ================= -->
-
-          <div class="enquiry-group">
-            <div class="enquiry-number">06</div>
-
-            <div class="enquiry-content">
-              <label>MATERIAL PREFERENCE</label>
-
-              <div class="material-options">
-                <label>
-                  <input type="radio" name="material" />
-                  <span>Solid Wood</span>
-                </label>
-
-                <label>
-                  <input type="radio" name="material" />
-                  <span>Engineered Wood</span>
-                </label>
-
-                <label>
-                  <input type="radio" name="material" />
-                  <span>Mixed Materials</span>
-                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  required
+                />
               </div>
             </div>
-          </div>
 
-          <!-- ================= 07 BUDGET ================= -->
+            <!-- PHONE + FURNITURE TYPE -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
 
-          <div class="enquiry-group enquiry-full">
-            <div class="enquiry-number">07</div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
 
-            <div class="enquiry-content">
-              <label>BUDGET RANGE</label>
+              <div class="form-group">
+                <label for="furnitureType">Furniture Type</label>
 
-              <div class="budget-options">
-                <label>
-                  <input type="radio" name="budget" />
-                  <span>
-                    <strong>₹25K–50K</strong>
-                    <small>STARTER</small>
-                  </span>
-                </label>
-
-                <label>
-                  <input type="radio" name="budget" />
-                  <span>
-                    <strong>₹50K–1L</strong>
-                    <small>PREMIUM</small>
-                  </span>
-                </label>
-
-                <label>
-                  <input type="radio" name="budget" />
-                  <span>
-                    <strong>₹1L–2L</strong>
-                    <small>BESPOKE</small>
-                  </span>
-                </label>
-
-                <label>
-                  <input type="radio" name="budget" />
-                  <span>
-                    <strong>₹2L+</strong>
-                    <small>LUXURY</small>
-                  </span>
-                </label>
+                <select id="furnitureType" name="furnitureType" required>
+                  <option value="">Select Furniture Type</option>
+                  <option value="table">Tables</option>
+                  <option value="bed">Beds</option>
+                  <option value="storage">Storage Units</option>
+                  <option value="wardrobe">Wardrobes</option>
+                  <option value="chair">Chairs</option>
+                  <option value="sofa">Sofas</option>
+                  <option value="custom">Custom Furniture</option>
+                </select>
               </div>
             </div>
-          </div>
 
-          <!-- ================= 08 DESCRIPTION ================= -->
-
-          <div class="enquiry-group enquiry-full">
-            <div class="enquiry-number">08</div>
-
-            <div class="enquiry-content">
-              <label>PROJECT DESCRIPTION</label>
+            <!-- DIMENSIONS -->
+            <div class="form-group full-width">
+              <label for="dimensions"> Dimensions & Requirements </label>
 
               <textarea
-                class="large-textarea"
-                placeholder="Tell us about your project, style, purpose, and requirements..."
+                id="dimensions"
+                name="dimensions"
+                rows="4"
+                placeholder="Enter dimensions and specific requirements"
               ></textarea>
             </div>
-          </div>
 
-          <!-- ================= 09 IMAGE ================= -->
+            <!-- BUDGET + MATERIAL -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budget"> Budget Range </label>
 
-          <div class="enquiry-group enquiry-full">
-            <div class="enquiry-number">09</div>
+                <select id="budget" name="budget">
+                  <option value="">Select Budget Range</option>
 
-            <div class="enquiry-content">
-              <label>REFERENCE IMAGE</label>
+                  <option value="below-25000">Below ₹25,000</option>
 
-              <label class="upload-box">
-                <input type="file" accept="image/*" />
+                  <option value="25000-50000">₹25,000 – ₹50,000</option>
 
-                <span>UPLOAD REFERENCE IMAGE</span>
+                  <option value="50000-100000">₹50,000 – ₹1,00,000</option>
 
-                <small> JPG, PNG or WEBP </small>
-              </label>
+                  <option value="100000-250000">₹1,00,000 – ₹2,50,000</option>
+
+                  <option value="above-250000">Above ₹2,50,000</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="material"> Material Preference </label>
+
+                <select id="material" name="material">
+                  <option value="">Select Material</option>
+
+                  <option value="walnut">Walnut</option>
+
+                  <option value="teak">Teak</option>
+
+                  <option value="oak">Oak</option>
+
+                  <option value="solid-wood">Solid Wood</option>
+
+                  <option value="plywood">Plywood</option>
+
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <!-- ================= SUBMIT ================= -->
+            <!-- PROJECT DESCRIPTION -->
+            <div class="form-group full-width">
+              <label for="projectDescription"> Project Description </label>
 
-          <div class="enquiry-submit">
-            <button type="submit">SEND ENQUIRY</button>
-          </div>
-        </form>
+              <textarea
+                id="projectDescription"
+                name="projectDescription"
+                rows="5"
+                placeholder="Describe your project, design ideas and requirements"
+              ></textarea>
+            </div>
+
+            <!-- REFERENCE IMAGE -->
+            <div class="form-group full-width">
+              <label for="referenceImage"> Reference Image Upload </label>
+
+              <div class="upload-box">
+                <i class="ri-image-add-line"></i>
+
+                <div>
+                  <strong>Upload Reference Image</strong>
+
+                  <small> JPG, PNG or WEBP files </small>
+                </div>
+
+                <input
+                  type="file"
+                  id="referenceImage"
+                  name="referenceImage"
+                  accept="image/*"
+                />
+              </div>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="form-submit">
+              <button type="submit">
+                Submit Enquiry
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 
     <!-- ==================================================
-     MAP LOCATION
+     WORKSHOP MAP
 ================================================== -->
 
-    <section class="map-location">
-      <div class="map-location-container">
-        <div class="map-wrapper">
-          <!-- MAP -->
-          <iframe
-            src="https://www.google.com/maps?q=Hyderabad,Telangana,India&output=embed"
-            loading="lazy"
-            allowfullscreen
-          >
-          </iframe>
+    <div class="info-map">
+      <div class="map-header">
+        <span>FIND US</span>
+        <h3>Our Workshop Location</h3>
+      </div>
 
-          <!-- DIRECTIONS -->
-          <a
-            href="https://www.google.com/maps/dir/?api=1&destination=Hyderabad,Telangana,India"
-            target="_blank"
-            rel="noopener"
-            class="map-directions"
-          >
-            GET DIRECTIONS
-          </a>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=Hyderabad,India&output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <section class="faq-section">
+      <div class="faq-container">
+        <!-- FAQ HEADER -->
+        <div class="faq-header">
+          <span class="faq-label">FAQ</span>
+
+          <h2>Frequently Asked <em>Questions</em></h2>
+
+          <p>Common questions about your custom furniture project.</p>
+        </div>
+
+        <!-- FAQ LIST -->
+        <div class="faq-list">
+          <!-- FAQ 01 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span class="faq-number">01</span>
+
+              <span class="faq-title">
+                How do I start a custom furniture project?
+              </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Tell us about your furniture idea, dimensions, preferred
+                materials, style, and budget through our enquiry form. Our team
+                will review your requirements and contact you.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 02 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span class="faq-number">02</span>
+
+              <span class="faq-title">
+                Can I provide my own furniture design?
+              </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. You can share sketches, reference images, room photos,
+                measurements, or inspiration images with your enquiry.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 03 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span class="faq-number">03</span>
+
+              <span class="faq-title">
+                What types of furniture do you make?
+              </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                We create dining tables, beds, wardrobes, storage units, TV
+                units, coffee tables, and other custom furniture based on your
+                requirements.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 04 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span class="faq-number">04</span>
+
+              <span class="faq-title">
+                Can I choose the material and finish?
+              </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. You can choose your preferred wood, material, color, and
+                finish. We can also recommend suitable options for your project.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 05 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span class="faq-number">05</span>
+
+              <span class="faq-title">
+                Can furniture be made to my exact dimensions?
+              </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. Our custom furniture can be designed around your available
+                space, measurements, lifestyle, and functional requirements.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 06 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span class="faq-number">06</span>
+
+              <span class="faq-title">
+                How long does a custom project take?
+              </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                The timeline depends on the furniture type, design, materials,
+                finishing, and overall project requirements.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 07 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span class="faq-number">07</span>
+
+              <span class="faq-title">
+                Do you provide delivery and installation?
+              </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Delivery and installation can be arranged depending on the
+                project requirements and location.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -521,9 +726,9 @@
         <p>© 2026 Craft Nest. All Rights Reserved.</p>
 
         <div class="footer-bottom-links">
-          <a href="#"> Privacy Policy </a>
+          <a href="privancy policy.html"> Privacy Policy </a>
 
-          <a href="#"> Terms &amp; Conditions </a>
+          <a href="terms.html"> Terms &amp; Conditions </a>
         </div>
       </div>
     </footer>

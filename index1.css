@@ -341,7 +341,7 @@ body.rtl .logo-name {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border: 3px solid var(--primary);
+  border: 1px solid var(--primary);
   border-radius: 13px;
   background: var(--bg);
   color: var(--text);
@@ -369,7 +369,7 @@ body.rtl .logo-name {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--primary);
+  border: 1px solid var(--primary);
   border-radius: 13px;
   background: var(--bg);
   color: var(--text);
@@ -1107,37 +1107,24 @@ body.rtl .logo-name {
 }
 
 /* ==================================================
-   OVERLAY
+   STRONG FULL BACKGROUND OVERLAY
 ================================================== */
 
 .luxury-hero-overlay {
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.85),
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.78)
-  );
+  background: rgba(0, 0, 0, 0.84);
 
   z-index: 1;
 }
-/* ==================================================
-   DARK MODE HERO
-================================================== */
 
 /* ==================================================
-   DARK MODE OVERLAY
+   DARK MODE — EXTRA STRONG
 ================================================== */
 
 body.dark .luxury-hero-overlay {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.9)
-  );
+  background: rgba(0, 0, 0, 0.9);
 }
 /* ==================================================
    CONTENT
@@ -2913,24 +2900,36 @@ body.rtl .material-content {
   padding: 110px 7%;
   background: var(--bg);
   color: var(--text);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* ==================================================
-   HEADER
+   JOURNEY HEADER
 ================================================== */
 
 .journey-header {
   width: 100%;
-  max-width: 850px;
+  max-width: 800px;
   margin: 0 auto 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   text-align: center;
+  direction: ltr;
+
+  box-sizing: border-box;
 }
 
 .journey-header > span {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
+  margin-bottom: 16px;
   padding: 7px 18px;
-  margin-bottom: 18px;
 
   border: 1px solid var(--primary);
   border-radius: 30px;
@@ -2938,20 +2937,23 @@ body.rtl .material-content {
   color: var(--primary);
 
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
+  letter-spacing: 2.5px;
 
-  letter-spacing: 2px;
-
-  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .journey-header h2 {
+  width: 100%;
   margin: 0;
 
-  font-size: clamp(45px, 6vw, 60px);
-  font-weight: 500;
-  line-height: 1.1;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 6vw, 62px);
+  line-height: 1;
+  font-weight: 600;
+
+  text-align: center;
 }
 
 .journey-header h2 em {
@@ -2960,13 +2962,18 @@ body.rtl .material-content {
 }
 
 .journey-header p {
+  width: 100%;
   max-width: 650px;
+
   margin: 20px auto 0;
 
-  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
   line-height: 1.8;
 
-  opacity: 0.75;
+  opacity: 0.7;
+
+  text-align: center;
 }
 
 /* ==================================================
@@ -2977,13 +2984,26 @@ body.rtl .material-content {
   position: relative;
 
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
 
   margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+
+  /*
+    IMPORTANT:
+    Always keep sequence:
+    01 → 02 → 03 → 04
+  */
+  direction: ltr;
+
+  box-sizing: border-box;
 }
 
 /* ==================================================
-   ONE STRAIGHT CENTER LINE
+   CENTER LINE
 ================================================== */
 
 .journey-timeline::before {
@@ -2996,34 +3016,37 @@ body.rtl .material-content {
 
   left: 50%;
 
-  width: 3px;
+  width: 1px;
 
-  background: var(--primary);
+  background: var(--secondary);
+
+  opacity: 0.35;
 
   transform: translateX(-50%);
-
-  opacity: 0.75;
-
-  z-index: 1;
 }
 
 /* ==================================================
-   EACH STEP
+   JOURNEY STEP
 ================================================== */
 
 .journey-step {
   position: relative;
 
   width: 100%;
-  min-height: 270px;
+  min-height: 145px;
 
   display: grid;
 
   grid-template-columns: 1fr 100px 1fr;
 
-  align-items: start;
+  align-items: center;
 
-  z-index: 2;
+  /*
+    Never reverse the step order
+  */
+  direction: ltr;
+
+  box-sizing: border-box;
 }
 
 /* ==================================================
@@ -3031,158 +3054,48 @@ body.rtl .material-content {
 ================================================== */
 
 .journey-content {
-  position: relative;
-
   width: 100%;
-  max-width: 440px;
+  max-width: 390px;
 
-  padding: 25px 30px;
-
-  background: var(--bg);
-
-  z-index: 4;
-  font-size: 15px;
+  box-sizing: border-box;
 }
 
-/* 01 / 03 / 05 */
+/* ==================================================
+   LTR CONTENT
+   01 / 03 → LEFT
+================================================== */
 
 .journey-step:nth-child(odd) .journey-content {
   grid-column: 1;
 
   justify-self: end;
 
+  padding-right: 45px;
+
   text-align: right;
+
+  direction: ltr;
 }
 
-/* 02 / 04 */
+/* ==================================================
+   LTR CONTENT
+   02 / 04 → RIGHT
+================================================== */
 
 .journey-step:nth-child(even) .journey-content {
   grid-column: 3;
 
   justify-self: start;
 
+  padding-left: 45px;
+
   text-align: left;
-}
-
-/* ==================================================
-   CENTER NUMBER
-   IMPORTANT:
-   ABSOLUTE = EVERY NUMBER STAYS AT SAME HEIGHT
-   AS ITS CONTENT HEADING
-================================================== */
-
-.journey-center {
-  position: absolute;
-
-  top: 25px;
-  left: 50%;
-
-  width: 64px;
-  height: 64px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  transform: translateX(-50%);
-
-  z-index: 10;
-
-  padding: 0;
-}
-
-/* ==================================================
-   NUMBER CIRCLE
-================================================== */
-
-.journey-number {
-  width: 64px;
-  height: 64px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 2px solid var(--primary);
-
-  border-radius: 50%;
-
-  background: var(--bg);
-
-  color: var(--primary);
-
-  font-size: 14px;
-  font-weight: 700;
-
-  letter-spacing: 2px;
 
   direction: ltr;
-
-  z-index: 10;
 }
 
 /* ==================================================
-   REMOVE ALL OLD CONNECTOR LINES
-================================================== */
-
-.journey-content::after {
-  content: none;
-}
-
-/* ==================================================
-   SMALL CONNECTOR - LEFT SIDE
-   01 / 03 / 05
-================================================== */
-
-.journey-step:nth-child(odd) .journey-content {
-  margin-right: 0;
-}
-
-/* small line from left content to number */
-
-.journey-step:nth-child(odd)::after {
-  content: "";
-
-  position: absolute;
-
-  top: 57px;
-
-  right: calc(50% - 18px);
-
-  width: 18px;
-  height: 1px;
-
-  background: var(--secondary);
-
-  z-index: 5;
-}
-
-/* ==================================================
-   SMALL CONNECTOR - RIGHT SIDE
-   02 / 04
-================================================== */
-
-.journey-step:nth-child(even)::after {
-  content: "";
-
-  position: absolute;
-
-  top: 57px;
-
-  left: calc(50% - 18px);
-
-  width: 18px;
-  height: 1px;
-
-  background: var(--secondary);
-
-  z-index: 5;
-}
-
-/* ==================================================
-   TAG
+   STEP TAG
 ================================================== */
 
 .journey-tag {
@@ -3190,48 +3103,52 @@ body.rtl .material-content {
 
   margin-bottom: 8px;
 
-  color: var(--secondary);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
 
-  font-size: 11px;
-  font-weight: 700;
-
-  letter-spacing: 3px;
+  color: var(--primary);
 }
 
 /* ==================================================
-   HEADINGS
+   TITLE
 ================================================== */
 
 .journey-content h3 {
-  margin: 0 0 5px;
+  margin: 0 0 7px;
 
-  color: var(--primary);
-
+  font-family: "Cormorant Garamond", serif;
   font-size: 28px;
   font-weight: 600;
 
-  letter-spacing: 1px;
+  line-height: 1.1;
+
+  color: var(--text);
 }
 
 .journey-content h4 {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 
-  font-size: 17px;
-  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  color: var(--secondary);
 }
-
-/* ==================================================
-   DESCRIPTION
-================================================== */
 
 .journey-content p {
   margin: 0;
 
-  font-size: 14px;
-  line-height: 1.8;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
 
-  opacity: 0.72;
-  font-size: 15px;
+  color: var(--text);
+
+  opacity: 0.7;
 }
 
 /* ==================================================
@@ -3240,12 +3157,11 @@ body.rtl .material-content {
 
 .journey-meta {
   display: flex;
-
-  flex-wrap: wrap;
+  align-items: center;
 
   gap: 8px;
 
-  margin-top: 18px;
+  margin-top: 15px;
 }
 
 .journey-step:nth-child(odd) .journey-meta {
@@ -3257,33 +3173,159 @@ body.rtl .material-content {
 }
 
 .journey-meta span {
-  padding: 6px 12px;
+  padding: 5px 10px;
 
-  border: 1px solid var(--secondary);
+  border: 1px solid rgba(139, 90, 53, 0.3);
+  border-radius: 20px;
 
-  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
 
-  font-size: 10px;
+  color: var(--secondary);
+}
+
+/* ==================================================
+   CENTER NUMBER
+================================================== */
+
+.journey-center {
+  position: relative;
+
+  z-index: 2;
+
+  grid-column: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  direction: ltr;
+
+  box-sizing: border-box;
+}
+
+.journey-number {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+
+  background: var(--bg);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 600;
 
   color: var(--primary);
 
-  white-space: nowrap;
+  /*
+    Always display:
+    01
+    02
+    03
+    04
+  */
+  direction: ltr;
+  unicode-bidi: isolate;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   CONNECTOR LINES
+================================================== */
+
+.journey-step::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 45px;
+  height: 1px;
+
+  background: var(--secondary);
+
+  opacity: 0.35;
+
+  transform: translateY(-50%);
+}
+
+/* 01 / 03 → LEFT */
+
+.journey-step:nth-child(odd)::after {
+  left: calc(50% - 95px);
+}
+
+/* 02 / 04 → RIGHT */
+
+.journey-step:nth-child(even)::after {
+  right: calc(50% - 95px);
 }
 
 /* ==================================================
    RTL
+   SIDES REVERSE
+   ORDER DOES NOT REVERSE
+
+   01 → RIGHT
+   02 → LEFT
+   03 → RIGHT
+   04 → LEFT
 ================================================== */
 
-body.rtl {
-  direction: rtl;
-}
-
-body.rtl .journey-header {
+body.rtl .project-journey {
   direction: rtl;
 }
 
 /* ==================================================
-   RTL CONTENT
+   RTL HEADER
+================================================== */
+
+body.rtl .journey-header {
+  direction: rtl;
+  text-align: center;
+}
+
+body.rtl .journey-header h2,
+body.rtl .journey-header p {
+  text-align: center;
+}
+
+/* ==================================================
+   RTL TIMELINE
+   KEEP ORDER STRAIGHT
+================================================== */
+
+body.rtl .journey-timeline {
+  direction: ltr;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==================================================
+   RTL STEP
+================================================== */
+
+body.rtl .journey-step {
+  direction: ltr;
+}
+
+/* ==================================================
+   RTL 01 / 03
+   CONTENT → RIGHT
 ================================================== */
 
 body.rtl .journey-step:nth-child(odd) .journey-content {
@@ -3291,42 +3333,73 @@ body.rtl .journey-step:nth-child(odd) .journey-content {
 
   justify-self: start;
 
-  text-align: left;
+  width: 100%;
+  max-width: 390px;
+
+  padding-left: 45px;
+  padding-right: 0;
+
+  text-align: right;
+
+  direction: rtl;
 }
+
+/* ==================================================
+   RTL 02 / 04
+   CONTENT → LEFT
+================================================== */
 
 body.rtl .journey-step:nth-child(even) .journey-content {
   grid-column: 1;
 
   justify-self: end;
 
+  width: 100%;
+  max-width: 390px;
+
+  padding-right: 45px;
+  padding-left: 0;
+
   text-align: right;
+
+  direction: rtl;
 }
 
 /* ==================================================
-   RTL CENTER
-   CENTER LINE NEVER MOVES
+   RTL CENTER NUMBER
 ================================================== */
 
 body.rtl .journey-center {
-  left: 50%;
-
-  transform: translateX(-50%);
+  grid-column: 2;
 
   direction: ltr;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.rtl .journey-number {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 /* ==================================================
-   RTL CONNECTOR
+   RTL CONNECTORS
 ================================================== */
 
+/* 01 / 03 → RIGHT */
+
 body.rtl .journey-step:nth-child(odd)::after {
-  right: auto;
-  left: calc(50% - 18px);
+  left: auto;
+  right: calc(50% - 95px);
 }
 
+/* 02 / 04 → LEFT */
+
 body.rtl .journey-step:nth-child(even)::after {
-  left: auto;
-  right: calc(50% - 18px);
+  right: auto;
+  left: calc(50% - 95px);
 }
 
 /* ==================================================
@@ -3342,196 +3415,287 @@ body.rtl .journey-step:nth-child(even) .journey-meta {
 }
 
 /* ==================================================
+   DARK MODE
+================================================== */
+
+body.dark .journey-number {
+  background: var(--bg);
+}
+
+body.dark .journey-meta span {
+  border-color: rgba(217, 161, 91, 0.35);
+}
+
+/* ==================================================
    LARGE DESKTOP
+   1600px+
 ================================================== */
 
 @media (min-width: 1600px) {
   .project-journey {
-    padding: 130px 7%;
+    padding: 135px 7%;
+  }
+
+  .journey-header {
+    max-width: 900px;
+    margin-bottom: 95px;
   }
 
   .journey-header h2 {
-    font-size: 62px;
+    font-size: 68px;
+  }
+
+  .journey-header p {
+    font-size: 15px;
+    max-width: 700px;
   }
 
   .journey-timeline {
-    max-width: 1250px;
+    max-width: 1350px;
+    gap: 75px;
   }
 
   .journey-step {
-    min-height: 310px;
+    min-height: 165px;
 
     grid-template-columns: 1fr 110px 1fr;
   }
 
-  .journey-content {
-    max-width: 500px;
-  }
-
-  .journey-center {
-    top: 25px;
-
-    width: 68px;
-    height: 68px;
-  }
-
   .journey-number {
     width: 68px;
     height: 68px;
-  }
 
-  .journey-step:nth-child(odd)::after {
-    top: 59px;
-  }
-
-  .journey-step:nth-child(even)::after {
-    top: 59px;
-  }
-}
-
-/* ==================================================
-   NETBOOK / LAPTOP
-   1025px - 1366px
-================================================== */
-
-@media (min-width: 1025px) and (max-width: 1366px) {
-  .project-journey {
-    padding: 90px 5%;
-  }
-
-  .journey-header {
-    max-width: 760px;
-    margin-bottom: 65px;
-  }
-
-  .journey-header h2 {
-    font-size: 44px;
-  }
-
-  .journey-header p {
-    font-size: 14px;
-  }
-
-  .journey-timeline {
-    max-width: 950px;
-  }
-
-  .journey-step {
-    min-height: 245px;
-
-    grid-template-columns: 1fr 90px 1fr;
+    font-size: 24px;
   }
 
   .journey-content {
-    max-width: 390px;
-
-    padding: 20px 25px;
-  }
-
-  .journey-center {
-    top: 20px;
-
-    width: 60px;
-    height: 60px;
-  }
-
-  .journey-number {
-    width: 60px;
-    height: 60px;
-  }
-
-  .journey-step:nth-child(odd)::after,
-  .journey-step:nth-child(even)::after {
-    top: 52px;
+    max-width: 460px;
   }
 
   .journey-content h3 {
-    font-size: 25px;
+    font-size: 32px;
   }
 
   .journey-content h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .journey-content p {
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  .journey-step:nth-child(odd) .journey-content {
+    padding-right: 55px;
+  }
+
+  .journey-step:nth-child(even) .journey-content {
+    padding-left: 55px;
+  }
+
+  /* RTL */
+
+  body.rtl .journey-step:nth-child(odd) .journey-content {
+    padding-left: 55px;
+    padding-right: 0;
+  }
+
+  body.rtl .journey-step:nth-child(even) .journey-content {
+    padding-right: 55px;
+    padding-left: 0;
   }
 }
 
 /* ==================================================
-   IPAD MINI
-   768px - 1024px
+   1920px+
 ================================================== */
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 1920px) {
+  .project-journey {
+    padding: 145px 0;
+  }
+
+  .journey-header {
+    width: 90%;
+    max-width: 950px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .journey-timeline {
+    width: 88%;
+    max-width: 1450px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==================================================
+   NETBOOK / TABLET
+   769px — 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
   .project-journey {
     padding: 85px 5%;
   }
 
   .journey-header {
-    max-width: 700px;
+    max-width: 750px;
     margin-bottom: 65px;
   }
 
   .journey-header h2 {
-    font-size: 40px;
+    font-size: 54px;
+  }
+
+  .journey-header p {
+    font-size: 13px;
   }
 
   .journey-timeline {
     max-width: 850px;
+    gap: 50px;
   }
 
   .journey-step {
-    min-height: 245px;
+    min-height: 130px;
 
     grid-template-columns: 1fr 80px 1fr;
   }
 
-  .journey-content {
-    max-width: 330px;
-
-    padding: 18px 20px;
-  }
-
-  .journey-center {
-    top: 18px;
-
-    width: 58px;
-    height: 58px;
-  }
-
   .journey-number {
-    width: 58px;
-    height: 58px;
+    width: 54px;
+    height: 54px;
+
+    font-size: 19px;
   }
 
-  .journey-step:nth-child(odd)::after,
-  .journey-step:nth-child(even)::after {
-    top: 47px;
+  .journey-content {
+    max-width: 310px;
   }
 
   .journey-content h3 {
-    font-size: 23px;
+    font-size: 24px;
   }
 
   .journey-content h4 {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .journey-content p {
-    font-size: 15px;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .journey-step:nth-child(odd) .journey-content {
+    padding-right: 30px;
+  }
+
+  .journey-step:nth-child(even) .journey-content {
+    padding-left: 30px;
+  }
+
+  /* RTL */
+
+  body.rtl .journey-step:nth-child(odd) .journey-content {
+    padding-left: 30px;
+    padding-right: 0;
+  }
+
+  body.rtl .journey-step:nth-child(even) .journey-content {
+    padding-right: 30px;
+    padding-left: 0;
+  }
+}
+
+/* ==================================================
+   IPAD MINI
+   600px — 768px
+================================================== */
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .project-journey {
+    padding: 75px 30px;
+  }
+
+  .journey-header {
+    max-width: 650px;
+    margin-bottom: 60px;
+  }
+
+  .journey-header h2 {
+    font-size: 50px;
+  }
+
+  .journey-header p {
+    font-size: 13px;
+  }
+
+  .journey-timeline {
+    max-width: 650px;
+    gap: 45px;
+  }
+
+  .journey-step {
+    min-height: 125px;
+
+    grid-template-columns: 1fr 75px 1fr;
+  }
+
+  .journey-number {
+    width: 52px;
+    height: 52px;
+
+    font-size: 18px;
+  }
+
+  .journey-content {
+    max-width: 270px;
+  }
+
+  .journey-content h3 {
+    font-size: 22px;
+  }
+
+  .journey-content h4 {
+    font-size: 11px;
+  }
+
+  .journey-content p {
+    font-size: 11px;
+  }
+
+  .journey-step:nth-child(odd) .journey-content {
+    padding-right: 25px;
+  }
+
+  .journey-step:nth-child(even) .journey-content {
+    padding-left: 25px;
+  }
+
+  /* RTL */
+
+  body.rtl .journey-step:nth-child(odd) .journey-content {
+    padding-left: 25px;
+    padding-right: 0;
+  }
+
+  body.rtl .journey-step:nth-child(even) .journey-content {
+    padding-right: 25px;
+    padding-left: 0;
   }
 }
 
 /* ==================================================
    MOBILE
-   360px - 767px
+   381px — 599px
 ================================================== */
 
-@media (max-width: 767px) {
+@media (min-width: 381px) and (max-width: 599px) {
   .project-journey {
-    padding: 70px 18px;
+    padding: 65px 18px;
   }
 
   .journey-header {
@@ -3539,167 +3703,405 @@ body.rtl .journey-step:nth-child(even) .journey-meta {
   }
 
   .journey-header h2 {
-    font-size: 32px;
+    font-size: 42px;
   }
 
   .journey-header p {
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 1.7;
   }
 
-  /* CENTER LINE */
+  .journey-timeline {
+    width: 100%;
+    max-width: 100%;
+
+    gap: 38px;
+  }
+
+  /* LTR CENTER LINE */
 
   .journey-timeline::before {
     left: 30px;
-
-    width: 2px;
+    right: auto;
 
     transform: none;
   }
 
-  /* STEP */
+  /* LTR MOBILE STEP */
 
   .journey-step {
-    display: grid;
+    min-height: 120px;
 
     grid-template-columns: 60px 1fr;
 
-    min-height: auto;
-
-    padding: 30px 0;
+    direction: ltr;
   }
 
-  /* NUMBER */
-
   .journey-center {
-    position: absolute;
+    grid-column: 1;
+    grid-row: 1;
 
-    top: 3px;
-    left: 30px;
-
-    width: 54px;
-    height: 54px;
-
-    transform: translateX(-50%);
+    width: 60px;
   }
 
   .journey-number {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
 
-    font-size: 12px;
+    font-size: 18px;
   }
 
-  /* CONTENT */
+  /* LTR CONTENT */
 
   .journey-content,
   .journey-step:nth-child(odd) .journey-content,
   .journey-step:nth-child(even) .journey-content {
     grid-column: 2;
+    grid-row: 1;
 
+    justify-self: start;
+
+    width: 100%;
     max-width: none;
 
     padding: 3px 0 3px 22px;
 
     text-align: left;
+
+    direction: ltr;
   }
 
-  /* NO CONNECTOR ON MOBILE */
+  .journey-content h3 {
+    font-size: 23px;
+  }
+
+  .journey-content h4 {
+    font-size: 11px;
+  }
+
+  .journey-content p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .journey-meta {
+    justify-content: flex-start !important;
+  }
 
   .journey-step::after {
     display: none;
   }
 
-  /* RTL MOBILE */
+  /* ==================================================
+     MOBILE RTL
+     
+     01 → RIGHT
+     02 → RIGHT
+     03 → RIGHT
+     04 → RIGHT
+     
+     Number column stays on RIGHT
+     Content stays LEFT of number
+     Sequence stays 01 → 02 → 03 → 04
+  ================================================== */
+
+  body.rtl .journey-timeline {
+    direction: ltr;
+  }
 
   body.rtl .journey-timeline::before {
     left: auto;
     right: 30px;
-  }
 
-  body.rtl .journey-center {
-    left: auto;
-    right: 30px;
-
-    transform: translateX(50%);
+    transform: none;
   }
 
   body.rtl .journey-step {
+    direction: ltr;
+
     grid-template-columns: 1fr 60px;
+  }
+
+  body.rtl .journey-center {
+    grid-column: 2;
+    grid-row: 1;
+
+    width: 60px;
+
+    direction: ltr;
+  }
+
+  body.rtl .journey-number {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  /* RTL CONTENT */
+
+  body.rtl .journey-content,
+  body.rtl .journey-step:nth-child(odd) .journey-content,
+  body.rtl .journey-step:nth-child(even) .journey-content {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-self: end;
+
+    width: 100%;
+    max-width: none;
+
+    padding: 3px 22px 3px 0;
+
+    direction: rtl;
+
+    text-align: right;
+  }
+
+  body.rtl .journey-meta {
+    justify-content: flex-start !important;
+  }
+}
+
+/* ==================================================
+   SAMSUNG S8+
+   360px — 380px
+================================================== */
+
+@media (min-width: 360px) and (max-width: 380px) {
+  .project-journey {
+    padding: 55px 15px;
+  }
+
+  .journey-header h2 {
+    font-size: 38px;
+  }
+
+  .journey-header p {
+    font-size: 11px;
+  }
+
+  .journey-timeline {
+    gap: 34px;
+  }
+
+  /* LTR LINE */
+
+  .journey-timeline::before {
+    left: 29px;
+    right: auto;
+  }
+
+  /* LTR STEP */
+
+  .journey-step {
+    grid-template-columns: 58px 1fr;
+
+    direction: ltr;
+  }
+
+  .journey-center {
+    width: 58px;
+  }
+
+  .journey-number {
+    width: 50px;
+    height: 50px;
+
+    font-size: 17px;
+  }
+
+  /* LTR CONTENT */
+
+  .journey-content,
+  .journey-step:nth-child(odd) .journey-content,
+  .journey-step:nth-child(even) .journey-content {
+    padding-left: 20px;
+    padding-right: 0;
+  }
+
+  .journey-content h3 {
+    font-size: 21px;
+  }
+
+  .journey-content h4 {
+    font-size: 10px;
+  }
+
+  .journey-content p {
+    font-size: 10px;
+    line-height: 1.65;
+  }
+
+  /* ==================================================
+     RTL S8+
+  ================================================== */
+
+  body.rtl .journey-timeline {
+    direction: ltr;
+  }
+
+  body.rtl .journey-timeline::before {
+    left: auto;
+    right: 29px;
+  }
+
+  body.rtl .journey-step {
+    direction: ltr;
+
+    grid-template-columns: 1fr 58px;
+  }
+
+  body.rtl .journey-center {
+    grid-column: 2;
+    grid-row: 1;
+
+    width: 58px;
+
+    direction: ltr;
+  }
+
+  body.rtl .journey-number {
+    direction: ltr;
+    unicode-bidi: isolate;
   }
 
   body.rtl .journey-content,
   body.rtl .journey-step:nth-child(odd) .journey-content,
   body.rtl .journey-step:nth-child(even) .journey-content {
     grid-column: 1;
+    grid-row: 1;
 
-    padding: 3px 22px 3px 0;
+    justify-self: end;
+
+    width: 100%;
+    max-width: none;
+
+    padding-right: 20px;
+    padding-left: 0;
 
     text-align: right;
+
+    direction: rtl;
   }
 }
 
 /* ==================================================
-   SAMSUNG S8+
-   360px - 380px
+   VERY SMALL DEVICES
+   BELOW 360px
 ================================================== */
 
-@media (min-width: 360px) and (max-width: 380px) {
+@media (max-width: 359px) {
   .project-journey {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 55px 15px;
   }
 
   .journey-header h2 {
-    font-size: 30px;
+    font-size: 36px;
   }
+
+  .journey-header p {
+    font-size: 11px;
+  }
+
+  .journey-timeline {
+    gap: 32px;
+  }
+
+  /* LTR LINE */
 
   .journey-timeline::before {
-    left: 29px;
+    left: 27px;
+    right: auto;
   }
 
+  /* LTR STEP */
+
   .journey-step {
-    grid-template-columns: 58px 1fr;
+    grid-template-columns: 54px 1fr;
+
+    direction: ltr;
   }
 
   .journey-center {
-    left: 29px;
-
-    width: 52px;
-    height: 52px;
+    width: 54px;
   }
 
   .journey-number {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
+
+    font-size: 16px;
   }
+
+  /* LTR CONTENT */
 
   .journey-content,
   .journey-step:nth-child(odd) .journey-content,
   .journey-step:nth-child(even) .journey-content {
-    padding-left: 20px;
+    padding-left: 16px;
+    padding-right: 0;
+  }
+
+  .journey-content h3 {
+    font-size: 20px;
+  }
+
+  .journey-content p {
+    font-size: 10px;
+  }
+
+  /* ==================================================
+     RTL VERY SMALL
+  ================================================== */
+
+  body.rtl .journey-timeline {
+    direction: ltr;
   }
 
   body.rtl .journey-timeline::before {
     left: auto;
-    right: 29px;
-  }
-
-  body.rtl .journey-center {
-    left: auto;
-    right: 29px;
+    right: 27px;
   }
 
   body.rtl .journey-step {
-    grid-template-columns: 1fr 58px;
+    direction: ltr;
+
+    grid-template-columns: 1fr 54px;
+  }
+
+  body.rtl .journey-center {
+    grid-column: 2;
+    grid-row: 1;
+
+    width: 54px;
+
+    direction: ltr;
+  }
+
+  body.rtl .journey-number {
+    direction: ltr;
+    unicode-bidi: isolate;
   }
 
   body.rtl .journey-content,
   body.rtl .journey-step:nth-child(odd) .journey-content,
   body.rtl .journey-step:nth-child(even) .journey-content {
-    padding-right: 20px;
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-self: end;
+
+    width: 100%;
+    max-width: none;
+
+    padding-right: 16px;
     padding-left: 0;
+
+    text-align: right;
+
+    direction: rtl;
   }
 }
+
 /* ==================================================
    CRAFTNEST - MEET OUR CRAFTSMEN
    RESPONSIVE + RTL
@@ -4693,291 +5095,14 @@ body.rtl .craftsmen-button {
   font-weight: 500;
 }
 
-/* ==================================================
-   CUSTOMER STORIES
-   RESPONSIVE + RTL
-================================================== */
-
-/* =====================================================
-   MAIN CTA
-===================================================== */
-
-.craftnest-cta {
-  width: 100%;
-
-  padding: 90px 7%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #ffffff;
+body.rtl .story-customer {
+  direction: rtl;
+  text-align: right;
 }
 
-/* =====================================================
-   CTA CONTAINER
-===================================================== */
-
-.craftnest-cta-container {
-  width: 100%;
-  max-width: 1450px;
-
-  min-height: 560px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  overflow: hidden;
-
-  border-radius: 22px;
-
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-}
-
-/* =====================================================
-   LEFT IMAGE
-===================================================== */
-
-.craftnest-cta-image {
-  width: 100%;
-  height: 100%;
-
-  min-height: 560px;
-
-  overflow: hidden;
-}
-
-.craftnest-cta-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-  object-position: center;
-}
-
-/* =====================================================
-   RIGHT CONTENT
-===================================================== */
-
-.craftnest-cta-content {
-  min-height: 560px;
-
-  padding: 70px 75px;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: flex-start;
-  justify-content: center;
-
-  background: #4a2c1a;
-
-  color: #ffffff;
-}
-
-/* =====================================================
-   LABEL
-===================================================== */
-
-.craftnest-cta-label {
-  display: block;
-
-  margin-bottom: 20px;
-
-  color: #d9a15b;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 14px;
-  font-weight: 700;
-
-  letter-spacing: 2.5px;
-}
-
-/* =====================================================
-   HEADING
-===================================================== */
-
-.craftnest-cta-content h2 {
-  max-width: 600px;
-
-  margin-bottom: 25px;
-
-  color: #ffffff;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: clamp(40px, 4vw, 58px);
-
-  line-height: 1.12;
-
-  font-weight: 700;
-
-  letter-spacing: -1.5px;
-}
-
-/* =====================================================
-   DESCRIPTION
-===================================================== */
-
-.craftnest-cta-content p {
-  max-width: 570px;
-
-  margin-bottom: 35px;
-
-  color: rgba(255, 255, 255, 0.78);
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 14px;
-
-  font-weight: 400;
-
-  line-height: 1.9;
-}
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.craftnest-cta-button {
-  min-width: 225px;
-  height: 54px;
-
-  padding: 0 28px;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 25px;
-
-  border-radius: 30px;
-
-  background: #d9a15b;
-
-  border: 1px solid #d9a15b;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.craftnest-cta-button span {
-  font-size: 20px;
-  line-height: 1;
-}
-
-.craftnest-cta-button:hover {
-  background: #b87333;
-
-  border-color: #b87333;
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
-}
-
-/* ==================================================
-   CUSTOMER STORIES
-   RESPONSIVE + RTL
-================================================== */
-
-/* ==================================================
-   LARGE DESKTOP — 1920px+
-   ONLY SIDE WIDTH REDUCED
-   LTR + RTL
-================================================== */
-
-@media (min-width: 1600px) {
-  .customer-stories {
-    width: 100%;
-    max-width: 1500px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    padding: 120px 4% 140px;
-
-    box-sizing: border-box;
-  }
-
-  /* ===============================
-     LTR
-  =============================== */
-
-  body:not(.rtl) .customer-stories {
-    direction: ltr;
-  }
-
-  body:not(.rtl) .customer-stories-header {
-    direction: ltr;
-    text-align: center;
-  }
-
-  body:not(.rtl) .customer-stories-grid {
-    direction: ltr;
-  }
-
-  /* ===============================
-     RTL
-  =============================== */
-
-  body.rtl .customer-stories {
-    direction: rtl;
-  }
-
-  body.rtl .customer-stories-header {
-    direction: rtl;
-    text-align: center;
-  }
-
-  body.rtl .customer-stories-grid {
-    direction: rtl;
-  }
-
-  body.rtl .story-card {
-    direction: rtl;
-    text-align: right;
-  }
-
-  body.rtl .story-content {
-    direction: rtl;
-    text-align: right;
-  }
-
-  body.rtl .story-stars {
-    direction: rtl;
-    text-align: right;
-  }
-
-  body.rtl .story-review {
-    direction: rtl;
-    text-align: right;
-  }
-
-  body.rtl .story-customer {
-    direction: rtl;
-    text-align: right;
-  }
-
-  body.rtl .story-badge {
-    left: auto;
-    right: 14px;
-  }
+body.rtl .story-badge {
+  left: auto;
+  right: 14px;
 }
 
 /* ==================================================
@@ -6261,7 +6386,7 @@ body.rtl .faq-answer p {
 .craftnest-cta-container {
   width: 100%;
   max-width: 1450px;
-  min-height: 560px;
+  min-height: 400px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -6277,8 +6402,8 @@ body.rtl .faq-answer p {
 
 .craftnest-cta-image {
   width: 100%;
-  height: 100%;
-  min-height: 560px;
+  height: 400;
+  min-height: 400px;
 
   overflow: hidden;
 }

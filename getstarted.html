@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Nest</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="get started.css" />
+
+    <!-- Lucide -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- ==================================================
+       HEADER
+  ================================================== -->
+
+    <header class="site-header">
+      <div class="header-container">
+        <!-- LOGO -->
+
+        <a href="index.html" class="logo">
+          <span class="logo-icon">
+            <img src="images/logo2.png" alt="Craft Nest Logo" />
+          </span>
+
+          <span class="logo-name"> Craft<strong>Nest</strong> </span>
+        </a>
+
+        <!-- HEADER ACTIONS -->
+
+        <div class="header-actions">
+          <!-- RTL -->
+
+          <button type="button" class="rtl-button" id="rtlToggle">
+            <span>RTL</span>
+          </button>
+
+          <!-- DARK / LIGHT -->
+
+          <button
+            type="button"
+            class="icon-button"
+            id="darkToggle"
+            aria-label="Dark Mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================================================
+     CUSTOM FURNITURE ENQUIRY
+================================================== -->
+
+    <section class="custom-enquiry" id="enquiry">
+      <div class="enquiry-container">
+        <!-- ==================================================
+         LEFT — CONTACT INFORMATION
+    ================================================== -->
+
+        <div class="enquiry-info">
+          <div class="enquiry-info-header">
+            <span>GET IN TOUCH</span>
+            <h2>Let's Build Something <em>Beautiful</em></h2>
+            <p>
+              Have a custom furniture idea? Share your requirements with us and
+              our craftsmen will help bring your vision to life.
+            </p>
+          </div>
+
+          <!-- ADDRESS -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-map-pin-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>ADDRESS</span>
+              <h3>Our Workshop</h3>
+              <p>
+                123 Craft Street,<br />
+                Woodworking District,<br />
+                Your City, India
+              </p>
+            </div>
+          </div>
+
+          <!-- WORKING HOURS -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-time-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>WORKING HOURS</span>
+              <h3>Visit Our Workshop</h3>
+              <p>
+                Monday – Saturday<br />
+                9:00 AM – 7:00 PM
+              </p>
+            </div>
+          </div>
+
+          <!-- PHONE -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-phone-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>PHONE NUMBER</span>
+              <h3>Call Us</h3>
+              <p>+91 98765 43210</p>
+            </div>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-mail-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>EMAIL ADDRESS</span>
+              <h3>Send Us a Message</h3>
+              <p>hello@customfurniture.com</p>
+            </div>
+          </div>
+
+          <!-- WORKSHOP -->
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="ri-hammer-line"></i>
+            </div>
+
+            <div class="info-content">
+              <span>OUR WORKSHOP</span>
+              <h3>Craftsmanship Studio</h3>
+              <p>Visit our workshop and explore our craftsmanship in person.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================
+         RIGHT — ENQUIRY FORM
+    ================================================== -->
+
+        <div class="enquiry-form-wrapper">
+          <div class="form-header">
+            <span>CUSTOM FURNITURE</span>
+            <h2>Custom Furniture <em>Enquiry</em></h2>
+            <p>
+              Tell us about your project and we will get back to you with the
+              right solution for your space.
+            </p>
+          </div>
+
+          <form class="enquiry-form">
+            <!-- NAME -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <!-- EMAIL -->
+              <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- PHONE + FURNITURE TYPE -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="furnitureType">Furniture Type</label>
+
+                <select id="furnitureType" name="furnitureType" required>
+                  <option value="">Select Furniture Type</option>
+                  <option value="table">Tables</option>
+                  <option value="bed">Beds</option>
+                  <option value="storage">Storage Units</option>
+                  <option value="wardrobe">Wardrobes</option>
+                  <option value="chair">Chairs</option>
+                  <option value="sofa">Sofas</option>
+                  <option value="custom">Custom Furniture</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- DIMENSIONS -->
+            <div class="form-group full-width">
+              <label for="dimensions"> Dimensions & Requirements </label>
+
+              <textarea
+                id="dimensions"
+                name="dimensions"
+                rows="4"
+                placeholder="Enter dimensions and specific requirements"
+              ></textarea>
+            </div>
+
+            <!-- BUDGET + MATERIAL -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budget"> Budget Range </label>
+
+                <select id="budget" name="budget">
+                  <option value="">Select Budget Range</option>
+
+                  <option value="below-25000">Below ₹25,000</option>
+
+                  <option value="25000-50000">₹25,000 – ₹50,000</option>
+
+                  <option value="50000-100000">₹50,000 – ₹1,00,000</option>
+
+                  <option value="100000-250000">₹1,00,000 – ₹2,50,000</option>
+
+                  <option value="above-250000">Above ₹2,50,000</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="material"> Material Preference </label>
+
+                <select id="material" name="material">
+                  <option value="">Select Material</option>
+
+                  <option value="walnut">Walnut</option>
+
+                  <option value="teak">Teak</option>
+
+                  <option value="oak">Oak</option>
+
+                  <option value="solid-wood">Solid Wood</option>
+
+                  <option value="plywood">Plywood</option>
+
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- PROJECT DESCRIPTION -->
+            <div class="form-group full-width">
+              <label for="projectDescription"> Project Description </label>
+
+              <textarea
+                id="projectDescription"
+                name="projectDescription"
+                rows="5"
+                placeholder="Describe your project, design ideas and requirements"
+              ></textarea>
+            </div>
+
+            <!-- REFERENCE IMAGE -->
+            <div class="form-group full-width">
+              <label for="referenceImage"> Reference Image Upload </label>
+
+              <div class="upload-box">
+                <i class="ri-image-add-line"></i>
+
+                <div>
+                  <strong>Upload Reference Image</strong>
+
+                  <small> JPG, PNG or WEBP files </small>
+                </div>
+
+                <input
+                  type="file"
+                  id="referenceImage"
+                  name="referenceImage"
+                  accept="image/*"
+                />
+              </div>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="form-submit">
+              <button type="submit">
+                Submit Enquiry
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="getstarted.js"></script>
+  </body>
+</html>
