@@ -66,14 +66,113 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
       event.stopPropagation();
 
-      navDropdown.classList.toggle("open");
+      /*
+          "open" = dropdown visibility
 
-      navDropdown.classList.toggle(
-        "active",
-        navDropdown.classList.contains("open"),
-      );
+          DO NOT use "active" here.
+          Active is only for the current page.
+        */
+
+      navDropdown.classList.toggle("open");
     });
   }
+
+  /* ==================================================
+     ACTIVE NAVIGATION
+  ================================================== */
+
+  function setActiveNavigation() {
+    if (!mainNav) {
+      return;
+    }
+
+    /* ==================================================
+       REMOVE OLD ACTIVE STATES
+    ================================================== */
+
+    mainNav.querySelectorAll(".nav-link").forEach(function (link) {
+      link.classList.remove("active");
+    });
+
+    /* ==================================================
+       GET CURRENT PAGE
+    ================================================== */
+
+    let currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+    /*
+      If URL is root:
+      example.com/
+      treat it as index.html
+    */
+
+    if (!currentPage) {
+      currentPage = "index.html";
+    }
+
+    /* ==================================================
+       HOME ACTIVE
+       index.html
+       index1.html
+    ================================================== */
+
+    if (currentPage === "index.html" || currentPage === "index1.html") {
+      if (homeDropdownButton) {
+        homeDropdownButton.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       OTHER NAVIGATION LINKS
+    ================================================== */
+
+    const navLinks = mainNav.querySelectorAll(".nav-link[href]");
+
+    navLinks.forEach(function (link) {
+      const href = link.getAttribute("href");
+
+      if (!href) {
+        return;
+      }
+
+      /*
+        Convert href to only filename.
+
+        Examples:
+
+        portfolio.html
+        ./portfolio.html
+        /portfolio.html
+
+        All become:
+
+        portfolio.html
+      */
+
+      const linkPage = href
+        .split("/")
+        .pop()
+        .split("?")[0]
+        .split("#")[0]
+        .toLowerCase();
+
+      /* ==================================================
+         CURRENT PAGE MATCH
+      ================================================== */
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  /* ==================================================
+     APPLY ACTIVE NAVIGATION
+  ================================================== */
+
+  setActiveNavigation();
 
   /* ==================================================
      CLOSE MOBILE MENU WHEN LINK CLICKED
@@ -89,8 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (navDropdown) {
             navDropdown.classList.remove("open");
-
-            navDropdown.classList.remove("active");
           }
 
           if (menuToggle) {
@@ -98,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             menuToggle.setAttribute("aria-label", "Open Menu");
 
-            menuToggle.setAttribute("title", "Menu");
+            menuToggle.setAttribute("title", "Open Menu");
 
             loadIcons();
           }
@@ -119,6 +216,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (menuToggle) {
             menuToggle.innerHTML = '<i data-lucide="menu"></i>';
+
+            menuToggle.setAttribute("aria-label", "Open Menu");
+
+            menuToggle.setAttribute("title", "Open Menu");
 
             loadIcons();
           }
@@ -142,15 +243,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (navDropdown) {
           navDropdown.classList.remove("open");
-
-          navDropdown.classList.remove("active");
         }
 
         menuToggle.innerHTML = '<i data-lucide="menu"></i>';
 
         menuToggle.setAttribute("aria-label", "Open Menu");
 
-        menuToggle.setAttribute("title", "Menu");
+        menuToggle.setAttribute("title", "Open Menu");
 
         loadIcons();
       }
@@ -189,8 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (navDropdown) {
         navDropdown.classList.remove("open");
-
-        navDropdown.classList.remove("active");
       }
 
       if (menuToggle) {
@@ -198,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuToggle.setAttribute("aria-label", "Open Menu");
 
-        menuToggle.setAttribute("title", "Menu");
+        menuToggle.setAttribute("title", "Open Menu");
 
         loadIcons();
       }

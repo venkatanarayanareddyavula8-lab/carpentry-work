@@ -52,9 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
       mainNav.classList.remove("active");
     }
 
+    /*
+      IMPORTANT:
+      Only close dropdown.
+      Do NOT remove "active"
+      because active = current page.
+    */
+
     if (dropdown) {
       dropdown.classList.remove("open");
-      dropdown.classList.remove("active");
     }
 
     setMenuIcon(false);
@@ -83,9 +89,14 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       event.stopPropagation();
 
-      const isOpen = dropdown.classList.toggle("open");
+      /*
+        "open" = dropdown state
+        "active" = current page state
 
-      dropdown.classList.toggle("active", isOpen);
+        So we only toggle "open" here.
+      */
+
+      dropdown.classList.toggle("open");
     });
   }
 
@@ -152,6 +163,100 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeader();
 
   /* ==================================================
+     ACTIVE NAVIGATION
+  ================================================== */
+
+  const setActiveNavigation = () => {
+    if (!mainNav) return;
+
+    const currentPage =
+      window.location.pathname.split("/").pop().toLowerCase() || "index.html";
+
+    /* Remove old active state */
+
+    mainNav.querySelectorAll(".nav-link").forEach((link) => {
+      link.classList.remove("active");
+    });
+
+    /* ==================================================
+       HOME
+       HOME 1 + HOME 2
+    ================================================== */
+
+    if (
+      currentPage === "index.html" ||
+      currentPage === "index1.html" ||
+      currentPage === ""
+    ) {
+      if (homeButton) {
+        homeButton.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       PORTFOLIO
+    ================================================== */
+
+    if (currentPage === "portfolio.html") {
+      const portfolio = mainNav.querySelector('a[href="portfolio.html"]');
+
+      if (portfolio) {
+        portfolio.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       MATERIALS & FINISHES
+    ================================================== */
+
+    if (currentPage === "materials.html") {
+      const materials = mainNav.querySelector('a[href="materials.html"]');
+
+      if (materials) {
+        materials.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       PROCESS
+    ================================================== */
+
+    if (currentPage === "process.html") {
+      const process = mainNav.querySelector('a[href="process.html"]');
+
+      if (process) {
+        process.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       CONTACT
+    ================================================== */
+
+    if (currentPage === "contact.html") {
+      const contact = mainNav.querySelector('a[href="contact.html"]');
+
+      if (contact) {
+        contact.classList.add("active");
+      }
+
+      return;
+    }
+  };
+
+  /* RUN ACTIVE NAVIGATION */
+
+  setActiveNavigation();
+
+  /* ==================================================
      RESPONSIVE RESET
   ================================================== */
 
@@ -191,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!Number.isFinite(target)) return;
 
     const duration = 1500;
+
     const startTime = performance.now();
 
     const animateCounter = (currentTime) => {
@@ -226,9 +332,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const direction = index === 0 ? 1 : -1;
 
         item.style.transform = `translate(
-            ${x * direction}px,
-            ${y * direction}px
-          )`;
+                ${x * direction}px,
+                ${y * direction}px
+              )`;
       });
     });
 
@@ -239,63 +345,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ==================================================
-   CRAFT NEST - ACTIVE NAV LINKS
-   6 NAV LINKS
-================================================== */
-
-  const currentPage =
-    window.location.pathname.split("/").pop().toLowerCase() || "index.html";
-
-  if (mainNav) {
-    const navLinks = mainNav.querySelectorAll(".nav-link");
-
-    /* -----------------------------------------------
-     REMOVE ACTIVE FROM ALL LINKS
-  ------------------------------------------------ */
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-    });
-
-    /* -----------------------------------------------
-     CHECK CURRENT PAGE
-  ------------------------------------------------ */
-
-    navLinks.forEach((link) => {
-      const href = link.getAttribute("href");
-
-      /* HOME */
-      if (
-        link === homeButton &&
-        (currentPage === "index.html" ||
-          currentPage === "index1.html" ||
-          currentPage === "")
-      ) {
-        link.classList.add("active");
-        return;
-      }
-
-      /* OTHER NAV LINKS */
-      if (href && href.toLowerCase() === currentPage) {
-        link.classList.add("active");
-      }
-    });
-
-    /* -----------------------------------------------
-     CLICK ACTIVE LINK
-  ------------------------------------------------ */
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        navLinks.forEach((item) => {
-          item.classList.remove("active");
-        });
-
-        this.classList.add("active");
-      });
-    });
-  }
   /* ==================================================
      INITIAL ICON LOAD
   ================================================== */

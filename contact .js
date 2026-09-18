@@ -64,16 +64,111 @@ document.addEventListener("DOMContentLoaded", function () {
   if (homeDropdownButton && navDropdown) {
     homeDropdownButton.addEventListener("click", function (event) {
       event.preventDefault();
+
       event.stopPropagation();
 
-      navDropdown.classList.toggle("open");
+      /*
+          "open" controls only dropdown visibility.
 
-      navDropdown.classList.toggle(
-        "active",
-        navDropdown.classList.contains("open"),
-      );
+          "active" is reserved for the current page.
+        */
+
+      navDropdown.classList.toggle("open");
     });
   }
+
+  /* ==================================================
+     ACTIVE NAVIGATION
+  ================================================== */
+
+  function setActiveNavigation() {
+    if (!mainNav) {
+      return;
+    }
+
+    /* ==================================================
+       REMOVE ALL ACTIVE STATES
+    ================================================== */
+
+    mainNav.querySelectorAll(".nav-link").forEach(function (link) {
+      link.classList.remove("active");
+    });
+
+    /* ==================================================
+       GET CURRENT PAGE
+    ================================================== */
+
+    let currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+    /*
+      Root website URL = index.html
+    */
+
+    if (!currentPage) {
+      currentPage = "index.html";
+    }
+
+    /* ==================================================
+       HOME ACTIVE
+       index.html
+       index1.html
+    ================================================== */
+
+    if (currentPage === "index.html" || currentPage === "index1.html") {
+      if (homeDropdownButton) {
+        homeDropdownButton.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       OTHER NAVIGATION LINKS
+    ================================================== */
+
+    const navLinks = mainNav.querySelectorAll(".nav-link[href]");
+
+    navLinks.forEach(function (link) {
+      const href = link.getAttribute("href");
+
+      if (!href) {
+        return;
+      }
+
+      /*
+        Normalize the link.
+
+        portfolio.html
+        ./portfolio.html
+        /portfolio.html
+
+        all become:
+
+        portfolio.html
+      */
+
+      const linkPage = href
+        .split("/")
+        .pop()
+        .split("?")[0]
+        .split("#")[0]
+        .toLowerCase();
+
+      /* ==================================================
+         ADD ACTIVE CLASS
+      ================================================== */
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  /* ==================================================
+     APPLY ACTIVE NAVIGATION
+  ================================================== */
+
+  setActiveNavigation();
 
   /* ==================================================
      CLOSE MOBILE MENU WHEN LINK CLICKED
@@ -89,8 +184,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (navDropdown) {
             navDropdown.classList.remove("open");
-
-            navDropdown.classList.remove("active");
           }
 
           if (menuToggle) {
@@ -120,6 +213,10 @@ document.addEventListener("DOMContentLoaded", function () {
           if (menuToggle) {
             menuToggle.innerHTML = '<i data-lucide="menu"></i>';
 
+            menuToggle.setAttribute("aria-label", "Open Menu");
+
+            menuToggle.setAttribute("title", "Menu");
+
             loadIcons();
           }
         }
@@ -142,8 +239,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (navDropdown) {
           navDropdown.classList.remove("open");
-
-          navDropdown.classList.remove("active");
         }
 
         menuToggle.innerHTML = '<i data-lucide="menu"></i>';
@@ -189,8 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (navDropdown) {
         navDropdown.classList.remove("open");
-
-        navDropdown.classList.remove("active");
       }
 
       if (menuToggle) {
@@ -217,25 +310,37 @@ faqItems.forEach(function (item) {
 
   const icon = item.querySelector(".faq-icon");
 
+  if (!question) {
+    return;
+  }
+
   question.addEventListener("click", function () {
     const isActive = item.classList.contains("active");
 
-    /* Close all FAQ items */
+    /* ==================================================
+         CLOSE ALL FAQ ITEMS
+      ================================================== */
 
     faqItems.forEach(function (otherItem) {
       otherItem.classList.remove("active");
 
       const otherIcon = otherItem.querySelector(".faq-icon");
 
-      otherIcon.textContent = "+";
+      if (otherIcon) {
+        otherIcon.textContent = "+";
+      }
     });
 
-    /* Open selected FAQ */
+    /* ==================================================
+         OPEN SELECTED FAQ
+      ================================================== */
 
     if (!isActive) {
       item.classList.add("active");
 
-      icon.textContent = "−";
+      if (icon) {
+        icon.textContent = "−";
+      }
     }
   });
 });

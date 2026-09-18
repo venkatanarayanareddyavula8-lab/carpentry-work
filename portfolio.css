@@ -1499,7 +1499,7 @@ body.dark .portfolio-hero-overlay {
 
 /* ==================================================
    OUR COLLECTION
-   COMPLETE RESPONSIVE CSS
+   BASE
 ================================================== */
 
 .furniture-collection {
@@ -1509,72 +1509,56 @@ body.dark .portfolio-hero-overlay {
   background: var(--bg);
   color: var(--text);
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* ==================================================
-   SECTION HEADER
+   COLLECTION HEADER
 ================================================== */
 
 .collection-header {
   width: 100%;
   max-width: 850px;
-  margin: 0 auto 45px;
+  margin: 0 auto 60px;
   text-align: center;
   box-sizing: border-box;
 }
 
 .collection-label {
   display: inline-block;
-
-  padding: 7px 18px;
   margin-bottom: 18px;
-
-  border: 1px solid var(--primary);
-  border-radius: 30px;
-
-  color: var(--primary);
-
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-
-  letter-spacing: 2px;
-
-  box-sizing: border-box;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--secondary);
 }
 
 .collection-header h2 {
-  margin: 0;
-
+  margin: 0 0 20px;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(45px, 6vw, 60px);
-  font-weight: 600;
-  line-height: 1;
-
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 1.05;
   color: var(--text);
 }
 
 .collection-header h2 em {
-  color: var(--secondary);
+  color: var(--primary);
   font-style: italic;
 }
 
 .collection-header p {
   width: 100%;
   max-width: 700px;
-
-  margin: 22px auto 0;
-
+  margin: 0 auto;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
-  font-weight: 400;
-  line-height: 1.7;
-
+  line-height: 1.8;
   color: var(--text);
-
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  opacity: 0.75;
+  box-sizing: border-box;
 }
 
 /* ==================================================
@@ -1584,12 +1568,10 @@ body.dark .portfolio-hero-overlay {
 .furniture-grid {
   width: 100%;
   max-width: 1500px;
-
   margin: 0 auto;
 
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
   gap: 30px;
 
   box-sizing: border-box;
@@ -1601,11 +1583,11 @@ body.dark .portfolio-hero-overlay {
 
 .furniture-card {
   width: 100%;
+  max-width: 100%;
   min-width: 0;
 
   background: var(--bg);
-
-  border: 1px solid rgba(139, 90, 53, 0.35);
+  border: 1px solid rgba(139, 90, 53, 0.18);
 
   overflow: hidden;
   box-sizing: border-box;
@@ -1617,17 +1599,18 @@ body.dark .portfolio-hero-overlay {
 
 .furniture-card:hover {
   transform: translateY(-6px);
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* ==================================================
-   IMAGE
+   FURNITURE IMAGE
 ================================================== */
 
 .furniture-image {
   width: 100%;
   height: 350px;
+
+  min-width: 0;
+  max-width: 100%;
 
   overflow: hidden;
   box-sizing: border-box;
@@ -1637,23 +1620,30 @@ body.dark .portfolio-hero-overlay {
   display: block;
 
   width: 100%;
+  max-width: 100%;
   height: 100%;
 
+  min-width: 0;
+
   object-fit: cover;
+  object-position: center;
 
   transition: transform 0.5s ease;
+
+  box-sizing: border-box;
 }
 
 .furniture-card:hover .furniture-image img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 /* ==================================================
-   CONTENT
+   FURNITURE CONTENT
 ================================================== */
 
 .furniture-content {
   width: 100%;
+  max-width: 100%;
   padding: 28px;
 
   box-sizing: border-box;
@@ -1661,13 +1651,12 @@ body.dark .portfolio-hero-overlay {
 
 .furniture-number {
   display: block;
-
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
 
   color: var(--primary);
 }
@@ -1676,211 +1665,50 @@ body.dark .portfolio-hero-overlay {
   margin: 0 0 12px;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 34px;
+  font-weight: 500;
   line-height: 1.1;
 
   color: var(--text);
 }
 
 .furniture-content p {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.75;
 
   color: var(--text);
+  opacity: 0.75;
 
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 /* ==================================================
    DARK MODE
 ================================================== */
 
+body.dark .furniture-collection {
+  background: var(--bg);
+  color: var(--text);
+}
+
 body.dark .furniture-card {
-  border-color: rgba(217, 161, 91, 0.35);
+  background: var(--bg);
+  border-color: rgba(217, 161, 91, 0.2);
 }
 
-body.dark .filter-btn {
-  border-color: var(--primary);
-}
-
-/* ==================================================
-   RESPONSIVE FURNITURE COLLECTION
-   S8+ / IPAD MINI / NETBOOK / 1920+
-================================================== */
-
-/* ==================================================
-   NETBOOK
-   769px - 1024px
-   2 CARDS
-================================================== */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .furniture-collection {
-    width: 100%;
-    max-width: 100%;
-    padding: 80px 5%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  .collection-header {
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto 40px;
-    box-sizing: border-box;
-  }
-
-  .collection-header p {
-    width: 100%;
-    max-width: 650px;
-  }
-
-  .furniture-card {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-
-  .furniture-image {
-    width: 100%;
-    max-width: 100%;
-    height: 300px;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  .furniture-image img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .furniture-content {
-    width: 100%;
-    padding: 24px;
-    box-sizing: border-box;
-  }
-
-  .furniture-content h3 {
-    font-size: 30px;
-  }
-}
-
-/* ==================================================
-   IPAD MINI
-   601px - 768px
-   2 CARDS + 1 CENTER
-================================================== */
-
-@media (min-width: 601px) and (max-width: 768px) {
-  .furniture-collection {
-    width: 100%;
-    max-width: 100%;
-    padding: 75px 5%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  .collection-header {
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto 35px;
-    box-sizing: border-box;
-  }
-
-  .collection-label {
-    font-size: 10px;
-    letter-spacing: 1.7px;
-  }
-
-  .collection-header h2 {
-    font-size: 46px;
-    line-height: 1.05;
-  }
-
-  .collection-header p {
-    width: 100%;
-    max-width: 600px;
-    font-size: 15px;
-  }
-
-  .furniture-grid {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-
-    box-sizing: border-box;
-  }
-
-  .furniture-card {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-
-  /* Third card centered */
-  .furniture-card:nth-child(3) {
-    grid-column: 1 / -1;
-
-    width: calc(50% - 10px);
-    max-width: calc(50% - 10px);
-
-    justify-self: center;
-  }
-
-  .furniture-image {
-    width: 100%;
-    max-width: 100%;
-    height: 270px;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  .furniture-image img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .furniture-content {
-    width: 100%;
-    padding: 22px;
-    box-sizing: border-box;
-  }
-
-  .furniture-number {
-    font-size: 9px;
-  }
-
-  .furniture-content h3 {
-    font-size: 28px;
-  }
-
-  .furniture-content p {
-    font-size: 15px;
-  }
+body.dark .collection-header h2,
+body.dark .furniture-content h3 {
+  color: var(--text);
 }
 
 /* ==================================================
    SAMSUNG GALAXY S8+
-   MOBILE RESPONSIVE ONLY
-   360px - 480px
+   360px — 480px
 ================================================== */
 
 @media (min-width: 360px) and (max-width: 480px) {
@@ -1888,49 +1716,43 @@ body.dark .filter-btn {
     width: 100%;
     max-width: 100%;
     padding: 60px 20px;
-    box-sizing: border-box;
+
     overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   .collection-header {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto 35px;
-    text-align: center;
-    box-sizing: border-box;
+    margin-bottom: 40px;
   }
 
   .collection-label {
+    margin-bottom: 14px;
     font-size: 9px;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
   }
 
   .collection-header h2 {
-    width: 100%;
-    max-width: 100%;
     font-size: 38px;
     line-height: 1.05;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    margin-bottom: 15px;
   }
 
   .collection-header p {
     width: 100%;
     max-width: 100%;
-    font-size: 12px;
-    line-height: 1.65;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    font-size: 11px;
+    line-height: 1.7;
   }
 
-  /* ONE COLUMN ONLY */
   .furniture-grid {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
-    display: grid;
+
     grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
+    gap: 22px;
+
     box-sizing: border-box;
   }
 
@@ -1938,6 +1760,7 @@ body.dark .filter-btn {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+
     box-sizing: border-box;
   }
 
@@ -1945,15 +1768,17 @@ body.dark .filter-btn {
     width: 100%;
     max-width: 100%;
     height: 280px;
+
     overflow: hidden;
     box-sizing: border-box;
   }
 
   .furniture-image img {
-    display: block;
     width: 100%;
     max-width: 100%;
     height: 100%;
+    min-width: 0;
+
     object-fit: cover;
     box-sizing: border-box;
   }
@@ -1962,24 +1787,280 @@ body.dark .filter-btn {
     width: 100%;
     max-width: 100%;
     padding: 20px;
+
     box-sizing: border-box;
   }
 
   .furniture-number {
+    margin-bottom: 10px;
     font-size: 9px;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.6px;
   }
 
   .furniture-content h3 {
     font-size: 27px;
     line-height: 1.1;
+    margin-bottom: 10px;
   }
 
   .furniture-content p {
+    width: 100%;
+    max-width: 100%;
     font-size: 11px;
-    line-height: 1.65;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    line-height: 1.7;
+  }
+}
+
+/* ==================================================
+   iPAD MINI
+   481px — 768px
+================================================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .furniture-collection {
+    width: 100%;
+    max-width: 100%;
+    padding: 75px 5%;
+
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .collection-header {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 50px;
+  }
+
+  .collection-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .collection-header h2 {
+    font-size: 48px;
+  }
+
+  .collection-header p {
+    max-width: 620px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .furniture-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+    box-sizing: border-box;
+  }
+
+  .furniture-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+  }
+
+  /* Third card centered */
+  .furniture-card:nth-child(3) {
+    grid-column: 1 / -1;
+    width: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    justify-self: center;
+  }
+
+  .furniture-image {
+    width: 100%;
+    max-width: 100%;
+    height: 270px;
+
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .furniture-image img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-width: 0;
+
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+
+  .furniture-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 22px;
+
+    box-sizing: border-box;
+  }
+
+  .furniture-number {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .furniture-content h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .furniture-content p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+}
+
+/* ==================================================
+   NETBOOK
+   769px — 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .furniture-collection {
+    width: 100%;
+    max-width: 100%;
+    padding: 80px 5%;
+
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .collection-header {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 55px;
+  }
+
+  .collection-header h2 {
+    font-size: 52px;
+  }
+
+  .collection-header p {
+    max-width: 680px;
+    font-size: 14px;
+  }
+
+  .furniture-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+
+    box-sizing: border-box;
+  }
+
+  .furniture-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+  }
+
+  .furniture-image {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .furniture-image img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-width: 0;
+
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+
+  .furniture-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+
+    box-sizing: border-box;
+  }
+
+  .furniture-content h3 {
+    font-size: 30px;
+  }
+
+  .furniture-content p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* ==================================================
+   1920px+
+   LARGE DESKTOP
+   3 CARDS — ONE ROW
+================================================== */
+
+@media (min-width: 1920px) {
+  .furniture-collection {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 100px 6%;
+
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .collection-header {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 65px;
+  }
+
+  .collection-label {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+
+  .collection-header h2 {
+    font-size: 64px;
+    line-height: 1.05;
+  }
+
+  .collection-header p {
+    max-width: 720px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .furniture-grid {
+    width: 100%;
+    max-width: 1350px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+
+    box-sizing: border-box;
+  }
+
+  .furniture-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
   }
 
   .furniture-card:nth-child(3) {
@@ -1988,122 +2069,131 @@ body.dark .filter-btn {
     max-width: 100%;
     justify-self: stretch;
   }
-}
 
-/* ==================================================
-   1920px+
-   RTL
-   SAME WIDTH + SAME ALIGNMENT
-================================================== */
-
-@media (min-width: 1920px) {
-  body.rtl .furniture-grid {
+  .furniture-image {
     width: 100%;
-    max-width: 1400px;
+    max-width: 100%;
+    height: 350px;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .furniture-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    min-width: 0;
+
+    object-fit: cover;
 
     box-sizing: border-box;
   }
 
-  body.rtl .furniture-card {
+  .furniture-content {
     width: 100%;
     max-width: 100%;
-    min-width: 0;
+    padding: 30px;
+
     box-sizing: border-box;
+  }
+
+  .furniture-number {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+  }
+
+  .furniture-content h3 {
+    font-size: 34px;
+    margin-bottom: 14px;
+  }
+
+  .furniture-content p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}
+
+/* ==================================================
+   RTL
+================================================== */
+
+body.rtl .furniture-collection {
+  direction: rtl;
+}
+
+body.rtl .collection-header {
+  direction: rtl;
+  text-align: center;
+}
+
+body.rtl .furniture-grid {
+  direction: rtl;
+}
+
+body.rtl .furniture-card {
+  direction: rtl;
+}
+
+body.rtl .furniture-content {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .furniture-number,
+body.rtl .furniture-content h3,
+body.rtl .furniture-content p {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ==================================================
+   RTL — iPAD MINI
+================================================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body.rtl .furniture-grid {
+    direction: rtl;
   }
 
   body.rtl .furniture-card:nth-child(3) {
     grid-column: 1 / -1;
-
-    width: calc(50% - 15px);
-    max-width: calc(50% - 15px);
-
+    width: calc(50% - 10px);
+    max-width: calc(50% - 10px);
     justify-self: center;
   }
+}
 
-  body.rtl .furniture-image {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-  }
+/* ==================================================
+   RTL — NETBOOK
+================================================== */
 
-  body.rtl .furniture-image img {
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+@media (min-width: 769px) and (max-width: 1024px) {
+  body.rtl .furniture-grid {
+    direction: rtl;
   }
 }
+
 /* ==================================================
-   1920px+
-   LOGO STRAIGHT / HEADER UNCHANGED
+   RTL — 1920px+
 ================================================== */
 
 @media (min-width: 1920px) {
-  .site-header {
-    width: 100%;
-    box-sizing: border-box;
+  body.rtl .furniture-collection {
+    direction: rtl;
   }
 
-  .header-container {
-    width: 100%;
-    max-width: 1650px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-shrink: 0;
-  }
-
-  .logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .logo-icon img {
-    display: block;
-  }
-
-  .logo-name {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-  }
-
-  .main-nav {
-    display: flex;
-    align-items: center;
-  }
-
-  .header-actions {
-    display: flex;
-    align-items: center;
-  }
-}
-/* ==================================================
-   1920px+
-   RTL ONLY
-   ALL FURNITURE CARDS - ONE ROW
-================================================== */
-
-@media (min-width: 1920px) {
   body.rtl .furniture-grid {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1350px;
 
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    direction: rtl;
 
     box-sizing: border-box;
   }
@@ -2113,91 +2203,74 @@ body.dark .filter-btn {
     max-width: 100%;
     min-width: 0;
 
+    direction: rtl;
     box-sizing: border-box;
   }
 
-  /* Third card also stays in the same row */
   body.rtl .furniture-card:nth-child(3) {
     grid-column: auto;
-
     width: 100%;
     max-width: 100%;
-
     justify-self: stretch;
   }
 
-  body.rtl .furniture-image {
-    width: 100%;
-    max-width: 100%;
-
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  body.rtl .furniture-image img {
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+  body.rtl .furniture-content {
+    direction: rtl;
+    text-align: right;
   }
 }
+
 /* ==================================================
    FINAL OVERFLOW SAFETY
+   DOES NOT CHANGE IMAGE HEIGHT
 ================================================== */
 
-.furniture-collection {
-  width: 100%;
-  max-width: 100%;
+.furniture-collection,
+.furniture-grid,
+.furniture-card,
+.furniture-image,
+.furniture-content {
+  min-width: 0;
   box-sizing: border-box;
+}
+
+.furniture-collection {
   overflow-x: hidden;
 }
 
 .furniture-grid {
   width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
 }
 
 .furniture-card {
-  min-width: 0;
   max-width: 100%;
-  box-sizing: border-box;
 }
 
 .furniture-image {
-  min-width: 0;
   max-width: 100%;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
 .furniture-image img {
   display: block;
-  width: 100%;
   max-width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 /* ==================================================
-   LIVING ROOM FURNITURE
-   COMPLETE RESPONSIVE CSS
+   LIVING ROOM FURNITURE SECTION
 ================================================== */
 
 .living-room-section {
   width: 100%;
   max-width: 100%;
 
-  padding: 100px 7%;
+  padding: 110px 6%;
 
   background: var(--bg);
   color: var(--text);
 
   box-sizing: border-box;
 
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* ==================================================
@@ -2208,18 +2281,23 @@ body.dark .filter-btn {
   width: 100%;
   max-width: 850px;
 
-  margin: 0 auto 45px;
+  margin: 0 auto 70px;
 
   text-align: center;
 
   box-sizing: border-box;
 }
 
+/* ==================================================
+   LABEL
+================================================== */
+
 .living-room-label {
   display: inline-block;
 
-  padding: 7px 18px;
   margin-bottom: 18px;
+
+  padding: 7px 18px;
 
   border: 1px solid var(--primary);
   border-radius: 30px;
@@ -2231,47 +2309,49 @@ body.dark .filter-btn {
   font-weight: 600;
 
   letter-spacing: 2px;
+  text-transform: uppercase;
 
   box-sizing: border-box;
 }
 
+/* ==================================================
+   HEADING
+================================================== */
+
 .living-room-header h2 {
-  margin: 0;
+  margin: 0 0 22px;
 
   font-family: "Cormorant Garamond", serif;
-
   font-size: clamp(45px, 6vw, 60px);
+  font-weight: 500;
 
-  font-weight: 600;
-
-  line-height: 1;
+  line-height: 1.05;
 
   color: var(--text);
 }
 
 .living-room-header h2 em {
-  color: var(--secondary);
-
   font-style: italic;
+  color: var(--primary);
 }
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
 
 .living-room-header p {
   width: 100%;
-  max-width: 700px;
+  max-width: 680px;
 
-  margin: 22px auto 0;
+  margin: 0 auto;
 
   font-family: "Montserrat", sans-serif;
-
-  font-size: 15px;
-  font-weight: 400;
-
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.8;
 
   color: var(--text);
 
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 /* ==================================================
@@ -2280,8 +2360,7 @@ body.dark .filter-btn {
 
 .living-room-grid {
   width: 100%;
-
-  max-width: 1500px;
+  max-width: 1400px;
 
   margin: 0 auto;
 
@@ -2295,31 +2374,19 @@ body.dark .filter-btn {
 }
 
 /* ==================================================
-   FURNITURE CARD
+   CARD
 ================================================== */
 
 .living-room-card {
   width: 100%;
-
   min-width: 0;
 
   background: var(--bg);
-
-  border: 1px solid rgba(139, 90, 53, 0.35);
+  color: var(--text);
 
   overflow: hidden;
 
   box-sizing: border-box;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.living-room-card:hover {
-  transform: translateY(-6px);
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* ==================================================
@@ -2328,7 +2395,6 @@ body.dark .filter-btn {
 
 .living-room-image {
   width: 100%;
-
   height: 350px;
 
   overflow: hidden;
@@ -2343,27 +2409,35 @@ body.dark .filter-btn {
   height: 100%;
 
   max-width: 100%;
+  min-width: 0;
 
   object-fit: cover;
 
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
+
+  box-sizing: border-box;
 }
 
 .living-room-card:hover .living-room-image img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 /* ==================================================
-   CONTENT
+   CARD CONTENT
 ================================================== */
 
 .living-room-content {
   width: 100%;
+  min-width: 0;
 
-  padding: 28px;
+  padding: 25px 5px 10px;
 
   box-sizing: border-box;
 }
+
+/* ==================================================
+   CARD NUMBER
+================================================== */
 
 .living-room-number {
   display: block;
@@ -2371,23 +2445,23 @@ body.dark .filter-btn {
   margin-bottom: 10px;
 
   font-family: "Montserrat", sans-serif;
-
   font-size: 10px;
+  font-weight: 600;
 
-  font-weight: 700;
-
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 
   color: var(--primary);
 }
 
+/* ==================================================
+   CARD TITLE
+================================================== */
+
 .living-room-content h3 {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 32px;
-
+  font-size: 30px;
   font-weight: 600;
 
   line-height: 1.1;
@@ -2395,236 +2469,110 @@ body.dark .filter-btn {
   color: var(--text);
 }
 
+/* ==================================================
+   CARD DESCRIPTION
+================================================== */
+
 .living-room-content p {
+  width: 100%;
+  max-width: 500px;
+
   margin: 0;
 
   font-family: "Montserrat", sans-serif;
-
-  font-size: 13px;
-
-  font-weight: 400;
-
+  font-size: 12px;
   line-height: 1.7;
 
   color: var(--text);
 
-  overflow-wrap: break-word;
-
-  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
-/* ==================================================
-   1920px+
-================================================== */
-
-@media (min-width: 1920px) {
-  .living-room-section {
-    padding: 110px 6%;
-  }
-
-  .living-room-header {
-    max-width: 900px;
-  }
-
-  .living-room-header h2 {
-    font-size: 64px;
-  }
-
-  .living-room-header p {
-    max-width: 720px;
-
-    font-size: 15px;
-  }
-
-  .living-room-grid {
-    width: 100%;
-
-    max-width: 1500px;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 30px;
-  }
-
-  .living-room-card {
-    width: 100%;
-
-    max-width: 100%;
-
-    min-width: 0;
-  }
-
-  .living-room-image {
-    height: 350px;
-  }
-
-  .living-room-content {
-    padding: 30px;
-  }
-
-  .living-room-content h3 {
-    font-size: 34px;
-  }
-}
-
-/* ==================================================
-   RTL - 1920px+
-   THREE CARDS SAME ROW
-================================================== */
-
-@media (min-width: 1920px) {
-  body.rtl .living-room-grid {
-    width: 100%;
-
-    max-width: 1500px;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 30px;
-
-    box-sizing: border-box;
-  }
-
-  body.rtl .living-room-card {
-    width: 100%;
-
-    max-width: 100%;
-
-    min-width: 0;
-
-    box-sizing: border-box;
-  }
-}
-
-/* ==================================================
-   NETBOOK
-   769px - 1024px
-================================================== */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .living-room-section {
-    padding: 90px 5%;
-  }
-
-  .living-room-header h2 {
-    font-size: 55px;
-  }
-
-  .living-room-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 20px;
-  }
-
-  .living-room-image {
-    height: 280px;
-  }
-
-  .living-room-content {
-    padding: 22px;
-  }
-
-  .living-room-content h3 {
-    font-size: 28px;
-  }
-
-  .living-room-content p {
-    font-size: 12px;
-  }
-}
-
-/* ==================================================
-   IPAD MINI
-   601px - 768px
-================================================== */
-
-@media (min-width: 601px) and (max-width: 768px) {
-  .living-room-section {
-    padding: 80px 5%;
-  }
-
-  .living-room-header h2 {
-    font-size: 50px;
-  }
-
-  .living-room-header p {
-    font-size: 14px;
-  }
-
-  .living-room-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 24px;
-  }
-
-  .living-room-image {
-    height: 300px;
-  }
-
-  .living-room-content {
-    padding: 24px;
-  }
-
-  .living-room-content h3 {
-    font-size: 30px;
-  }
-
-  /* ==============================================
-     THIRD CARD - CENTER
-  ============================================== */
-
-  .living-room-card:nth-child(3) {
-    grid-column: 1 / -1;
-
-    width: 50%;
-
-    max-width: 50%;
-
-    justify-self: center;
-  }
-}
 /* ==================================================
    SAMSUNG GALAXY S8+
-   361px - 600px
+   361px — 600px
 ================================================== */
 
 @media (min-width: 361px) and (max-width: 600px) {
   .living-room-section {
+    width: 100%;
+
     padding: 70px 5%;
+
+    overflow-x: hidden;
   }
 
   .living-room-header {
-    margin-bottom: 35px;
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 50px;
+  }
+
+  .living-room-label {
+    padding: 6px 15px;
+
+    margin-bottom: 15px;
+
+    font-size: 9px;
+    letter-spacing: 1.7px;
   }
 
   .living-room-header h2 {
-    font-size: 44px;
+    margin-bottom: 18px;
 
+    font-size: 43px;
     line-height: 1.05;
   }
 
   .living-room-header p {
-    font-size: 13px;
+    max-width: 100%;
 
+    font-size: 12px;
     line-height: 1.7;
   }
 
   .living-room-grid {
+    width: 100%;
+    max-width: 100%;
+
     grid-template-columns: 1fr;
 
-    gap: 25px;
+    gap: 40px;
+  }
+
+  .living-room-card {
+    width: 100%;
+    min-width: 0;
   }
 
   .living-room-image {
-    height: 300px;
+    width: 100%;
+    height: 280px;
   }
 
   .living-room-content {
-    padding: 24px;
+    padding: 20px 2px 5px;
+  }
+
+  .living-room-number {
+    margin-bottom: 8px;
+
+    font-size: 9px;
+    letter-spacing: 1.7px;
   }
 
   .living-room-content h3 {
-    font-size: 30px;
+    margin-bottom: 8px;
+
+    font-size: 25px;
+  }
+
+  .living-room-content p {
+    max-width: 100%;
+
+    font-size: 11px;
+    line-height: 1.65;
   }
 }
 
@@ -2635,72 +2583,458 @@ body.dark .filter-btn {
 
 @media (max-width: 360px) {
   .living-room-section {
+    width: 100%;
+
     padding: 60px 5%;
+
+    overflow-x: hidden;
+  }
+
+  .living-room-header {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 40px;
+  }
+
+  .living-room-label {
+    padding: 6px 13px;
+
+    margin-bottom: 13px;
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
   }
 
   .living-room-header h2 {
-    font-size: 40px;
+    margin-bottom: 16px;
 
+    font-size: 38px;
     line-height: 1.05;
   }
 
   .living-room-header p {
-    font-size: 12px;
+    max-width: 100%;
+
+    font-size: 11px;
+    line-height: 1.65;
   }
 
   .living-room-grid {
+    width: 100%;
+    max-width: 100%;
+
     grid-template-columns: 1fr;
 
-    gap: 22px;
+    gap: 32px;
+  }
+
+  .living-room-card {
+    width: 100%;
+    min-width: 0;
   }
 
   .living-room-image {
+    width: 100%;
+    height: 250px;
+  }
+
+  .living-room-content {
+    padding: 18px 2px 5px;
+  }
+
+  .living-room-number {
+    margin-bottom: 7px;
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .living-room-content h3 {
+    margin-bottom: 7px;
+
+    font-size: 23px;
+  }
+
+  .living-room-content p {
+    max-width: 100%;
+
+    font-size: 10px;
+    line-height: 1.65;
+  }
+}
+
+/* ==================================================
+   iPAD MINI
+   601px — 768px
+================================================== */
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .living-room-section {
+    width: 100%;
+
+    padding: 80px 5%;
+
+    overflow-x: hidden;
+  }
+
+  .living-room-header {
+    max-width: 100%;
+
+    margin-bottom: 55px;
+  }
+
+  .living-room-label {
+    font-size: 10px;
+  }
+
+  .living-room-header h2 {
+    margin-bottom: 20px;
+
+    font-size: 50px;
+  }
+
+  .living-room-header p {
+    max-width: 620px;
+
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .living-room-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px 22px;
+  }
+
+  .living-room-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .living-room-card:nth-child(3) {
+    grid-column: 1 / -1;
+
+    width: calc(50% - 11px);
+
+    justify-self: center;
+  }
+
+  .living-room-image {
+    width: 100%;
     height: 270px;
   }
 
   .living-room-content {
-    padding: 22px;
+    padding: 20px 2px 5px;
+  }
+
+  .living-room-number {
+    margin-bottom: 8px;
+
+    font-size: 9px;
+    letter-spacing: 1.7px;
   }
 
   .living-room-content h3 {
+    margin-bottom: 8px;
+
+    font-size: 27px;
+  }
+
+  .living-room-content p {
+    max-width: 100%;
+
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}
+
+/* ==================================================
+   NETBOOK
+   769px — 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .living-room-section {
+    width: 100%;
+
+    padding: 90px 5%;
+
+    overflow-x: hidden;
+  }
+
+  .living-room-header {
+    max-width: 850px;
+
+    margin-bottom: 60px;
+  }
+
+  .living-room-label {
+    font-size: 10px;
+  }
+
+  .living-room-header h2 {
+    font-size: 52px;
+  }
+
+  .living-room-header p {
+    max-width: 680px;
+
+    font-size: 13px;
+  }
+
+  .living-room-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 35px 28px;
+  }
+
+  .living-room-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .living-room-image {
+    width: 100%;
+    height: 300px;
+  }
+
+  .living-room-content {
+    padding: 22px 3px 8px;
+  }
+
+  .living-room-number {
+    margin-bottom: 9px;
+
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+
+  .living-room-content h3 {
+    margin-bottom: 9px;
+
     font-size: 28px;
   }
 
   .living-room-content p {
-    font-size: 12px;
+    max-width: 100%;
+
+    font-size: 11px;
+    line-height: 1.7;
   }
 }
 
 /* ==================================================
-   DARK MODE
+   1920px+
+   LARGE DESKTOP
 ================================================== */
 
-body.dark .living-room-card {
-  border-color: rgba(217, 161, 91, 0.35);
-}
+@media (min-width: 1920px) {
+  .living-room-section {
+    width: 100%;
+    max-width: 100%;
 
-body.dark .living-room-filter {
-  border-color: var(--primary);
+    padding: 110px 6%;
+
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+  }
+
+  .living-room-header {
+    max-width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 70px;
+  }
+
+  .living-room-label {
+    margin-bottom: 20px;
+
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+
+  .living-room-header h2 {
+    margin-bottom: 24px;
+
+    font-size: 62px;
+    line-height: 1.04;
+  }
+
+  .living-room-header p {
+    max-width: 700px;
+
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .living-room-grid {
+    width: 100%;
+    max-width: 1350px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+
+    box-sizing: border-box;
+  }
+
+  .living-room-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .living-room-image {
+    width: 100%;
+    height: 350px;
+
+    overflow: hidden;
+  }
+
+  .living-room-image img {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  .living-room-content {
+    padding: 28px 5px 10px;
+  }
+
+  .living-room-number {
+    margin-bottom: 11px;
+
+    font-size: 11px;
+    letter-spacing: 2.2px;
+  }
+
+  .living-room-content h3 {
+    margin-bottom: 12px;
+
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .living-room-content p {
+    max-width: 500px;
+
+    font-size: 13px;
+    line-height: 1.8;
+  }
 }
 
 /* ==================================================
-   CUSTOM PROJECT
+   RTL
+================================================== */
+
+body.rtl .living-room-section {
+  direction: rtl;
+}
+
+body.rtl .living-room-header {
+  text-align: center;
+}
+
+body.rtl .living-room-grid {
+  direction: rtl;
+}
+
+body.rtl .living-room-card {
+  direction: rtl;
+}
+
+body.rtl .living-room-content {
+  text-align: right;
+}
+
+body.rtl .living-room-number,
+body.rtl .living-room-content h3,
+body.rtl .living-room-content p {
+  direction: rtl;
+}
+
+/* ==================================================
+   FINAL OVERFLOW SAFETY
+================================================== */
+
+.living-room-section,
+.living-room-header,
+.living-room-grid,
+.living-room-card,
+.living-room-image,
+.living-room-content {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.living-room-section {
+  overflow-x: hidden;
+}
+
+.living-room-grid {
+  overflow: hidden;
+}
+
+.living-room-card {
+  max-width: 100%;
+}
+
+.living-room-image,
+.living-room-image img {
+  max-width: 100%;
+}
+
+.living-room-content p {
+  overflow-wrap: break-word;
+}
+/* ==================================================
+   CUSTOM PROJECT SECTION
 ================================================== */
 
 .custom-project-section {
   width: 100%;
+  max-width: 100%;
+
   padding: 110px 6%;
+
   background: var(--bg);
   color: var(--text);
+
   box-sizing: border-box;
+
+  overflow-x: hidden;
 }
 
-/* HEADER */
+/* ==================================================
+   CUSTOM PROJECT HEADER
+================================================== */
 
 .custom-project-header {
+  width: 100%;
   max-width: 850px;
+
   margin: 0 auto 70px;
+
   text-align: center;
+
+  box-sizing: border-box;
 }
 
 .custom-project-label {
@@ -2729,6 +3063,7 @@ body.dark .living-room-filter {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(45px, 6vw, 60px);
   font-weight: 500;
+
   line-height: 1.05;
 }
 
@@ -2738,86 +3073,129 @@ body.dark .living-room-filter {
 }
 
 .custom-project-header p {
+  width: 100%;
   max-width: 680px;
+
   margin: 0 auto;
 
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 1.8;
+
   color: var(--text);
+
+  box-sizing: border-box;
 }
 
-/* CONTENT */
+/* ==================================================
+   CUSTOM PROJECT CONTENT
+================================================== */
 
 .custom-project-content {
   width: 100%;
-  max-width: 1450px;
+  max-width: 1400px;
+
   margin: 0 auto;
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-  gap: 70px;
+  gap: 60px;
+
   align-items: stretch;
+
+  box-sizing: border-box;
 }
 
-/* IMAGE */
+/* ==================================================
+   CUSTOM PROJECT IMAGE
+================================================== */
 
 .custom-project-image {
   width: 100%;
   min-width: 0;
+
   overflow: hidden;
+
+  box-sizing: border-box;
 }
 
 .custom-project-image img {
-  width: 100%;
-  height: 80%;
-  min-height: 400px;
-
   display: block;
 
+  width: 100%;
+  height: 100%;
+
+  min-height: 500px;
+
+  max-width: 100%;
+  min-width: 0;
+
   object-fit: cover;
+
   transition: transform 0.6s ease;
+
+  box-sizing: border-box;
 }
 
 .custom-project-image:hover img {
   transform: scale(1.03);
 }
 
-/* DETAILS */
+/* ==================================================
+   CUSTOM PROJECT DETAILS
+================================================== */
 
 .custom-project-details {
+  width: 100%;
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  min-width: 0;
+  box-sizing: border-box;
 }
 
 .custom-project-details > p {
+  width: 100%;
   max-width: 580px;
+
   margin: 0 0 38px;
 
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 1.8;
+
   color: var(--text);
+
+  box-sizing: border-box;
 }
 
-/* FEATURES */
+/* ==================================================
+   FEATURES
+================================================== */
 
 .custom-project-features {
   width: 100%;
+
   margin-bottom: 40px;
+
+  box-sizing: border-box;
 }
 
 .custom-project-feature {
+  width: 100%;
+  min-width: 0;
+
   display: flex;
   gap: 22px;
 
   padding: 20px 0;
 
   border-top: 1px solid rgba(139, 90, 53, 0.25);
+
+  box-sizing: border-box;
 }
 
 .custom-project-feature:last-child {
@@ -2830,8 +3208,14 @@ body.dark .living-room-filter {
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
   font-weight: 600;
+
   letter-spacing: 1px;
+
   color: var(--primary);
+}
+
+.custom-project-feature > div {
+  min-width: 0;
 }
 
 .custom-project-feature h4 {
@@ -2840,6 +3224,8 @@ body.dark .living-room-filter {
   font-family: "Cormorant Garamond", serif;
   font-size: 25px;
   font-weight: 600;
+
+  line-height: 1.15;
 }
 
 .custom-project-feature p {
@@ -2848,10 +3234,13 @@ body.dark .living-room-filter {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 1.6;
+
   color: var(--text);
 }
 
-/* BUTTON */
+/* ==================================================
+   BUTTON
+================================================== */
 
 .custom-project-button {
   width: fit-content;
@@ -2861,6 +3250,7 @@ body.dark .living-room-filter {
   justify-content: center;
 
   min-height: 48px;
+
   padding: 0 28px;
 
   background: var(--primary);
@@ -2871,7 +3261,10 @@ body.dark .living-room-filter {
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: 600;
+
   letter-spacing: 1.5px;
+
+  box-sizing: border-box;
 
   transition:
     background 0.3s ease,
@@ -2880,71 +3273,254 @@ body.dark .living-room-filter {
 
 .custom-project-button:hover {
   background: var(--secondary);
+
   transform: translateY(-2px);
 }
 
 /* ==================================================
-   1920px+
+   CUSTOM PROJECT
+   SAMSUNG GALAXY S8+
+   361px — 600px
 ================================================== */
 
-@media (min-width: 1920px) {
+@media (min-width: 361px) and (max-width: 600px) {
   .custom-project-section {
-    padding: 130px 6%;
+    width: 100%;
+
+    padding: 70px 5%;
+
+    overflow-x: hidden;
   }
 
-  .custom-project-content {
-    max-width: 1550px;
-    gap: 90px;
+  .custom-project-header {
+    margin-bottom: 50px;
   }
 
-  .custom-project-image img {
-    min-height: 700px;
+  .custom-project-label {
+    padding: 6px 15px;
+
+    margin-bottom: 15px;
+
+    font-size: 9px;
+    letter-spacing: 1.7px;
   }
 
   .custom-project-header h2 {
-    font-size: 72px;
+    margin-bottom: 18px;
+
+    font-size: 43px;
+    line-height: 1.05;
   }
-}
 
-/* ==================================================
-   NETBOOK
-   769px - 1024px
-================================================== */
+  .custom-project-header p {
+    max-width: 100%;
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .custom-project-section {
-    padding: 90px 5%;
+    font-size: 12px;
+    line-height: 1.7;
   }
 
   .custom-project-content {
-    gap: 40px;
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .custom-project-image {
+    width: 100%;
   }
 
   .custom-project-image img {
-    min-height: 550px;
+    width: 100%;
+    height: 320px;
+
+    min-height: 0;
+
+    object-fit: cover;
   }
 
-  .custom-project-header h2 {
-    font-size: 52px;
+  .custom-project-details {
+    width: 100%;
   }
 
   .custom-project-details > p {
-    font-size: 13px;
+    max-width: 100%;
+
+    margin-bottom: 30px;
+
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .custom-project-features {
+    margin-bottom: 32px;
+  }
+
+  .custom-project-feature {
+    gap: 15px;
+
+    padding: 17px 0;
+  }
+
+  .custom-project-feature > span {
+    font-size: 10px;
+  }
+
+  .custom-project-feature h4 {
+    margin-bottom: 5px;
+
+    font-size: 22px;
+  }
+
+  .custom-project-feature p {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .custom-project-button {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 0 18px;
+
+    font-size: 9px;
   }
 }
 
 /* ==================================================
-   IPAD MINI
-   601px - 768px
+   CUSTOM PROJECT
+   SMALL MOBILE
+   360px AND BELOW
+================================================== */
+
+@media (max-width: 360px) {
+  .custom-project-section {
+    width: 100%;
+
+    padding: 60px 5%;
+
+    overflow-x: hidden;
+  }
+
+  .custom-project-header {
+    margin-bottom: 40px;
+  }
+
+  .custom-project-label {
+    padding: 6px 13px;
+
+    margin-bottom: 13px;
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .custom-project-header h2 {
+    margin-bottom: 16px;
+
+    font-size: 38px;
+    line-height: 1.05;
+  }
+
+  .custom-project-header p {
+    max-width: 100%;
+
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .custom-project-content {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .custom-project-image {
+    width: 100%;
+  }
+
+  .custom-project-image img {
+    width: 100%;
+    height: 280px;
+
+    min-height: 0;
+
+    object-fit: cover;
+  }
+
+  .custom-project-details > p {
+    max-width: 100%;
+
+    margin-bottom: 25px;
+
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .custom-project-features {
+    margin-bottom: 28px;
+  }
+
+  .custom-project-feature {
+    gap: 12px;
+
+    padding: 15px 0;
+  }
+
+  .custom-project-feature > span {
+    font-size: 9px;
+  }
+
+  .custom-project-feature h4 {
+    margin-bottom: 4px;
+
+    font-size: 20px;
+  }
+
+  .custom-project-feature p {
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .custom-project-button {
+    width: 100%;
+
+    min-height: 43px;
+
+    padding: 0 15px;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
+
+/* ==================================================
+   CUSTOM PROJECT
+   iPAD MINI
+   601px — 768px
 ================================================== */
 
 @media (min-width: 601px) and (max-width: 768px) {
   .custom-project-section {
+    width: 100%;
+
     padding: 80px 5%;
+
+    overflow-x: hidden;
   }
 
   .custom-project-header {
     margin-bottom: 55px;
+  }
+
+  .custom-project-label {
+    font-size: 10px;
   }
 
   .custom-project-header h2 {
@@ -2952,65 +3528,43 @@ body.dark .living-room-filter {
   }
 
   .custom-project-header p {
+    max-width: 620px;
+
     font-size: 13px;
   }
 
   .custom-project-content {
+    width: 100%;
+    max-width: 100%;
+
     grid-template-columns: 1fr;
+
     gap: 45px;
   }
 
   .custom-project-image img {
+    width: 100%;
     height: 450px;
-    min-height: 450px;
-  }
-}
 
-/* ==================================================
-   SAMSUNG GALAXY S8+
-   361px - 600px
-================================================== */
+    min-height: 0;
 
-@media (min-width: 361px) and (max-width: 600px) {
-  .custom-project-section {
-    padding: 70px 5%;
-  }
-
-  .custom-project-header {
-    margin-bottom: 40px;
-  }
-
-  .custom-project-header h2 {
-    font-size: 43px;
-    line-height: 1.05;
-  }
-
-  .custom-project-header p {
-    font-size: 12px;
-    line-height: 1.7;
-  }
-
-  .custom-project-content {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .custom-project-image img {
-    height: 320px;
-    min-height: 320px;
+    object-fit: cover;
   }
 
   .custom-project-details > p {
-    font-size: 12px;
+    max-width: 100%;
+
+    font-size: 13px;
   }
 
   .custom-project-feature {
-    gap: 15px;
-    padding: 17px 0;
+    gap: 18px;
+
+    padding: 18px 0;
   }
 
   .custom-project-feature h4 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .custom-project-feature p {
@@ -3018,1363 +3572,724 @@ body.dark .living-room-filter {
   }
 
   .custom-project-button {
-    width: 100%;
-    box-sizing: border-box;
+    min-height: 47px;
   }
 }
 
 /* ==================================================
-   SMALL MOBILE
-   360px AND BELOW
+   CUSTOM PROJECT
+   NETBOOK
+   769px — 1024px
 ================================================== */
 
-@media (max-width: 360px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .custom-project-section {
-    padding: 60px 5%;
+    width: 100%;
+
+    padding: 90px 5%;
+
+    overflow-x: hidden;
+  }
+
+  .custom-project-header {
+    margin-bottom: 60px;
   }
 
   .custom-project-header h2 {
-    font-size: 38px;
+    font-size: 52px;
+  }
+
+  .custom-project-header p {
+    font-size: 13px;
   }
 
   .custom-project-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 40px;
   }
 
   .custom-project-image img {
-    height: 280px;
-    min-height: 280px;
+    width: 100%;
+    height: auto;
+
+    min-height: 550px;
+
+    object-fit: cover;
   }
 
-  .custom-project-details h3 {
-    font-size: 32px;
+  .custom-project-details > p {
+    max-width: 100%;
+
+    font-size: 13px;
+  }
+
+  .custom-project-feature {
+    gap: 17px;
+
+    padding: 18px 0;
+  }
+
+  .custom-project-feature h4 {
+    font-size: 23px;
+  }
+
+  .custom-project-feature p {
+    font-size: 11px;
+  }
+}
+
+/* ==================================================
+   CUSTOM PROJECT
+   1920px+
+================================================== */
+
+@media (min-width: 1920px) {
+  .custom-project-section {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 110px 6%;
+
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+  }
+
+  .custom-project-header {
+    max-width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 70px;
+  }
+
+  .custom-project-header h2 {
+    font-size: 68px;
+  }
+
+  .custom-project-header p {
+    max-width: 700px;
+
+    font-size: 14px;
+  }
+
+  .custom-project-content {
+    width: 100%;
+    max-width: 1400px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 70px;
+
+    box-sizing: border-box;
+  }
+
+  .custom-project-image {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+  }
+
+  .custom-project-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    height: 100%;
+    min-height: 500px;
+
+    object-fit: cover;
+
+    box-sizing: border-box;
+  }
+
+  .custom-project-details {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .custom-project-details > p {
+    max-width: 580px;
+
+    font-size: 14px;
+  }
+
+  .custom-project-feature {
+    gap: 22px;
+
+    padding: 20px 0;
+  }
+
+  .custom-project-feature h4 {
+    font-size: 27px;
+  }
+
+  .custom-project-feature p {
+    font-size: 12px;
   }
 
   .custom-project-button {
-    width: 100%;
-    box-sizing: border-box;
+    min-height: 50px;
+
+    padding: 0 30px;
+
+    font-size: 10px;
   }
 }
-/* ==================================================
-   CRAFT NEST
-   COMPLETE RESPONSIVE CSS
-   RTL / LTR
-   DARK / LIGHT
-   GALAXY S8+
-   iPAD MINI
-   NETBOOK
-   1920px DESKTOP
-================================================== */
 
 /* ==================================================
-   ROOT VARIABLES
+   CUSTOM PROJECT RTL
 ================================================== */
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
+body.rtl .custom-project-section {
+  direction: rtl;
 }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
-  max-width: 100%;
-}
-
-button {
-  cursor: pointer;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-/* ==================================================
-   GLOBAL CONTAINER
-================================================== */
-
-.container,
-.section-container,
-.projects-container,
-.finishes-container,
-.portfolio-container,
-.contact-container {
-  width: min(var(--container), calc(100% - 60px));
-
-  max-width: var(--container);
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ==================================================
-   HEADER
-================================================== */
-
-.site-header {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-  right: 0;
-
-  width: 100%;
-
-  z-index: 1000;
-
-  background: var(--bg);
-
-  border-bottom: 3px solid rgba(139, 90, 53, 0.18);
-
-  transition:
-    background var(--transition),
-    box-shadow var(--transition);
-}
-
-.site-header.scrolled {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* ==================================================
-   HEADER CONTAINER
-================================================== */
-
-.header-container {
-  width: min(1400px, calc(100% - 60px));
-
-  min-height: var(--header-height);
-
-  margin-left: auto;
-  margin-right: auto;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-}
-
-/* ==================================================
-   LOGO
-================================================== */
-
-.logo {
-  display: inline-flex;
-
-  flex-direction: row;
-
-  direction: ltr;
-
-  align-items: center;
-  justify-content: flex-start;
-
-  gap: 0;
-
-  margin: 0;
-  padding: 0;
-
-  flex-shrink: 0;
-
-  overflow: visible;
-
-  white-space: nowrap;
-}
-
-.logo-icon {
-  width: 82px;
-  height: 82px;
-
-  min-width: 82px;
-
-  flex: 0 0 82px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  margin: 0;
-  padding: 0;
-
-  overflow: visible;
-
-  position: relative;
-
-  z-index: 2;
-}
-
-.logo-icon img {
-  width: 82px;
-  height: 82px;
-
-  min-width: 82px;
-  min-height: 82px;
-
-  max-width: none;
-  max-height: none;
-
-  display: block;
-
-  object-fit: contain;
-
-  object-position: center;
-
-  transform: translateX(12px) scale(1.6);
-}
-
-.logo-name {
-  display: block;
-
-  margin: 0;
-  padding: 0;
-
-  margin-left: -42px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 21px;
-
-  line-height: 1;
-
-  font-weight: 700;
-
-  color: var(--primary);
-
-  white-space: nowrap;
-
-  position: relative;
-
-  z-index: 10;
-}
-
-.logo-name strong {
-  color: var(--secondary);
-}
-
-/* ==================================================
-   NAVIGATION
-================================================== */
-
-.nav-links {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 24px;
-
-  flex: 1;
-
-  min-width: 0;
-}
-
-.nav-link {
-  position: relative;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  white-space: nowrap;
-
-  color: var(--text);
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  transition: color var(--transition);
-}
-
-.nav-link:hover {
-  color: var(--primary);
-}
-
-.nav-link.active {
-  color: var(--primary);
-}
-
-/* ==================================================
-   HEADER ACTIONS
-================================================== */
-
-.header-actions {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 7px;
-
-  flex-shrink: 0;
-
-  direction: ltr;
-}
-
-/* ==================================================
-   RTL BUTTON
-================================================== */
-
-.rtl-button {
-  height: 40px;
-
-  min-width: 62px;
-
-  padding: 0 9px;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid var(--primary);
-
-  border-radius: 13px;
-
-  background: var(--bg);
-
-  color: var(--text);
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition:
-    color var(--transition),
-    background var(--transition),
-    border-color var(--transition);
-}
-
-.rtl-button:hover {
-  color: var(--secondary);
-
-  border-color: var(--secondary);
-}
-
-/* ==================================================
-   ICON BUTTON
-================================================== */
-
-.icon-button {
-  width: 40px;
-  height: 40px;
-
-  min-width: 40px;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid var(--primary);
-
-  border-radius: 13px;
-
-  background: var(--bg);
-
-  color: var(--text);
-
-  cursor: pointer;
-
-  transition:
-    color var(--transition),
-    background var(--transition),
-    border-color var(--transition);
-}
-
-.icon-button:hover {
-  color: var(--secondary);
-
-  border-color: var(--secondary);
-}
-
-.icon-button svg {
-  width: 17px;
-  height: 17px;
-
-  stroke-width: 2;
-}
-
-/* ==================================================
-   LOGIN BUTTON
-================================================== */
-
-.login-button {
-  min-height: 40px;
-
-  padding: 0 18px;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 0;
-
-  border-radius: 13px;
-
-  background: var(--primary);
-
-  color: #ffffff;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  white-space: nowrap;
-
-  transition:
-    background var(--transition),
-    transform var(--transition);
-}
-
-.login-button:hover {
-  background: var(--secondary);
-
-  transform: translateY(-1px);
-}
-
-/* ==================================================
-   MOBILE MENU BUTTON
-================================================== */
-
-.menu-toggle {
-  display: none;
-
-  width: 40px;
-  height: 40px;
-
-  min-width: 40px;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid var(--primary);
-
-  border-radius: 13px;
-
-  background: var(--bg);
-
-  color: var(--text);
-}
-
-.menu-toggle svg {
-  width: 19px;
-  height: 19px;
-}
-
-/* ==================================================
-   MAIN
-================================================== */
-
-main {
-  width: 100%;
-  max-width: 100%;
-
-  overflow-x: hidden;
-}
-
-/* ==================================================
-   ALL SECTIONS
-================================================== */
-
-section {
-  width: 100%;
-  max-width: 100%;
-
-  overflow-x: hidden;
-}
-
-/* ==================================================
-   SECTION HEADINGS
-================================================== */
-
-.section-title {
-  max-width: 800px;
-
-  margin-left: auto;
-  margin-right: auto;
-
+body.rtl .custom-project-header {
   text-align: center;
 }
 
-.section-title h2 {
-  font-family: "Cormorant Garamond", serif;
-
-  color: var(--text);
-
-  font-size: 48px;
-
-  line-height: 1.1;
-
-  font-weight: 700;
+body.rtl .custom-project-content {
+  direction: rtl;
 }
 
-.section-title p {
-  margin-top: 14px;
+body.rtl .custom-project-details {
+  text-align: right;
+}
 
-  color: var(--text);
+body.rtl .custom-project-feature {
+  direction: rtl;
+}
 
-  font-size: 15px;
+body.rtl .custom-project-feature > div {
+  text-align: right;
+}
 
-  line-height: 1.8;
+body.rtl .custom-project-button {
+  direction: rtl;
+}
 
-  opacity: 0.75;
+/* ==================================================
+   FINAL OVERFLOW SAFETY
+================================================== */
+
+.custom-project-section,
+.custom-project-header,
+.custom-project-content,
+.custom-project-image,
+.custom-project-details,
+.custom-project-features,
+.custom-project-feature {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.custom-project-section,
+.custom-project-content {
+  max-width: 100%;
+}
+
+.custom-project-image {
+  overflow: hidden;
+}
+
+.custom-project-image img {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.custom-project-feature > div {
+  min-width: 0;
+}
+
+.custom-project-feature h4,
+.custom-project-feature p {
+  overflow-wrap: break-word;
 }
 
 /* ==================================================
    PROJECTS SECTION
+   BASE / DESKTOP
 ================================================== */
 
 .projects-section {
   width: 100%;
-
-  padding: 100px 0;
-
-  background: var(--bg);
-
-  overflow: hidden;
-}
-
-.projects-container {
-  width: min(1400px, calc(100% - 60px));
-
-  max-width: 1400px;
-
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
+  padding: 100px 6%;
+  box-sizing: border-box;
+  overflow-x: clip;
 }
 
 .projects-header {
-  max-width: 800px;
-
-  margin: 0 auto 50px;
-
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 60px;
   text-align: center;
-}
-
-.projects-header span {
-  display: inline-block;
-
-  padding: 7px 18px;
-
-  margin-bottom: 18px;
-
-  border: 1px solid var(--primary);
-
-  border-radius: 30px;
-
-  color: var(--primary);
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 11px;
-
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
   box-sizing: border-box;
 }
 
+.projects-label {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 7px 16px;
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+  color: var(--primary);
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
 .projects-header h2 {
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(45px, 6vw, 60px);
-
-  line-height: 1.1;
-
+  margin: 0 0 18px;
   color: var(--text);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(44px, 4vw, 58px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.projects-header h2 em {
+  color: var(--primary);
+  font-style: italic;
 }
 
 .projects-header p {
-  margin-top: 15px;
-
-  font-size: 15px;
-
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
   line-height: 1.8;
-
-  opacity: 0.75;
 }
 
 /* ==================================================
-   PROJECT GRID
+   PROJECTS GRID
 ================================================== */
 
 .projects-grid {
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 
   display: grid;
-
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
 
-  gap: 28px;
-
-  align-items: stretch;
+  box-sizing: border-box;
 }
-
-/* ==================================================
-   PROJECT CARD
-================================================== */
 
 .project-card {
   width: 100%;
-
   min-width: 0;
-
   overflow: hidden;
+  box-sizing: border-box;
 
   background: var(--bg);
-
   border: 1px solid rgba(139, 90, 53, 0.18);
-
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow);
-
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
 }
-
-.project-card:hover {
-  transform: translateY(-6px);
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-}
-
-/* ==================================================
-   PROJECT IMAGE
-================================================== */
 
 .project-image {
   width: 100%;
-
-  aspect-ratio: 4 / 3;
-
+  height: 350px;
   overflow: hidden;
-
-  background: var(--secondary);
+  box-sizing: border-box;
 }
 
 .project-image img {
+  display: block;
   width: 100%;
   height: 100%;
-
   max-width: 100%;
 
-  display: block;
-
   object-fit: cover;
+  object-position: center;
 
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
-
-/* ==================================================
-   PROJECT CONTENT
-================================================== */
 
 .project-content {
   width: 100%;
-
-  padding: 25px;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 .project-number {
   display: block;
-
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 
   color: var(--primary);
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
 }
 
 .project-content h3 {
-  font-family: "Cormorant Garamond", serif;
+  margin: 0 0 10px;
 
   color: var(--text);
-
+  font-family: "Cormorant Garamond", serif;
   font-size: 28px;
-
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .project-content p {
-  margin-top: 10px;
+  margin: 0;
 
   color: var(--text);
-
-  font-size: 14px;
-
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
   line-height: 1.7;
-
-  opacity: 0.75;
 }
 
 /* ==================================================
-   FINISHES GRID
-================================================== */
-
-.finishes-grid {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 28px;
-}
-
-.finish-card {
-  min-width: 0;
-
-  width: 100%;
-
-  overflow: hidden;
-
-  border-radius: var(--radius);
-}
-
-.finish-card img {
-  width: 100%;
-
-  height: auto;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-/* ==================================================
-   PORTFOLIO GRID
-================================================== */
-
-.portfolio-grid {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 28px;
-}
-
-.portfolio-card {
-  min-width: 0;
-
-  width: 100%;
-
-  overflow: hidden;
-
-  border-radius: var(--radius);
-
-  background: var(--bg);
-}
-
-.portfolio-card img {
-  width: 100%;
-  height: auto;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-/* ==================================================
-   FORM ELEMENTS
-================================================== */
-
-input,
-textarea,
-select {
-  width: 100%;
-
-  max-width: 100%;
-
-  border: 1px solid rgba(139, 90, 53, 0.25);
-
-  border-radius: 10px;
-
-  background: var(--bg);
-
-  color: var(--text);
-
-  outline: none;
-
-  transition: border-color var(--transition);
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--primary);
-}
-
-textarea {
-  resize: vertical;
-}
-
-/* ==================================================
-   RTL
-================================================== */
-
-body.rtl {
-  direction: rtl;
-
-  overflow-x: hidden;
-}
-
-body.rtl .header-container {
-  direction: rtl;
-}
-
-body.rtl .logo {
-  direction: ltr;
-
-  flex-direction: row;
-}
-
-body.rtl .logo-icon {
-  order: 1;
-}
-
-body.rtl .logo-name {
-  order: 2;
-
-  margin-left: -42px;
-  margin-right: 0;
-
-  text-align: left;
-}
-
-body.rtl .header-actions {
-  direction: ltr;
-}
-
-body.rtl .nav-links {
-  direction: rtl;
-}
-
-body.rtl .projects-header,
-body.rtl .section-title {
-  text-align: center;
-}
-
-body.rtl .project-content {
-  text-align: right;
-}
-
-/* ==================================================
-   1920px LARGE DESKTOP
-================================================== */
-
-@media (min-width: 1600px) {
-  .header-container,
-  .projects-container,
-  .container,
-  .section-container,
-  .finishes-container,
-  .portfolio-container,
-  .contact-container {
-    width: min(1400px, calc(100% - 80px));
-
-    max-width: 1400px;
-  }
-
-  .projects-grid,
-  .finishes-grid,
-  .portfolio-grid {
-    max-width: 1400px;
-
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* ==================================================
-   1200px - 1599px
-================================================== */
-
-@media (min-width: 1200px) and (max-width: 1599px) {
-  .header-container {
-    width: calc(100% - 50px);
-  }
-
-  .nav-links {
-    gap: 18px;
-  }
-
-  .projects-container,
-  .container,
-  .section-container,
-  .finishes-container,
-  .portfolio-container,
-  .contact-container {
-    width: calc(100% - 50px);
-  }
-}
-
-/* ==================================================
-   NETBOOK / 1024px
-================================================== */
-
-@media (min-width: 769px) and (max-width: 1199px) {
-  .header-container {
-    width: calc(100% - 40px);
-
-    min-height: 72px;
-
-    gap: 14px;
-  }
-
-  .logo-icon {
-    width: 70px;
-    height: 70px;
-
-    min-width: 70px;
-
-    flex-basis: 70px;
-  }
-
-  .logo-icon img {
-    width: 70px;
-    height: 70px;
-
-    min-width: 70px;
-    min-height: 70px;
-
-    transform: translateX(8px) scale(1.45);
-  }
-
-  .logo-name {
-    margin-left: -32px;
-
-    font-size: 19px;
-  }
-
-  .nav-links {
-    gap: 13px;
-  }
-
-  .nav-link {
-    font-size: 12px;
-  }
-
-  .rtl-button {
-    min-width: 55px;
-
-    height: 38px;
-
-    font-size: 12px;
-  }
-
-  .icon-button {
-    width: 38px;
-    height: 38px;
-
-    min-width: 38px;
-  }
-
-  .login-button {
-    min-height: 38px;
-
-    padding: 0 13px;
-
-    font-size: 12px;
-  }
-
-  .projects-container,
-  .container,
-  .section-container,
-  .finishes-container,
-  .portfolio-container,
-  .contact-container {
-    width: calc(100% - 40px);
-  }
-
-  .projects-grid,
-  .finishes-grid,
-  .portfolio-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 22px;
-  }
-
-  .projects-header h2,
-  .section-title h2 {
-    font-size: 42px;
-  }
-}
-
-/* ==================================================
-   iPAD MINI
-   600px - 768px
-================================================== */
-
-@media (min-width: 600px) and (max-width: 768px) {
-  .header-container {
-    width: calc(100% - 32px);
-
-    min-height: 68px;
-
-    gap: 10px;
-  }
-
-  .logo-icon {
-    width: 62px;
-    height: 62px;
-
-    min-width: 62px;
-
-    flex-basis: 62px;
-  }
-
-  .logo-icon img {
-    width: 62px;
-    height: 62px;
-
-    min-width: 62px;
-    min-height: 62px;
-
-    transform: translateX(6px) scale(1.3);
-  }
-
-  .logo-name {
-    margin-left: -27px;
-
-    font-size: 18px;
-  }
-
-  .nav-links {
-    gap: 9px;
-  }
-
-  .nav-link {
-    font-size: 11px;
-  }
-
-  .header-actions {
-    gap: 5px;
-  }
-
-  .rtl-button {
-    min-width: 52px;
-
-    height: 36px;
-
-    padding: 0 6px;
-
-    font-size: 11px;
-  }
-
-  .icon-button {
-    width: 36px;
-    height: 36px;
-
-    min-width: 36px;
-  }
-
-  .login-button {
-    min-height: 36px;
-
-    padding: 0 10px;
-
-    font-size: 11px;
-  }
-
-  .projects-container,
-  .container,
-  .section-container,
-  .finishes-container,
-  .portfolio-container,
-  .contact-container {
-    width: calc(100% - 32px);
-  }
-
-  .projects-grid,
-  .finishes-grid,
-  .portfolio-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 20px;
-  }
-
-  .projects-header {
-    margin-bottom: 35px;
-  }
-
-  .projects-header h2,
-  .section-title h2 {
-    font-size: 40px;
-  }
-
-  .project-content {
-    padding: 20px;
-  }
-
-  .project-content h3 {
-    font-size: 25px;
-  }
-}
-
-/* ==================================================
-   MOBILE
-   381px - 599px
+   SAMSUNG GALAXY S8+ / SMALL MOBILE
+   320px - 599px
+
+   1 CARD PER ROW
+   FULL IMAGE
+   FULL CONTENT
+   NO HORIZONTAL OVERFLOW
 ================================================== */
 
 @media (max-width: 599px) {
-  html,
-  body {
+  /* ==================================================
+     SECTION
+  ================================================== */
+
+  .projects-section {
     width: 100%;
-
     max-width: 100%;
-
+    padding: 60px 16px;
+    margin: 0;
+    box-sizing: border-box;
     overflow-x: hidden;
   }
 
-  .site-header {
+  /* ==================================================
+     HEADER
+  ================================================== */
+
+  .projects-header {
     width: 100%;
+    max-width: 100%;
+    margin: 0 auto 35px;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
   }
 
-  .header-container {
-    width: calc(100% - 24px);
-
-    min-height: 64px;
-
-    gap: 6px;
+  .projects-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 13px;
+    font-size: 10px;
+    box-sizing: border-box;
   }
 
-  /* LOGO */
+  .projects-header h2 {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 14px;
+    padding: 0;
 
-  .logo {
+    font-size: 32px;
+    line-height: 1.12;
+
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .projects-header p {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    font-size: 11px;
+    line-height: 1.7;
+
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+  }
+
+  /* ==================================================
+     PROJECT GRID
+     ONE CARD PER ROW
+  ================================================== */
+
+  .projects-grid {
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
 
-    max-width: calc(100% - 45px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  /* ==================================================
+     PROJECT CARD
+  ================================================== */
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* ==================================================
+     IMAGE
+     FULL IMAGE
+     NO CROPPING
+  ================================================== */
+
+  .project-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .project-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform: none;
+
+    box-sizing: border-box;
+  }
+
+  /* ==================================================
+     CONTENT
+     FULL CONTENT VISIBLE
+  ================================================== */
+
+  .project-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+
+    margin: 0;
+
+    box-sizing: border-box;
 
     overflow: visible;
   }
 
-  .logo-icon {
-    width: 54px;
-    height: 54px;
+  .project-number {
+    display: block;
 
-    min-width: 54px;
-
-    flex: 0 0 54px;
-  }
-
-  .logo-icon img {
-    width: 54px;
-    height: 54px;
-
-    min-width: 54px;
-    min-height: 54px;
-
-    transform: translateX(5px) scale(1.22);
-  }
-
-  .logo-name {
-    margin-left: -22px;
-
-    font-size: 16px;
-
-    max-width: 125px;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-  }
-
-  /* NAVIGATION */
-
-  .nav-links {
-    display: none;
-
-    position: absolute;
-
-    top: 64px;
-
-    left: 12px;
-    right: 12px;
-
-    width: auto;
-
-    max-width: none;
-
-    max-height: calc(100vh - 74px);
-
-    overflow-y: auto;
-
-    overflow-x: hidden;
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 0;
-
-    padding: 10px;
-
-    background: var(--bg);
-
-    border: 1px solid rgba(139, 90, 53, 0.18);
-
-    border-radius: 14px;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-link {
-    width: 100%;
-
-    min-width: 0;
-
-    padding: 12px 14px;
-
-    justify-content: flex-start;
-
-    font-size: 14px;
-  }
-
-  /* HEADER ACTIONS */
-
-  .header-actions {
-    gap: 4px;
-
-    flex-shrink: 0;
-  }
-
-  .rtl-button {
-    height: 36px;
-
-    min-width: 48px;
-
-    padding: 0 5px;
+    margin: 0 0 9px;
 
     font-size: 10px;
+    line-height: 1.4;
   }
 
-  .icon-button {
-    width: 36px;
-    height: 36px;
-
-    min-width: 36px;
-
-    flex: 0 0 36px;
-  }
-
-  .icon-button svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .login-button {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-
-    width: 36px;
-    height: 36px;
-
-    min-width: 36px;
-  }
-
-  /* CONTAINERS */
-
-  .container,
-  .section-container,
-  .projects-container,
-  .finishes-container,
-  .portfolio-container,
-  .contact-container {
-    width: calc(100% - 24px);
-
+  .project-content h3 {
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 0 10px;
+    padding: 0;
+
+    font-size: 24px;
+    line-height: 1.2;
+
+    box-sizing: border-box;
+
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 
-  /* PROJECTS */
+  .project-content p {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-  .projects-section {
-    padding: 75px 0;
+    margin: 0;
+    padding: 0;
+
+    font-size: 11px;
+    line-height: 1.7;
+
+    box-sizing: border-box;
+
+    overflow-wrap: anywhere;
   }
 
-  .projects-header {
-    margin-bottom: 30px;
+  /* ==================================================
+     RTL
+  ================================================== */
+
+  body.rtl .projects-section {
+    direction: rtl;
+  }
+
+  body.rtl .projects-grid {
+    direction: rtl;
+  }
+
+  body.rtl .project-content {
+    text-align: right;
+  }
+
+  /* ==================================================
+     MOBILE OVERFLOW PROTECTION
+  ================================================== */
+
+  .projects-section,
+  .projects-header,
+  .projects-grid,
+  .project-card,
+  .project-image,
+  .project-content {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .projects-section img {
+    max-width: 100%;
+    height: auto;
   }
 
   .projects-header h2,
-  .section-title h2 {
-    font-size: clamp(30px, 8vw, 38px);
-  }
-
   .projects-header p,
-  .section-title p {
-    font-size: 13px;
+  .project-content h3,
+  .project-content p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
 
-    line-height: 1.7;
+/* ==================================================
+   IPAD MINI
+   600px - 1024px
+   2 CARDS PER ROW
+   LAST / ODD CARD CENTER
+================================================== */
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .projects-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 80px 5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
-  .projects-grid,
-  .finishes-grid,
-  .portfolio-grid {
+  .projects-header {
     width: 100%;
-
-    max-width: 100%;
-
-    grid-template-columns: 1fr;
-
-    gap: 18px;
+    max-width: 800px;
+    margin: 0 auto 45px;
+    box-sizing: border-box;
   }
 
-  .project-card,
-  .finish-card,
-  .portfolio-card {
+  .projects-header h2 {
+    font-size: clamp(38px, 5vw, 50px);
+  }
+
+  .projects-header p {
+    max-width: 650px;
+    font-size: 12px;
+  }
+
+  /* 2 CARDS */
+  .projects-grid {
     width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 
-    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
 
+    box-sizing: border-box;
+  }
+
+  .project-card {
+    width: 100%;
     min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
   }
 
   .project-content {
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;
   }
 
   .project-content h3 {
@@ -4382,167 +4297,29 @@ body.rtl .project-content {
   }
 
   .project-content p {
-    font-size: 13px;
-  }
-
-  /* IMAGES */
-
-  .project-image {
-    aspect-ratio: 4 / 3;
-  }
-
-  .project-image img,
-  .finish-card img,
-  .portfolio-card img {
-    max-width: 100%;
-  }
-
-  /* TYPOGRAPHY */
-
-  h1 {
-    font-size: clamp(30px, 9vw, 42px);
-
-    line-height: 1.1;
-  }
-
-  h2 {
-    font-size: clamp(26px, 8vw, 36px);
-
-    line-height: 1.2;
-  }
-
-  h3 {
-    font-size: clamp(20px, 6vw, 28px);
-  }
-
-  p {
-    font-size: 14px;
-
+    font-size: 11px;
     line-height: 1.7;
   }
-}
 
-/* ==================================================
-   GALAXY S8+
-   360px AND BELOW
-================================================== */
+  /* ==================================================
+     ODD CARD CENTER
+     Example: 3 cards
+     Card 3 comes to center
+  ================================================== */
 
-@media (max-width: 380px) {
-  .header-container {
-    width: calc(100% - 16px);
-
-    gap: 4px;
+  .project-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 12px);
+    justify-self: center;
   }
 
-  .logo {
-    max-width: calc(100% - 42px);
-  }
-
-  .logo-icon {
-    width: 50px;
-    height: 50px;
-
-    min-width: 50px;
-
-    flex: 0 0 50px;
-  }
-
-  .logo-icon img {
-    width: 50px;
-    height: 50px;
-
-    min-width: 50px;
-    min-height: 50px;
-
-    transform: translateX(4px) scale(1.18);
-  }
-
-  .logo-name {
-    margin-left: -20px;
-
-    font-size: 15px;
-
-    max-width: 110px;
-  }
-
-  .header-actions {
-    gap: 3px;
-  }
-
-  .rtl-button {
-    width: 44px;
-
-    min-width: 44px;
-
-    height: 34px;
-
-    padding: 0;
-
-    font-size: 10px;
-  }
-
-  .icon-button,
-  .menu-toggle {
-    width: 34px;
-    height: 34px;
-
-    min-width: 34px;
-  }
-
-  .icon-button svg,
-  .menu-toggle svg {
-    width: 15px;
-    height: 15px;
-  }
-
-  .projects-container,
-  .container,
-  .section-container,
-  .finishes-container,
-  .portfolio-container,
-  .contact-container {
-    width: calc(100% - 16px);
-  }
-
-  .projects-section {
-    padding: 65px 0;
-  }
-
-  .projects-grid,
-  .finishes-grid,
-  .portfolio-grid {
-    gap: 15px;
-  }
-
-  .project-content {
-    padding: 17px;
-  }
-
-  .project-content h3 {
-    font-size: 23px;
-  }
-
-  .project-content p {
-    font-size: 12px;
-  }
-}
-
-/* ==================================================
-   RTL MOBILE
-================================================== */
-
-@media (max-width: 599px) {
-  body.rtl .nav-links {
-    left: 12px;
-    right: 12px;
-
+  /* RTL */
+  body.rtl .projects-section {
     direction: rtl;
   }
 
-  body.rtl .nav-link {
-    justify-content: flex-start;
-
-    text-align: right;
+  body.rtl .projects-grid {
+    direction: rtl;
   }
 
   body.rtl .project-content {
@@ -4551,143 +4328,214 @@ body.rtl .project-content {
 }
 
 /* ==================================================
-   PREVENT OVERFLOW
+   NETBOOK / SMALL LAPTOP
+   1025px - 1366px
+   3 CARDS PER ROW
 ================================================== */
 
-@media (max-width: 1199px) {
-  .container,
-  .section-container,
-  .projects-container,
-  .finishes-container,
-  .portfolio-container,
-  .contact-container,
-  .projects-grid,
-  .finishes-grid,
-  .portfolio-grid {
-    min-width: 0;
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .projects-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 90px 5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
-  .project-card,
-  .finish-card,
-  .portfolio-card {
+  .projects-header {
+    max-width: 800px;
+    margin: 0 auto 50px;
+  }
+
+  .projects-header h2 {
+    font-size: clamp(42px, 4vw, 54px);
+  }
+
+  .projects-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+
+    box-sizing: border-box;
+  }
+
+  .project-card {
+    width: 100%;
     min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+  }
+
+  .project-content {
+    width: 100%;
+    padding: 22px;
+    box-sizing: border-box;
+  }
+
+  .project-content h3 {
+    font-size: 27px;
+  }
+
+  .project-content p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  /* RTL */
+  body.rtl .projects-section {
+    direction: rtl;
+  }
+
+  body.rtl .projects-grid {
+    direction: rtl;
+  }
+
+  body.rtl .project-content {
+    text-align: right;
   }
 }
 
 /* ==================================================
-   FIX LONG TEXT
+   1920px / LARGE DESKTOP
+   PREMIUM WIDTH
 ================================================== */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span {
-  overflow-wrap: break-word;
+@media (min-width: 1600px) {
+  .projects-section {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    padding: 120px 5%;
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+  }
+
+  .projects-header {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 70px;
+  }
+
+  .projects-header h2 {
+    font-size: 60px;
+    line-height: 1.05;
+  }
+
+  .projects-header p {
+    max-width: 720px;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .projects-grid {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+
+    box-sizing: border-box;
+  }
+
+  .project-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .project-content {
+    width: 100%;
+    padding: 28px;
+    box-sizing: border-box;
+  }
+
+  .project-number {
+    font-size: 11px;
+  }
+
+  .project-content h3 {
+    font-size: 31px;
+  }
+
+  .project-content p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  /* RTL */
+  body.rtl .projects-section {
+    direction: rtl;
+  }
+
+  body.rtl .projects-grid {
+    direction: rtl;
+  }
+
+  body.rtl .project-content {
+    text-align: right;
+  }
 }
 
 /* ==================================================
-   FIX FLEX / GRID OVERFLOW
+   FINAL GLOBAL OVERFLOW PROTECTION
 ================================================== */
 
-.flex,
-.flex-container,
-.grid,
-.grid-container {
+.projects-section,
+.projects-header,
+.projects-grid,
+.project-card,
+.project-image,
+.project-content {
+  box-sizing: border-box;
   min-width: 0;
   max-width: 100%;
 }
 
-/* ==================================================
-   FIX TABLE OVERFLOW
-================================================== */
-
-table {
-  width: 100%;
-
+.projects-section img {
   max-width: 100%;
-
-  border-collapse: collapse;
-}
-
-.table-wrapper {
-  width: 100%;
-
-  max-width: 100%;
-
-  overflow-x: auto;
-}
-
-/* ==================================================
-   FIX CODE / PRE
-================================================== */
-
-pre,
-code {
-  max-width: 100%;
-
-  overflow-x: auto;
-
-  white-space: pre-wrap;
-
-  overflow-wrap: break-word;
-}
-
-/* ==================================================
-   DARK MODE TRANSITION
-================================================== */
-
-body,
-.site-header,
-.nav-links,
-.project-card,
-.finish-card,
-.portfolio-card,
-.rtl-button,
-.icon-button,
-.menu-toggle,
-input,
-textarea,
-select {
-  transition:
-    background-color var(--transition),
-    color var(--transition),
-    border-color var(--transition),
-    box-shadow var(--transition);
-}
-
-/* ==================================================
-   FINAL MOBILE SAFETY
-================================================== */
-
-@media (max-width: 599px) {
-  * {
-    max-width: 100%;
-  }
-
-  body {
-    position: relative;
-
-    left: 0;
-    right: 0;
-
-    transform: none;
-
-    zoom: 1;
-  }
-
-  section,
-  main,
-  footer,
-  header {
-    max-width: 100vw;
-
-    overflow-x: hidden;
-  }
 }
 /* =========================================================
    FURNITURE UNITS SECTION
@@ -4957,6 +4805,17 @@ select {
 
   .furniture-unit h3 {
     font-size: 24px;
+  }
+  .furniture-units-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
+
+  /* 3rd card / odd last card center */
+  .furniture-unit:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 12.5px);
+    justify-self: center;
   }
 }
 /* ==================================================
@@ -5294,6 +5153,17 @@ select {
     max-width: 280px;
     font-size: 15px;
   }
+}
+.client-stories-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 65px 30px;
+}
+
+/* 3rd / odd card center */
+.client-story:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - 15px);
+  justify-self: center;
 }
 
 /* ==================================================
@@ -6861,4 +6731,496 @@ body {
   box-sizing: border-box;
 
   max-width: 100%;
+}
+/* ==================================================
+   CRAFT NEST
+   RTL FOOTER GAP FIX
+   LOGO / CONTENT / SOCIAL ICONS
+================================================== */
+
+body.rtl .footer-brand {
+  gap: 8px;
+}
+
+body.rtl .footer-logo {
+  margin-bottom: 0;
+}
+
+body.rtl .footer-description {
+  margin-top: 6px;
+}
+
+body.rtl .social-links {
+  margin-top: 8px;
+}
+
+/* ==================================================
+   RTL FOOTER COLUMNS
+================================================== */
+
+body.rtl .footer-column {
+  gap: 0;
+}
+
+body.rtl .footer-column h3 {
+  margin-bottom: 18px;
+}
+
+body.rtl .footer-column > a {
+  margin-bottom: 12px;
+}
+
+/* ==================================================
+   RTL CONTACT
+================================================== */
+
+body.rtl .footer-contact {
+  padding-top: 2px;
+}
+
+body.rtl .footer-contact p {
+  margin-bottom: 13px;
+  gap: 9px;
+}
+
+/* ==================================================
+   RTL FOOTER BOTTOM
+================================================== */
+
+body.rtl .footer-bottom {
+  gap: 18px;
+}
+
+/* ==================================================
+   RTL — 361px TO 768px
+================================================== */
+
+@media (min-width: 361px) and (max-width: 768px) {
+  body.rtl .footer-brand {
+    gap: 6px;
+  }
+
+  body.rtl .footer-logo {
+    margin: -10px 0 -6px 0;
+  }
+
+  body.rtl .footer-description {
+    margin-top: 5px;
+  }
+
+  body.rtl .social-links {
+    margin-top: 6px;
+    gap: 9px;
+  }
+
+  body.rtl .footer-column h3 {
+    margin-bottom: 15px;
+  }
+
+  body.rtl .footer-contact p {
+    gap: 8px;
+    margin-bottom: 11px;
+  }
+
+  body.rtl .footer-bottom {
+    gap: 12px;
+  }
+}
+
+/* ==================================================
+   RTL — 360px
+================================================== */
+
+@media (max-width: 360px) {
+  body.rtl .footer-brand {
+    gap: 5px;
+  }
+
+  body.rtl .footer-logo {
+    margin: -8px 0 -6px 0;
+  }
+
+  body.rtl .footer-description {
+    margin-top: 4px;
+  }
+
+  body.rtl .social-links {
+    margin-top: 5px;
+    gap: 8px;
+  }
+
+  body.rtl .footer-column h3 {
+    margin-bottom: 14px;
+  }
+
+  body.rtl .footer-contact p {
+    gap: 7px;
+    margin-bottom: 10px;
+  }
+
+  body.rtl .footer-bottom {
+    gap: 10px;
+  }
+}
+
+/* ==================================================
+   RTL — TABLET / NETBOOK
+   769px - 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body.rtl .footer-brand {
+    gap: 7px;
+  }
+
+  body.rtl .footer-logo {
+    margin: -15px 0 -7px 0;
+  }
+
+  body.rtl .footer-description {
+    margin-top: 5px;
+  }
+
+  body.rtl .social-links {
+    margin-top: 6px;
+    gap: 9px;
+  }
+
+  body.rtl .footer-contact p {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+}
+
+/* ==================================================
+   RTL — LARGE DESKTOP
+   1025px+
+================================================== */
+
+@media (min-width: 1025px) {
+  body.rtl .footer-brand {
+    gap: 8px;
+  }
+
+  body.rtl .footer-description {
+    margin-top: 6px;
+  }
+
+  body.rtl .social-links {
+    margin-top: 8px;
+  }
+}
+/* ==================================================
+   CRAFT NEST
+   FOOTER NORMAL RESPONSIVE GAP
+================================================== */
+
+/* DESKTOP */
+.footer-brand {
+  gap: 8px;
+}
+
+.footer-logo {
+  margin-bottom: 4px;
+}
+
+.footer-description {
+  margin-top: 4px;
+}
+
+.social-links {
+  margin-top: 8px;
+}
+
+/* ==================================================
+   MOBILE — 361px TO 768px
+================================================== */
+
+@media (min-width: 361px) and (max-width: 768px) {
+  .footer-brand {
+    gap: 6px;
+  }
+
+  .footer-logo {
+    margin-bottom: 4px;
+  }
+
+  .footer-description {
+    margin-top: 4px;
+  }
+
+  .social-links {
+    margin-top: 6px;
+  }
+}
+
+/* ==================================================
+   MOBILE — 360px
+================================================== */
+
+@media (max-width: 360px) {
+  .footer-brand {
+    gap: 5px;
+  }
+
+  .footer-logo {
+    margin-bottom: 3px;
+  }
+
+  .footer-description {
+    margin-top: 3px;
+  }
+
+  .social-links {
+    margin-top: 5px;
+  }
+}
+
+/* ==================================================
+   TABLET / NETBOOK — 769px TO 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-brand {
+    gap: 7px;
+  }
+
+  .footer-logo {
+    margin-bottom: 4px;
+  }
+
+  .footer-description {
+    margin-top: 4px;
+  }
+
+  .social-links {
+    margin-top: 7px;
+  }
+}
+
+/* ==================================================
+   LARGE DESKTOP — 1025px+
+================================================== */
+
+@media (min-width: 1025px) {
+  .footer-brand {
+    gap: 8px;
+  }
+
+  .footer-logo {
+    margin-bottom: 5px;
+  }
+
+  .footer-description {
+    margin-top: 5px;
+  }
+
+  .social-links {
+    margin-top: 8px;
+  }
+}
+
+/* ==================================================
+   RTL — SAME LITTLE GAP
+================================================== */
+
+body.rtl .footer-brand {
+  gap: 8px;
+}
+
+body.rtl .footer-logo {
+  margin-bottom: 5px;
+}
+
+body.rtl .footer-description {
+  margin-top: 5px;
+}
+
+body.rtl .social-links {
+  margin-top: 8px;
+}
+
+/* RTL MOBILE */
+@media (max-width: 768px) {
+  body.rtl .footer-brand {
+    gap: 6px;
+  }
+
+  body.rtl .footer-logo {
+    margin-bottom: 4px;
+  }
+
+  body.rtl .footer-description {
+    margin-top: 4px;
+  }
+
+  body.rtl .social-links {
+    margin-top: 6px;
+  }
+}
+
+/* RTL 360px */
+@media (max-width: 360px) {
+  body.rtl .footer-brand {
+    gap: 5px;
+  }
+
+  body.rtl .footer-logo {
+    margin-bottom: 3px;
+  }
+
+  body.rtl .footer-description {
+    margin-top: 3px;
+  }
+
+  body.rtl .social-links {
+    margin-top: 5px;
+  }
+}
+/* ==================================================
+   iPAD MINI ONLY
+   NORMAL + RTL
+   CONTENT / DESCRIPTION = 2 LINES
+================================================== */
+
+@media (min-width: 768px) and (max-width: 820px) {
+  .footer-description {
+    max-width: 330px;
+    line-height: 1.6;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+  }
+
+  body.rtl .footer-description {
+    max-width: 330px;
+    text-align: right;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+  }
+}
+/* ==================================================
+   FOOTER CENTER
+   SAMSUNG GALAXY S8+
+   LTR + RTL
+================================================== */
+
+@media screen and (min-width: 360px) and (max-width: 600px) {
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-description {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .social-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-column {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column > a {
+    text-align: center;
+  }
+
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-contact p {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+
+  /* ==================================================
+     RTL — KEEP FOOTER CENTERED
+  ================================================== */
+
+  body.rtl .footer-container {
+    direction: rtl;
+    text-align: center;
+  }
+
+  body.rtl .footer-brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  body.rtl .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body.rtl .footer-description {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  body.rtl .social-links {
+    justify-content: center;
+  }
+
+  body.rtl .footer-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  body.rtl .footer-column > a {
+    text-align: center;
+  }
+
+  body.rtl .footer-contact {
+    text-align: center;
+  }
+
+  body.rtl .footer-contact p {
+    justify-content: center;
+    text-align: center;
+  }
+
+  body.rtl .footer-bottom {
+    align-items: center;
+    text-align: center;
+  }
+
+  body.rtl .footer-bottom-links {
+    justify-content: center;
+  }
 }

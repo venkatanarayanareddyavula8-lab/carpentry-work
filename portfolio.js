@@ -67,11 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
       event.stopPropagation();
 
       navDropdown.classList.toggle("open");
-
-      navDropdown.classList.toggle(
-        "active",
-        navDropdown.classList.contains("open"),
-      );
     });
   }
 
@@ -89,8 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (navDropdown) {
             navDropdown.classList.remove("open");
-
-            navDropdown.classList.remove("active");
           }
 
           if (menuToggle) {
@@ -120,6 +113,10 @@ document.addEventListener("DOMContentLoaded", function () {
           if (menuToggle) {
             menuToggle.innerHTML = '<i data-lucide="menu"></i>';
 
+            menuToggle.setAttribute("aria-label", "Open Menu");
+
+            menuToggle.setAttribute("title", "Menu");
+
             loadIcons();
           }
         }
@@ -142,8 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (navDropdown) {
           navDropdown.classList.remove("open");
-
-          navDropdown.classList.remove("active");
         }
 
         menuToggle.innerHTML = '<i data-lucide="menu"></i>';
@@ -178,6 +173,108 @@ document.addEventListener("DOMContentLoaded", function () {
   handleScroll();
 
   /* ==================================================
+     ACTIVE NAVIGATION
+  ================================================== */
+
+  function setActiveNavigation() {
+    if (!mainNav) {
+      return;
+    }
+
+    /* ==================================================
+       REMOVE ALL ACTIVE STATES
+    ================================================== */
+
+    mainNav.querySelectorAll(".nav-link").forEach(function (link) {
+      link.classList.remove("active");
+    });
+
+    /* ==================================================
+       GET CURRENT PAGE
+    ================================================== */
+
+    let currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+    if (currentPage === "" || currentPage === "/") {
+      currentPage = "index.html";
+    }
+
+    /* ==================================================
+       HOME
+    ================================================== */
+
+    if (currentPage === "index.html" || currentPage === "index1.html") {
+      if (homeDropdownButton) {
+        homeDropdownButton.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       PORTFOLIO
+    ================================================== */
+
+    if (currentPage === "portfolio.html") {
+      const portfolioLink = mainNav.querySelector('a[href*="portfolio.html"]');
+
+      if (portfolioLink) {
+        portfolioLink.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       MATERIALS
+    ================================================== */
+
+    if (currentPage === "materials.html") {
+      const materialsLink = mainNav.querySelector('a[href*="materials.html"]');
+
+      if (materialsLink) {
+        materialsLink.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       PROCESS
+    ================================================== */
+
+    if (currentPage === "process.html") {
+      const processLink = mainNav.querySelector('a[href*="process.html"]');
+
+      if (processLink) {
+        processLink.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       CONTACT
+    ================================================== */
+
+    if (currentPage === "contact.html") {
+      const contactLink = mainNav.querySelector('a[href*="contact.html"]');
+
+      if (contactLink) {
+        contactLink.classList.add("active");
+      }
+
+      return;
+    }
+  }
+
+  /* ==================================================
+     APPLY ACTIVE NAVIGATION
+  ================================================== */
+
+  setActiveNavigation();
+
+  /* ==================================================
      RESIZE SAFETY
   ================================================== */
 
@@ -189,8 +286,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (navDropdown) {
         navDropdown.classList.remove("open");
-
-        navDropdown.classList.remove("active");
       }
 
       if (menuToggle) {
@@ -203,5 +298,25 @@ document.addEventListener("DOMContentLoaded", function () {
         loadIcons();
       }
     }
+  });
+});
+
+/* ==================================================
+   FAQ
+================================================== */
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(function (question) {
+  question.addEventListener("click", function () {
+    const currentItem = question.parentElement;
+
+    document.querySelectorAll(".faq-item").forEach(function (item) {
+      if (item !== currentItem) {
+        item.classList.remove("active");
+      }
+    });
+
+    currentItem.classList.toggle("active");
   });
 });

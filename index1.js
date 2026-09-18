@@ -66,12 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
       event.stopPropagation();
 
-      navDropdown.classList.toggle("open");
+      /* 
+           ONLY control dropdown open/close.
+           Do NOT add/remove "active" here.
+           Active state belongs to current page.
+        */
 
-      navDropdown.classList.toggle(
-        "active",
-        navDropdown.classList.contains("open"),
-      );
+      navDropdown.classList.toggle("open");
     });
   }
 
@@ -89,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (navDropdown) {
             navDropdown.classList.remove("open");
-            navDropdown.classList.remove("active");
           }
 
           if (menuToggle) {
@@ -119,6 +119,10 @@ document.addEventListener("DOMContentLoaded", function () {
           if (menuToggle) {
             menuToggle.innerHTML = '<i data-lucide="menu"></i>';
 
+            menuToggle.setAttribute("aria-label", "Open Menu");
+
+            menuToggle.setAttribute("title", "Menu");
+
             loadIcons();
           }
         }
@@ -141,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (navDropdown) {
           navDropdown.classList.remove("open");
-          navDropdown.classList.remove("active");
         }
 
         menuToggle.innerHTML = '<i data-lucide="menu"></i>';
@@ -176,6 +179,112 @@ document.addEventListener("DOMContentLoaded", function () {
   handleScroll();
 
   /* ==================================================
+     ACTIVE NAVIGATION
+  ================================================== */
+
+  function setActiveNavigation() {
+    if (!mainNav) {
+      return;
+    }
+
+    /* 
+       Get current page name.
+       If URL is just "/" or empty,
+       treat it as index.html.
+    */
+
+    const currentPage =
+      window.location.pathname.split("/").pop().toLowerCase() || "index.html";
+
+    /* ==================================================
+       REMOVE ALL ACTIVE STATES FIRST
+    ================================================== */
+
+    mainNav.querySelectorAll(".nav-link").forEach(function (link) {
+      link.classList.remove("active");
+    });
+
+    /* ==================================================
+       HOME
+       index.html + index1.html
+    ================================================== */
+
+    if (
+      currentPage === "index.html" ||
+      currentPage === "index1.html" ||
+      currentPage === ""
+    ) {
+      if (homeDropdownButton) {
+        homeDropdownButton.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       PORTFOLIO
+    ================================================== */
+
+    if (currentPage === "portfolio.html") {
+      const portfolio = mainNav.querySelector('a[href="portfolio.html"]');
+
+      if (portfolio) {
+        portfolio.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       MATERIALS & FINISHES
+    ================================================== */
+
+    if (currentPage === "materials.html") {
+      const materials = mainNav.querySelector('a[href="materials.html"]');
+
+      if (materials) {
+        materials.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       PROCESS
+    ================================================== */
+
+    if (currentPage === "process.html") {
+      const process = mainNav.querySelector('a[href="process.html"]');
+
+      if (process) {
+        process.classList.add("active");
+      }
+
+      return;
+    }
+
+    /* ==================================================
+       CONTACT
+    ================================================== */
+
+    if (currentPage === "contact.html") {
+      const contact = mainNav.querySelector('a[href="contact.html"]');
+
+      if (contact) {
+        contact.classList.add("active");
+      }
+
+      return;
+    }
+  }
+
+  /* ==================================================
+     RUN ACTIVE NAVIGATION
+  ================================================== */
+
+  setActiveNavigation();
+
+  /* ==================================================
      RESIZE SAFETY
   ================================================== */
 
@@ -187,7 +296,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (navDropdown) {
         navDropdown.classList.remove("open");
-        navDropdown.classList.remove("active");
       }
 
       if (menuToggle) {
@@ -209,11 +317,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const faqQuestions = document.querySelectorAll(".faq-question");
 
-faqQuestions.forEach((question) => {
-  question.addEventListener("click", () => {
+faqQuestions.forEach(function (question) {
+  question.addEventListener("click", function () {
     const currentItem = question.parentElement;
 
-    document.querySelectorAll(".faq-item").forEach((item) => {
+    document.querySelectorAll(".faq-item").forEach(function (item) {
       if (item !== currentItem) {
         item.classList.remove("active");
       }
