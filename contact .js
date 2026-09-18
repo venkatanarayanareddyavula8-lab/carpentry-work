@@ -21,15 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
   ================================================== */
 
   const menuToggle = document.getElementById("menuToggle");
+
   const mainNav = document.getElementById("mainNav");
 
   const homeDropdownButton = document.getElementById("homeDropdownButton");
 
   const navDropdown = document.querySelector(".nav-dropdown");
-
-  const rtlToggle = document.getElementById("rtlToggle");
-
-  const darkToggle = document.getElementById("darkToggle");
 
   const siteHeader = document.getElementById("siteHeader");
 
@@ -92,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (navDropdown) {
             navDropdown.classList.remove("open");
+
             navDropdown.classList.remove("active");
           }
 
@@ -144,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (navDropdown) {
           navDropdown.classList.remove("open");
+
           navDropdown.classList.remove("active");
         }
 
@@ -157,113 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-
-  /* ==================================================
-     RTL TOGGLE
-     RTL WORKS INDEPENDENTLY
-  ================================================== */
-
-  if (rtlToggle) {
-    rtlToggle.addEventListener("click", function () {
-      document.body.classList.toggle("rtl");
-
-      const rtlEnabled = document.body.classList.contains("rtl");
-
-      rtlToggle.setAttribute(
-        "aria-label",
-        rtlEnabled ? "Switch to LTR" : "Switch to RTL",
-      );
-
-      rtlToggle.setAttribute(
-        "title",
-        rtlEnabled ? "Switch to LTR" : "Switch to RTL",
-      );
-    });
-  }
-
-  /* ==================================================
-     DARK MODE TOGGLE
-     DARK MODE WORKS INDEPENDENTLY
-  ================================================== */
-
-  if (darkToggle) {
-    darkToggle.addEventListener("click", function () {
-      document.body.classList.toggle("dark");
-
-      const darkEnabled = document.body.classList.contains("dark");
-
-      darkToggle.innerHTML = darkEnabled
-        ? '<i data-lucide="sun"></i>'
-        : '<i data-lucide="moon"></i>';
-
-      darkToggle.setAttribute(
-        "aria-label",
-        darkEnabled ? "Light Mode" : "Dark Mode",
-      );
-
-      darkToggle.setAttribute(
-        "title",
-        darkEnabled ? "Light Mode" : "Dark Mode",
-      );
-
-      loadIcons();
-    });
-  }
-
-  /* ==================================================
-     RTL + DARK MODE
-     BOTH CAN EXIST AT SAME TIME
-  ================================================== */
-
-  function updateModeState() {
-    const rtlEnabled = document.body.classList.contains("rtl");
-
-    const darkEnabled = document.body.classList.contains("dark");
-
-    /* ------------------------------------------
-       RTL STATE
-    ------------------------------------------ */
-
-    if (rtlToggle) {
-      rtlToggle.setAttribute(
-        "aria-label",
-        rtlEnabled ? "Switch to LTR" : "Switch to RTL",
-      );
-
-      rtlToggle.setAttribute(
-        "title",
-        rtlEnabled ? "Switch to LTR" : "Switch to RTL",
-      );
-    }
-
-    /* ------------------------------------------
-       DARK MODE STATE
-    ------------------------------------------ */
-
-    if (darkToggle) {
-      darkToggle.innerHTML = darkEnabled
-        ? '<i data-lucide="sun"></i>'
-        : '<i data-lucide="moon"></i>';
-
-      darkToggle.setAttribute(
-        "aria-label",
-        darkEnabled ? "Light Mode" : "Dark Mode",
-      );
-
-      darkToggle.setAttribute(
-        "title",
-        darkEnabled ? "Light Mode" : "Dark Mode",
-      );
-    }
-
-    loadIcons();
-  }
-
-  /* ==================================================
-     INITIAL MODE STATE
-  ================================================== */
-
-  updateModeState();
 
   /* ==================================================
      HEADER SCROLL
@@ -297,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (navDropdown) {
         navDropdown.classList.remove("open");
+
         navDropdown.classList.remove("active");
       }
 
@@ -321,12 +214,14 @@ const faqItems = document.querySelectorAll(".faq-item");
 
 faqItems.forEach(function (item) {
   const question = item.querySelector(".faq-question");
+
   const icon = item.querySelector(".faq-icon");
 
   question.addEventListener("click", function () {
     const isActive = item.classList.contains("active");
 
     /* Close all FAQ items */
+
     faqItems.forEach(function (otherItem) {
       otherItem.classList.remove("active");
 
@@ -336,6 +231,7 @@ faqItems.forEach(function (item) {
     });
 
     /* Open selected FAQ */
+
     if (!isActive) {
       item.classList.add("active");
 

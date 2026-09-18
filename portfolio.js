@@ -21,15 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
   ================================================== */
 
   const menuToggle = document.getElementById("menuToggle");
+
   const mainNav = document.getElementById("mainNav");
 
   const homeDropdownButton = document.getElementById("homeDropdownButton");
 
   const navDropdown = document.querySelector(".nav-dropdown");
-
-  const rtlToggle = document.getElementById("rtlToggle");
-
-  const darkToggle = document.getElementById("darkToggle");
 
   const siteHeader = document.getElementById("siteHeader");
 
@@ -50,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuOpen ? "Close Menu" : "Open Menu",
       );
 
-      menuToggle.setAttribute("title", menuOpen ? "Close Menu" : "Open Menu");
+      menuToggle.setAttribute("title", menuOpen ? "Close Menu" : "Menu");
 
       menuToggle.innerHTML = menuOpen
         ? '<i data-lucide="x"></i>'
@@ -92,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (navDropdown) {
             navDropdown.classList.remove("open");
+
             navDropdown.classList.remove("active");
           }
 
@@ -144,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (navDropdown) {
           navDropdown.classList.remove("open");
+
           navDropdown.classList.remove("active");
         }
 
@@ -157,113 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-
-  /* ==================================================
-     RTL TOGGLE
-     RTL WORKS INDEPENDENTLY
-  ================================================== */
-
-  if (rtlToggle) {
-    rtlToggle.addEventListener("click", function () {
-      document.body.classList.toggle("rtl");
-
-      const rtlEnabled = document.body.classList.contains("rtl");
-
-      rtlToggle.setAttribute(
-        "aria-label",
-        rtlEnabled ? "Switch to LTR" : "Switch to RTL",
-      );
-
-      rtlToggle.setAttribute(
-        "title",
-        rtlEnabled ? "Switch to LTR" : "Switch to RTL",
-      );
-    });
-  }
-
-  /* ==================================================
-     DARK MODE TOGGLE
-     DARK MODE WORKS INDEPENDENTLY
-  ================================================== */
-
-  if (darkToggle) {
-    darkToggle.addEventListener("click", function () {
-      document.body.classList.toggle("dark");
-
-      const darkEnabled = document.body.classList.contains("dark");
-
-      darkToggle.innerHTML = darkEnabled
-        ? '<i data-lucide="sun"></i>'
-        : '<i data-lucide="moon"></i>';
-
-      darkToggle.setAttribute(
-        "aria-label",
-        darkEnabled ? "Light Mode" : "Dark Mode",
-      );
-
-      darkToggle.setAttribute(
-        "title",
-        darkEnabled ? "Light Mode" : "Dark Mode",
-      );
-
-      loadIcons();
-    });
-  }
-
-  /* ==================================================
-     RTL + DARK MODE
-     BOTH CAN EXIST AT SAME TIME
-  ================================================== */
-
-  function updateModeState() {
-    const rtlEnabled = document.body.classList.contains("rtl");
-
-    const darkEnabled = document.body.classList.contains("dark");
-
-    /* ------------------------------------------
-       RTL STATE
-    ------------------------------------------ */
-
-    if (rtlToggle) {
-      rtlToggle.setAttribute(
-        "aria-label",
-        rtlEnabled ? "Switch to LTR" : "Switch to RTL",
-      );
-
-      rtlToggle.setAttribute(
-        "title",
-        rtlEnabled ? "Switch to LTR" : "Switch to RTL",
-      );
-    }
-
-    /* ------------------------------------------
-       DARK MODE STATE
-    ------------------------------------------ */
-
-    if (darkToggle) {
-      darkToggle.innerHTML = darkEnabled
-        ? '<i data-lucide="sun"></i>'
-        : '<i data-lucide="moon"></i>';
-
-      darkToggle.setAttribute(
-        "aria-label",
-        darkEnabled ? "Light Mode" : "Dark Mode",
-      );
-
-      darkToggle.setAttribute(
-        "title",
-        darkEnabled ? "Light Mode" : "Dark Mode",
-      );
-    }
-
-    loadIcons();
-  }
-
-  /* ==================================================
-     INITIAL MODE STATE
-  ================================================== */
-
-  updateModeState();
 
   /* ==================================================
      HEADER SCROLL
@@ -297,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (navDropdown) {
         navDropdown.classList.remove("open");
+
         navDropdown.classList.remove("active");
       }
 
@@ -310,32 +203,5 @@ document.addEventListener("DOMContentLoaded", function () {
         loadIcons();
       }
     }
-  });
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const sliders = document.querySelectorAll(".before-after-slider");
-
-  sliders.forEach(function (slider) {
-    const range = slider.querySelector(".before-after-range");
-
-    const beforeImage = slider.querySelector(".before-after-before");
-
-    const divider = slider.querySelector(".before-after-divider");
-
-    if (!range || !beforeImage || !divider) {
-      return;
-    }
-
-    function updateSlider() {
-      const value = range.value;
-
-      beforeImage.style.width = value + "%";
-
-      divider.style.left = value + "%";
-    }
-
-    range.addEventListener("input", updateSlider);
-
-    updateSlider();
   });
 });

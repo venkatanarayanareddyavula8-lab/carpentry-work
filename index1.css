@@ -83,13 +83,13 @@ img {
 ================================================== */
 
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   background: var(--bg);
-  border-bottom: 1px solid rgba(139, 90, 53, 0.18);
+  border-bottom: 3px solid rgba(139, 90, 53, 0.18);
   transition:
     box-shadow 0.3s ease,
     background 0.3s ease;
@@ -231,33 +231,12 @@ body.rtl .logo-name {
   transition: color 0.25s ease;
 }
 
-.nav-link::after,
-.dropdown-button::after {
-  content: "";
-  position: absolute;
-  left: 11px;
-  right: 11px;
-  bottom: 15px;
-  height: 2px;
-  background: var(--primary);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-}
-
 .nav-link:hover,
 .nav-link.active,
 .dropdown-button:hover,
 .nav-dropdown.active .dropdown-button {
   color: var(--secondary);
 }
-
-.nav-link:hover::after,
-.nav-link.active::after,
-.nav-dropdown.active .dropdown-button::after {
-  transform: scaleX(1);
-}
-
 /* ==================================================
    DROPDOWN
 ================================================== */
@@ -6889,7 +6868,7 @@ body.rtl .faq-answer p {
 
   color: var(--text);
 
-  margin-top: 80px;
+  margin-top: -30px;
 
   border-top: 1px solid rgba(128, 128, 128, 0.18);
 
@@ -7044,11 +7023,6 @@ body.rtl .faq-answer p {
 .footer-logo .logo-name strong {
   color: var(--secondary);
 }
-
-/* ==================================================
-   DESCRIPTION
-   NO EXTRA GAP
-================================================== */
 
 .footer-description {
   width: 100%;

@@ -5791,7 +5791,7 @@ body.rtl .premium-cta-actions {
 
   color: var(--text);
 
-  margin-top: 100px;
+  margin-top: -60px;
 
   border-top: 1px solid rgba(128, 128, 128, 0.18);
 
@@ -5946,11 +5946,6 @@ body.rtl .premium-cta-actions {
 .footer-logo .logo-name strong {
   color: var(--secondary);
 }
-
-/* ==================================================
-   DESCRIPTION
-   NO EXTRA GAP
-================================================== */
 
 .footer-description {
   width: 100%;

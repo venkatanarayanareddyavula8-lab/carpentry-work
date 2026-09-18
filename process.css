@@ -3453,7 +3453,7 @@ body.rtl .process-cta-content {
 
   color: var(--text);
 
-  margin-top: 80px;
+  margin-top: -30px;
 
   border-top: 1px solid rgba(128, 128, 128, 0.18);
 

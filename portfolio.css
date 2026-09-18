@@ -89,7 +89,7 @@ img {
   right: 0;
   z-index: 1000;
   background: var(--bg);
-  border-bottom: 1px solid rgba(139, 90, 53, 0.18);
+  border-bottom: 3px solid rgba(139, 90, 53, 0.18);
   transition:
     box-shadow 0.3s ease,
     background 0.3s ease;
@@ -615,7 +615,7 @@ body.rtl .logo-name {
     align-items: center;
     justify-content: center;
     background: var(--primary);
-    color: #000000;
+    color: var(--text);
     border: 1px solid var(--primary);
     border-radius: 7px;
     font-size: 13px;
@@ -625,7 +625,7 @@ body.rtl .logo-name {
   .mobile-login:hover {
     background: var(--secondary);
     border-color: var(--secondary);
-    color: #ffffff;
+    color: var(--bg);
   }
 
   body.rtl .header-container {
@@ -846,7 +846,7 @@ body.rtl .logo-name {
   .mobile-login:hover {
     background: var(--secondary);
     border-color: var(--secondary);
-    color: #ffffff;
+    color: var(--bg);
   }
 
   body.rtl .header-container {
@@ -3057,372 +3057,837 @@ body.dark .living-room-filter {
   }
 }
 /* ==================================================
-   BEFORE & AFTER SECTION
+   CRAFT NEST
+   COMPLETE RESPONSIVE CSS
+   RTL / LTR
+   DARK / LIGHT
+   GALAXY S8+
+   iPAD MINI
+   NETBOOK
+   1920px DESKTOP
 ================================================== */
-
-.before-after-section {
-  width: 100%;
-  padding: 120px 6%;
-  background: var(--bg);
-  color: var(--text);
-  box-sizing: border-box;
-  overflow: hidden;
-}
 
 /* ==================================================
-   SECTION HEADER
+   ROOT VARIABLES
 ================================================== */
 
-.before-after-header {
-  width: 100%;
-  max-width: 850px;
-  margin: 0 auto 70px;
-
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.before-after-label {
-  display: inline-block;
-
-  padding: 7px 18px;
-  margin-bottom: 18px;
-
-  border: 1px solid var(--primary);
-  border-radius: 30px;
-
-  color: var(--primary);
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 2.5px;
-}
-
-.before-after-header h2 {
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(42px, 5vw, 62px);
-  font-weight: 600;
-  line-height: 1;
-
-  color: var(--text);
-}
-
-.before-after-header h2 em {
-  color: var(--primary);
-  font-style: normal;
-}
-
-.before-after-header p {
-  max-width: 620px;
-  margin: 20px auto 0;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  line-height: 1.8;
-
-  color: var(--text);
-  opacity: 0.7;
-}
-
-/* ==================================================
-   THREE PROJECTS — ONE ROW
-================================================== */
-
-.before-after-projects {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
-
-  box-sizing: border-box;
-}
-
-/* ==================================================
-   PROJECT
-================================================== */
-
-.before-after-project {
-  width: 100%;
-  min-width: 0;
-
-  box-sizing: border-box;
-}
-
-/* ==================================================
-   BEFORE / AFTER IMAGE AREA
-================================================== */
-
-.before-after-slider {
-  position: relative;
-
-  width: 100%;
-  height: 420px;
-
-  overflow: hidden;
-
-  background: #111;
-
-  box-sizing: border-box;
-}
-
-/* AFTER IMAGE */
-
-.before-after-after {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-}
-
-.before-after-after img {
-  width: 100%;
-  height: 100%;
-
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
-
-  object-fit: cover;
+  max-width: 100%;
 }
 
-/* BEFORE IMAGE */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  max-width: 100%;
+}
 
-.before-after-before {
-  position: absolute;
-  inset: 0;
+button {
+  cursor: pointer;
+}
 
-  width: 50%;
-  height: 100%;
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  overflow: hidden;
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==================================================
+   GLOBAL CONTAINER
+================================================== */
+
+.container,
+.section-container,
+.projects-container,
+.finishes-container,
+.portfolio-container,
+.contact-container {
+  width: min(var(--container), calc(100% - 60px));
+
+  max-width: var(--container);
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  background: var(--bg);
+
+  border-bottom: 3px solid rgba(139, 90, 53, 0.18);
+
+  transition:
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================================================
+   HEADER CONTAINER
+================================================== */
+
+.header-container {
+  width: min(1400px, calc(100% - 60px));
+
+  min-height: var(--header-height);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo {
+  display: inline-flex;
+
+  flex-direction: row;
+
+  direction: ltr;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 0;
+
+  margin: 0;
+  padding: 0;
+
+  flex-shrink: 0;
+
+  overflow: visible;
+
+  white-space: nowrap;
+}
+
+.logo-icon {
+  width: 82px;
+  height: 82px;
+
+  min-width: 82px;
+
+  flex: 0 0 82px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: visible;
+
+  position: relative;
 
   z-index: 2;
 }
 
-.before-after-before img {
-  width: 100%;
-  height: 100%;
+.logo-icon img {
+  width: 82px;
+  height: 82px;
+
+  min-width: 82px;
+  min-height: 82px;
+
+  max-width: none;
+  max-height: none;
 
   display: block;
 
-  object-fit: cover;
+  object-fit: contain;
 
-  /*
-    Important:
-    Keep the complete image width aligned
-    with the AFTER image.
-  */
-  max-width: none;
-  width: calc(100% + 0px);
+  object-position: center;
+
+  transform: translateX(12px) scale(1.6);
+}
+
+.logo-name {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  margin-left: -42px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 21px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: var(--primary);
+
+  white-space: nowrap;
+
+  position: relative;
+
+  z-index: 10;
+}
+
+.logo-name strong {
+  color: var(--secondary);
 }
 
 /* ==================================================
-   LABELS
+   NAVIGATION
 ================================================== */
 
-.before-after-label-tag {
-  position: absolute;
-
-  top: 18px;
-
-  z-index: 5;
-
-  padding: 6px 12px;
-
-  background: rgba(0, 0, 0, 0.65);
-
-  color: #ffffff;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-
-  box-sizing: border-box;
-}
-
-.before-label {
-  left: 18px;
-}
-
-.after-label {
-  right: 18px;
-}
-
-/* ==================================================
-   CENTER DIVIDER
-================================================== */
-
-.before-after-divider {
-  position: absolute;
-
-  top: 0;
-  bottom: 0;
-  left: 50%;
-
-  width: 2px;
-
-  background: #ffffff;
-
-  z-index: 6;
-
-  transform: translateX(-50%);
-
-  pointer-events: none;
-}
-
-/* ==================================================
-   HANDLE
-================================================== */
-
-.before-after-handle {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  width: 44px;
-  height: 44px;
-
-  transform: translate(-50%, -50%);
-
+.nav-links {
   display: flex;
+
   align-items: center;
   justify-content: center;
-  gap: 5px;
 
-  border: 1px solid #ffffff;
-  border-radius: 50%;
+  gap: 24px;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+.nav-link {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+
+  color: var(--text);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: color var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link.active {
+  color: var(--primary);
+}
+
+/* ==================================================
+   HEADER ACTIONS
+================================================== */
+
+.header-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+
+  direction: ltr;
+}
+
+/* ==================================================
+   RTL BUTTON
+================================================== */
+
+.rtl-button {
+  height: 40px;
+
+  min-width: 62px;
+
+  padding: 0 9px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--primary);
+
+  border-radius: 13px;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.rtl-button:hover {
+  color: var(--secondary);
+
+  border-color: var(--secondary);
+}
+
+/* ==================================================
+   ICON BUTTON
+================================================== */
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+
+  min-width: 40px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--primary);
+
+  border-radius: 13px;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.icon-button:hover {
+  color: var(--secondary);
+
+  border-color: var(--secondary);
+}
+
+.icon-button svg {
+  width: 17px;
+  height: 17px;
+
+  stroke-width: 2;
+}
+
+/* ==================================================
+   LOGIN BUTTON
+================================================== */
+
+.login-button {
+  min-height: 40px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 13px;
 
   background: var(--primary);
 
   color: #ffffff;
 
-  font-family: Arial, sans-serif;
-  font-size: 22px;
-  line-height: 1;
+  font-size: 13px;
 
-  box-sizing: border-box;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    background var(--transition),
+    transform var(--transition);
 }
 
-.before-after-handle span {
-  display: block;
-}
+.login-button:hover {
+  background: var(--secondary);
 
-/* ==================================================
-   RANGE SLIDER
-================================================== */
-
-.before-after-range {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  margin: 0;
-
-  opacity: 0;
-
-  cursor: ew-resize;
-
-  z-index: 10;
-
-  appearance: none;
+  transform: translateY(-1px);
 }
 
 /* ==================================================
-   PROJECT INFORMATION
+   MOBILE MENU BUTTON
 ================================================== */
 
-.before-after-info {
-  width: 100%;
+.menu-toggle {
+  display: none;
 
-  padding: 28px 5px 0;
+  width: 40px;
+  height: 40px;
+
+  min-width: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--primary);
+
+  border-radius: 13px;
+
+  background: var(--bg);
+
+  color: var(--text);
+}
+
+.menu-toggle svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ==================================================
+   MAIN
+================================================== */
+
+main {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+}
+
+/* ==================================================
+   ALL SECTIONS
+================================================== */
+
+section {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+}
+
+/* ==================================================
+   SECTION HEADINGS
+================================================== */
+
+.section-title {
+  max-width: 800px;
+
+  margin-left: auto;
+  margin-right: auto;
 
   text-align: center;
-
-  box-sizing: border-box;
 }
 
-.before-after-number {
-  display: block;
+.section-title h2 {
+  font-family: "Cormorant Garamond", serif;
 
-  margin-bottom: 10px;
+  color: var(--text);
+
+  font-size: 48px;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+.section-title p {
+  margin-top: 14px;
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  opacity: 0.75;
+}
+
+/* ==================================================
+   PROJECTS SECTION
+================================================== */
+
+.projects-section {
+  width: 100%;
+
+  padding: 100px 0;
+
+  background: var(--bg);
+
+  overflow: hidden;
+}
+
+.projects-container {
+  width: min(1400px, calc(100% - 60px));
+
+  max-width: 1400px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-header {
+  max-width: 800px;
+
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.projects-header span {
+  display: inline-block;
+
+  padding: 7px 18px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid var(--primary);
+
+  border-radius: 30px;
 
   color: var(--primary);
 
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
+
+  font-size: 11px;
+
   font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+.projects-header h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 6vw, 60px);
+
+  line-height: 1.1;
+
+  color: var(--text);
+}
+
+.projects-header p {
+  margin-top: 15px;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  opacity: 0.75;
+}
+
+/* ==================================================
+   PROJECT GRID
+================================================== */
+
+.projects-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+/* ==================================================
+   PROJECT CARD
+================================================== */
+
+.project-card {
+  width: 100%;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--bg);
+
+  border: 1px solid rgba(139, 90, 53, 0.18);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ==================================================
+   PROJECT IMAGE
+================================================== */
+
+.project-image {
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: var(--secondary);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.04);
+}
+
+/* ==================================================
+   PROJECT CONTENT
+================================================== */
+
+.project-content {
+  width: 100%;
+
+  padding: 25px;
+}
+
+.project-number {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--primary);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
   letter-spacing: 2px;
 }
 
-.before-after-info h3 {
-  margin: 0 0 12px;
+.project-content h3 {
+  font-family: "Cormorant Garamond", serif;
 
   color: var(--text);
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 29px;
-  font-weight: 600;
-  line-height: 1.1;
+  font-size: 28px;
+
+  line-height: 1.2;
 }
 
-.before-after-info p {
-  max-width: 380px;
-  margin: 0 auto;
+.project-content p {
+  margin-top: 10px;
 
   color: var(--text);
 
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: 14px;
 
-  opacity: 0.7;
+  line-height: 1.7;
+
+  opacity: 0.75;
+}
+
+/* ==================================================
+   FINISHES GRID
+================================================== */
+
+.finishes-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+.finish-card {
+  min-width: 0;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: var(--radius);
+}
+
+.finish-card img {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* ==================================================
+   PORTFOLIO GRID
+================================================== */
+
+.portfolio-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+.portfolio-card {
+  min-width: 0;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: var(--radius);
+
+  background: var(--bg);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* ==================================================
+   FORM ELEMENTS
+================================================== */
+
+input,
+textarea,
+select {
+  width: 100%;
+
+  max-width: 100%;
+
+  border: 1px solid rgba(139, 90, 53, 0.25);
+
+  border-radius: 10px;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  outline: none;
+
+  transition: border-color var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+}
+
+textarea {
+  resize: vertical;
 }
 
 /* ==================================================
    RTL
 ================================================== */
 
-body.rtl .before-after-section {
+body.rtl {
+  direction: rtl;
+
+  overflow-x: hidden;
+}
+
+body.rtl .header-container {
   direction: rtl;
 }
 
-body.rtl .before-after-header {
+body.rtl .logo {
+  direction: ltr;
+
+  flex-direction: row;
+}
+
+body.rtl .logo-icon {
+  order: 1;
+}
+
+body.rtl .logo-name {
+  order: 2;
+
+  margin-left: -42px;
+  margin-right: 0;
+
+  text-align: left;
+}
+
+body.rtl .header-actions {
+  direction: ltr;
+}
+
+body.rtl .nav-links {
   direction: rtl;
+}
+
+body.rtl .projects-header,
+body.rtl .section-title {
   text-align: center;
 }
 
-body.rtl .before-after-projects {
-  direction: rtl;
-}
-
-body.rtl .before-after-project {
-  direction: rtl;
-}
-
-body.rtl .before-after-info {
-  text-align: center;
-}
-
-/* ==================================================
-   DARK MODE
-================================================== */
-
-body.dark .before-after-section {
-  background: var(--bg);
-}
-
-body.dark .before-after-label-tag {
-  background: rgba(0, 0, 0, 0.75);
+body.rtl .project-content {
+  text-align: right;
 }
 
 /* ==================================================
@@ -3430,216 +3895,798 @@ body.dark .before-after-label-tag {
 ================================================== */
 
 @media (min-width: 1600px) {
-  .before-after-section {
-    padding: 140px 5%;
+  .header-container,
+  .projects-container,
+  .container,
+  .section-container,
+  .finishes-container,
+  .portfolio-container,
+  .contact-container {
+    width: min(1400px, calc(100% - 80px));
+
+    max-width: 1400px;
   }
 
-  .before-after-header {
-    max-width: 950px;
-    margin-bottom: 85px;
-  }
+  .projects-grid,
+  .finishes-grid,
+  .portfolio-grid {
+    max-width: 1400px;
 
-  .before-after-projects {
-    width: 90%;
-    max-width: 1500px;
-    gap: 35px;
-  }
-
-  .before-after-slider {
-    height: 470px;
-  }
-
-  .before-after-info {
-    padding-top: 32px;
-  }
-
-  .before-after-info h3 {
-    font-size: 32px;
-  }
-
-  .before-after-info p {
-    font-size: 13px;
-    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /* ==================================================
-   NETBOOK / 769px — 1024px
+   1200px - 1599px
 ================================================== */
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .before-after-section {
-    padding: 90px 5%;
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .header-container {
+    width: calc(100% - 50px);
   }
 
-  .before-after-header {
-    margin-bottom: 55px;
-  }
-
-  .before-after-projects {
+  .nav-links {
     gap: 18px;
   }
 
-  .before-after-slider {
-    height: 300px;
+  .projects-container,
+  .container,
+  .section-container,
+  .finishes-container,
+  .portfolio-container,
+  .contact-container {
+    width: calc(100% - 50px);
+  }
+}
+
+/* ==================================================
+   NETBOOK / 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .header-container {
+    width: calc(100% - 40px);
+
+    min-height: 72px;
+
+    gap: 14px;
   }
 
-  .before-after-label-tag {
-    padding: 5px 9px;
-    font-size: 8px;
+  .logo-icon {
+    width: 70px;
+    height: 70px;
+
+    min-width: 70px;
+
+    flex-basis: 70px;
   }
 
-  .before-after-handle {
-    width: 38px;
-    height: 38px;
+  .logo-icon img {
+    width: 70px;
+    height: 70px;
+
+    min-width: 70px;
+    min-height: 70px;
+
+    transform: translateX(8px) scale(1.45);
+  }
+
+  .logo-name {
+    margin-left: -32px;
+
     font-size: 19px;
   }
 
-  .before-after-info {
-    padding-top: 22px;
+  .nav-links {
+    gap: 13px;
   }
 
-  .before-after-info h3 {
-    font-size: 25px;
-  }
-
-  .before-after-info p {
-    font-size: 11px;
-  }
-}
-
-/* ==================================================
-   IPAD MINI — 600px — 768px
-================================================== */
-
-@media (min-width: 600px) and (max-width: 768px) {
-  .before-after-section {
-    padding: 80px 30px;
-  }
-
-  .before-after-header {
-    margin-bottom: 50px;
-  }
-
-  .before-after-projects {
-    grid-template-columns: 1fr;
-    max-width: 600px;
-    gap: 55px;
-  }
-
-  .before-after-slider {
-    height: 390px;
-  }
-
-  .before-after-info h3 {
-    font-size: 28px;
-  }
-}
-
-/* ==================================================
-   SAMSUNG GALAXY S8+ / MOBILE
-================================================== */
-
-@media (min-width: 361px) and (max-width: 599px) {
-  .before-after-section {
-    padding: 70px 20px;
-  }
-
-  .before-after-header {
-    margin-bottom: 45px;
-  }
-
-  .before-after-header h2 {
-    font-size: 43px;
-  }
-
-  .before-after-header p {
+  .nav-link {
     font-size: 12px;
   }
 
-  .before-after-projects {
-    grid-template-columns: 1fr;
-    gap: 45px;
+  .rtl-button {
+    min-width: 55px;
+
+    height: 38px;
+
+    font-size: 12px;
   }
 
-  .before-after-slider {
-    height: 320px;
+  .icon-button {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
   }
 
-  .before-after-info {
-    padding-top: 22px;
+  .login-button {
+    min-height: 38px;
+
+    padding: 0 13px;
+
+    font-size: 12px;
   }
 
-  .before-after-info h3 {
-    font-size: 27px;
+  .projects-container,
+  .container,
+  .section-container,
+  .finishes-container,
+  .portfolio-container,
+  .contact-container {
+    width: calc(100% - 40px);
   }
 
-  .before-after-info p {
-    font-size: 11px;
+  .projects-grid,
+  .finishes-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+  }
+
+  .projects-header h2,
+  .section-title h2 {
+    font-size: 42px;
   }
 }
 
 /* ==================================================
-   360px AND BELOW
+   iPAD MINI
+   600px - 768px
 ================================================== */
 
-@media (max-width: 360px) {
-  .before-after-section {
-    padding: 60px 16px;
+@media (min-width: 600px) and (max-width: 768px) {
+  .header-container {
+    width: calc(100% - 32px);
+
+    min-height: 68px;
+
+    gap: 10px;
   }
 
-  .before-after-header {
-    margin-bottom: 40px;
+  .logo-icon {
+    width: 62px;
+    height: 62px;
+
+    min-width: 62px;
+
+    flex-basis: 62px;
   }
 
-  .before-after-header h2 {
-    font-size: 39px;
+  .logo-icon img {
+    width: 62px;
+    height: 62px;
+
+    min-width: 62px;
+    min-height: 62px;
+
+    transform: translateX(6px) scale(1.3);
   }
 
-  .before-after-header p {
-    font-size: 11px;
-  }
+  .logo-name {
+    margin-left: -27px;
 
-  .before-after-projects {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .before-after-slider {
-    height: 290px;
-  }
-
-  .before-after-label-tag {
-    top: 12px;
-    padding: 5px 8px;
-    font-size: 8px;
-  }
-
-  .before-label {
-    left: 12px;
-  }
-
-  .after-label {
-    right: 12px;
-  }
-
-  .before-after-handle {
-    width: 36px;
-    height: 36px;
     font-size: 18px;
   }
 
-  .before-after-info {
-    padding-top: 20px;
+  .nav-links {
+    gap: 9px;
   }
 
-  .before-after-info h3 {
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .rtl-button {
+    min-width: 52px;
+
+    height: 36px;
+
+    padding: 0 6px;
+
+    font-size: 11px;
+  }
+
+  .icon-button {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+  }
+
+  .login-button {
+    min-height: 36px;
+
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+
+  .projects-container,
+  .container,
+  .section-container,
+  .finishes-container,
+  .portfolio-container,
+  .contact-container {
+    width: calc(100% - 32px);
+  }
+
+  .projects-grid,
+  .finishes-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+  .projects-header {
+    margin-bottom: 35px;
+  }
+
+  .projects-header h2,
+  .section-title h2 {
+    font-size: 40px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-content h3 {
+    font-size: 25px;
+  }
+}
+
+/* ==================================================
+   MOBILE
+   381px - 599px
+================================================== */
+
+@media (max-width: 599px) {
+  html,
+  body {
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    width: 100%;
+  }
+
+  .header-container {
+    width: calc(100% - 24px);
+
+    min-height: 64px;
+
+    gap: 6px;
+  }
+
+  /* LOGO */
+
+  .logo {
+    min-width: 0;
+
+    max-width: calc(100% - 45px);
+
+    overflow: visible;
+  }
+
+  .logo-icon {
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+
+    flex: 0 0 54px;
+  }
+
+  .logo-icon img {
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+    min-height: 54px;
+
+    transform: translateX(5px) scale(1.22);
+  }
+
+  .logo-name {
+    margin-left: -22px;
+
+    font-size: 16px;
+
+    max-width: 125px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+
+  /* NAVIGATION */
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+
+    top: 64px;
+
+    left: 12px;
+    right: 12px;
+
+    width: auto;
+
+    max-width: none;
+
+    max-height: calc(100vh - 74px);
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 10px;
+
+    background: var(--bg);
+
+    border: 1px solid rgba(139, 90, 53, 0.18);
+
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    justify-content: flex-start;
+
+    font-size: 14px;
+  }
+
+  /* HEADER ACTIONS */
+
+  .header-actions {
+    gap: 4px;
+
+    flex-shrink: 0;
+  }
+
+  .rtl-button {
+    height: 36px;
+
+    min-width: 48px;
+
+    padding: 0 5px;
+
+    font-size: 10px;
+  }
+
+  .icon-button {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    flex: 0 0 36px;
+  }
+
+  .icon-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+  }
+
+  /* CONTAINERS */
+
+  .container,
+  .section-container,
+  .projects-container,
+  .finishes-container,
+  .portfolio-container,
+  .contact-container {
+    width: calc(100% - 24px);
+
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* PROJECTS */
+
+  .projects-section {
+    padding: 75px 0;
+  }
+
+  .projects-header {
+    margin-bottom: 30px;
+  }
+
+  .projects-header h2,
+  .section-title h2 {
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  .projects-header p,
+  .section-title p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .projects-grid,
+  .finishes-grid,
+  .portfolio-grid {
+    width: 100%;
+
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .project-card,
+  .finish-card,
+  .portfolio-card {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-content h3 {
     font-size: 25px;
   }
 
-  .before-after-info p {
-    font-size: 10px;
+  .project-content p {
+    font-size: 13px;
+  }
+
+  /* IMAGES */
+
+  .project-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-image img,
+  .finish-card img,
+  .portfolio-card img {
+    max-width: 100%;
+  }
+
+  /* TYPOGRAPHY */
+
+  h1 {
+    font-size: clamp(30px, 9vw, 42px);
+
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(26px, 8vw, 36px);
+
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  p {
+    font-size: 14px;
+
     line-height: 1.7;
+  }
+}
+
+/* ==================================================
+   GALAXY S8+
+   360px AND BELOW
+================================================== */
+
+@media (max-width: 380px) {
+  .header-container {
+    width: calc(100% - 16px);
+
+    gap: 4px;
+  }
+
+  .logo {
+    max-width: calc(100% - 42px);
+  }
+
+  .logo-icon {
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+
+    flex: 0 0 50px;
+  }
+
+  .logo-icon img {
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+    min-height: 50px;
+
+    transform: translateX(4px) scale(1.18);
+  }
+
+  .logo-name {
+    margin-left: -20px;
+
+    font-size: 15px;
+
+    max-width: 110px;
+  }
+
+  .header-actions {
+    gap: 3px;
+  }
+
+  .rtl-button {
+    width: 44px;
+
+    min-width: 44px;
+
+    height: 34px;
+
+    padding: 0;
+
+    font-size: 10px;
+  }
+
+  .icon-button,
+  .menu-toggle {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+  }
+
+  .icon-button svg,
+  .menu-toggle svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .projects-container,
+  .container,
+  .section-container,
+  .finishes-container,
+  .portfolio-container,
+  .contact-container {
+    width: calc(100% - 16px);
+  }
+
+  .projects-section {
+    padding: 65px 0;
+  }
+
+  .projects-grid,
+  .finishes-grid,
+  .portfolio-grid {
+    gap: 15px;
+  }
+
+  .project-content {
+    padding: 17px;
+  }
+
+  .project-content h3 {
+    font-size: 23px;
+  }
+
+  .project-content p {
+    font-size: 12px;
+  }
+}
+
+/* ==================================================
+   RTL MOBILE
+================================================== */
+
+@media (max-width: 599px) {
+  body.rtl .nav-links {
+    left: 12px;
+    right: 12px;
+
+    direction: rtl;
+  }
+
+  body.rtl .nav-link {
+    justify-content: flex-start;
+
+    text-align: right;
+  }
+
+  body.rtl .project-content {
+    text-align: right;
+  }
+}
+
+/* ==================================================
+   PREVENT OVERFLOW
+================================================== */
+
+@media (max-width: 1199px) {
+  .container,
+  .section-container,
+  .projects-container,
+  .finishes-container,
+  .portfolio-container,
+  .contact-container,
+  .projects-grid,
+  .finishes-grid,
+  .portfolio-grid {
+    min-width: 0;
+  }
+
+  .project-card,
+  .finish-card,
+  .portfolio-card {
+    min-width: 0;
+  }
+}
+
+/* ==================================================
+   FIX LONG TEXT
+================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  overflow-wrap: break-word;
+}
+
+/* ==================================================
+   FIX FLEX / GRID OVERFLOW
+================================================== */
+
+.flex,
+.flex-container,
+.grid,
+.grid-container {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ==================================================
+   FIX TABLE OVERFLOW
+================================================== */
+
+table {
+  width: 100%;
+
+  max-width: 100%;
+
+  border-collapse: collapse;
+}
+
+.table-wrapper {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: auto;
+}
+
+/* ==================================================
+   FIX CODE / PRE
+================================================== */
+
+pre,
+code {
+  max-width: 100%;
+
+  overflow-x: auto;
+
+  white-space: pre-wrap;
+
+  overflow-wrap: break-word;
+}
+
+/* ==================================================
+   DARK MODE TRANSITION
+================================================== */
+
+body,
+.site-header,
+.nav-links,
+.project-card,
+.finish-card,
+.portfolio-card,
+.rtl-button,
+.icon-button,
+.menu-toggle,
+input,
+textarea,
+select {
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+/* ==================================================
+   FINAL MOBILE SAFETY
+================================================== */
+
+@media (max-width: 599px) {
+  * {
+    max-width: 100%;
+  }
+
+  body {
+    position: relative;
+
+    left: 0;
+    right: 0;
+
+    transform: none;
+
+    zoom: 1;
+  }
+
+  section,
+  main,
+  footer,
+  header {
+    max-width: 100vw;
+
+    overflow-x: hidden;
   }
 }
 /* =========================================================
@@ -4670,7 +5717,7 @@ body.rtl .portfolio-cta-content p {
 
   color: var(--text);
 
-  margin-top: 80px;
+  margin-top: -30px;
 
   border-top: 1px solid rgba(128, 128, 128, 0.18);
 
