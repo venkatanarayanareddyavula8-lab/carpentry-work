@@ -1526,19 +1526,30 @@ body.dark .portfolio-hero-overlay {
 
 .collection-label {
   display: inline-block;
+
   margin-bottom: 18px;
+
+  padding: 7px 18px;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+
+  color: var(--primary);
+
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 2.5px;
+
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--secondary);
+
+  box-sizing: border-box;
 }
 
 .collection-header h2 {
   margin: 0 0 20px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 58px;
+  font-size: clamp(45px, 6vw, 60px);
   font-weight: 500;
   line-height: 1.05;
   color: var(--text);
@@ -1622,7 +1633,6 @@ body.dark .portfolio-hero-overlay {
   width: 100%;
   max-width: 100%;
   height: 100%;
-
   min-width: 0;
 
   object-fit: cover;
@@ -1638,12 +1648,33 @@ body.dark .portfolio-hero-overlay {
 }
 
 /* ==================================================
+   FIRST CARD IMAGE
+   FULL IMAGE FIT - NO CROPPING
+================================================== */
+
+.furniture-card:first-child .furniture-image {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.furniture-card:first-child .furniture-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* ==================================================
    FURNITURE CONTENT
 ================================================== */
 
 .furniture-content {
   width: 100%;
   max-width: 100%;
+
   padding: 28px;
 
   box-sizing: border-box;
@@ -1651,6 +1682,7 @@ body.dark .portfolio-hero-overlay {
 
 .furniture-number {
   display: block;
+
   margin-bottom: 12px;
 
   font-family: "Montserrat", sans-serif;
@@ -1675,6 +1707,7 @@ body.dark .portfolio-hero-overlay {
 .furniture-content p {
   width: 100%;
   max-width: 100%;
+
   margin: 0;
 
   font-family: "Montserrat", sans-serif;
@@ -1704,6 +1737,190 @@ body.dark .furniture-card {
 body.dark .collection-header h2,
 body.dark .furniture-content h3 {
   color: var(--text);
+}
+
+/* ==================================================
+   IPAD MINI
+   600px - 768px
+   2 CARDS + CENTERED THIRD CARD
+================================================== */
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .furniture-collection {
+    width: 100%;
+    max-width: 100%;
+    padding: 70px 22px;
+
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  /* -----------------------------------------------
+     HEADER
+  ----------------------------------------------- */
+
+  .collection-header {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 40px;
+  }
+
+  .collection-label {
+    margin-bottom: 15px;
+
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .collection-header h2 {
+    font-size: clamp(38px, 7vw, 48px);
+    line-height: 1.12;
+  }
+
+  .collection-header p {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* -----------------------------------------------
+     GRID
+     2 CARDS PER ROW
+  ----------------------------------------------- */
+
+  .furniture-grid {
+    width: 100%;
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    box-sizing: border-box;
+  }
+
+  /* -----------------------------------------------
+     CARD
+  ----------------------------------------------- */
+
+  .furniture-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  /* -----------------------------------------------
+     THIRD CARD
+     CENTERED
+  ----------------------------------------------- */
+
+  .furniture-card:last-child {
+    grid-column: 1 / -1;
+
+    justify-self: center;
+
+    width: calc((100% - 20px) / 2);
+
+    min-width: 0;
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  /* -----------------------------------------------
+     IMAGE
+  ----------------------------------------------- */
+
+  .furniture-image {
+    width: 100%;
+    height: 300px;
+
+    min-width: 0;
+    max-width: 100%;
+
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .furniture-image img {
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    min-width: 0;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+  }
+
+  /* -----------------------------------------------
+     FIRST CARD IMAGE
+     FULL IMAGE - NO CROP
+  ----------------------------------------------- */
+
+  .furniture-card:first-child .furniture-image {
+    width: 100%;
+    height: 300px;
+
+    overflow: hidden;
+  }
+
+  .furniture-card:first-child .furniture-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+  }
+
+  /* -----------------------------------------------
+     CONTENT
+  ----------------------------------------------- */
+
+  .furniture-content {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 21px 20px 25px;
+
+    box-sizing: border-box;
+  }
+
+  .furniture-number {
+    margin-bottom: 8px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .furniture-content h3 {
+    margin-bottom: 8px;
+
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .furniture-content p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
 }
 
 /* ==================================================
@@ -1807,111 +2024,6 @@ body.dark .furniture-content h3 {
     width: 100%;
     max-width: 100%;
     font-size: 11px;
-    line-height: 1.7;
-  }
-}
-
-/* ==================================================
-   iPAD MINI
-   481px — 768px
-================================================== */
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .furniture-collection {
-    width: 100%;
-    max-width: 100%;
-    padding: 75px 5%;
-
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-
-  .collection-header {
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 50px;
-  }
-
-  .collection-label {
-    font-size: 10px;
-    letter-spacing: 2px;
-  }
-
-  .collection-header h2 {
-    font-size: 48px;
-  }
-
-  .collection-header p {
-    max-width: 620px;
-    font-size: 13px;
-    line-height: 1.75;
-  }
-
-  .furniture-grid {
-    width: 100%;
-    max-width: 100%;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-
-    box-sizing: border-box;
-  }
-
-  .furniture-card {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    box-sizing: border-box;
-  }
-
-  /* Third card centered */
-  .furniture-card:nth-child(3) {
-    grid-column: 1 / -1;
-    width: calc(50% - 10px);
-    max-width: calc(50% - 10px);
-    justify-self: center;
-  }
-
-  .furniture-image {
-    width: 100%;
-    max-width: 100%;
-    height: 270px;
-
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  .furniture-image img {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    min-width: 0;
-
-    object-fit: cover;
-    box-sizing: border-box;
-  }
-
-  .furniture-content {
-    width: 100%;
-    max-width: 100%;
-    padding: 22px;
-
-    box-sizing: border-box;
-  }
-
-  .furniture-number {
-    font-size: 10px;
-    letter-spacing: 1.8px;
-  }
-
-  .furniture-content h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-
-  .furniture-content p {
-    font-size: 12px;
     line-height: 1.7;
   }
 }
@@ -3645,56 +3757,16 @@ body.rtl .living-room-content p {
 /* ==================================================
    CUSTOM PROJECT
    1920px+
+   ONLY IMAGE WIDTH CHANGE
 ================================================== */
 
 @media (min-width: 1920px) {
-  .custom-project-section {
-    width: 100%;
-    max-width: 100%;
-
-    padding: 110px 6%;
-
-    overflow-x: hidden;
-
-    box-sizing: border-box;
-  }
-
-  .custom-project-header {
-    max-width: 900px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    margin-bottom: 70px;
-  }
-
-  .custom-project-header h2 {
-    font-size: 68px;
-  }
-
-  .custom-project-header p {
-    max-width: 700px;
-
-    font-size: 14px;
-  }
-
-  .custom-project-content {
-    width: 100%;
-    max-width: 1400px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-
-    gap: 70px;
-
-    box-sizing: border-box;
-  }
-
   .custom-project-image {
-    width: 100%;
-    max-width: 100%;
+    width: 85%;
+    max-width: 85%;
+
+    margin-left: auto;
+    margin-right: auto;
 
     min-width: 0;
 
@@ -3717,110 +3789,6 @@ body.rtl .living-room-content p {
 
     box-sizing: border-box;
   }
-
-  .custom-project-details {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .custom-project-details > p {
-    max-width: 580px;
-
-    font-size: 14px;
-  }
-
-  .custom-project-feature {
-    gap: 22px;
-
-    padding: 20px 0;
-  }
-
-  .custom-project-feature h4 {
-    font-size: 27px;
-  }
-
-  .custom-project-feature p {
-    font-size: 12px;
-  }
-
-  .custom-project-button {
-    min-height: 50px;
-
-    padding: 0 30px;
-
-    font-size: 10px;
-  }
-}
-
-/* ==================================================
-   CUSTOM PROJECT RTL
-================================================== */
-
-body.rtl .custom-project-section {
-  direction: rtl;
-}
-
-body.rtl .custom-project-header {
-  text-align: center;
-}
-
-body.rtl .custom-project-content {
-  direction: rtl;
-}
-
-body.rtl .custom-project-details {
-  text-align: right;
-}
-
-body.rtl .custom-project-feature {
-  direction: rtl;
-}
-
-body.rtl .custom-project-feature > div {
-  text-align: right;
-}
-
-body.rtl .custom-project-button {
-  direction: rtl;
-}
-
-/* ==================================================
-   FINAL OVERFLOW SAFETY
-================================================== */
-
-.custom-project-section,
-.custom-project-header,
-.custom-project-content,
-.custom-project-image,
-.custom-project-details,
-.custom-project-features,
-.custom-project-feature {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.custom-project-section,
-.custom-project-content {
-  max-width: 100%;
-}
-
-.custom-project-image {
-  overflow: hidden;
-}
-
-.custom-project-image img {
-  max-width: 100%;
-  min-width: 0;
-}
-
-.custom-project-feature > div {
-  min-width: 0;
-}
-
-.custom-project-feature h4,
-.custom-project-feature p {
-  overflow-wrap: break-word;
 }
 
 /* ==================================================
@@ -4415,136 +4383,33 @@ body.rtl .custom-project-button {
     text-align: right;
   }
 }
-
 /* ==================================================
-   1920px / LARGE DESKTOP
-   PREMIUM WIDTH
+   ONLY 1920px+ IMAGE WIDTH
+   NOTHING ELSE CHANGED
 ================================================== */
 
-@media (min-width: 1600px) {
-  .projects-section {
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-
-    padding: 120px 5%;
-    box-sizing: border-box;
-
-    overflow-x: hidden;
-  }
-
-  .projects-header {
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto 70px;
-  }
-
-  .projects-header h2 {
-    font-size: 60px;
-    line-height: 1.05;
-  }
-
-  .projects-header p {
-    max-width: 720px;
-    font-size: 14px;
-    line-height: 1.9;
-  }
-
-  .projects-grid {
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
-
-    box-sizing: border-box;
-  }
-
-  .project-card {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-
+@media (min-width: 1920px) {
   .project-image {
-    width: 100%;
-    height: 380px;
-    overflow: hidden;
+    width: 85%;
+    max-width: 85%;
+
+    margin-left: auto;
+    margin-right: auto;
+
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   .project-image img {
     width: 100%;
-    height: 100%;
     max-width: 100%;
+    height: 100%;
 
     display: block;
 
     object-fit: cover;
     object-position: center;
   }
-
-  .project-content {
-    width: 100%;
-    padding: 28px;
-    box-sizing: border-box;
-  }
-
-  .project-number {
-    font-size: 11px;
-  }
-
-  .project-content h3 {
-    font-size: 31px;
-  }
-
-  .project-content p {
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-  /* RTL */
-  body.rtl .projects-section {
-    direction: rtl;
-  }
-
-  body.rtl .projects-grid {
-    direction: rtl;
-  }
-
-  body.rtl .project-content {
-    text-align: right;
-  }
-}
-
-/* ==================================================
-   FINAL GLOBAL OVERFLOW PROTECTION
-================================================== */
-
-.projects-section,
-.projects-header,
-.projects-grid,
-.project-card,
-.project-image,
-.project-content {
-  box-sizing: border-box;
-  min-width: 0;
-  max-width: 100%;
-}
-
-.projects-section img {
-  max-width: 100%;
-}
-/* =========================================================
-   FURNITURE UNITS SECTION
-========================================================= */
-
-.furniture-units-section {
-  width: 100%;
-  padding: 100px 0;
-  background: var(--bg);
 }
 
 /* =========================================================
@@ -4724,98 +4589,420 @@ body.rtl .custom-project-button {
 }
 
 /* =========================================================
-   TABLET
+   FURNITURE UNITS
+   RESPONSIVE CSS
 ========================================================= */
 
-@media (max-width: 1000px) {
-  .furniture-units-section {
-    padding: 80px 0;
+/* =========================================================
+   1920px+ DESKTOP
+========================================================= */
+
+@media (min-width: 1440px) {
+  .furniture-units-header {
+    width: min(900px, calc(100% - 80px));
+    margin-bottom: 60px;
+  }
+
+  .furniture-units-header h2 {
+    font-size: 60px;
+  }
+
+  .furniture-units-header p {
+    font-size: 16px;
   }
 
   .furniture-units-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    width: min(1400px, calc(100% - 80px));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 
   .unit-image {
-    height: 380px;
+    height: 430px;
+  }
+
+  .unit-content {
+    padding: 30px 30px 34px;
+  }
+
+  .furniture-unit h3 {
+    font-size: 29px;
+  }
+}
+
+/* =========================================================
+   NETBOOK
+   769px - 1024px
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .furniture-units-header {
+    width: calc(100% - 50px);
+    margin-bottom: 45px;
+  }
+
+  .furniture-units-header h2 {
+    font-size: clamp(40px, 5.5vw, 52px);
+  }
+
+  .furniture-units-header p {
+    max-width: 620px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .furniture-units-wrapper {
+    width: calc(100% - 50px);
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+  }
+
+  .unit-image {
+    height: 340px;
+  }
+
+  .unit-content {
+    padding: 24px 24px 28px;
+  }
+
+  .unit-number {
+    font-size: 11px;
+    margin-bottom: 9px;
+  }
+
+  .furniture-unit h3 {
+    font-size: 25px;
+  }
+
+  .unit-size {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .furniture-unit p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   IPAD MINI
+   600px - 768px
+========================================================= */
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .furniture-units-header {
+    width: calc(100% - 44px);
+    margin: 0 auto 40px;
+  }
+
+  .furniture-units-label {
+    padding: 6px 16px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .furniture-units-header h2 {
+    font-size: clamp(38px, 7vw, 48px);
+    line-height: 1.12;
+  }
+
+  .furniture-units-header p {
+    max-width: 580px;
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* =====================================================
+     CARDS
+     2 CARDS PER ROW
+     LAST CARD CENTERED
+  ===================================================== */
+
+  .furniture-units-wrapper {
+    width: calc(100% - 44px);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+    align-items: start;
+  }
+
+  .furniture-unit {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* =====================================================
+     LAST CARD — CENTER
+  ===================================================== */
+
+  .furniture-unit:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    /* Same width as one card */
+    width: calc((100% - 20px) / 2);
+  }
+
+  /* =====================================================
+     IMAGE
+  ===================================================== */
+
+  .unit-image {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* =====================================================
+     CONTENT
+  ===================================================== */
+
+  .unit-content {
+    padding: 21px 20px 25px;
+    box-sizing: border-box;
+  }
+
+  .unit-number {
+    margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .furniture-unit h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .unit-size {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+
+  .furniture-unit p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+}
+/* =========================================================
+   SAMSUNG GALAXY S8+
+   361px - 599px
+
+   1 CARD PER ROW
+========================================================= */
+
+@media (min-width: 361px) and (max-width: 599px) {
+  .furniture-units-header {
+    width: calc(100% - 36px);
+    margin-bottom: 35px;
+  }
+
+  .furniture-units-label {
+    padding: 6px 14px;
+    margin-bottom: 13px;
+
+    font-size: 9px;
+    letter-spacing: 1.6px;
+  }
+
+  .furniture-units-header h2 {
+    font-size: clamp(34px, 9vw, 44px);
+    line-height: 1.12;
+  }
+
+  .furniture-units-header h2 em {
+    margin-top: 2px;
+  }
+
+  .furniture-units-header p {
+    max-width: 100%;
+    margin-top: 16px;
+
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .furniture-units-wrapper {
+    width: calc(100% - 36px);
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .furniture-unit {
+    width: 100%;
+  }
+
+  .unit-image {
+    height: 300px;
+  }
+
+  .unit-content {
+    padding: 20px 19px 24px;
+  }
+
+  .unit-number {
+    margin-bottom: 8px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .furniture-unit h3 {
+    margin-bottom: 8px;
+
+    font-size: 23px;
+    line-height: 1.2;
+  }
+
+  .unit-size {
+    margin-bottom: 12px;
+
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+
+  .furniture-unit p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .furniture-unit:hover {
+    transform: none;
+  }
+
+  .furniture-unit:hover .unit-image img {
+    transform: none;
   }
 }
 
 /* =========================================================
    MOBILE
+   360px AND BELOW
 ========================================================= */
 
-@media (max-width: 650px) {
-  .furniture-units-section {
-    padding: 65px 0;
+@media (max-width: 360px) {
+  .furniture-units-header {
+    width: calc(100% - 28px);
+    margin-bottom: 30px;
   }
 
-  .furniture-units-header {
-    width: calc(100% - 30px);
-    margin-bottom: 40px;
+  .furniture-units-label {
+    padding: 5px 12px;
+    margin-bottom: 12px;
+
+    font-size: 8px;
+    letter-spacing: 1.4px;
   }
 
   .furniture-units-header h2 {
-    font-size: 38px;
+    font-size: clamp(31px, 10vw, 39px);
+    line-height: 1.12;
   }
 
   .furniture-units-header p {
-    font-size: 15px;
-    line-height: 1.7;
+    margin-top: 14px;
+
+    font-size: 12px;
+    line-height: 1.65;
   }
 
   .furniture-units-wrapper {
-    width: calc(100% - 30px);
+    width: calc(100% - 28px);
 
     grid-template-columns: 1fr;
 
-    gap: 30px;
+    gap: 18px;
+  }
+
+  .furniture-unit {
+    width: 100%;
   }
 
   .unit-image {
-    height: 360px;
+    height: 270px;
   }
 
   .unit-content {
-    padding: 24px;
+    padding: 18px 16px 21px;
+  }
+
+  .unit-number {
+    margin-bottom: 7px;
+
+    font-size: 9px;
+    letter-spacing: 1.8px;
   }
 
   .furniture-unit h3 {
-    font-size: 26px;
+    margin-bottom: 7px;
+
+    font-size: 21px;
+    line-height: 1.2;
+  }
+
+  .unit-size {
+    margin-bottom: 10px;
+
+    font-size: 10px;
+    letter-spacing: 0.7px;
+  }
+
+  .furniture-unit p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .furniture-unit:hover {
+    transform: none;
+  }
+
+  .furniture-unit:hover .unit-image img {
+    transform: none;
   }
 }
 
 /* =========================================================
-   SMALL MOBILE
+   VERY SMALL DEVICES
+   320px AND BELOW
 ========================================================= */
 
-@media (max-width: 380px) {
-  .furniture-units-header h2 {
-    font-size: 32px;
+@media (max-width: 320px) {
+  .furniture-units-header {
+    width: calc(100% - 24px);
+  }
+
+  .furniture-units-wrapper {
+    width: calc(100% - 24px);
   }
 
   .unit-image {
-    height: 320px;
+    height: 245px;
   }
 
   .unit-content {
-    padding: 20px;
+    padding: 16px 14px 19px;
   }
 
   .furniture-unit h3 {
-    font-size: 24px;
-  }
-  .furniture-units-wrapper {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
+    font-size: 20px;
   }
 
-  /* 3rd card / odd last card center */
-  .furniture-unit:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    width: calc(50% - 12.5px);
-    justify-self: center;
+  .furniture-unit p {
+    font-size: 11.5px;
   }
 }
 /* ==================================================
@@ -5154,17 +5341,6 @@ body.rtl .custom-project-button {
     font-size: 15px;
   }
 }
-.client-stories-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 65px 30px;
-}
-
-/* 3rd / odd card center */
-.client-story:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-  width: calc(50% - 15px);
-  justify-self: center;
-}
 
 /* ==================================================
    LARGE MOBILE
@@ -5277,6 +5453,184 @@ body.rtl .custom-project-button {
 
   .client-story-content p {
     font-size: 10px;
+  }
+}
+
+/* ==================================================
+   FINAL CLIENT STORIES GRID FIX
+   DO NOT CHANGE EXISTING ALIGNMENT
+================================================== */
+
+/* Desktop + 1920px:
+   3 PROJECTS IN ONE ROW
+*/
+@media (min-width: 1025px) {
+  .client-stories-grid {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 80px;
+
+    box-sizing: border-box;
+  }
+
+  .client-story {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .client-story-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Remove any previous centered 3rd-card rule */
+  .client-story:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+    justify-self: auto;
+  }
+}
+
+/* ==================================================
+   1600px+
+   3 IMAGES IN ONE ROW
+================================================== */
+
+@media (min-width: 1600px) {
+  .client-stories-grid {
+    max-width: 1450px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 100px;
+  }
+
+  .client-story:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+    justify-self: auto;
+  }
+}
+
+/* ==================================================
+   NETBOOK / TABLET
+   769px - 1024px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .client-stories-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    box-sizing: border-box;
+  }
+
+  .client-story:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+    justify-self: auto;
+  }
+
+  .client-story-image {
+    max-width: 210px;
+    max-height: 210px;
+  }
+}
+
+/* ==================================================
+   iPAD MINI
+   601px - 768px
+================================================== */
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .client-stories-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 65px 30px;
+
+    box-sizing: border-box;
+  }
+
+  .client-story:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 15px);
+    justify-self: center;
+  }
+}
+
+/* ==================================================
+   LARGE MOBILE
+   481px - 600px
+================================================== */
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .client-stories-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+    gap: 65px;
+
+    box-sizing: border-box;
+  }
+
+  .client-story:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+    justify-self: auto;
+  }
+}
+
+/* ==================================================
+   MOBILE
+   360px - 480px
+================================================== */
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .client-stories-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+    gap: 55px;
+
+    box-sizing: border-box;
+  }
+
+  .client-story:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+    justify-self: auto;
+  }
+}
+
+/* ==================================================
+   SMALL MOBILE
+   BELOW 360px
+================================================== */
+
+@media (max-width: 359px) {
+  .client-stories-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+    gap: 50px;
+
+    box-sizing: border-box;
+  }
+
+  .client-story:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+    justify-self: auto;
   }
 }
 /* =========================================================
