@@ -224,8 +224,8 @@ body.rtl .logo-name {
   border: 0;
   background: transparent;
   color: var(--text);
-  font-size: 15px;
-  font-weight: 610;
+  font-size: 18px;
+  font-weight: 700;
   white-space: nowrap;
   cursor: pointer;
   transition: color 0.25s ease;
@@ -4792,52 +4792,6 @@ body.rtl .hardware-detail strong {
 }
 
 /* =========================================================
-   DETAILS
-========================================================= */
-
-.quality-details {
-  width: 100%;
-
-  margin-top: 17px;
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 6px;
-
-  box-sizing: border-box;
-}
-
-.quality-details span {
-  display: inline-block;
-
-  padding: 5px 7px;
-
-  border: 1px solid var(--border);
-
-  border-radius: 20px;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 11px;
-  font-weight: 600;
-
-  line-height: 1.4;
-
-  color: var(--primary);
-
-  text-align: center;
-
-  white-space: nowrap;
-
-  box-sizing: border-box;
-}
-
-/* =========================================================
    RTL BASE
 ========================================================= */
 
@@ -4877,12 +4831,6 @@ body.rtl .quality-step-label,
 body.rtl .quality-content h3,
 body.rtl .quality-content p {
   text-align: center;
-}
-
-body.rtl .quality-details {
-  direction: rtl;
-
-  justify-content: center;
 }
 
 /* =========================================================
@@ -5077,18 +5025,6 @@ body.rtl .quality-details {
     line-height: 1.55;
   }
 
-  .quality-details {
-    margin-top: 10px;
-
-    gap: 4px;
-  }
-
-  .quality-details span {
-    padding: 4px 5px;
-
-    font-size: 6.5px;
-  }
-
   /* RTL connectors */
 
   body.rtl .quality-step:nth-child(1)::after,
@@ -5234,16 +5170,6 @@ body.rtl .quality-details {
     max-width: 190px;
 
     font-size: 14px;
-  }
-
-  .quality-details {
-    gap: 4px;
-  }
-
-  .quality-details span {
-    padding: 4px 5px;
-
-    font-size: 7px;
   }
 
   /* RTL */
@@ -5392,18 +5318,6 @@ body.rtl .quality-details {
     line-height: 1.7;
   }
 
-  .quality-details {
-    margin-top: 14px;
-
-    gap: 5px;
-  }
-
-  .quality-details span {
-    padding: 5px 6px;
-
-    font-size: 8px;
-  }
-
   /* RTL */
 
   body.rtl .quality-step:nth-child(1)::after,
@@ -5544,18 +5458,6 @@ body.rtl .quality-details {
     font-size: 13px;
 
     line-height: 1.85;
-  }
-
-  .quality-details {
-    margin-top: 20px;
-
-    gap: 7px;
-  }
-
-  .quality-details span {
-    padding: 6px 9px;
-
-    font-size: 10px;
   }
 }
 

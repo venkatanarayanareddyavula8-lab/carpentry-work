@@ -224,8 +224,8 @@ body.rtl .logo-name {
   border: 0;
   background: transparent;
   color: var(--text);
-  font-size: 15px;
-  font-weight: 610;
+  font-size: 18px;
+  font-weight: 700;
   white-space: nowrap;
   cursor: pointer;
   transition: color 0.25s ease;
@@ -1665,7 +1665,7 @@ body.rtl .process-hero-content {
   left: 10%;
   right: 10%;
 
-  height: 1px;
+  height: 2px;
 
   background: rgba(139, 90, 53, 0.28);
 
@@ -1696,7 +1696,7 @@ body.rtl .process-hero-content {
 
   border: 2px solid var(--primary);
 
-  border-radius: 50%;
+  border-radius: 40%;
 
   background: var(--bg);
 
@@ -1773,7 +1773,7 @@ body.rtl .process-hero-content {
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 12px;
+  font-size: 14px;
 
   line-height: 1.8;
 

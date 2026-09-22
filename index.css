@@ -224,8 +224,8 @@ body.rtl .logo-name {
   border: 0;
   background: transparent;
   color: var(--text);
-  font-size: 15px;
-  font-weight: 610;
+  font-size: 18px;
+  font-weight: 700;
   white-space: nowrap;
   cursor: pointer;
   transition: color 0.25s ease;
@@ -1130,8 +1130,7 @@ body.rtl .logo-name {
   position: absolute;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.72);
-
+  background: rgba(0, 0, 0, 0.75);
   z-index: 1;
 }
 
@@ -1156,6 +1155,7 @@ body.dark .hero-overlay {
   padding: 35px 20px 40px;
 
   text-align: center;
+  margin-top: 100px;
 
   animation: heroContent 1s ease forwards;
 }

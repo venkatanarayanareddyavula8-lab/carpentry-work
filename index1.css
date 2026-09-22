@@ -224,8 +224,8 @@ body.rtl .logo-name {
   border: 0;
   background: transparent;
   color: var(--text);
-  font-size: 15px;
-  font-weight: 610;
+  font-size: 18px;
+  font-weight: 700px;
   white-space: nowrap;
   cursor: pointer;
   transition: color 0.25s ease;
