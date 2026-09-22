@@ -5191,7 +5191,7 @@ body.rtl .living-room-content p {
   margin: 0 auto 22px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 
   line-height: 1.8;
 
@@ -5215,7 +5215,7 @@ body.rtl .living-room-content p {
 
 .client-story-tags span {
   font-family: "Montserrat", sans-serif;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 1.2px;
@@ -5934,14 +5934,19 @@ body.rtl .portfolio-cta-content p {
    FOOTER
 ================================================== */
 
+/* =========================================================
+   FOOTER
+   REDUCED GAP FROM CTA
+========================================================= */
+
 .site-footer {
   width: 100%;
 
   background: var(--bg);
-
   color: var(--text);
 
-  margin-top: -30px;
+  /* REDUCE CTA → FOOTER GAP */
+  margin-top: -70px;
 
   border-top: 1px solid rgba(128, 128, 128, 0.18);
 
@@ -6213,7 +6218,76 @@ body.rtl .portfolio-cta-content p {
 
   font-weight: 700;
 }
+/* ==================================================
+   CONTACT
+================================================== */
 
+.footer-contact {
+  width: 100%;
+}
+
+.footer-contact h3 {
+  margin: 0 0 22px 0;
+
+  padding: 0;
+
+  color: var(--primary);
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+.footer-contact p {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0 0 15px 0;
+
+  padding: 0;
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  line-height: 1.55;
+
+  text-align: left;
+}
+
+/* ==================================================
+   CONTACT ICON
+================================================== */
+
+.footer-contact p svg {
+  width: 17px;
+  height: 17px;
+
+  min-width: 17px;
+
+  color: var(--primary);
+
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+/* ==================================================
+   CONTACT TEXT
+================================================== */
+
+.footer-contact p span {
+  min-width: 0;
+  font-size: 15px;
+
+  overflow-wrap: anywhere;
+}
 /* ==================================================
    QUICK LINKS
 ================================================== */

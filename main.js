@@ -1,6 +1,5 @@
 /* ==================================================
    CRAFT NEST
-   GLOBAL WEBSITE MODE
    RTL + DARK MODE
    LOCAL STORAGE
 ================================================== */
@@ -16,10 +15,10 @@
     const darkEnabled = localStorage.getItem("craftNestDark") === "enabled";
 
     /* ==================================================
-       HTML
+       HTML / DOCUMENT DIRECTION
     ================================================== */
 
-    document.documentElement.dir = rtlEnabled ? "rtl" : "ltr";
+    document.documentElement.setAttribute("dir", rtlEnabled ? "rtl" : "ltr");
 
     document.documentElement.classList.toggle("rtl", rtlEnabled);
 
@@ -42,6 +41,16 @@
     const rtlButton = document.getElementById("rtlToggle");
 
     if (rtlButton) {
+      /*
+        When current mode is RTL,
+        button shows LTR.
+
+        When current mode is LTR,
+        button shows RTL.
+      */
+
+      rtlButton.textContent = rtlEnabled ? "LTR" : "RTL";
+
       rtlButton.setAttribute(
         "aria-label",
         rtlEnabled ? "Switch to LTR" : "Switch to RTL",
@@ -54,7 +63,7 @@
     }
 
     /* ==================================================
-       DARK BUTTON
+       DARK MODE BUTTON
     ================================================== */
 
     const darkButton = document.getElementById("darkToggle");
@@ -70,68 +79,104 @@
         darkEnabled ? "Switch to Light Mode" : "Switch to Dark Mode",
       );
 
-      /* ==================================================
-         DARK ICON
-      ================================================== */
-
       const icon = darkButton.querySelector("[data-lucide]");
 
       if (icon) {
         icon.setAttribute("data-lucide", darkEnabled ? "sun" : "moon");
-
-        if (
-          typeof lucide !== "undefined" &&
-          typeof lucide.createIcons === "function"
-        ) {
-          lucide.createIcons();
-        }
       }
     }
+
+    /* ==================================================
+       LUCIDE
+    ================================================== */
+
+    if (
+      typeof lucide !== "undefined" &&
+      typeof lucide.createIcons === "function"
+    ) {
+      lucide.createIcons();
+    }
   }
-
-  /* ==================================================
-     APPLY BEFORE PAGE IS READY
-  ================================================== */
-
-  applyModes();
 
   /* ==================================================
      PAGE READY
   ================================================== */
 
   document.addEventListener("DOMContentLoaded", function () {
+    /* -----------------------------------------------
+         APPLY SAVED SETTINGS
+      ----------------------------------------------- */
+
     applyModes();
 
     /* ==================================================
-         RTL TOGGLE
+         RTL BUTTON
       ================================================== */
 
     const rtlButton = document.getElementById("rtlToggle");
 
     if (rtlButton) {
-      rtlButton.addEventListener("click", function () {
-        const current = localStorage.getItem("craftNestRTL") === "enabled";
+      rtlButton.addEventListener("click", function (event) {
+        event.preventDefault();
 
-        localStorage.setItem("craftNestRTL", current ? "disabled" : "enabled");
+        /* ------------------------------------------
+               GET CURRENT MODE
+            ------------------------------------------ */
+
+        const rtlEnabled = localStorage.getItem("craftNestRTL") === "enabled";
+
+        /* ------------------------------------------
+               TOGGLE RTL / LTR
+            ------------------------------------------ */
+
+        if (rtlEnabled) {
+          /* RTL → LTR */
+
+          localStorage.setItem("craftNestRTL", "disabled");
+        } else {
+          /* LTR → RTL */
+
+          localStorage.setItem("craftNestRTL", "enabled");
+        }
+
+        /* ------------------------------------------
+               APPLY IMMEDIATELY
+            ------------------------------------------ */
 
         applyModes();
       });
     }
 
     /* ==================================================
-         DARK MODE TOGGLE
+         DARK MODE BUTTON
       ================================================== */
 
     const darkButton = document.getElementById("darkToggle");
 
     if (darkButton) {
-      darkButton.addEventListener("click", function () {
-        const current = localStorage.getItem("craftNestDark") === "enabled";
+      darkButton.addEventListener("click", function (event) {
+        event.preventDefault();
 
-        localStorage.setItem("craftNestDark", current ? "disabled" : "enabled");
+        const darkEnabled = localStorage.getItem("craftNestDark") === "enabled";
+
+        localStorage.setItem(
+          "craftNestDark",
+          darkEnabled ? "disabled" : "enabled",
+        );
 
         applyModes();
       });
+    }
+
+    /* ==================================================
+         LUCIDE INITIALIZE
+      ================================================== */
+
+    if (
+      typeof lucide !== "undefined" &&
+      typeof lucide.createIcons === "function"
+    ) {
+      lucide.createIcons();
     }
   });
 })();

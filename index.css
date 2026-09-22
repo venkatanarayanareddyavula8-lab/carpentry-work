@@ -1342,7 +1342,7 @@ body.dark .hero-overlay {
 
 .stat-number > span {
   font-family: "Cormorant Garamond", serif;
-  font-size: 25px;
+  font-size: 35px;
   line-height: 1;
   font-weight: 700;
   color: var(--primary);
@@ -1352,7 +1352,7 @@ body.dark .hero-overlay {
   display: block;
   margin-top: 8px;
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 1.5px;
   color: #ffffff;
@@ -1463,158 +1463,319 @@ body.rtl .hero-stats {
 }
 
 /* =========================================================
-   =========================================================
-   1. SAMSUNG GALAXY S8+
+   CRAFT NEST
+   SAMSUNG GALAXY S8+
    360px — 599px
-   =========================================================
+   PREMIUM HERO
+   PROPER GAP + ALIGNMENT + RTL
 ========================================================= */
 
 @media (min-width: 360px) and (max-width: 599px) {
+  /* =====================================================
+     HERO
+  ===================================================== */
+
   .premium-hero {
     width: 100%;
     max-width: 100%;
-
     min-height: 620px;
     height: 620px;
 
-    padding: 20px 15px;
+    padding: 0;
 
+    box-sizing: border-box;
     overflow: hidden;
+
+    position: relative;
   }
+
+  /* =====================================================
+     HERO CONTENT
+  ===================================================== */
 
   .hero-content {
     width: 100%;
     max-width: 100%;
 
-    padding: 25px 10px 35px;
-
+    padding: 35px 18px 55px;
     margin: 0 auto;
+
+    box-sizing: border-box;
+
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  /* =====================================================
+     BADGE
+  ===================================================== */
 
   .hero-badge {
-    max-width: 100%;
+    width: auto;
+    max-width: calc(100% - 20px);
 
-    font-size: 9px;
+    padding: 6px 12px;
+    margin: 0 0 16px;
 
-    padding: 6px 13px;
+    font-size: 8px;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
 
-    letter-spacing: 1.5px;
+    text-align: center;
 
-    margin-bottom: 12px;
+    box-sizing: border-box;
   }
+
+  /* =====================================================
+     MAIN HEADING
+  ===================================================== */
 
   .premium-hero h1 {
     width: 100%;
-    max-width: 100%;
+    max-width: 330px;
 
-    font-size: 42px;
+    margin: 0 auto;
 
-    line-height: 0.98;
+    font-size: 34px;
+    line-height: 1.08;
 
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    text-align: center;
+
+    overflow-wrap: normal;
+    word-break: normal;
+
+    box-sizing: border-box;
   }
+
+  .premium-hero h1 span {
+    display: inline;
+  }
+
+  /* =====================================================
+     DESCRIPTION
+  ===================================================== */
 
   .hero-description {
     width: 100%;
-    max-width: 430px;
+    max-width: 310px;
 
-    margin: 16px auto;
+    margin: 16px auto 0;
 
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.55;
 
-    line-height: 1.65;
+    text-align: center;
+
+    overflow-wrap: normal;
+    word-break: normal;
+
+    box-sizing: border-box;
   }
+
+  /* =====================================================
+     BUTTONS
+  ===================================================== */
 
   .hero-buttons {
     width: 100%;
-    max-width: 100%;
+    max-width: 310px;
+
+    margin: 22px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     gap: 8px;
 
-    margin-top: 18px;
+    box-sizing: border-box;
   }
 
   .hero-btn {
+    flex: 1 1 0;
+
     min-width: 0;
-    width: auto;
+    max-width: 145px;
 
-    max-width: 100%;
+    min-height: 38px;
 
-    padding: 10px 14px;
+    padding: 9px 10px;
 
-    font-size: 10px;
+    font-size: 9px;
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    box-sizing: border-box;
   }
 
   .hero-btn svg {
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
+
+    flex: 0 0 auto;
   }
+
+  /* =====================================================
+     STATS
+  ===================================================== */
 
   .hero-stats {
     width: 100%;
-    max-width: 100%;
+    max-width: 330px;
 
-    gap: 22px;
+    margin: 28px auto 0;
 
-    margin-top: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    box-sizing: border-box;
   }
 
   .hero-stat {
+    flex: 1 1 0;
+
     min-width: 0;
-    max-width: 100%;
+    max-width: none;
+
+    text-align: center;
+
+    box-sizing: border-box;
   }
+
+  /* NUMBER */
 
   .hero-stat strong {
-    font-size: 25px;
+    display: block;
+
+    margin: 0;
+
+    font-size: 35px;
+    line-height: 1;
+
+    white-space: nowrap;
   }
+
+  /* LABEL */
 
   .hero-stat span {
-    font-size: 15px;
+    display: block;
 
-    letter-spacing: 1px;
+    width: 100%;
+
+    margin-top: 7px;
+
+    font-size: 25px;
+    line-height: 1.25;
+
+    letter-spacing: 0.8px;
+
+    white-space: normal;
+    text-align: center;
+
+    box-sizing: border-box;
   }
 
+  /* =====================================================
+     FLOATING CRAFT ICONS
+  ===================================================== */
+
   .floating-craft {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
+
+    max-width: 32px;
+    max-height: 32px;
+
+    z-index: 2;
   }
 
   .floating-craft svg {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
   }
 
   .craft-one {
-    left: 6%;
-    top: 18%;
+    left: 5%;
+    top: 20%;
   }
 
   .craft-two {
-    right: 6%;
+    right: 5%;
     bottom: 20%;
   }
 
+  /* =====================================================
+     BOTTOM TEXT
+  ===================================================== */
+
   .hero-bottom-text {
+    position: absolute;
+
     left: 50%;
+    bottom: 14px;
 
     width: max-content;
-    max-width: calc(100% - 20px);
+    max-width: calc(100% - 30px);
 
-    gap: 15px;
+    margin: 0;
+    padding: 0;
 
-    bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    font-size: 7px;
+    gap: 10px;
 
-    letter-spacing: 1.5px;
+    font-size: 14px;
+    line-height: 1.2;
 
-    overflow: hidden;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    transform: translateX(-50%);
+
+    box-sizing: border-box;
+
+    z-index: 4;
   }
 
-  /* RTL */
+  /* =====================================================
+     RTL
+  ===================================================== */
+
+  body.rtl .premium-hero {
+    direction: rtl;
+  }
 
   body.rtl .hero-content {
+    direction: rtl;
+
+    text-align: center;
+
+    align-items: center;
+  }
+
+  body.rtl .hero-badge {
+    direction: rtl;
+    text-align: center;
+  }
+
+  body.rtl .premium-hero h1 {
     direction: rtl;
     text-align: center;
   }
@@ -1624,14 +1785,106 @@ body.rtl .hero-stats {
     text-align: center;
   }
 
+  /* =====================================================
+     RTL BUTTONS
+  ===================================================== */
+
   body.rtl .hero-buttons {
+    direction: rtl;
+
     flex-direction: row-reverse;
+
     justify-content: center;
   }
 
+  /* =====================================================
+     RTL STATS
+  ===================================================== */
+
   body.rtl .hero-stats {
     direction: rtl;
-    justify-content: center;
+
+    justify-content: space-between;
+  }
+
+  body.rtl .hero-stat {
+    direction: rtl;
+
+    text-align: center;
+  }
+
+  body.rtl .hero-stat strong,
+  body.rtl .hero-stat span {
+    text-align: center;
+  }
+
+  /* =====================================================
+     RTL BOTTOM TEXT
+  ===================================================== */
+
+  body.rtl .hero-bottom-text {
+    direction: rtl;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================================
+   VERY SMALL WIDTH
+   360px — 375px
+========================================================= */
+
+@media (min-width: 360px) and (max-width: 375px) {
+  .hero-content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .premium-hero h1 {
+    max-width: 310px;
+
+    font-size: 32px;
+    line-height: 1.08;
+  }
+
+  .hero-description {
+    max-width: 290px;
+
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .hero-buttons {
+    max-width: 295px;
+
+    gap: 7px;
+  }
+
+  .hero-btn {
+    max-width: 140px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+
+    font-size: 8px;
+  }
+
+  .hero-stats {
+    max-width: 315px;
+
+    gap: 5px;
+  }
+
+  .hero-stat strong {
+    font-size: 40px;
+  }
+
+  .hero-stat span {
+    font-size: 13px;
+
+    letter-spacing: 0.6px;
   }
 }
 
@@ -1759,7 +2012,7 @@ body.rtl .hero-stats {
   }
 
   .hero-stat span {
-    font-size: 9px;
+    font-size: 15px;
 
     letter-spacing: 1.2px;
   }
@@ -1798,7 +2051,7 @@ body.rtl .hero-stats {
 
     bottom: 20px;
 
-    font-size: 9px;
+    font-size: 15px;
 
     letter-spacing: 1.5px;
 
@@ -2033,7 +2286,8 @@ body.rtl .hero-stats {
 .bespoke-header h2 {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: 52px;
+  font-size: clamp(45px, 6vw, 60px);
+
   line-height: 1;
   font-weight: 600;
 }
@@ -2046,7 +2300,7 @@ body.rtl .hero-stats {
 .bespoke-header p {
   max-width: 680px;
   margin: 20px auto 0;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
   opacity: 0.75;
 }
@@ -2100,7 +2354,7 @@ body.rtl .hero-stats {
   justify-content: space-between;
 
   color: var(--bg);
-  font-size: 9px;
+  font-size: 15px;
   letter-spacing: 2px;
 }
 
@@ -2112,7 +2366,7 @@ body.rtl .hero-stats {
 
 .info-label {
   color: var(--primary);
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 2px;
 }
@@ -2120,7 +2374,7 @@ body.rtl .hero-stats {
 .bespoke-info h3 {
   margin: 15px 0 20px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 45px;
+  font-size: 30px;
 
   line-height: 1.05;
   font-weight: 600;
@@ -2132,7 +2386,7 @@ body.rtl .hero-stats {
 
 .bespoke-description {
   margin-bottom: 30px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
   opacity: 0.75;
 }
@@ -2164,7 +2418,7 @@ body.rtl .hero-stats {
 }
 
 .bespoke-feature p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   opacity: 0.65;
 }
@@ -2180,7 +2434,7 @@ body.rtl .hero-stats {
   color: var(--text);
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
 
@@ -2600,7 +2854,7 @@ body.rtl .bespoke-link {
 .categories-header p {
   max-width: 680px;
   margin: 20px auto 0;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
   opacity: 0.75;
 }
@@ -2689,7 +2943,7 @@ body.rtl .bespoke-link {
   gap: 10px;
   color: var(--bg);
   text-decoration: none;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 1px;
   border-bottom: 1px solid var(--primary);
@@ -2729,7 +2983,7 @@ body.rtl .bespoke-link {
 .category-content p {
   max-width: 380px;
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   opacity: 0.7;
 }
@@ -3132,7 +3386,7 @@ body.rtl .categories-grid {
 
   margin: 20px auto 0;
 
-  font-size: 15px;
+  font-size: 17px;
 
   line-height: 1.8;
 
@@ -3222,7 +3476,7 @@ body.rtl .categories-grid {
 
   color: var(--bg);
 
-  font-size: 9px;
+  font-size: 15px;
 
   letter-spacing: 2px;
 }
@@ -3248,7 +3502,7 @@ body.rtl .categories-grid {
 
   margin-bottom: 30px;
 
-  font-size: 15px;
+  font-size: 16px;
 
   line-height: 1.8;
 
@@ -3296,13 +3550,13 @@ body.rtl .categories-grid {
 .material-detail h4 {
   margin-bottom: 5px;
 
-  font-size: 14px;
+  font-size: 16px;
 
   font-weight: 600;
 }
 
 .material-detail p {
-  font-size: 13px;
+  font-size: 15;
 
   line-height: 1.6;
 
@@ -3330,7 +3584,7 @@ body.rtl .categories-grid {
 
   color: var(--text);
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -3408,7 +3662,7 @@ body.rtl .categories-grid {
 .material-item-content h4 {
   margin-bottom: 5px;
 
-  font-size: 14px;
+  font-size: 17px;
 
   font-weight: 600;
 
@@ -3416,7 +3670,7 @@ body.rtl .categories-grid {
 }
 
 .material-item-content p {
-  font-size: 13px;
+  font-size: 15px;
 
   opacity: 0.6;
 }
@@ -3462,7 +3716,7 @@ body.rtl .categories-grid {
 .materials-bottom-text > span {
   color: var(--primary);
 
-  font-size: 10px;
+  font-size: 15px;
 
   font-weight: 600;
 
@@ -4248,7 +4502,7 @@ body.rtl .materials-button {
 
   margin: 20px auto 0;
 
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.8;
 
   text-align: center;
@@ -4368,7 +4622,7 @@ body.rtl .work-line {
 
   margin: 0 auto;
 
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.7;
 
   text-align: center;
@@ -4757,7 +5011,7 @@ body.rtl .work-step p {
 
   color: var(--primary);
 
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2.5px;
@@ -4783,7 +5037,7 @@ body.rtl .work-step p {
   max-width: 650px;
   margin: 20px auto 0;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   line-height: 1.8;
 
@@ -4887,10 +5141,9 @@ body.rtl .work-step p {
 .testimonial-role {
   margin: 6px 0 12px;
 
-  font-family: "Montserrat", sans-serif;
   font-size: 11px;
   font-weight: 500;
-
+  font-family: sans-serif;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 
@@ -4922,8 +5175,8 @@ body.rtl .work-step p {
 
   margin: 0 auto;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
+  font-family: sans-serif;
+  font-size: 15px;
   line-height: 1.6;
   font-weight: 500;
 
@@ -4943,7 +5196,7 @@ body.dark .testimonial-card:hover {
 }
 
 /* =====================================================
-   RTL
+   RTL — TESTIMONIALS
 ====================================================== */
 
 body.rtl .client-testimonials {
@@ -4951,7 +5204,8 @@ body.rtl .client-testimonials {
 }
 
 body.rtl .testimonials-heading {
-  text-align: center;
+  direction: rtl;
+  text-align: right;
 }
 
 body.rtl .testimonial-grid {
@@ -4960,7 +5214,13 @@ body.rtl .testimonial-grid {
 
 body.rtl .testimonial-card {
   direction: rtl;
-  text-align: center;
+  text-align: right;
+}
+
+body.rtl .testimonial-card h3,
+body.rtl .testimonial-card p,
+body.rtl .testimonial-card blockquote {
+  text-align: right;
 }
 
 /* =====================================================
@@ -5227,7 +5487,7 @@ body.rtl .testimonial-card {
 
   margin: 20px auto 0;
 
-  font-size: 14px;
+  font-size: 17px;
 
   line-height: 1.8;
 
@@ -5309,7 +5569,7 @@ body.rtl .testimonial-card {
 .craft-stat p {
   margin: 0;
 
-  font-size: 10px;
+  font-size: 14px;
 
   letter-spacing: 2px;
 
@@ -5577,7 +5837,7 @@ body.rtl .craft-stat {
   margin: 22px auto 18px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.85;
 
   color: var(--text);
@@ -5595,7 +5855,7 @@ body.rtl .craft-stat {
   margin: 0 auto 32px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.8;
 
   color: var(--text);
@@ -5928,8 +6188,8 @@ body.rtl .cta-button {
     1fr
     1fr
     1.2fr;
-
   column-gap: 70px;
+
   row-gap: 0;
 
   align-items: start;
@@ -5941,16 +6201,18 @@ body.rtl .cta-button {
 
 .site-footer {
   width: 100%;
+
   background: var(--bg);
+
   color: var(--text);
 
-  /* FOOTER TOP */
   margin-top: -30px;
 
   border-top: 1px solid rgba(128, 128, 128, 0.18);
 
   overflow: hidden;
 }
+
 /* ==================================================
    BRAND
 ================================================== */
@@ -6100,11 +6362,6 @@ body.rtl .cta-button {
   color: var(--secondary);
 }
 
-/* ==================================================
-   DESCRIPTION
-   NO EXTRA GAP
-================================================== */
-
 .footer-description {
   width: 100%;
   max-width: 380px;
@@ -6203,6 +6460,76 @@ body.rtl .cta-button {
 
   padding: 0;
 }
+/* ==================================================
+   CONTACT
+================================================== */
+
+.footer-contact {
+  width: 100%;
+}
+
+.footer-contact h3 {
+  margin: 0 0 22px 0;
+
+  padding: 0;
+
+  color: var(--primary);
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+.footer-contact p {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0 0 15px 0;
+
+  padding: 0;
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  line-height: 1.55;
+
+  text-align: left;
+}
+
+/* ==================================================
+   CONTACT ICON
+================================================== */
+
+.footer-contact p svg {
+  width: 17px;
+  height: 17px;
+
+  min-width: 17px;
+
+  color: var(--primary);
+
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+/* ==================================================
+   CONTACT TEXT
+================================================== */
+
+.footer-contact p span {
+  min-width: 0;
+  font-size: 15px;
+
+  overflow-wrap: anywhere;
+}
 
 /* ==================================================
    COLUMN HEADING
@@ -6237,7 +6564,7 @@ body.rtl .cta-button {
 
   color: var(--text);
 
-  font-size: 15px;
+  font-size: 16px;
 
   line-height: 1.5;
 
@@ -6310,7 +6637,7 @@ body.rtl .cta-button {
 
   color: var(--text);
 
-  font-size: 13px;
+  font-size: 15px;
 
   line-height: 1.55;
 
@@ -6377,7 +6704,7 @@ body.rtl .cta-button {
 
   color: var(--text);
 
-  font-size: 14px;
+  font-size: 13px;
 
   line-height: 1.5;
 }
@@ -7055,6 +7382,45 @@ body.rtl .footer-bottom-links {
   touch-action: manipulation;
 }
 
+/* ==================================================
+   NO HORIZONTAL OVERFLOW
+================================================== */
+
+html {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: hidden;
+
+  -webkit-text-size-adjust: 100%;
+
+  text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: hidden;
+
+  -webkit-text-size-adjust: 100%;
+
+  text-size-adjust: 100%;
+}
+
+/* ==================================================
+   FOOTER SAFETY
+================================================== */
+
+.site-footer *,
+.footer-container *,
+.footer-bottom * {
+  box-sizing: border-box;
+
+  max-width: 100%;
+}
 /* ==================================================
    NO HORIZONTAL OVERFLOW
 ================================================== */

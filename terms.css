@@ -17,6 +17,15 @@
 }
 
 /* ==================================================
+   DARK MODE
+================================================== */
+
+body.dark {
+  --bg: #222222;
+
+  --text: #ffffff;
+}
+/* ==================================================
    RESET
 ================================================== */
 
@@ -71,8 +80,6 @@ button {
   z-index: 1000;
 
   background: var(--bg);
-
-  border-bottom: 3px solid rgba(139, 90, 53, 0.18);
 
   transition:
     background 0.3s ease,
@@ -233,43 +240,24 @@ button {
 
 .rtl-button {
   height: 40px;
-
   min-width: 62px;
-
   padding: 0 9px;
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
-  border: 1x solid var(--primary);
-
+  gap: 5px;
+  border: 1px solid var(--primary);
   border-radius: 13px;
-
   background: var(--bg);
-
   color: var(--text);
-
   font-size: 13px;
-
   font-weight: 700;
-
   cursor: pointer;
-
   transition:
     color 0.25s ease,
     background 0.25s ease,
     border-color 0.25s ease;
 }
-
-.rtl-button:hover {
-  color: var(--secondary);
-
-  border-color: var(--secondary);
-}
-
 /* ==================================================
    DARK / LIGHT BUTTON
 ================================================== */
@@ -310,16 +298,6 @@ button {
   width: 17px;
 
   height: 17px;
-}
-
-/* ==================================================
-   DARK MODE
-================================================== */
-
-body.dark {
-  --bg: #222222;
-
-  --text: #ffffff;
 }
 
 /* ==================================================

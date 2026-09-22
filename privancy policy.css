@@ -72,8 +72,6 @@ button {
 
   background: var(--bg);
 
-  border-bottom: 3px solid rgba(139, 90, 53, 0.18);
-
   transition:
     background 0.3s ease,
     box-shadow 0.3s ease;
