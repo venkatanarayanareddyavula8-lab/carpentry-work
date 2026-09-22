@@ -398,6 +398,7 @@ body.rtl .logo-name {
   height: 40px;
   min-width: 88px;
   padding: 0 15px;
+  font-family: "Montserrat", sans-serif;
   display: inline-flex;
   align-items: center;
   justify-content: center;

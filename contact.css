@@ -395,6 +395,7 @@ body.rtl .logo-name {
 ================================================== */
 
 .login-button {
+  font-family: "Montserrat", sans-serif;
   height: 40px;
   min-width: 88px;
   padding: 0 15px;
@@ -2677,7 +2678,7 @@ body.rtl .faq-header {
   font-weight: 600;
   letter-spacing: 2px;
 
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
 
   transition:
@@ -2690,6 +2691,7 @@ body.rtl .faq-header {
   background: var(--secondary);
   border-color: var(--secondary);
   transform: translateY(-3px);
+  color: var(--bg);
 }
 
 /* ==================================================

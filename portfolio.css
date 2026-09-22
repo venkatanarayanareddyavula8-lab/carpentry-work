@@ -395,6 +395,7 @@ body.rtl .logo-name {
 ================================================== */
 
 .login-button {
+  font-family: "Montserrat", sans-serif;
   height: 40px;
   min-width: 88px;
   padding: 0 15px;
@@ -1684,9 +1685,9 @@ body.dark .portfolio-hero-overlay {
   display: block;
 
   margin-bottom: 12px;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Montserrat", sans-serif;
 
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
 
@@ -2556,8 +2557,8 @@ body.rtl .furniture-content p {
 
   margin-bottom: 10px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
   font-weight: 600;
 
   letter-spacing: 2px;
@@ -3909,8 +3910,8 @@ body.rtl .living-room-content p {
   margin-bottom: 10px;
 
   color: var(--primary);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 1.8px;
 }
@@ -4103,8 +4104,9 @@ body.rtl .living-room-content p {
     display: block;
 
     margin: 0 0 9px;
+    font-family: "Montserrat", sans-serif;
 
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.4;
   }
 
@@ -4546,10 +4548,11 @@ body.rtl .living-room-content p {
 
 .unit-number {
   display: block;
+  font-family: "Montserrat", sans-serif;
 
   margin-bottom: 10px;
 
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2.5px;
 
@@ -4572,6 +4575,7 @@ body.rtl .living-room-content p {
   display: block;
 
   margin-bottom: 17px;
+  font-family: "Montserrat", sans-serif;
 
   font-size: 14px;
   font-weight: 600;
@@ -5768,11 +5772,11 @@ body.rtl .living-room-content p {
 }
 
 .portfolio-cta-button:hover {
-  background: var(--primary);
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--bg);
 
   transform: translateY(-2px);
-
-  box-shadow: 0 8px 20px rgba(139, 90, 53, 0.22);
 }
 
 /* =========================================================

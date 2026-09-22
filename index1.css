@@ -397,6 +397,7 @@ body.rtl .logo-name {
 .login-button {
   height: 40px;
   min-width: 88px;
+  font-family: "Montserrat", sans-serif;
   padding: 0 15px;
   display: inline-flex;
   align-items: center;
@@ -6634,7 +6635,12 @@ body.rtl .faq-answer p {
   font-size: 20px;
   line-height: 1;
 }
+.craftnest-cta-button:hover {
+  border-color: var(--secondary);
+  color: var(--bg);
 
+  transform: translateY(-2px);
+}
 /* =====================================================
    1920px / LARGE DESKTOP
    ONLY SIDE WIDTH REDUCED
