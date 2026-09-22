@@ -41,7 +41,7 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: "Cormorant Garamond", serif;
   background: var(--bg);
   color: var(--text);
   transition:
@@ -1229,6 +1229,7 @@ body.dark .hero-overlay {
   width: 100%;
   max-width: 700px;
   margin: 20px auto;
+  font-family: "Montserrat", sans-serif;
 
   color: #ffffff;
   font-size: 17px;
@@ -1341,7 +1342,7 @@ body.dark .hero-overlay {
 }
 
 .stat-number > span {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Montserrat";
   font-size: 35px;
   line-height: 1;
   font-weight: 700;
@@ -2300,9 +2301,10 @@ body.rtl .hero-stats {
 .bespoke-header p {
   max-width: 680px;
   margin: 20px auto 0;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.8;
   opacity: 0.75;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ================= CONTENT ================= */
@@ -2354,7 +2356,7 @@ body.rtl .hero-stats {
   justify-content: space-between;
 
   color: var(--bg);
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 2px;
 }
 
@@ -2386,9 +2388,10 @@ body.rtl .hero-stats {
 
 .bespoke-description {
   margin-bottom: 30px;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.8;
   opacity: 0.75;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ================= FEATURES ================= */
@@ -2418,9 +2421,10 @@ body.rtl .hero-stats {
 }
 
 .bespoke-feature p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   opacity: 0.65;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ================= LINK ================= */
@@ -2446,7 +2450,7 @@ body.rtl .hero-stats {
 
 .bespoke-link span {
   color: var(--primary);
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .bespoke-link:hover {
@@ -2767,7 +2771,7 @@ body.rtl .bespoke-link {
   }
 
   .bespoke-feature p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6;
   }
 
@@ -2854,9 +2858,10 @@ body.rtl .bespoke-link {
 .categories-header p {
   max-width: 680px;
   margin: 20px auto 0;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.8;
   opacity: 0.75;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ==========================================
@@ -2983,9 +2988,10 @@ body.rtl .bespoke-link {
 .category-content p {
   max-width: 380px;
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
   opacity: 0.7;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ==========================================
@@ -3386,11 +3392,12 @@ body.rtl .categories-grid {
 
   margin: 20px auto 0;
 
-  font-size: 17px;
+  font-size: 14px;
 
   line-height: 1.8;
 
   opacity: 0.75;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ==========================================
@@ -3476,9 +3483,10 @@ body.rtl .categories-grid {
 
   color: var(--bg);
 
-  font-size: 15px;
+  font-size: 14px;
 
   letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ==========================================
@@ -3502,11 +3510,12 @@ body.rtl .categories-grid {
 
   margin-bottom: 30px;
 
-  font-size: 16px;
+  font-size: 14px;
 
   line-height: 1.8;
 
   opacity: 0.72;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ==========================================
@@ -3542,8 +3551,7 @@ body.rtl .categories-grid {
 
   color: var(--secondary);
 
-  font-family: "Cormorant Garamond", serif;
-
+  font-family: "Montserrat";
   font-size: 24px;
 }
 
@@ -3556,11 +3564,12 @@ body.rtl .categories-grid {
 }
 
 .material-detail p {
-  font-size: 15;
+  font-size: 14px;
 
   line-height: 1.6;
 
   opacity: 0.6;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ==========================================
@@ -3670,9 +3679,10 @@ body.rtl .categories-grid {
 }
 
 .material-item-content p {
-  font-size: 15px;
+  font-size: 14px;
 
   opacity: 0.6;
+  font-family: "Montserrat", sans-serif;
 }
 
 .material-arrow {
@@ -3715,6 +3725,7 @@ body.rtl .categories-grid {
 
 .materials-bottom-text > span {
   color: var(--primary);
+  font-family: "Montserrat", sans-serif;
 
   font-size: 15px;
 
@@ -3754,11 +3765,12 @@ body.rtl .categories-grid {
 
   color: var(--text);
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 
   transition: 0.3s ease;
+  font-family: "Montserrat", sans-serif;
 }
 
 .materials-button span {
@@ -4463,6 +4475,7 @@ body.rtl .materials-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: "Montserrat", sans-serif;
 
   margin-bottom: 15px;
   padding: 7px 18px;
@@ -4502,12 +4515,13 @@ body.rtl .materials-button {
 
   margin: 20px auto 0;
 
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.8;
 
   text-align: center;
 
   opacity: 0.7;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* =========================================================
@@ -4622,12 +4636,13 @@ body.rtl .work-line {
 
   margin: 0 auto;
 
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
 
   text-align: center;
 
   opacity: 0.7;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* =========================================================
@@ -5036,8 +5051,7 @@ body.rtl .work-step p {
 .testimonials-heading p {
   max-width: 650px;
   margin: 20px auto 0;
-
-  font-family: sans-serif;
+  font-family: "Montserrat";
   font-size: 14px;
   line-height: 1.8;
 
@@ -5143,9 +5157,10 @@ body.rtl .work-step p {
 
   font-size: 11px;
   font-weight: 500;
-  font-family: sans-serif;
+
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
 
   color: var(--secondary);
 
@@ -5174,9 +5189,9 @@ body.rtl .work-step p {
   max-width: 360px;
 
   margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
 
-  font-family: sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   font-weight: 500;
 
@@ -5835,9 +5850,9 @@ body.rtl .craft-stat {
   max-width: 650px;
 
   margin: 22px auto 18px;
+  font-family: "Montserrat";
 
-  font-family: "Montserrat", sans-serif;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.85;
 
   color: var(--text);

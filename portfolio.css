@@ -41,7 +41,7 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: "Cormorant Garamond", serif;
   background: var(--bg);
   color: var(--text);
   transition:
@@ -1227,7 +1227,7 @@ body.dark .portfolio-hero-overlay {
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 17px;
+  font-size: 14px;
 
   line-height: 1.7;
 
@@ -1565,7 +1565,7 @@ body.dark .portfolio-hero-overlay {
   max-width: 700px;
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.8;
   color: var(--text);
   opacity: 0.75;
@@ -1684,8 +1684,8 @@ body.dark .portfolio-hero-overlay {
   display: block;
 
   margin-bottom: 12px;
+  font-family: "Cormorant Garamond", serif;
 
-  font-family: "Montserrat", sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -2556,7 +2556,7 @@ body.rtl .furniture-content p {
 
   margin-bottom: 10px;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 10px;
   font-weight: 600;
 
@@ -2592,7 +2592,8 @@ body.rtl .furniture-content p {
   margin: 0;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+
   line-height: 1.7;
 
   color: var(--text);
@@ -3844,7 +3845,7 @@ body.rtl .living-room-content p {
   margin: 0 auto;
   color: var(--text);
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -3908,7 +3909,7 @@ body.rtl .living-room-content p {
   margin-bottom: 10px;
 
   color: var(--primary);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 1.8px;
@@ -3929,7 +3930,7 @@ body.rtl .living-room-content p {
 
   color: var(--text);
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -4445,7 +4446,7 @@ body.rtl .living-room-content p {
 .furniture-units-header h2 {
   margin: 0;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(45px, 6vw, 60px);
   line-height: 1.1;
   font-weight: 500;
@@ -4465,8 +4466,8 @@ body.rtl .living-room-content p {
 .furniture-units-header p {
   max-width: 650px;
   margin: 22px auto 0;
-
-  font-size: 16px;
+  font-family: "Montserrat";
+  font-size: 14px;
   line-height: 1.8;
 
   color: var(--text);
@@ -4558,7 +4559,7 @@ body.rtl .living-room-content p {
 .furniture-unit h3 {
   margin: 0 0 10px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 28px;
   line-height: 1.2;
@@ -4572,7 +4573,7 @@ body.rtl .living-room-content p {
 
   margin-bottom: 17px;
 
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
 
@@ -4581,8 +4582,8 @@ body.rtl .living-room-content p {
 
 .furniture-unit p {
   margin: 0;
-
-  font-size: 15px;
+  font-family: "Montserrat";
+  font-size: 14px;
   line-height: 1.75;
 
   color: var(--text);
@@ -5139,7 +5140,7 @@ body.rtl .living-room-content p {
 
   margin-bottom: 10px;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 11px;
   font-weight: 600;
 
@@ -5694,7 +5695,7 @@ body.rtl .living-room-content p {
 
 .portfolio-cta-content h2 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(45px, 6vw, 60px);
   line-height: 1.15;
   font-weight: 500;
@@ -5713,10 +5714,12 @@ body.rtl .living-room-content p {
 
 .portfolio-cta-box p {
   width: 100%;
+  font-family: "Montserrat";
   max-width: 650px;
   margin: 10px auto 0;
   padding: 0;
-  font-size: 15px;
+  font-size: 14px;
+
   line-height: 1.6;
   text-align: center;
   box-sizing: border-box;

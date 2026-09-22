@@ -47,7 +47,7 @@ body {
   min-height: 100vh;
   width: 100%;
   max-width: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
@@ -70,11 +70,15 @@ button {
    HEADER
 ================================================== */
 
+/* ==================================================
+   HEADER
+   NORMAL PAGE FLOW
+================================================== */
+
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+
+  width: 100%;
   z-index: 1000;
 
   background: var(--bg);
@@ -134,7 +138,9 @@ button {
 
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+
+  transform: translate(-50%, 6px);
+  margin-top: 100px;
 }
 
 /* ==================================================
@@ -406,6 +412,7 @@ button {
 
 .enquiry-info-header p {
   max-width: 650px;
+  font-family: "Montserrat", sans-serif;
 
   margin: 18px auto 0;
 
@@ -461,6 +468,7 @@ button {
 
 .form-header > span {
   display: block;
+  font-family: "Montserrat", sans-serif;
 
   margin-bottom: 8px;
 
@@ -496,6 +504,7 @@ button {
 
 .form-header p {
   margin: 8px 0 0;
+  font-family: "Montserrat", sans-serif;
 
   color: var(--text);
 
@@ -554,6 +563,7 @@ button {
 
   font-size: 13px;
   font-weight: 700;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ==================================================
@@ -606,6 +616,7 @@ button {
   min-height: 115px;
 
   padding: 15px 16px;
+  font-family: "Montserrat", sans-serif;
 
   resize: vertical;
 }
