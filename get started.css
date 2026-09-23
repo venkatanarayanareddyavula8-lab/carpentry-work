@@ -736,19 +736,32 @@ body.rtl .header-actions {
   flex-direction: row;
 }
 
+/* =========================================================
+   RTL LOGO
+   LTR → Craft Nest [Logo]
+   RTL → [Logo] Craft Nest
+========================================================= */
+
 body.rtl .logo {
   direction: ltr;
-
-  flex-direction: row-reverse;
-
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-
   gap: 8px;
 }
 
-body.rtl .enquiry-container {
-  direction: rtl;
+body.rtl .logo-icon {
+  order: 1;
+  margin: 0;
+  padding: 0;
+}
+
+body.rtl .logo-name {
+  order: 2;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 body.rtl .form-group {

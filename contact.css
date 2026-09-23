@@ -3493,24 +3493,30 @@ body.rtl .footer-logo {
   padding: 0;
 }
 
-body.rtl .footer-logo .logo-icon {
-  order: 1;
+/* ==================================================
+   RTL FOOTER LOGO
+   LTR  → [Logo] Craft Nest
+   RTL  → Craft Nest [Logo]
+================================================== */
 
-  margin: 0;
-
-  padding: 0;
+body.rtl .footer-logo {
+  direction: ltr;
+  flex-direction: row;
+  gap: 8px;
 }
 
 body.rtl .footer-logo .logo-name {
-  order: 2;
-
-  margin-left: -42px;
-
+  order: 1;
+  margin-left: 0;
   margin-right: 0;
-
   padding: 0;
+  text-align: right;
+}
 
-  text-align: left;
+body.rtl .footer-logo .logo-icon {
+  order: 2;
+  margin: 0;
+  padding: 0;
 }
 
 /* ==================================================
@@ -3694,30 +3700,24 @@ body.rtl .footer-bottom-links {
     height: 38px;
   }
 
-  /* RTL LOGO */
-
-  body.rtl .footer-logo {
+  * RTL LOGO */ body.rtl .footer-logo {
     margin: -8px 0 -12px 0;
-
     direction: ltr;
-
     flex-direction: row;
-
     gap: 0;
   }
 
-  body.rtl .footer-logo .logo-icon {
+  body.rtl .footer-logo .logo-name {
     order: 1;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: right;
   }
 
-  body.rtl .footer-logo .logo-name {
+  body.rtl .footer-logo .logo-icon {
     order: 2;
-
-    margin-left: -28px;
-
-    margin-right: 0;
-
-    text-align: left;
+    margin: 0;
+    padding: 0;
   }
 
   /* RTL SOCIAL */
@@ -3867,30 +3867,34 @@ body.rtl .footer-bottom-links {
     gap: 9px;
   }
 
-  /* RTL LOGO */
+  /* ==================================================
+   IPAD MINI / TABLET
+   RTL FOOTER LOGO
+
+   LTR → [Logo] Craft Nest
+   RTL → Craft Nest [Logo]
+================================================== */
 
   body.rtl .footer-logo {
-    margin: -10px 0 -14px 0;
-
-    direction: ltr;
-
+    display: inline-flex;
     flex-direction: row;
-
-    gap: 0;
-  }
-
-  body.rtl .footer-logo .logo-icon {
-    order: 1;
+    direction: ltr;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
   }
 
   body.rtl .footer-logo .logo-name {
+    order: 1;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+
+  body.rtl .footer-logo .logo-icon {
     order: 2;
-
-    margin-left: -36px;
-
-    margin-right: 0;
-
-    text-align: left;
+    margin: 0;
+    padding: 0;
   }
 
   /* RTL SOCIAL */
@@ -4009,22 +4013,34 @@ body.rtl .footer-bottom-links {
     margin: -2px 0 0 0;
   }
 
-  /* RTL */
+  /* ==================================================
+   IPAD MINI / TABLET
+   RTL FOOTER LOGO
+
+   LTR → [Logo] Craft Nest
+   RTL → Craft Nest [Logo]
+================================================== */
 
   body.rtl .footer-logo {
-    margin: -15px 0 -15px 0;
-
-    direction: ltr;
-
+    display: inline-flex;
     flex-direction: row;
-
-    gap: 0;
+    direction: ltr;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
   }
 
   body.rtl .footer-logo .logo-name {
-    margin-left: -34px;
+    order: 1;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
 
-    margin-right: 0;
+  body.rtl .footer-logo .logo-icon {
+    order: 2;
+    margin: 0;
+    padding: 0;
   }
 
   body.rtl .social-links {
@@ -4609,4 +4625,45 @@ body.rtl .social-links {
   .site-footer {
     margin-top: 0;
   }
+}
+/* ==================================================
+   CRAFT NEST LOGO - LTR / RTL
+   ONLY REVERSE ORDER
+================================================== */
+
+/* LTR
+   [LOGO] Craft Nest
+*/
+.logo {
+  display: inline-flex;
+  flex-direction: row;
+  direction: ltr;
+  align-items: center;
+}
+
+.logo-icon {
+  order: 1;
+}
+
+.logo-name {
+  order: 2;
+}
+
+/* RTL
+   Craft Nest [LOGO]
+*/
+body.rtl .logo {
+  display: inline-flex;
+  flex-direction: row;
+  direction: ltr;
+  align-items: center;
+  gap: 10px;
+}
+
+body.rtl .logo-name {
+  order: 1;
+}
+
+body.rtl .logo-icon {
+  order: 2;
 }
